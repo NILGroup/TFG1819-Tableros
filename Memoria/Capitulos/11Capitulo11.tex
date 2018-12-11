@@ -1,0 +1,65 @@
+
+%---------------------------------------------------------------------
+%
+%                          Capitulo 11
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{Conclusiones y Trabajo futuro}
+
+\begin{resumen}
+En este capítulo se presentan las conclusiones del TFG y el trabajo futuro que consideramos que podría implementarse si se continuara con el desarrollo de este proyecto.
+\end{resumen}
+
+\section{Conclusiones}
+%--------
+\label{cap11:sec:conclusiones}
+
+En la actualidad tenemos acceso a una cantidad enorme de información. Toda esta información debe ser interpretada correctamente para saber si es útil para nosotros o no. En este punto surge un problema porque no todas las personas tienen la misma facilidad para interpretar un texto. Por ejemplo, la falta de empatía emocional en las personas con Trastornos del Espectro Autista (TEA) les impide reconocer el contenido afectivo de un texto lo que puede llegar a alterar en gran medida la interpretación de la información. Algo similar ocurre cuando estas personas quieren escribir algo en la red: la dificultad para expresar sus emociones puede provocar malentendidos. Por todo ello es necesario desarrollar herramientas que faciliten la integración digital de personas con este tipo de discapacidad. 
+
+El objetivo principal de este trabajo era implementar una serie de servicios web que permitiesen detectar automáticamente el grado de carga afectiva de un texto con el fin de hacer el texto más accesible. La idea era medir la presencia de cada una de las cinco categorías emocionales básicas con las que habíamos decidido trabajar: tristeza, miedo, alegría, enfado y asco. Para ello contábamos con un diccionario afectivo compuesto por una serie de palabras acompañadas de su lexema y cinco valores del uno al cinco (uno para cada categoría emocional). A partir de este diccionario pudimos marcar las palabras emocionales que componen el texto con sus grados emocionales correspondientes lo que nos serviría de base para el análisis emocional del texto. Los grados emocionales de las palabras nos permitirán obtener los grados emocionales finales de las frases del texto y, a partir de estos, obtendremos los grados definitivos para cada categoría emocional en el texto.
+
+Una vez desarrollados los servicios los integramos en una API para hacerlos accesibles a todo aquel que los necesite y así favorecer la transferencia de resultados. A continuación, creamos una aplicación web para que pueda ser utilizada por cualquier usuario de manera sencilla. Esta web permite introducir un texto y muestra los resultados de forma gráfica, utilizando emoticonos y colores para hacer explicitas las categorías emocionales que contiene el texto introducido. Además, marca las palabras emocionales (aquellas cuyos grados han contribuido al resultado obtenido) dentro del texto.
+
+La aplicación web ha sido sometida a una evaluación con usuarios finales en la que hemos podido poner a prueba tanto su funcionalidad como su interfaz. Esta evaluación puso de manifiesto la utilidad de la aplicación así como la existencia de bastantes aspectos que mejorar.
+
+Este trabajo ha sido una oportunidad para aplicar todos los conocimientos adquiridos en distintas asignaturas cursadas durante la carrera a un proyecto grande y de impacto real. Entre estas asignaturas cabe destacar:
+
+\begin{itemize}
+	\item \textbf{Fundamentos de la Programación}, \textbf{Tecnología de la Programación} y \textbf{Estructura de Datos y Computadores} que nos ayudaron a adquirir una forma de pensar estructurada y eficiente a la hora de programar.
+	\item \textbf{Ingeniería del software}, que nos enseñó a tener la capacidad para gestionar un proyecto software de manera correcta así como las distintas pruebas software que se pueden realiza sobre un proyecto.
+	\item \textbf{Auditoría Informática} y \textbf{Evaluación de Configuraciones}, las cuales nos han ayudado a mejorar el rendimiento de nuestros servicios web.
+	\item  \textbf{Aplicaciones Web}, \textbf{Ampliación de Bases de datos} e \textbf{Ingeniería Web}, que nos aportaron los conocimientos necesarios de HTML, CSS y Javascript para desarrollar nuestra aplicación web.
+	\item \textbf{Bases de datos}, que nos ayudó a crear la base de datos que forma el modelo de Django.
+	\item \textbf{Sistemas Operativos}, \textbf{Redes}, \textbf{Redes y Seguridad }y \textbf{Amplicación de Redes y Sistemas Operativos}, que nos ayudaron a realizar la gestión de la configuración de nuestro servidor Apache así como a realizar el despliegue del proyecto sobre él.
+	\item Para finalizar, en la asignatura de \textbf{Ética, Legislación y Profesión} aprendimos todo lo necesario sobre licencias, tanto para proteger nuestro código como para saber utilizar de forma correcta el software libre desarrollado por terceros.
+\end{itemize}
+    
+También hemos aprendido muchas cosas nuevas, entre las que cabe destacar: configuración de un host virtual en un servidor Apache, Python, metodología Scrum, Jenkins y Latex.
+
+En resumen, durante este TFG hemos cumplido con todos los objetivos que nos marcamos al principio y que se pueden consultar en la sección 1.2 de esta memoria.
+
+
+\section{Trabajo futuro}
+
+%--------
+\label{cap11:sec:trabajo futuro}
+
+Con el fin de suplir algunas de las carencias del proyecto y dotarlo de mayor funcionalidad para tener una aplicación más completa, consideramos que podemos dejar como trabajo futuro la implementación de los siguientes aspectos que no llegamos a cubrir en nuestra aplicación y que surgieron tras la realización de la evaluación final.
+
+\begin{itemize}
+	\item \textbf{Añadir cambio de imágenes asociadas a las emociones}: al igual que nuestra aplicación permite el cambio de los colores asociados a cada emoción, se implementaría la posibilidad de realizar el cambio de imagen que también llevan asociadas las emociones. Para ello, deberíamos crear una sesión por cada usuario que utilizara nuestra aplicación con el fin de que las imágenes que seleccionase quedaran guardadas en su ordenador.
+	\item \textbf{Implementación de detección automática de colores oscuros para las emociones}: Si se selecciona un color oscuro para una emoción, la imagen con el emoticono de dicha emoción debe invertirse para conseguir una visualización correcta.
+	\item \textbf{Añadir reconocimiento por voz}: se intentó realizar la implementación del reconocimiento por voz haciendo uso de la API de Google, Speech Recognition (la cual convierte el texto que escucha por el micrófono en texto escrito), pero como las peticiones que realizamos al servidor son HTTP y el explorador (Chrome) las reconoce como no seguras, no se permite el acceso al micrófono y tuvimos que abortar este objetivo. En un futuro creemos que sería interesante añadir esta funcionalidad.
+	\item \textbf{Cambiar tipo de peticiones al servidor}: las peticiones que actualmente se realizan al servidor son HTTP, lo que hace que se restrinja en cierta medida el uso de APIs externas (como por ejemplo la API de reconocimiento por voz), por ello y por seguridad creemos que deberíamos cambiar los tipos de peticiones a HTTPs.
+	\item \textbf{Calcular de diferente manera los valores de los distintos tipos de frases}: el proyecto ha sido desarrollado para reconocer frases exclamativas, interrogativas y afirmativas. Como trabajo futuro, debería implementarse el reconocimiento de frases negativas, subordinadas, adjetivas...
+	\item \textbf{Añadir posibilidad de insertar nuevas palabras que no aparecen en nuestro diccionario}: tras la evaluación preliminar con usuarios, se observó la necesidad de incluir en el diccionario términos más coloquiales. Por ello, sería útil la implementación de la inserción de nuevas palabras en nuestro diccionario. Una posible solución sería crear diferentes roles, con el fin de darle solo la oportunidad de añadir nuevas palabras a aquel usuario que tuviera el rol de "tutor". Otra solución podría ser la creación de un buzón de sugerencia o similar, con el fin de que cuando una palabra fuera sugerida por un mínimo de usuarios ésta se insertara en el diccionario.
+	\item \textbf{ Inserción de frases hechas y expresiones en el diccionario}:  un avance en el progreso de la aplicación sería la inserción en el diccionario de frases hechas y expresiones coloquiales, con el fin de ampliar la cobertura de nuestro traductor emocional.
+	\item \textbf{Implementación de una aplicación móvil}: Cada vez son más los usuarios que disponen de un dispositivo móvil, por ello también sería útil el desarrollo de una aplicación móvil basada en la aplicación web actual.
+	\item \textbf{Actualización de la interfaz para que el nivel de conformidad sea AAA} con el fin de que la web sea más accesible para personas con algún tipo de discapacidad.
+	\item \textbf{Creación de un log} para poder guardar en el diccionario las nuevas palabras de los textos que se introducen en la aplicación, así como sus resultados para facilitar la depuración de los errores y el análisis de los resultados.
+\end{itemize}
+
+El principal factor que ha impedido realizar estas funcionalidades que presentamos como trabajo futuro ha sido la falta tiempo. En un futuro próximo nos gustaría mejorar la aplicación para que ésta sea una herramienta con la máxima funcionalidad posible y que así pueda de verdad ayudar a las personas que lo necesiten.
+
+

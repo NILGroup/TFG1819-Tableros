@@ -1,0 +1,705 @@
+%---------------------------------------------------------------------
+%
+%                          Capitulo 7
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{Evaluación}
+\label{cap6:Evaluacion}
+
+\begin{resumen}
+Una vez finalizada la implementación de todos los servicios y la interfaz web hemos realizado pruebas para valorar nuestra aplicación. Hemos hecho dos tipos de evaluaciones diferentes: evaluación de la corrección del marcado emocional y evaluación de la usabilidad y utilidad de la aplicación.
+En la sección 7.1 comentaremos la evaluación del marcado y en la sección 7.2. la evaluación con usuarios finales y de la aplicación.
+\end{resumen}
+
+%-------------------------------------------------------------------
+\section{Evaluación del marcado emocional}
+%-------------------------------------------------------------------
+\label{cap6:sec:metodo}
+
+Llamamos evaluación del marcado emocional a la evaluación realizada sobre los resultados del etiquetado emocional. Con esta evaluación queremos determinar el nivel de correción de la marcación realizada por el sistema. Para esto, hemos escogido una serie de noticias, blogs y cuentos que serán marcados emocionalmente por nuestro sistema. Tras el análisis de resultados obtenidos sacaremos conclusiones sobre su eficacia y los puntos a mejorar.
+En las siguientes subsecciones se muestran los resultados para cada uno de los textos evaluados. Mostraremos el texto en cuestión, con las palabras consideradas emocionales en negrita y una tabla con los resultados para cada emoción señalando la mayoritaria.
+
+\subsection{Cuentos}
+
+Hemos utilizado cuentos cortos o resumenes de cuentos más largos como casos de prueba. En total tenemos 13 de este tipo y a continuación mostramos los resultados para cada uno de ellos y un análisis sobre su corrección.
+
+\subsubsection{Blancanieves}
+El cuento original fue publicado por Louis Weber, Disney Enterprises, Inc. Nosotras hemos utilizado un resumen obtenido de Internet. 
+
+``\textit{Había una \textbf{vez} una \textbf{princesa} \textbf{dulce} y \textbf{gentil} \textbf{llamada} Blancanieves. La \textbf{malvada} \textbf{reina} estaba \textbf{celosa} de la \textbf{belleza} de Blancanieves. Blancanieves \textbf{tuvo} que \textbf{huir} y se \textbf{refugió} en la \textbf{casa} de los siete \textbf{enanitos}. La \textbf{reina} \textbf{engañó} a Blancanieves con una \textbf{manzana} \textbf{envenenada}. Pero \textbf{llegó} el \textbf{príncipe}, \textbf{despertó} a Blancanieves con un \textbf{beso} y \textbf{vivieron} \textbf{felices} para siempre.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.19 & 2.02 & \textbf{3.02} & 1.81 & 1.51 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento Blancanieves}
+	\end{center}
+\end{table} 
+
+Podemos ver en la tabla que la emoción mayoritaria es alegría tal y como esperábamos porque el cuento tiene un final feliz y es infantil. Por otra parte los resultados nos parecen coherentes ya que la segunda emoción es el miedo y en este cuento aparece una malvada bruja.
+
+\subsubsection{Blancanieves y sus amigos}
+El cuento original fue publicado por Louis Weber, Disney Enterprises, Inc. Nosotras hemos utilizado un resumen obtenido de Internet. 
+
+``\textit{La \textbf{amable} y \textbf{gentil} Blancanieves \textbf{tenía} muchos \textbf{amigos}. Los \textbf{animales} del \textbf{bosque} eran sus \textbf{amigos}. Un \textbf{pequeño} \textbf{pajarito} era su \textbf{amigo}. El \textbf{príncipe} \textbf{azul} era su \textbf{amigo}. Pero los siete \textbf{enanitos} eran los \textbf{mejores} \textbf{amigos} de Blancanieves.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.33 & 1.5 & \textbf{4.14} & 1.17 & 1.1 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento Blancanieves y sus amigos}
+	\end{center}
+\end{table} 
+
+Este cuento también nos da un resultado correcto, ya que los amigos están relacionados con la alegría.
+
+\subsubsection{La sirenita}
+El cuento original fue publicado por Louis Weber, Disney Enterprises, Inc. Nosotras hemos utilizado un resumen obtenido de Internet. 
+
+``\textit{Ariel era una \textbf{sirenita} que \textbf{vivía} bajo el \textbf{mar}. Ariel se \textbf{sentía} \textbf{fascinada} por los \textbf{humanos}, \textbf{sobretodo} por el \textbf{príncipe} Eric. Ariel \textbf{pidió} a la \textbf{bruja} del \textbf{mar} que la \textbf{transformara} en \textbf{humana} para poder \textbf{estar} con el \textbf{príncipe} Eric. Si Eric no \textbf{besaba} a Ariel antes de que \textbf{pasaran} tres \textbf{días}, ella \textbf{volvería} a \textbf{convertirse} en \textbf{sirena}. Pero ni la \textbf{magia} de la \textbf{bruja} del \textbf{mar} pudo \textbf{separar} a Eric y Ariel.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.92 & 2.12 & \textbf{3.89} & 1.4 & 1.33 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento La sirenita}
+	\end{center}
+\end{table} 
+
+La sirenita es un cuento con un final feliz y por ello la emoción correcta es la alegría y el etiquetado emocional es correcto.
+
+\subsubsection{La bella durmiente}
+El cuento original fue publicado por Louis Weber, Disney Enterprises, Inc. Nosotras hemos utilizado un resumen obtenido de Internet. 
+
+``\textit{Cuando \textbf{nació} la \textbf{princesa} Aurora, las \textbf{hadas} \textbf{buenas} le \textbf{hicieron} \textbf{maravillosos} \textbf{regalos}. Pero el \textbf{regalo} de la \textbf{malvada} Maléfica fue una \textbf{maldición}: al \textbf{cumplir} dieciséis \textbf{años}, la \textbf{princesa} se \textbf{pincharía} en una \textbf{rueca}. Las \textbf{hadas} se \textbf{llevaron} a Aurora a \textbf{vivir} al \textbf{bosque}. \textbf{Querían} \textbf{protegerla}. La \textbf{maldición} de Maléfica era muy \textbf{fuerte}. Hizo que Aurora se \textbf{pinchara} el \textbf{dedo} y se \textbf{durmiera}. El \textbf{príncipe} Felipe \textbf{rompió} el \textbf{hechizo} y \textbf{despertó} a la Bella Durmiente.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.82 & 2.12 & \textbf{2.29} & 1.8 & 1.29 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento La bella durmiente}
+	\end{center}
+\end{table} 
+
+Aunque la emoción mayoritaria de este cuento sea la alegría, con la que estamos de acuerdo dado que el cuento es infantil y posee un final feliz, la interfaz posteriormente devolvería que es un texto sin emociones dado que ninguno de los resultados supera el 2.5, resultado con el que también estamos de acuerdo ya que en este texto también domina bastante el miedo de la maldición.
+
+\subsubsection{La margarita}
+Este texto es un fragmento de un cuento que se llama 'La margarita' cuyo autor es Hans Christian Andersen\footnote{Fuente: http://www.cuentoscortos.com/cuentos-clasicos/la-margarita}.
+
+``\textit{Había una \textbf{vez} una \textbf{casa} de \textbf{campo} con un \textbf{jardín} \textbf{lleno} de \textbf{flores} y una cerca \textbf{pintada}. En \textbf{medio} del \textbf{bello} y \textbf{verde} \textbf{césped} \textbf{crecía} una \textbf{pequeña} \textbf{margarita}. El \textbf{sol} era \textbf{igual} de \textbf{generoso} con la \textbf{pequeña} \textbf{margarita} que con las \textbf{grandes} y \textbf{suntuosas} \textbf{flores} del \textbf{jardín}. Y la \textbf{margarita} \textbf{crecía}, de \textbf{hora} en \textbf{hora}. Allí estaba una \textbf{mañana} la \textbf{margarita}, \textbf{recibiendo} el \textbf{calor} del \textbf{sol}, \textbf{despreocupada}, sin \textbf{dolerse} de ser una \textbf{pobre} \textbf{flor} \textbf{insignificante}. Estaba \textbf{contenta} y, \textbf{mirando} al \textbf{sol}, \textbf{escuchaba} el \textbf{alegre} \textbf{canto} de la \textbf{alondra}, \textbf{feliz} como si fuera un \textbf{día} de \textbf{fiesta}. Los \textbf{niños} \textbf{estaban} en la \textbf{escuela}, y mientras ellos \textbf{estudiaban}, la \textbf{margarita} \textbf{aprendía} a \textbf{conocer} la \textbf{bondad} de Dios en el \textbf{calor} del sol y en la \textbf{belleza} de lo que la \textbf{rodeaba}.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.45 & 1.47 & \textbf{3.79} & 1.17 & 1.13 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento La margarita}
+	\end{center}
+\end{table} 
+
+Este resultado también lo consideramos correcto.
+
+\subsubsection{La bella y la bestia}
+El cuento original fue publicado por Louis Weber, Disney Enterprises, Inc. Nosotras hemos utilizado un resumen obtenido de Internet. 
+
+``\textit{Bella \textbf{vivía} en una \textbf{pequeña} \textbf{aldea}. Le \textbf{encantaba} \textbf{leer}. Bella \textbf{quería} mucho a su \textbf{padre}. Cuando \textbf{desapareció}, Bella \textbf{salió} a \textbf{buscarlo}. Bella \textbf{encontró} a su \textbf{padre} en el \textbf{castillo} de la \textbf{Bestia}. Bella y Bestia \textbf{aprendieron} a ser \textbf{amigos}. Cuando Bella se \textbf{enamoró} de Bestia, él \textbf{volvió} a \textbf{convertirse} en \textbf{príncipe}.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.62 & 1.87 & \textbf{3.9} & 1.37 & 1.19 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento La Bella y la Bestia}
+	\end{center}
+\end{table} 
+
+Aunque en este cuento podría parecer que las emociones son tristeza y miedo por la situación entre el padre y la hija y el hecho de que aparezca una bestia, nos habla en realidad de como los protagonistas son amigos y se enamoran resultando así un final alegre, por lo que estamos de acuerdo con este resultado. 
+
+\subsubsection{El castillo de Bestia}
+El cuento original fue publicado por Louis Weber, Disney Enterprises, Inc. Nosotras hemos utilizado un resumen obtenido de Internet. 
+
+``\textit{Bestia \textbf{vivía} en un \textbf{castillo} \textbf{encantado}. Plumero, la Señora Potts y Din-Dón \textbf{dieron} la \textbf{bienvenida} a Bella. Todos se \textbf{esforzaron} para conseguir que Bella se \textbf{sintiera} como en \textbf{casa}. Bella \textbf{disfrutaba} de las \textbf{cenas} con Bestia en el \textbf{gran} \textbf{comedor} del \textbf{castillo}. Bella se sintió feliz de que aquel castillo fuera su \textbf{hogar} para siempre.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.11 & 1.13 & \textbf{3.14} & 1.0 & 1.0 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento El castillo de Bestia}
+	\end{center}
+\end{table} 
+
+Este cuento lo calificaríamos como alegre, y nuestro programa lo hace de la misma manera. Cabe destacar que pone enfado y asco a 1, lo que significa que no hay presencia de estas emociones.
+
+\subsubsection{Cenicienta}
+El cuento original fue publicado por Louis Weber, Disney Enterprises, Inc. Nosotras hemos utilizado un resumen obtenido de Internet. 
+
+``\textit{Cenicienta \textbf{trabajaba} mucho, \textbf{día} y \textbf{noche}. Y a \textbf{pesar} de todo estaba \textbf{alegre}. Se \textbf{divertía} con sus \textbf{amigos} los \textbf{ratones}.
+También se \textbf{ponía} \textbf{contenta} cuando \textbf{cantaba}. Pero \textbf{creer} en sus \textbf{sueños} era lo que la \textbf{hacía} \textbf{sentirse} más \textbf{feliz}.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.43 & 1.53 & \textbf{4.05} & 1.27 & 1.16 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento Cenicienta}
+	\end{center}
+\end{table} 
+
+Este cuento es claramente alegre o esperanzador por lo que este resultado nos parece correcto.
+
+\subsubsection{Mulán}
+El cuento original fue publicado por Louis Weber, Disney Enterprises, Inc. Nosotras hemos utilizado un resumen obtenido de Internet. 
+
+``\textit{Mulán \textbf{quería} \textbf{llevar} el \textbf{honor} a su \textbf{familia}. A \textbf{veces} era \textbf{difícil}. Un \textbf{día}, el \textbf{padre} de Mulán se \textbf{enteró} que \textbf{tenía} que \textbf{ir} a la \textbf{guerra}. Mulán \textbf{fingió} ser un \textbf{muchacho}. Se \textbf{unió} al \textbf{ejército} para que su \textbf{padre} no \textbf{tuviera} que \textbf{hacerlo}. Mulán se entrenó duramente. \textbf{Ayudó} al \textbf{ejército} \textbf{chino} a \textbf{ganar} la \textbf{guerra}. La \textbf{familia} de Mulán se \textbf{sintió} muy \textbf{orgullosa} de ella.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.39 & 1.36 & \textbf{1.94} & 1.23 & 0.96 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento Mulán}
+	\end{center}
+\end{table} 
+
+Con este cuento hay más controversia porque al hablar de la guerra puede llevarnos a la tristeza o al miedo, aunque el final es alegre, podríamos decir que es un cuento neutral. El resultado que nos devuelve la aplicación es que la mayoritaria es la alegría pero al no superar el umbral del 2.5 mostraría que no tiene emociones.
+
+\subsubsection{Pinocho}
+El cuento original fue publicado por Ediciones Orbis, S.A. Nosotras hemos utilizado un resumen obtenido de Internet.
+
+``\textit{Había una \textbf{vez} un \textbf{artesano} que \textbf{labraba} en \textbf{madera} \textbf{juguetes} tan \textbf{bellos} que todos lo \textbf{tenían} por un \textbf{escultor} y un \textbf{maestro}. Maese Geppetto, que así se \textbf{llamaba}, era muy \textbf{anciano}, y entre sus muchas \textbf{virtudes} no \textbf{figuraba} el \textbf{buen} \textbf{carácter}. Por eso, había \textbf{envejecido} \textbf{solo}. Un \textbf{día}, \textbf{sinténdose} más \textbf{viejo} y más \textbf{solo} que de \textbf{costumbre}, para \textbf{ahuyentar} la \textbf{soledad} \textbf{decidió} \textbf{tallar} en \textbf{madera} un \textbf{muñeco} que le \textbf{hiciera} \textbf{compañía}. Eran tantos los que había \textbf{construido} para \textbf{transformar} el \textbf{aburrimiento} de los \textbf{niños} en \textbf{momentos} \textbf{maravillosos}. Ahora se \textbf{fabricaría} uno para él. En el \textbf{taller} de un \textbf{colega} carpintero \textbf{consiguió} un \textbf{tronco} de \textbf{pino} y se \textbf{dispuso} a \textbf{fabricar} el \textbf{muñeco}. \textbf{Corta} un poco aquí, \textbf{talla} un poco allá y \textbf{he} aquí la \textbf{cabeza}, la \textbf{nariz} y la \textbf{boca}... En \textbf{cuanto} hubo terminado de \textbf{modelar} la \textbf{boca} de \textbf{madera}, el \textbf{muñeco} \textbf{rompió} a \textbf{hablar}, \textbf{excalamndo}: Quién eres, eres mi \textbf{abuelito}. \textbf{Superado} el \textbf{asombro}, \textbf{maese} Gepetto se \textbf{apresuró} a \textbf{completar} su \textbf{obra} y, como había \textbf{tallado} al \textbf{muñeco} en un \textbf{tronco} de \textbf{pino}, pensó \textbf{llamarlo} Pino. Pero después de \textbf{reparar} en su \textbf{traviesa} \textbf{mirada}, \textbf{decidió} que le \textbf{iría} mejor el \textbf{nombre} de Pinocho. Y en \textbf{cuanto} Pinocho \textbf{tuvo} un \textbf{par} de \textbf{piernas} de \textbf{madera}, se \textbf{incorporó} de un \textbf{salto}, \textbf{cogió} \textbf{impulso} y se \textbf{marchó} a todo correr.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.36 & 1.54 & \textbf{2.59} & 1.12 & 1.0 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento Pinocho}
+	\end{center}
+\end{table} 
+
+Este fragmento del comienzo del cuento popular de Pinocho es alegre tal y como indica el traductor de emociones.
+
+\subsubsection{Pocahontas}
+El cuento original fue publicado por Louis Weber, Disney Enterprises, Inc. Nosotras hemos utilizado un resumen obtenido de Internet.
+
+``\textit{\textbf{Pocahontas} era una \textbf{indígena} de Norteamérica. \textbf{Amaba} la \textbf{naturaleza}. Un \textbf{día}, un \textbf{barco} de Inglaterra \textbf{llegó} a Norteamérica. Algunos \textbf{ingleses} eran \textbf{codiciosos} y \textbf{malvados}, pero John Smith era \textbf{bondadoso} y \textbf{amable}. La \textbf{tribu} de Pocahontas \textbf{quería} que los \textbf{ingleses} se \textbf{fueran}. Los ingleses se \textbf{fueron} en su \textbf{barco}, pero Pocahontas y John Smith nunca se \textbf{olvidarían} uno de otro.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.55 & 1.54 & \textbf{2.07} & 1.16 & 0.99 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento Pocahontas}
+	\end{center}
+\end{table} 
+
+En este texto se enfrentan adjetivos contrarios codiciosos y bondadosos, malvados y amables, por lo que es natural que sea un texto más difícil de clasificar y por ello, aunque la aplicación indique que la emoción mayoritaria es la alegría, con lo que estamos de acuerdo, la interfaz web mostraría que este texto no tiene emociones porque no supera el umbral del 2.5.
+
+\subsubsection{Aladdín}
+El cuento original fue publicado por Louis Weber, Disney Enterprises, Inc. Nosotras hemos utilizado un resumen obtenido de Internet.
+
+``\textit{Yasmín era una \textbf{princesa} y \textbf{vivía} en el \textbf{palacio} \textbf{real}. Su \textbf{padre} \textbf{quería} que se \textbf{casara}. Pero ella no estaba \textbf{enamorada}. Yasmín \textbf{escapó} del \textbf{palacio}. \textbf{Deseaba} ser \textbf{libre}. Yasmín \textbf{conoció} a Aladdín en el \textbf{bazar}. Con la \textbf{ayuda} del Genio, Yasmín y Aladdín se \textbf{enamoraron}.}"
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.47 & 1.71 & \textbf{3.81} & 1.26 & 1.14 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento Aladdin}
+	\end{center}
+\end{table} 
+
+Podríamos decir que este cuento, aunque tiene final feliz es un poco triste porque la princesa está triste hasta que se enamora. Pero la aplicación no entiende sentencias como ``no estaba enamorada" que sería algo propio del enfado o la tristeza y las califica por la palabra ``enamorada" como alegre. Es por esto que este resultado es el esperado, pero sabemos que contemplar las negaciones es un aspecto a mejorar en trabajo futuro.
+
+\subsubsection{El ratoncito Pérez}
+
+Este cuento es 'La fantástica historia del Ratoncito Pérez' de Meritxell Martí y Xavier Salomó. 
+
+``\textit{En un \textbf{barrio} \textbf{pobre}, junto al \textbf{bosque} del Quinto Pino, \textbf{vivía} el \textbf{ratón} Pérez con su \textbf{familia}. Sus \textbf{padres} \textbf{pasaban} el \textbf{día} \textbf{buscando} por los \textbf{rincones} un \textbf{pedazo} de \textbf{queso} para \textbf{alimentar} a su \textbf{familia}. No era \textbf{fácil}: un \textbf{escobazo} por aquí, una \textbf{trampa} por allí, cada \textbf{día} \textbf{llegaban} a \textbf{casa} \textbf{magullados}. A Pérez, la \textbf{vida} de los \textbf{ratones} no le parecía nada \textbf{envidiable}. El \textbf{pequeño} \textbf{roedor} se \textbf{lamentaba}: Por qué no habré \textbf{nacido} \textbf{gato}, o \textbf{pantera}. Si al menos fuera \textbf{rico} \textbf{viviría} en otro \textbf{barrio} con más \textbf{queso} y menos \textbf{trampas}. Un \textbf{día} \textbf{decidió} que \textbf{tenía} que \textbf{dar} con un \textbf{modo} de \textbf{salir} adelante. Caminando \textbf{pensativo}, \textbf{llegó} al \textbf{bosque} del Quinto Pino. De entre los \textbf{árboles} le \textbf{llegó} el \textbf{sonido} de un \textbf{aleteo}.}"
+
+\textit{- ¿Quién \textbf{anda} ahí? -. \textbf{susurró}, medio \textbf{escondido} bajo una \textbf{mata}.}
+
+\textit{Pérez \textbf{abrió} los \textbf{ojos} como \textbf{platos} cuando una \textbf{niña} se \textbf{acercó} a él sin \textbf{tocar} el \textbf{suelo}. Estaba \textbf{volando}. La \textbf{niña} se \textbf{presentó}: }
+
+\textit{- Soy Pina, el \textbf{hada} de este \textbf{bosque}. Nunca te había \textbf{visto} por aquí.}
+
+\textit{Pérez \textbf{salió} de la mata e, \textbf{hipnotizado}, \textbf{saludó} mientras \textbf{miraba} las \textbf{alas} que se \textbf{movían} sin \textbf{parar}:}
+
+\textit{- Me \textbf{llamo} Pérez, por \textbf{cierto}, ¿qué es un \textbf{hada}?}
+
+\textit{- ¡Es un \textbf{ser} \textbf{mágico}! - \textbf{respondió} Pina, \textbf{sorprendida} -. ¿Acaso no te han \textbf{contado} ningún \textbf{cuento} de \textbf{hadas}?}
+
+Pérez \textbf{contestó} que sus \textbf{padres} \textbf{llegaban} a \textbf{casa} sin \textbf{ánimo} de \textbf{contar} \textbf{cuentos}. Pina \textbf{sintió} \textbf{lástima} por el \textbf{pobre} \textbf{ratoncito}. En \textbf{verdad}, mucha \textbf{gente} \textbf{temía} a los \textbf{ratones} y no les \textbf{ponía} las \textbf{cosas} \textbf{fáciles}. El \textbf{hada} \textbf{pensó} unos \textbf{instantes} y a \textbf{continuación} le \textbf{hizo} una \textbf{propuesta} más \textbf{asombrosa} que \textbf{ratón} alguno haya \textbf{escuchado}.
+
+- \textbf{Mira}, Pérez, podemos \textbf{hacer} un \textbf{trato}. Hay algo que \textbf{podrías} \textbf{traerme}. A \textbf{cambio}, te \textbf{haré} un \textbf{regalo} \textbf{mágico}. ¿Qué me \textbf{dices}?
+
+Pérez no podía \textbf{creer} que él pudiera \textbf{hacer} \textbf{tratos} con un \textbf{hada}. Pero en \textbf{seguida} \textbf{reaccionó}: ¿Qué \textbf{tendría} que \textbf{traerte}?, \textbf{espero} que no sea \textbf{queso}.
+
+El \textbf{hada} se \textbf{rió}. Cuando le \textbf{dijo} lo que \textbf{esperaba} de Pérez, el \textbf{roedor} se \textbf{quedó} de \textbf{piedra}.
+
+- ¿Cómo? - \textbf{repitió}, \textbf{aturdido} -. ¿\textbf{Quieres} que \textbf{traiga} los \textbf{dientes} de las \textbf{niñas} y \textbf{niños} de todo el \textbf{mundo}?
+
+Pina se lo \textbf{explicó}: 
+
+- \textbf{Querido} Pérez, no te \textbf{asustes}. A los \textbf{niños} se les \textbf{caen} los \textbf{dientes} de \textbf{leche} para que \textbf{puedan} \textbf{salirles} los \textbf{nuevos}, más \textbf{resistentes}. Tú sólo \textbf{tendrás} que \textbf{entrar} en sus \textbf{casas} cuando \textbf{duerman}, \textbf{recoger} esos \textbf{dientecitos} y \textbf{traérmelos}.
+
+Pérez \textbf{seguía} sin \textbf{verlo} \textbf{claro}. Le \textbf{preguntó} cómo \textbf{entraría} en todas las \textbf{casas}. Al \textbf{fin} y al \textbf{cabo}, sólo era un \textbf{pequeño} \textbf{ratón}. Pina \textbf{sacó} de su \textbf{bolso} una \textbf{llave} \textbf{dorada} y le \textbf{dijo} que con ella podría \textbf{abrir} todas las \textbf{puertas} del \textbf{mundo}. Pérez se \textbf{relamió}: podría \textbf{entrar} de \textbf{noche} en una \textbf{gran} \textbf{quesería} y... Pero el \textbf{hada} le \textbf{leyó} el \textbf{pensamiento}.
+
+- No, Pérez, nada de robar \textbf{queso}. A \textbf{cambio} de los \textbf{dientes}, te \textbf{daré} otra \textbf{cosa}.
+
+Y \textbf{sacó} de su \textbf{bolso} un \textbf{cofre} de \textbf{madera}.
+
+- De este \textbf{cofre} siempre \textbf{saldrán} \textbf{monedas} y \textbf{regalos}. Los \textbf{regalos} serán para las \textbf{niñas} y \textbf{niños} en \textbf{agradecimiento} por \textbf{llevarte} sus \textbf{dientecillos}. Y las \textbf{monedas} serán para ti. Con ellas, podrás \textbf{ayudar} a muchos \textbf{ratones}. 
+
+Pérez apenas podía \textbf{creerlo}. Sería el \textbf{ayudante} de un \textbf{hada}, \textbf{viajaría} por todo el \textbf{mundo} y \textbf{tendría} una \textbf{gran} \textbf{recompensa}.
+
+- Pero Pina, ¿para qué \textbf{quieres} los dientes?
+
+- Para \textbf{hacer} \textbf{magia}. Con \textbf{polvo} de \textbf{dientes} de \textbf{leche} y \textbf{lava} de \textbf{volcán} \textbf{hago} una \textbf{pócima} que \textbf{reduce} los \textbf{objetos}. \textbf{Mezclado} con \textbf{trébol} de cinco \textbf{hojas}, ese \textbf{polvo} te \textbf{hace} \textbf{invisible}. Con medio \textbf{diente} y \textbf{agua} de \textbf{luna} se puede \textbf{viajar} a cualquier \textbf{sitio} en un \textbf{segundo}... y muchos otros \textbf{hechizos}.
+
+Tras \textbf{decir} esto, \textbf{sacó} del \textbf{bolso} un \textbf{puñado} de \textbf{polvo} y lo \textbf{sopló} sobre la \textbf{llave} y el \textbf{cofre}, que se \textbf{volvieron} \textbf{diminutos}.
+
+- Entonces, \textbf{¿trato} \textbf{hecho}? - \textbf{dijo}, \textbf{ofreciendo} al \textbf{ratón} la \textbf{pequeñísima} \textbf{llave} y el \textbf{diminuto} \textbf{cofre}.
+
+Pérez los \textbf{tomó} y \textbf{chocó} su \textbf{mano}. 
+
+- ¡\textbf{Trato} \textbf{hecho}! - \textbf{dijo} el \textbf{ratón}.
+
+Pina y Pérez se \textbf{quedaron} \textbf{charlando} hasta el \textbf{anochecer}. Entonces, el \textbf{ratón} \textbf{frotó} la \textbf{llave}, tal como le \textbf{indicó} el \textbf{hada}, y \textbf{desapareció} del \textbf{bosque}. Esa \textbf{noche} \textbf{entró} en las \textbf{casas} donde a algún \textbf{pequeño} se le había \textbf{caído} un \textbf{diente}. Al \textbf{despertar}, el \textbf{diente} había \textbf{desaparecido} y en su \textbf{lugar} había un \textbf{regalo}. La \textbf{noticia} \textbf{corrió} como la \textbf{pólvora} por todas las \textbf{casas}. Todos los \textbf{niños} y \textbf{niñas} del \textbf{mundo} \textbf{saben} ya quién es el \textbf{ratoncito} Pérez y le \textbf{dejan} sus \textbf{dientes} de \textbf{leche} bajo la \textbf{almohada} para que \textbf{pase} con su \textbf{cofre} \textbf{mágico}. Además, cuando \textbf{ven} un \textbf{ratón}, no se \textbf{asustan}, podría ser él.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.28 & 1.45 & \textbf{2.27} & 1.12 & 1.03 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados cuento El ratoncito Pérez}
+	\end{center}
+\end{table} 
+
+Viendo los resultados de este texto, vemos como pone como emoción mayoritaria la alegría ya que el ratón encuentra un hada y hace felices a los niños, pero la interfaz no mostraría emociones dado que no supera el 2.5, esto nos hace pensar que cuanto más largos son los textos más ambiguos son los resultados y es más sencillo no encontrar emociones.
+
+\subsection{Noticias}
+
+Hemos utilizado 4 noticias de distintos ámbitos. Un asesinato, un nacimiento, una noticia de la OMS y una política. Al igual que en los cuentos encontraremos el texto con las palabras emocionales en negrita y en una tabla los resultados de las emociones.
+
+\subsubsection{Noticia asesinato}
+Fuente: https://elpais.com/internacional/2018/03/20/mexico/
+1521567442\_844144.html
+
+Un \textbf{brutal} \textbf{caso} de \textbf{violencia} \textbf{machista} \textbf{paraliza} uno de los \textbf{centros} \textbf{comerciales} más \textbf{concurridos} de la Ciudad de México. Burló todos los \textbf{controles} de \textbf{seguridad}. \textbf{Subió} a la \textbf{segunda} \textbf{planta} del \textbf{centro} \textbf{comercial}. Dos \textbf{disparos}. Uno al \textbf{pecho}, el otro al \textbf{abdomen}. Después \textbf{dejó} una \textbf{nota} en el \textbf{mostrador} de la \textbf{tienda} en la que \textbf{trabajaba} su \textbf{esposa} y se \textbf{disparó} en la \textbf{cara}. El \textbf{feminicidio} e \textbf{intento} de \textbf{suicidio} \textbf{paralizó} este \textbf{lunes} Reforma 222, uno de los \textbf{centros} \textbf{comerciales} más \textbf{concurridos} de la Ciudad de México. \textbf{Selene}, de 28 \textbf{años}, \textbf{falleció} \textbf{horas} más tarde. Alejandro, el \textbf{agresor} de 35, \textbf{sobrevivió} y se \textbf{encuentra} \textbf{grave}, pero \textbf{estable} en un \textbf{hospital} de la \textbf{capital}. Después de las \textbf{detonaciones}, los \textbf{trabajadores} de las \textbf{tiendas} y los \textbf{clientes} \textbf{corrieron} para \textbf{protegerse} y \textbf{resguardarse}. Los \textbf{hechos} se \textbf{produjeron} a las tres de la \textbf{tarde}, en lo que había sido una \textbf{anodina} tarde de \textbf{puente}. Las \textbf{primeras} \textbf{versiones} \textbf{barajaban} que se había \textbf{tratado} de un \textbf{robo} a la \textbf{zapatería} Nine West de la \textbf{plaza} \textbf{comercial}, que se \textbf{encuentra} en el Paseo de la Reforma, una de las \textbf{avenidas} más \textbf{transitadas} e \textbf{icónicas} de la \textbf{capital}. Después las \textbf{autoridades} \textbf{dieron} a conocer que había sido un \textbf{homicidio}. La Procuraduría (Fiscalía) \textbf{local} ha \textbf{iniciado} las \textbf{investigaciones} por el \textbf{delito} de \textbf{homicidio} \textbf{calificado}. Selene había \textbf{pedido} a Alejandro el \textbf{divorcio} y la \textbf{custodia} de su \textbf{hijo}. El \textbf{agresor} había estado \textbf{preso} tres \textbf{veces} por \textbf{robo} en \textbf{2002}, \textbf{2004} y \textbf{2012} y ya había \textbf{amenazado} unos \textbf{días} antes a Selene. ''No \textbf{vas} tú a \textbf{destruir} mi \textbf{vida} y después como si nada. Por \textbf{puta} te \textbf{pasó} esto'', se \textbf{lee} en la \textbf{supuesta} \textbf{nota} que \textbf{dejó} el \textbf{feminicida} y que ha sido \textbf{divulgada} por la \textbf{prensa} \textbf{mexicana}.
+
+''La \textbf{mujer} \textbf{lesionada} \textbf{manifestó} que el \textbf{hombre} la había \textbf{amenazado} a \textbf{causa} de un \textbf{conflicto} \textbf{pasional}'', \textbf{señaló} la \textbf{policía} \textbf{capitalina}. En un \textbf{país} en el que son \textbf{asesinadas} siete \textbf{mujeres} a \textbf{diario} por la \textbf{violencia} \textbf{machista}, los ``\textbf{crímenes} \textbf{pasionales}'' aún son \textbf{vistos} como \textbf{excusas} y \textbf{detonantes} para \textbf{atacar} a las \textbf{mujeres} por el \textbf{hecho} de ser \textbf{mujeres}.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			2.28 & \textbf{2.4} & 1.78 & 2.13 & 1.65 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados noticia asesinato}
+	\end{center}
+\end{table} 
+
+Con este resultado estamos también de acuerdo, ya que la emoción mayoritaria es el miedo y las noticias de asesinato es lo que provocan. Aunque nos fijamos en que esta emoción no alcanza el 2.5 por lo que resultaría no tener emoción con lo que no estamos del todo de acuerdo.
+
+\subsubsection{Noticia nacimiento}
+Fuente: \hline
+https://www.elespanol.com/corazon/celebrities/20180320/chiara-ferragni-madre-primer-hijo-sabemos-nombre/293471460\_0.html
+
+Chiara Ferragni ya es \textbf{madre} de su \textbf{primer} \textbf{hijo} y \textbf{sabemos} el \textbf{nombre}. La '\textbf{influencer}' todavía no se ha \textbf{pronunciado} en sus \textbf{redes} \textbf{sociales} pero los \textbf{medios} \textbf{italianos} \textbf{confirman} el \textbf{nacimiento} del \textbf{pequeño} Leone. Chiara Ferragni (30 años) por \textbf{fin} es \textbf{mamá} y, aunque la \textbf{influencer} \textbf{italiana} todavía no se ha \textbf{pronunciado} a \textbf{través} de sus \textbf{cotizadas} \textbf{redes} \textbf{sociales}, el \textbf{portal} \textbf{italiano} Tabloit ya ha \textbf{confirmado} la \textbf{noticia}. El medio \textbf{italiano} ha \textbf{anunciado} que el \textbf{hijo} de Chiara con el \textbf{rapero} Fedez \textbf{llegó} al mundo en la \textbf{noche} del 19 al 20 \textbf{marzo}. La \textbf{italiana} \textbf{dio} a \textbf{luz} en el \textbf{hospital} Cedars-Sinaí de Los Ángeles, el mismo en el que \textbf{dio} a \textbf{luz} Beyoncé (36), a \textbf{través} de un \textbf{parto} programado. Los 12 \textbf{millones} de \textbf{seguidores} de la \textbf{influencer} \textbf{apuntaban} en las \textbf{últimas} \textbf{horas} que Ferragni podía estar \textbf{dando} a \textbf{luz} por su \textbf{desaparición} en \textbf{redes} \textbf{sociales}. Al \textbf{final} la \textbf{noticia} se \textbf{confirmaba} \textbf{horas} después, \textbf{apodando} ya en las \textbf{redes} \textbf{sociales} al \textbf{pequeño} como \textbf{baby} Raviolo, por el \textbf{origen} de sus \textbf{padres}. Pero ambos ya \textbf{anunciaron} en su Instagram en \textbf{nombre} del \textbf{pequeño} Leone. Según el mismo \textbf{medio}, el \textbf{parto} se habría \textbf{adelantado} dos o tres \textbf{semanas}, pero tanto el \textbf{bebé} como la \textbf{madre} se \textbf{encuentran} en \textbf{perfecto} \textbf{estado}. Era la misma Chiara la \textbf{encargada} en \textbf{desvelar} el \textbf{sexo} y el \textbf{nombre} de su \textbf{primer} \textbf{hijo} ante todos sus \textbf{seguidores}, \textbf{considerada} por Forbes como la \textbf{influencer} más \textbf{poderosa} del \textbf{mundo} de la \textbf{moda} \textbf{dándose} a \textbf{conocer} \textbf{gracias} a su \textbf{web} The Blonde Salad.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.63 & 1.8 & \textbf{3.09} & 1.38 & 1.29 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados noticia nacimiento}
+	\end{center}
+\end{table} 
+
+Estamos de acuerdo con que la emoción de una noticia relacionada con nacimientos debe ser alegre.
+
+
+\subsubsection{Noticia OMS}
+Fuente: \hline
+https://www.efe.com/efe/cono-sur/destacada-cono-sur/expertos-de-la-oms-recomiendan-declarar-a-paraguay-pais-libre-malaria/50000832-3556530
+
+\textbf{Expertos} de OMS \textbf{recomiendan} \textbf{declarar} a Paraguay ''\textbf{país} \textbf{libre} de \textbf{malaria}''. Un \textbf{grupo} de \textbf{expertos} de la Organización Mundial de la Salud (OMS) \textbf{recomendó} \textbf{declarar} a Paraguay como ''\textbf{país} \textbf{libre} de \textbf{malaria}'' después de \textbf{verificar} la \textbf{situación} de esa \textbf{enfermedad} sobre el \textbf{terreno} durante dos \textbf{semanas}, \textbf{informó} el \textbf{domingo} el Ministerio de Salud Pública. La \textbf{cartera} \textbf{sanitaria} \textbf{explicó} a \textbf{través} de un \textbf{comunicado} que los \textbf{expertos} de la OMS \textbf{comprobaron} que en el \textbf{país} \textbf{suramericano} que ''no se \textbf{registran} \textbf{casos} de \textbf{transmisión} \textbf{local} de \textbf{malaria} en los \textbf{últimos} \textbf{años} y que el \textbf{sistema} \textbf{sanitario} puede \textbf{prevenir} \textbf{eventuales} \textbf{casos} de esta \textbf{enfermedad}''. Esta \textbf{recomendación} \textbf{cierra} el \textbf{esfuerzo} del \textbf{sistema} \textbf{sanitario} \textbf{paraguayo} en los \textbf{últimos} seis \textbf{años}, que desde 2012 no \textbf{registra} \textbf{casos} \textbf{autóctonos} de la \textbf{enfermedad}.
+``Este \textbf{gran} \textbf{logro} \textbf{nacional} \textbf{posibilita} que Paraguay hoy esté en el \textbf{privilegiado} \textbf{sitial} de \textbf{primer} \textbf{país} \textbf{sudamericano} en \textbf{erradicar} la \textbf{enfermedad}'', \textbf{indicaron} desde el Ministerio de Salud Pública.
+La \textbf{malaria} \textbf{pasó} a la \textbf{historia} de los \textbf{registros} \textbf{médicos} del \textbf{país} en \textbf{2011}, con el \textbf{último} \textbf{caso} \textbf{registrado} en Paraguay, según \textbf{datos} del Servicio Nacional de Erradicación del Paludismo (Senepa) \textbf{presentados} en \textbf{septiembre} de 2017. El Senepa se \textbf{fundó} a \textbf{raíz} del \textbf{brote} de \textbf{malaria} que \textbf{sufrió} Paraguay en 1957, cuando unas 90.000 \textbf{personas} en el 90\% del \textbf{territorio} del \textbf{país} \textbf{contrajeran} la \textbf{enfermedad}. El \textbf{paludismo} o \textbf{malaria} es una \textbf{enfermedad} \textbf{letal} \textbf{causada} por \textbf{parásitos} del \textbf{género} \textbf{plasmodium}, que se \textbf{transmiten} al \textbf{ser} \textbf{humano} por la \textbf{picadura} de \textbf{mosquitos} \textbf{infectados}. El \textbf{paludismo} se \textbf{mantiene} todavía \textbf{presente} en 91 \textbf{países} concentrados en África, Asia y América, y se \textbf{calcula} que en 2016 hubo 445.000 \textbf{fallecidos} en todo el \textbf{mundo} y 216 millones de \textbf{casos}, según \textbf{datos} de la OMS.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			2.63 & \textbf{2.69} & 2.37 & 2.02 & 1.87 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados noticia OMS}
+	\end{center}
+\end{table} 
+
+Una vez más, estamos de acuerdo con los resultados. En este texto cabe destacar que también estamos de acuerdo con la segunda emoción mayoritaria, la tristeza, ya que el numero de muertos nombrados es algo triste.
+
+
+\subsubsection{Noticia política}
+Fuente: \hline
+https://www.animalpolitico.com/el-pulso/crisis-politica-en-espana-podria-llegar-a-su-fin/
+
+El \textbf{estancamiento} \textbf{político} que \textbf{agobia} a España desde hace 10 \textbf{meses} podría \textbf{llegar} a su \textbf{fin} pues se \textbf{espera} que el \textbf{parlamento} \textbf{apruebe} un \textbf{gobierno} \textbf{liderado} por el \textbf{presidente} \textbf{interino} Mariano Rajoy. Rajoy \textbf{necesitaba} una \textbf{mayoría} en el \textbf{parlamento} de 350 \textbf{escaños} durante la \textbf{primera} \textbf{votación} \textbf{realizada} el \textbf{jueves}, pero no la \textbf{logró}. El \textbf{sábado} se \textbf{realiza} una \textbf{segunda} \textbf{votación} en que sólo \textbf{necesita} más \textbf{votos} a \textbf{favor} que en \textbf{contra}. \textbf{Cuenta} con el \textbf{apoyo} de 170 \textbf{legisladores}, de los cuales 137 son de su propio \textbf{partido}, el \textbf{centroderechista} Partido Popular.Todo \textbf{dependerá} del Partido Socialista. Ha \textbf{accedido} a \textbf{abstenerse} en la \textbf{votación} del \textbf{sábado} aunque 11 \textbf{diputados} han \textbf{dicho} que \textbf{votarán} en \textbf{contra}.De ser \textbf{elegido}, Rajoy será \textbf{juramentado} por el \textbf{rey} Felipe VI el \textbf{domingo}. Si para el \textbf{lunes} no hay \textbf{gobierno}, se \textbf{convocará} a una \textbf{tercera} \textbf{elección}.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.44 & 1.33 & \textbf{1.94} & 1.39 & 1.17 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados noticia política}
+	\end{center}
+\end{table} 
+
+Al igual que con otras de las pruebas, ninguna de las emociones supera el umbral del 2.5 por lo que este texto se mostraría neutral con lo que estaríamos de acuerdo. Dependiendo del punto de vista este texto puede llegar a ser alegre, por lo que no nos parece incorrecta esta emoción mayoritaria.
+
+\subsection{Blogs}
+
+Hemos utilizado 5 tipos de entradas de Blogs diferentes como ejemplo.
+A continuación, como en los casos anteriores mostraremos el texto empleado con sus palabras emocionales en negrita y una tabla con los resultados emocionales.
+
+\subsubsection{Blog agradecimiento}
+Fuente: Twitter: @cristipedroche
+
+Una \textbf{vez} más, \textbf{gracias}.
+Una \textbf{vez} más me \textbf{dejáis} sin \textbf{palabras} y \textbf{hacéis} que todo \textbf{merezca} la \textbf{pena}. De \textbf{verdad}, \textbf{gracias}.
+Esto no es solo un \textbf{regalo} o una \textbf{muñeca} más. Quizás para algunos sí, pero para mí es algo muy muy \textbf{especial}. \textbf{Significa} que \textbf{estáis} ahí y que me \textbf{apoyáis}, y no \textbf{sabéis} las \textbf{ganas} de \textbf{comerme} el \textbf{mundo} que \textbf{siento} cuando os noto tan cerca.
+\textbf{Os} \textbf{dejo} \textbf{fotos} del \textbf{paso} a \textbf{paso} para que \textbf{veáis} todos los \textbf{detalles} y cómo está todo súper \textbf{cuidado}. ¡\textbf{Menudo} \textbf{trabajazo}!
+Gracias, no \textbf{solo} a la \textbf{marca} que me lo ha \textbf{hecho}, sino a todos por \textbf{vuestro} \textbf{calor}.
+\textbf{Gracias} a \textbf{vosotros} las \#\textbf{PedrocheCampanadas} \textbf{tienen} más \textbf{sentido} que nunca.
+Os \textbf{adoro}.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.29 & 1.21 & \textbf{2.77} & 1.04 & 0.95 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados blog agradecimiento}
+	\end{center}
+\end{table} 
+
+En este texto de agradecimiento, estamos de acuerdo con que la emoción mayoritaria es la alegría.
+
+\subsubsection{Blog moda}
+Fuente: https://stylelovely.com/ladyaddict/2018/04/black-and-white
+
+Hoy os \textbf{dejo} este \textbf{outfit} de \textbf{entretiempo} en \textbf{blanco} y \textbf{negro}. \textbf{Llevo} una \textbf{blusa} \textbf{blanca} con \textbf{volantes} de Storets que os he \textbf{enseñado} ya alguna \textbf{vez} por \textbf{instagram}, la \textbf{combiné} con LIA Jeans en \textbf{negro} y los \textbf{zapatos} de Dior. El \textbf{abrigo} \textbf{línea} \textbf{oversize} es de \textbf{paño} \textbf{fino} y lo estoy \textbf{usando} mucho estos \textbf{días} de ni \textbf{frío} ni \textbf{calor}. Esto es todo por hoy.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			1.1 & 0.93 & \textbf{2.05} & 0.96 & 0.9 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados blog moda}
+	\end{center}
+\end{table} 
+
+Una vez más, estamos de acuerdo con que la emoción mayoritaria es la alegría, pero esta no supera el 2.5 por lo que el texto no contiene emociones con lo que estamos de acuerdo también.
+
+
+\subsubsection{Blog reflexión}
+Fuente:  http://www.martacarriedo.com/la-diary-003/
+
+Y \textbf{bueno} como ya \textbf{sabéis} que me \textbf{encanta} \textbf{compartir} todo con \textbf{vosotros}, mal que le \textbf{pese} a más de uno, hoy \textbf{quiero} \textbf{hablaros} de un \textbf{tema} me lleva \textbf{preocupando} las \textbf{últimas} \textbf{semanas}. ¿Qué \textbf{entendéis} \textbf{vosotros} por \textbf{autoestima}? Quizá pueda \textbf{contestármelo} la \textbf{gente} que \textbf{critica} que algunos no lo \textbf{tenemos}... Yo (y por \textbf{supuesto} mi \textbf{verdad} o mi \textbf{opinión} no son \textbf{universales} no, son simplemente MI \textbf{forma} de \textbf{ver} la \textbf{vida}), \textbf{creo} que puede ser \textbf{verdad} que no \textbf{tenga} mucho \textbf{autoestima}, pero no lo \textbf{veo} como algo \textbf{negativo} del todo. He \textbf{vivido} \textbf{situaciones} en mi \textbf{vida} con \textbf{determinadas} \textbf{personas} que \textbf{seguro} que si me \textbf{quisiese} un poco más ahora mismo no \textbf{formarían} \textbf{parte} de mi \textbf{vida}. Sin \textbf{embargo} lo siguen \textbf{haciendo}, y no me \textbf{arrepiento} de ello. ¿A esto lo podemos \textbf{llamar} no \textbf{quererse} a uno \textbf{mismo}? Yo más bien \textbf{diría}: \textbf{querer} más al otro que a uno \textbf{mismo}. \textbf{Frase} que por \textbf{cierto} me \textbf{recuerda} bastante a la \textbf{enseñanza} de Dios: ``\textbf{ama} al \textbf{prójimo} como a ti mismo'', aunque se de bastante poco hoy en \textbf{día}. Es \textbf{diferente} no \textbf{tener} \textbf{autoestima} a querer \textbf{evitar} \textbf{problemas} y \textbf{preferir} \textbf{tener} un \textbf{trato} \textbf{cordial} con \textbf{personas} que han sido \textbf{importantes} en tu \textbf{vida}. De \textbf{todas} \textbf{formas} esta es una \textbf{decisión} muy \textbf{personal} de cada uno y me parece \textbf{injusto} que se \textbf{critique} o se \textbf{comente} abiertamente sin ni si \textbf{quiera} \textbf{conocer} a la \textbf{persona} ni \textbf{saber} por qué \textbf{situaciones} ha \textbf{pasado}. No \textbf{creo} que haya nadie que \textbf{tenga} siempre el \textbf{autoestima} \textbf{alto} en todo \textbf{momento}. Las  \textbf{situaciones} que \textbf{vivimos} a \textbf{diario} pueden \textbf{hacer} que \textbf{suba} o \textbf{baje}, pero también \textbf{creo} que es de ser \textbf{inteligente} el saber \textbf{mantener} nuestro \textbf{autoestima} dentro de unos \textbf{límites}. Yo no soy una \textbf{persona} muy \textbf{orgullosa} y la \textbf{verdad} es los \textbf{enfados} se me \textbf{pasan} muy \textbf{rápido}, incluso \textbf{prefiero} \textbf{pedir} \textbf{disculpas} aunque no \textbf{tenga} claro del todo que ha sido mi \textbf{culpa} con \textbf{tal} de \textbf{poner} \textbf{fin} a la \textbf{discusión}. Esto es algo que podría \textbf{definir} como una \textbf{virtud} más que como un ``no me \textbf{quiero} a mi misma'' o que \textbf{tengo} el \textbf{autoestima} \textbf{baja}. Y me \textbf{encanta} que mis \textbf{padres} me hayan \textbf{enseñado} este \textbf{tipo} de \textbf{valores} y \textbf{educación}, de \textbf{seguir} siempre \textbf{hacia} delante te \textbf{hagan} lo que te hagan, \textbf{perdonando} y sin \textbf{odiar} ni \textbf{guardar} \textbf{rencor} a nadie... que eso es lo que acaba \textbf{consumiendo} a muchas \textbf{personas} hoy en \textbf{día}: el \textbf{rencor} y la \textbf{envidia}. En \textbf{fin}, me \textbf{gustaría} \textbf{saber} cómo \textbf{anda} \textbf{vuestro} \textbf{autoestima} y si alguna \textbf{vez} os han \textbf{dicho} que lo \textbf{tenéis} muy \textbf{alto} o muy \textbf{bajo}... Yo me sigo \textbf{queriendo} y \textbf{valorando} a mi misma pero en su \textbf{justa} \textbf{medida} para nunca \textbf{perder} la \textbf{visión} de la \textbf{realidad}.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			2.0 & 1.99 & \textbf{3.12} & 1.8 &1.56 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados blog reflexión}
+	\end{center}
+\end{table} 
+
+La emoción mayoritaria es la alegría y estamos de acuerdo con el resultado.
+
+
+\subsubsection{Blog muerte}
+Fuente: http://blogs.21rs.es/muertevida/
+
+Una \textbf{año} mas en este 21 de \textbf{enero}, esta \textbf{página} en \textbf{blanco} se \textbf{llena} de \textbf{palabras} que \textbf{brotan} de mi \textbf{interior}, \textbf{salpicadas} de tantas \textbf{cosas} que \textbf{contar} que se \textbf{escapan} del propio \textbf{entendimiento}. Un \textbf{año} mas ha \textbf{pasado}, y ya son doce, desde aquella \textbf{mañana} tan \textbf{fría}, en que nuestros \textbf{cuerpos} se \textbf{separaban}, pero nuestras \textbf{almas} decidían estar \textbf{conectadas} para siempre. No podré \textbf{verte}, ni \textbf{escucharte}, ni \textbf{achucharte}... Pero sin \textbf{embargo} si puedo \textbf{sentirte} a \textbf{través} de tantas \textbf{personas} que van \textbf{llegando} a \textbf{través} de Lágrimas de Vida. A través de tantas \textbf{historias} que se \textbf{entremezclan} con la nuestra, y \textbf{convierten} \textbf{tantas} lágrimas en \textbf{vida}, que puedo \textbf{besarte}, \textbf{olerte}, y \textbf{achucharte}, porque \textbf{forman} \textbf{parte} de mi cada \textbf{instante}.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			2.16 & 1.91 & \textbf{2.7} & 1.61 & 1.33 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados blog muerte}
+	\end{center}
+\end{table} 
+
+Vemos que el resultado es alegría en vez de miedo o tristeza y esto se debe a que el EmoTraductor no entiende de contextos, en el blog una mujer recuerda el día en que perdió a uno de sus hijos y lamenta que no puede besarle o abrazarle. Estas palabras en el diccionario son alegres y al no tener en cuenta la negación asume que es un texto alegre.
+
+
+\subsubsection{Blog enfado}
+Fuente: https://lauraescan.es/respeto/
+
+Los que me \textbf{conocéis} y los que me habéis \textbf{seguido} en \textbf{redes} \textbf{sabréis} que las \textbf{críticas} no las he \textbf{llevado} mal y he \textbf{aguantado} mucho. Pero es \textbf{obvio} que no es \textbf{agradable} leer \textbf{mentiras} \textbf{semana} tras \textbf{semana} y aún así \textbf{hacer} \textbf{oídos} \textbf{sordos} y \textbf{seguir} adelante con tu \textbf{trabajo}, tu \textbf{familia} y tus \textbf{amigos}. Claro que al ser '\textbf{personajes} \textbf{públicos}' \textbf{tenemos} ese \textbf{riesgo}. No es todo de \textbf{rosa} y nos \textbf{exponemos} a que la \textbf{gente} \textbf{hable}. Bien, mal, \textbf{regular}. Como \textbf{quieran}. Pero ¿\textbf{existe} algún \textbf{tipo} de \textbf{límite}? ¿Quién lo \textbf{pone}? Después de la \textbf{nochecita} en Twitter y en \textbf{prensa} he \textbf{visto} que \textbf{desde} luego no \textbf{existe} ningún \textbf{límite}.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			Tristeza & Miedo & Alegría & Enfado & Asco \\ \hline
+			0.68 & 0.91 & \textbf{1.4} & 0.63 & 0.56 \\ \hline
+		\end{tabular}
+		\label{tabla:Resultados blog enfado}
+	\end{center}
+\end{table} 
+
+Vemos que el resultado es alegría en vez de enfado. No es un caso alarmante, ya que como se ha explicado anteriormente, nuestro sistema tiene en cuenta las emociones por encima del 2.5 y en este caso en concreto no supera este límite ninguna de las emociones, aunque indique que la mayoritaria es la alegría, realmente la interfaz web diría que no existe ninguna emoción.
+
+\subsubsection{Conclusiones}
+
+Podemos concluir por lo tanto que las pruebas han sido bastante satisfactorias. Vemos, gracias a los resultados, que el límite puesto en el 2.5 nos favorece para indicar acertadamente las emociones. También nos damos cuenta de que es bastante importante entender las negaciones ya que cambian mucho los significados y cambiarían las emociones en muchos de los casos anteriores.
+%-------------------------------------------------------------------
+\section{Evaluación de la aplicación}
+%-------------------------------------------------------------------
+\label{cap6:sec:aplicacion}
+
+Gracias a la Asociación Asperger Madrid hemos podido probar esta aplicación con usuarios finales. Hemos realizado dos evaluaciones, una preliminar que nos ha servido para evaluar si el diseño de nuestra evaluación era adecuado y otra final. En las siguientes secciones explicamos en detalle como realizamos el diseño de la evaluación, la evaluación preliminar y la final.
+\subsection{Diseño de la evaluación}
+
+Para comenzar, decidimos crear dos formularios de Google Forms para realizar la evaluación, uno por rol que iba a tomar el evaluador en la aplicación: experto o usuario. Los dos formularios eran similares con la diferencia de que en los formularios de expertos tenían que indicarnos su papel en la asociación.
+
+El objetivo de estas evaluaciones no era otra que conocer qué opinaban los usuarios finales de la utilidad y usabilidad de la aplicación y no tanto evaluar el método porque ya estaba evaluado con anterioridad y porque los usuarios finales tienen dificultades a la hora de identificar las emociones por lo que no podrían decirnos si los resultados son correctos o no.
+
+En la primera parte del formulario tomábamos datos demográficos: edad y sexo.
+
+En la segunda sección les pedíamos introducir el siguiente texto en la aplicación:
+
+	``\textit{La amable y gentil Blancanieves tenía muchos amigos. Los animales del bosque eran sus amigos. Un pequeño pajarito era su amigo. El príncipe azul era su amigo. Pero los siete enanitos eran los mejores amigos de Blancanieves.}"
+	
+	Se trata de un texto con una única emoción: alegría. A continuación se les pedía a los usuarios que seleccionaran las emociones presentes en el texto. El objetivo era comprobar si los usuarios eran capaces de interactuar con la aplicación y de interpretar la barra emocional cuando solo había una emoción implicada.
+	
+Después, en la tercera parte del formulario, se le pedía al usuario que introdujera el siguiente texto en la aplicación:
+
+``\textit{He ido a por el pan esta mañana. Había mucha gente pero no he tenido que esperar mucho. En esa panadería son muy eficientes siempre, por eso voy allí. Está a 2 minutos de mi casa y, además, al lado hay una tienda de fotocopias en la que trabaja la chica que conocimos el otro día. Deberías pasarte.}''.
+
+Este texto no tiene ninguna emoción asociada. A continuación, se le pedirá a los usuarios indicar qué emociones están presentes en el texto. El objetivo era comprobar si los usuarios entienden correctamente la ausencia de emociones en el texto.
+	
+En la cuarta sección, volvíamos a pedirles que introdujeran el siguiente texto:
+
+``\textit{El dolor que se calla es el más triste. Sufro cada vez que pienso en la angustia que me produce esta soledad. Ha pasado una semana desde su muerte en aquel terrible accidente. Tras el entierro el abandono me abruma y me mata la ansiedad de seguir tras esta tragedia. Su ausencia es una herida que lastima como nada.}''.
+
+Este texto posee dos emociones: tristeza y miedo, donde tristeza es la emoción mayoritaria y miedo la minoritaria. A continuación se les preguntaba a los usuarios qué emociones estaban presentes en el texto así como la emoción mayoritaria y la minoritaria. También se les preguntó por las emociones de dos palabras del texto. El objetivo de estas preguntas era ver si los usuarios eran capaces de inferir las emociones de un texto cuando había más de una emoción implicada y sí eran capaces de distinguir cuál de las emociones que aparecen en la barra emocional es la mayoritaria y cual la minoritaria (cuando había una emoción mayoritaria o minoritaria claramente) y comprobar si la funcionalidad de las pistas en las palabras emocionales era útil y adecuada.
+
+En la sección cinco se les pidió introducir el siguiente texto:
+
+``\textit{El otro día vi a un alcohólico acosar a una pobre chica. Odio esas situaciones tan violentas. Me sentí terriblemente asqueado. Ver las amenazas y los insultos que ese asqueroso soltaba me puso enfermo. Odio ver tal perversión y brutalidad, es triste. El temor de la chica y la repugnante agresividad del sucio borracho despertaron mi ira. Ahora me encuentro enfadado, muy enfadado.}''.
+
+Este texto era un texto con dos emociones con la misma carga emocional: enfado y tristeza. Después se les preguntaba cuáles eran las emociones presentes en el texto y cuáles eran la emoción mayoritaria y la minoritaria. El objetivo de esta sección era comprobar si el usuario era capaz de identificar que ambas emociones tenían el mismo peso en el texto y comprender que no había una mayoritaria ni una minoritaria.
+
+A continuación, le pedíamos al usuario que explorara la aplicación libremente con el objetivo de saber si la aplicación era fácil de manejar si no tenía una guía y ver si eran capaces de encontrar la funcionalidad de cambiar el color asociado a las emociones.
+
+Después, en la última sección, se les mostraban las siguientes afirmaciones que ellos tenían que valorar con una escala \textit{likert} de cinco puntos\footnote{Se decidió usar la escala con cinco puntos porque los expertos nos indicaron que para el colectivo objetivo esta granularidad era la mejor.}:
+
+\begin{itemize}
+		\item La aplicación es fácil de usar.
+		\item Me gustaría usar la aplicación en mi día a día.
+		\item Recomendaría la aplicación a otras personas.
+		\item Los colores asociados a las emociones por defecto son adecuados.
+		\item Las imágenes asociadas a las emociones por defecto son adecuadas.
+		\item Me parece útil poder cambiar los colores asociados a las emociones.
+		\item Me gustaría poder cambiar las imágenes asociadas a las emociones.
+		\item La barra emocional es intuitiva.
+		\item Me parece útil tener información sobre las palabras con carga emocional del texto.
+		\item Me parece útil tener información sobre la emoción concreta que transmiten las palabras con carga emocional del texto	.
+		
+\end{itemize}
+
+Una vez realizada esta última parte, el formulario se enviaba y las respuestas quedaban registradas para su posterior análisis.
+Este formulario puede encontrarse en nuestro repositorio de GitHub, en la rama correspondiente.\footnote{https://github.com/NILGroup/TFG-1718-Emociones/tree/Formularios}
+\subsection{Evaluación preliminar}
+
+Para la evaluación preliminar se organizó en la Facultad de Informática de la Universidad Complutense de Madrid una jornada para la Asociación Asperger Madrid. Esta jornada se realizó el día 22 de Mayo de 2018, y consistía en una visita guiada por el Museo Profesor García Santesmases y un recorrido por toda la Facultad. Una vez acabada la visita a la facultad procedimos a realizar la evaluación en uno de los laboratorios de la Facultad. Esta evaluación fue realizada por cuatro de los integrantes de la Asociación Asperger Madrid, dos expertos y dos usuarios. Y asistimos tanto las integrantes del grupo como las directoras de nuestro trabajo para ir apuntando las conclusiones y resolviendo las posibles dudas a los evaluadores.
+
+El objetivo de esta evaluación preliminar era ver si el diseño de la evaluación era correcto antes de lanzar la evaluación final. Las conclusiones que sacamos de esta evaluación preliminar fueron las siguientes:
+
+\begin{itemize}
+	\item La aparición de palabras emocionales en el segundo texto que daba como resultado ausencia de emociones despistaba a los evaluadores. No entendían que un texto sin emociones contuviera palabras emocionales.
+	\item Durante el uso libre de la aplicación vimos que algunos de los textos introducidos devolvían ausencia de emociones cuando claramente eran emocionales. Esto ocurría por dos razones principalmente: hacían uso de palabras muy coloquiales que no aparecían en nuestro diccionario y dábamos demasiado peso a las palabras no emocionales.
+	\item Vimos que los usuarios no encontraban la opción de personalizar colores y cuando les preguntaban por la personalización de los colores todos respondían al azar dado que no habían encontrado la opción solos.
+	\item Al final de la evaluación enseñamos a los usuarios a personalizar los colores y nos dimos cuenta que si los colores que eligen son demasiado oscuros, el pictograma que representa la emoción en la barra emocional y el nombre de la emoción no pueden verse, ya que estos tienen el color negro por defecto.
+	\item Los usuarios se pasaban mucho tiempo en la parte de uso libre de la aplicación probando los diferentes textos a ver sí la hacían falltar y se olvidaban de que no habían terminado la última parte del formulario.
+\end{itemize}
+
+Para mejorar de cara a la evaluación final hicimos los siguientes cambios:
+\begin{enumerate}
+	\item Pasamos a mostrar en negrita solo las palabras emocionales que tienen el mismo contenido emocional que tiene asociado el texto en la barra emocional.
+	\item Modificamos la forma de calcular las emociones para que no hubiera tantas frases sin emociones en el resultado final, pues quitamos importancia a las palabras no emocionales.
+	\item Modificamos el formulario añadiendo una pregunta de si han encontrado la configuración de los colores y en caso de responder negativamente se les explica como acceder a ella.
+	\item Pasamos la parte de libre uso de la aplicación al final, para que no se olvidaran de responder la última parte.
+\end{enumerate}
+
+\subsection{Evaluación final}
+
+El día 24 de Mayo de 2018 tuvo lugar la evaluación final en uno de los talleres sobre habilidades sociales que imparte la Asociación Asperger Madrid en sus instalaciones. En esta evaluación participaron siete usuarios finales de entre 16 y 31 años.
+
+El formulario empleado en esta evaluación puede encontrarse en nuestro repositorio de GitHub, junto al utilizado para la evaluación preeliminar.\footnote{https://github.com/NILGroup/TFG-1718-Emociones/tree/Formularios}.
+
+En la tabla \ref{tabla:evaluacionFinal} se muestran los resultados obtenidos en la primera parte de la evaluación. Aquella en la que se mostraban los textos y se buscaba ver si los usuarios eran capaces de interpretar los resultados que se mostraban (emociones presentes en el texto, emoción mayoritaria y minoritaria, palabras emocionales y las emociones asociadas a dichas palabras). Si analizamos los datos presentes en la tabla podemos concluir:
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+																							& Texto 	& Aciertos/Respuestas & Porcentajes \\ \hline
+	
+			\multirow{4}{*}{Emociones presentes}		& Texto 1 & 7/7 & 100\% 	\\ 
+																							& Texto 2	& 5/7 & 71.43\% \\ 
+																							& Texto 3	& 4/7 & 57.14\% \\
+																							& Texto 4	& 6/7 & 85.71\% \\ \hline
+			\multirow{2}{*}{Emociones mayoritarias} & Texto 3 & 6/7 & 65.71\% \\
+																							& Texto 4 & 3/7 & 42.86\% \\ \hline
+			\multirow{2}{*}{Emociones minoritarias} & Texto 3 & 4/7 & 42.86\% \\ 
+																							& Texto 4 & 3/7 & 42.86\% \\ \hline										
+			Palabras emocionales  									& Texto 3 & 3/7 & 42.86\% \\ \hline 
+			Emociones de accidente 									& Texto 3	& 3/7 & 42.86\% \\ \hline
+			Emociones de herida 										& Texto 3 & 3/7 & 42.86\% \\ \hline
+			Encontrado el cambio de color 					& 				& 5/7 & 71.43\% \\ \hline
+		\end{tabular}
+		\caption{Resultados sobre la correcta interpretación de resultados en la evaluación final del EmoTraductor}
+		\label{tabla:evaluacionFinal}
+	\end{center}
+\end{table} 
+
+\begin{itemize}
+	\item Emociones presentes en el texto: Cuando solo hay una emoción todo el mundo la detecta sin problemas, pero cuando hay ausencia de emcoines o más de una emoción implicada la cosa se complica.
+	Creemos que fallan en el texto con ausencia de emociones (texto 2) porque algunos de los usuarios son capaces de ver matices emocionales en algunas de las palabras o en el contexto y esto hizo que no respondieran conforme a lo que devolvía la aplicación sino conforme a lo que ellos interpretaban. 
+	Respecto al texto con tristeza y miedo como emociones (texto 3) vemos en los resultados de la figura \ref{fig:resultadoTexto3} que el 100\% de los evaluadores eligieron tristeza como una de las emociones en el texto, mientras que solo el 71.4\% eligieron también el miedo y un 14,3\% eligió enfado. Creemos que esto se puede deber a que el otro 28.6\% o no comprendieron que se estaba pidiendo que marcaran todas las emociones del texto y únicamente marcaron la emoción que parecía mayor o no supieron que podían marcar más de una emoción.
+	En cuanto al texto con cuatro emociones (texto 4) podemos ver en la figura \ref{fig:resultadoTexto4} que el 100\% marcaron la tristeza, el miedo y el enfado como emociones presentes, en cuanto al asco el 85.7\%, 6 de los 7 evaluadores, la eligieron como emoción presente en el texto. Pensamos que este evaluador que no marcó esta emoción debió olvidarse ya que sí fue capaz de interpretar el resto de la barra. 
+	Como análisis general de esta pregunta en cada texto, creemos que hubiera sido buena idea añadir un campo en el formulario para que justificaran su respuesta y así comprender y poder analizar mejor sus resultados.
+
+\figura{Bitmap/Capitulo7/resultadoTexto3}{width=.9\textwidth}{fig:resultadoTexto3}{Resultado emociones presentes en el texto 3}
+\figura{Bitmap/Capitulo7/resultadoTexto4}{width=.9\textwidth}{fig:resultadoTexto4}{Resultado emociones presentes en el texto 4}
+
+	\item Emoción mayoritaria: Cuando una emoción es claramente superior al resto, como ocurre en el texto 3, la mayoría de los evaluadores lo interpreta correctamente. Sin embargo, cuando todas las emociones tienen el mismo peso, más de la mitad de los evaluadores no son capaces de detectar que no existe emoción mayoritaria. Quizás el problema ha sido la forma en que se realiza la pregunta, quizás deberíamos de haber buscado una forma más clara de hacerla.
+	\item Emoción minoritaria: Los resultados de estas preguntas son los peores que nos hemos encontrado, pensamos que es porque los evaluadores no entendieron emoción minoritaria como la emoción que aparecía en el texto con menor intensidad sino como la contraria a la mayoritaria, quizá deberíamos haberles explicado en la pregunta qué era a lo que nos referíamos con emoción minoritaria.
+	\item Palabras emocionales: En el texto 3, les pedíamos que eligieran entre una serie de palabras cuáles eran, según el EmoTraductor, emocionales. Las palabras emocionales eran: ``dolor", ``calla", ``triste", ``angustia" y ``soledad". En los resultados, que podemos ver en la figura \ref{fig:resultadoPalabras}, vemos que las palabras ``calla", ``angustia" y ``soledad" son las menos elegidas, creemos que esto se debe a que no comprendieron del todo que las palabras emocionales eran las que aparecían en negrita en la pantalla y que ellos mismos decidieron elegir cuáles eran las palabras emocionales; es por esto que las palabras que son más difíciles de categorizar emocionalmente (``calla", ``angustia" y ``soledad") no han sido elegidas mientras que las más sencillas de identificar como ``dolor" o ``triste" si fueron elegidas. También hay evaluadores que han marcado la palabra ``Sufro" como emocional, suponemos que por la misma razón.
+	
+\figura{Bitmap/Capitulo7/resultadoPalabras}{width=.9\textwidth}{fig:resultadoPalabras}{Resultado de las palabras emocionales del texto 3}
+	\item Emociones asociadas a las palabras herida y accidente: Una vez más creemos que no todos los evaluadores entendieron lo que tenían que hacer, a pesar que en la interfaz se les muestra una pista en la que dice ``Sí posicionas el ratón sobre alguna de ellas conocerás las emociones asociadas a dicha palabra" pensamos que ellos mismos decidieron qué emociones tenía cada palabra y que únicamente un 42.86\% de los evaluadores comprendieron que tenían que situar el ratón encima de las palabras ``accidente" y ``herida'". Esto nos hace pensar que las ayudas de nuestra aplicación no son del todo útiles.
+
+\end{itemize}
+
+A continuación vamos e presentar los resultados de las preguntas de la última parte dedicada a la usabilidad e impresión general de la aplicación. Recordamos que para responder a estas preguntas se usó una escala \textit{Likert} de cinco puntos. El uno indicaba que el usuario estaba totalmente en desacuerdo con la afirmación y el cinco que estaba totalmente de acuerdo. 
+
+En la imagen \ref{fig:facilUsar} se pueden ver los resultados obtenidos para la pregunta sobre la facilidad de uso. Viendo los resultados podemos concluir con que la aplicación es fácil de usar o que al menos no es difícil ya que ninguno de los usuarios ha estado en desacuerdo con la afirmación.
+
+\figura{Bitmap/Capitulo7/facilDeUsar}{width=.9\textwidth}{fig:facilUsar}{Resultado de la afirmación ``La aplicación es fácil de usar''.}
+
+En la imagen \ref{fig:diaAdia} se pueden ver los resultados obtenidos para la pregunta sobre si les gustaría usar la aplicación en su día a día. Podemos ver que tres de los siete evaluadores están de acuerdo en que les gustaría usarla; por lo que podríamos concluir que sería útil para algunas de las personas con Asperger cumpliendo la finalidad de la aplicación.
+
+\figura{Bitmap/Capitulo7/diaAdia}{width=.9\textwidth}{fig:diaAdia}{Resultado de la afirmación ``Me gustaría usar la aplicación en mi día a día''.}
+
+En la imagen \ref{fig:recomendar} se pueden ver los resultados obtendios para la afirmación ``Recomendaría la aplicación a otras personas''. Podemos observar que solo un evaluador no se la recomendaría mientras que más de un 50\% sí lo haría. Concluimos que este resultado es muy bueno ya que la mayoría de los usuarios considera que la aplicación sería útil para más gente o para algunos de sus compañeros.
+
+\figura{Bitmap/Capitulo7/recomendar}{width=.9\textwidth}{fig:recomendar}{Resultado de la afirmación ``Recomendaría la aplicación a otras personas''.}
+
+En la imagen \ref{fig:coloresAsociados} se pueden ver los resultados sobre el grado de conformidad con los colores asociados a las emociones por defecto. Vemos que todos los evaluadores están de acuerdo en que están bien escogidos o al menos no están en desacuerdo. Concluimos por tanto que los colores por defecto, son adecuados.
+
+\figura{Bitmap/Capitulo7/coloresAsociados}{width=.9\textwidth}{fig:coloresAsociados}{Resultado de la afirmación ``Los colores asociados a las emociones por defecto son adecuados''.}
+
+En la imagen \ref{fig:imagenesAsociadas} se pueden ver los resultados para la pregunta de si les parecen adecuadas las imágenes asociadas a cada emoción. Vemos en los resultados que un único evaluador no está de acuerdo con ellas, pero el resto está de acuerdo en que son adecuadas.
+Esto nos lleva a concluir que las imágenes son adecuadas pero habría que contemplar la posibilidad de poder personalizarlas como ya se hace con los colores.
+
+\figura{Bitmap/Capitulo7/imagenesAsociadas}{width=.9\textwidth}{fig:imagenesAsociadas}{Resultado de la afirmación ``Las imágenes asociadas a las emociones por defecto son adecuadas''.}
+
+En la imagen \ref{fig:cambiarColores} se pueden ver los resultados para la afirmación ``Me parece útil cambiar los colores asociados a las emociones''. Vemos en los resultados que hay un 28.6\% que no está de acuerdo en que esto sea útil pero observando los resultados concluimos con que en número de usuarios a los que no les parece útil esta configuración es el mismo número de los evaluadores a los que no les parece útil la aplicación en su día a día. Por lo tanto, creemos que esta configuración es útil, ya que al 42.9\% de los evaluadores así les parece y el 28.6\% restante esta de acuerdo o no en desacuerdo.
+
+\figura{Bitmap/Capitulo7/cambioColor}{width=.9\textwidth}{fig:cambiarColores}{Resultados de la afirmación ``Me parece útil poder cambiar los colores asociados a las emociones''.}
+
+En la imagen \ref{fig:cambiarImagenes} se pueden ver los resultados sobre añadir la posibilidad de cambiar también las imágenes asociadas a las emociones. Vemos en los resultados que todos los evaluadores no están en desacuerdo. Con lo que concluimos que es un aspecto a mejorar en nuestra aplicación y debe añadirse al trabajo futuro.
+
+\figura{Bitmap/Capitulo7/cambioImagenes}{width=.9\textwidth}{fig:cambiarImagenes}{Resultados de la afirmación ``Me gustaría poder cambiar las imágenes asociadas a las emociones''.}
+
+En la imagen \ref{fig:barraEmocional} se pueden ver los resultados sobre la conformidad con la intuitividad de la barra emocional. Vemos que mas de la mitad de los evaluadores está totalmente de acuerdo con que es intuitiva, el 28.6\% esta de acuerdo y solo un 14.3\% no está de acuerdo ni en desacuerdo. Con lo que podemos concluir que fue una buena decisión escuchar las recomendaciones de los expertos y mostrar así los resultados.
+
+\figura{Bitmap/Capitulo7/barraEmocional}{width=.9\textwidth}{fig:barraEmocional}{Resultados de la afirmación ``La barra emocional es intuitiva''.}
+
+En la imagen \ref{fig:infopalabras} se pueden ver los resultados para la afirmación ``Me parece útil tener información sobre las palabras con carga emocional del texto''. La mayoría de los evaluadores están totalmente de acuerdo con que esta información les resulta útil y el resto de ellos no están en desacuerdo. Por lo que concluimos que mostrar esta información es útil.
+
+\figura{Bitmap/Capitulo7/infoPalabras}{width=.9\textwidth}{fig:infopalabras}{Resultados de la afirmación ``Me parece útil tener información sobre las palabras con carga emocional del texto''.}
+
+En la imagen \ref{fig:infoEmocion} se pueden ver los resultados para la afirmación ``Me parece útil tener información sobre la emoción concreta que transmiten las palabras con carga emocional del texto''. Vemos que esta también ha sido una buena decisión, ya que un 71.4\% está de completamente de acuerdo o de acuerdo. 
+
+\figura{Bitmap/Capitulo7/infoEmocion}{width=.9\textwidth}{fig:infoEmocion}{Resultados de la afirmación ``Me parece útil tener información sobre la emoción conreta que transmiten las palabras con carga emocional del texto''.}
+
+Por último, las observaciones dadas por los evaluadores al final de la evaluación fueron las siguientes:
+\begin{itemize}
+	\item Hay que explicar como se utiliza la aplicación.
+	\item La aplicación puede ser buena, pero no precisa y puede dar emociones erróneas en algunas situaciones.
+	\item Me cuesta reconocer los sentimientos los miedos afrontarlos enfrentarlos.
+	\item He tenido algunas dificultades porque no está adaptado para personas con discapacidad visual.
+\end{itemize}
+
+En resumen, las principales conclusiones de la evaluación con usuarios finales son las siguientes:
+\begin{itemsize}
+	\item La identificación de emociones mayoritarias y minoritarias no ha obtenido muy buenos resultados. Creemos que es debido a la mala interpretación de lo que se pedía pero habría que repetir la evaluación pra corroborar este punto.
+	\item Las ayudas presentes en la aplicación sobre las palabras emocionales del texto no han sido tenidas en cuenta por alguno de los usuarios así que habría que revisarlos.
+	\item Los colores y los emoticonos usados por defecto en la aplicación han resultado ser correctos.
+	\item El diseño de la barra emocional que muestra el resultado de la traducción emocional es intuitiva.
+	\item La personalización de colores y emoticonos resultado útil.
+	\item Llevando a cabo una serie de mejoras en la aplicación y en el método de marcado la aplicación resultaría en una herramienta útil en el día a día del colectivo objetivo.
+\end{itemsize}
+
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

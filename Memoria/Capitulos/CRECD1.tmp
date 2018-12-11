@@ -1,0 +1,300 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 2
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{Estado del arte}
+
+\begin{resumen}
+	En este capítulo se van a tratar los aspectos más importantes tanto de la computación afectiva como de las diferentes tecnologías y metodologías que se van a utilizar.
+	En primer lugar, en la sección 2.1 se da una breve explicación de lo que son las emociones y las diferentes formas que existen para representarlas, en la sección 2.2 se define la computación afectiva y sus posibles aplicaciones. En la sección 2.3 se explican los distintos diccionarios afectivos ya existentes que permiten la marcación emocional de textos. En la sección 2.4 se introduce la tecnología que se va a utilizar para implementar el trabajo, los servicios web. En la sección 2.5 se fijan los conceptos relacionados con la metodología Scrum, la cual hemos seguido durante todo el trabajo. Finalmente, en la sección 2.6 se explican las bases de la integración continua aplicada al desarrollo de software y cómo se va a aplicar en este trabajo.
+
+\end{resumen}
+
+%------------------------------------------------------------------
+\section{Emociones}
+%-------------------------------------------------------------------
+\label{cap2:sec:emociones}
+
+Las emociones son reacciones afectivas que surgen súbitamente ante un estímulo, duran un corto espacio de tiempo y comprenden una serie de repercusiones psicocorporales \citep{TesisVir}.
+Podríamos definir las emociones como reacciones automáticas que nuestro cuerpo experimenta ante un determinado estímulo. Sin embargo, todas ellas derivan en sentimientos más prolongados en el tiempo. Son experimentadas de manera particular por cada individuo debido a experiencias pasadas, su carácter, aprendizaje... 
+
+Existen dos formas principales para representar las emociones: dimensiones y categorías. 
+
+Las dimensiones emocionales representan los aspectos esenciales de una emoción. Generalmente se utilizan tres dimensiones que forman un espacio tridimensional que permite identificar la emoción según los valores que tome para cada dimensión. Las tres dimensiones que se tienen en cuenta son las siguientes \citep{Lang99}:
+
+\begin{itemize}
+	\item \textbf{Evaluación}: Representa como de positiva o negativa es la emoción. Por ejemplo, la emoción alegría es positiva mientras que la emoción tristeza es muy negativa.
+	\item \textbf{Activación}: Representa cómo de activa es la emoción. Por ejemplo, la emoción alegría es muy activa mientras que la emoción tristeza no.
+	\item \textbf{Control}: Representa el control que tiene la emoción sobre una persona. Por ejemplo, el control de la emoción alegría es mayor que el de la emoción de tristeza.
+\end{itemize}
+
+Las categorías emocionales representan cada una de las emociones básicas de carácter universal y a partir de las cuales se desarrollan las emociones secundarias. Conocemos como categorías emocionales 
+% -- A modo de resumen, podríamos hablar también de las tres dimensiones de la persona que se activan a la vez y de modo indisoluble con cada emoción:
+
+%y dimensiones. Dentro de la multitud de categorías que existen, nos centraremos en las conocidas como categorías básicas: miedo, sorpresa, alegría, ira y tristeza.
+ 
+
+%\begin{itemize}
+%	\item \textbf{Dimensión cognitiva}: Es la posibilidad que tiene el ser humano de aprender conceptualmente la realidad que le rodea formulando teorías e hipótesis sobre lamisma, de tal manera que no solo la puedecomprender si no que además interactúa conella pasa transformarla
+%	\item \textbf{Somática}: 
+%	\item \textbf{Relacional}: 
+%\end{itemize}
+
+
+
+%-------------------------------------------------------------------
+\section{Computación Afectiva}
+%-------------------------------------------------------------------
+\label{cap2:sec:computacion_afectiva}
+
+La computación afectiva es el estudio y el desarrollo de sistemas y dispositivos capaces de percibir, medir e interpretar las emociones humanas \citep{Picard}.
+
+Esta rama de la computación permite un avance notable en la inteligencia artificial, hasta tal punto que los ordenadores lleguen a adaptarse a los humanos, sus necesidades y estados de ánimo. Los seres humanos están rodeados de emociones, en cualquier ámbito de su vida, tanto de las suyas propias como las de las personas con las que se comunican. Tanta importancia tienen para nosotros que influyen no sólo en nuestra comunicación, sino también en nuestro aprendizaje y toma de decisiones. Por ello, resulta artificial y en ocasiones incluso frustrante intentar comunicarse con una máquina que no es capaz de expresar sentimientos. La computación afectiva pretende mejorar la interacción hombre-máquina haciéndola más natural y asequible en este sentido. 
+
+
+La computación afectiva tiene multitud de aplicaciones, ya que como se ha mencionado antes, las emociones están presentes en todos los ámbitos de la vida de una persona. A continuación presentamos algunas de las más importantes \citep{aplicacionesCA}: %(No sé qué cita es esta)
+
+\begin{itemize}
+	\item \textbf{Seguridad}: El análisis de las emociones como el estrés, el aburrimiento o la distracción puede ser muy interesante en tareas repetitivas como conducir o controlar una cinta de producción. 
+	\item \textbf{Marketing}: Poder evaluar la reacción emocional de alguien ante un anuncio o producto es una estrategia comercial que ya está siendo utilizada cada vez por más empresas.
+	\item \textbf{Salud}: Es posible inferir el nivel de estrés de una persona midiendo sus señales fisiológicas (ritmo cardiaco, respiración...) y si este nivel es demasiado alto se reaccionará en consecuencia según el tipo de sistema. 
+	\item \textbf{Entretenimiento}: La industria de los videojuegos ha crecido mucho en los últimos años e introducir las emociones en los videojuegos permite a las compañías crear juegos más adaptables y cercanos al jugador, lo que atrae a más público y mejora la experiencia de juego \citep{chinos}.
+	\item \textbf{Robótica}: El mayor problema de los robots diseñados para interactuar con humanos es la carencia de emociones. Algunos de ellos llegan a producir una sensación de incomodidad. Dotar a este tipo de robots de cierta ``humanidad'' no sólo haría más cómodo el tratar con ellos sino que podrían realizar tareas como el acompañamiento de personas mayores \citep{RobotSonrie}.
+	\item \textbf{Accesibilidad}: El paradigma actual obliga a cualquier usuario a adaptarse a las máquinas sin tener en cuenta las dificultades particulares que pueda tener el individuo. El uso de computación afectiva permite facilitar la inversión del paradigma para que sean las máquinas quienes utilicen las emociones del usuario para adaptarse a él.
+
+\end{itemize}
+
+El funcionamiento de este tipo de sistemas se basa en identificar el estado emocional del sujeto a través de diferentes fuentes (voz, expresiones, señales fisiológicas, texto...) y procesar la información para clasificarla y aprender de ella. Clasificar la información de entrada puede resultar complicado ya que se suelen recibir varias señales diferentes a la vez, lo que hace necesario utilizar técnicas de priorización para determinar cuáles son las que más aportan a la hora de analizar y gestionar la información. Una vez identificada la emoción predominante, el sistema responde adecuándose a ella. La salida dependerá del tipo de sistema y las herramientas de las que dispone este para expresar su respuesta (colores, sonidos, emoticonos...) En casos más complejos aplicados a robótica o modelado, la salida producida es una simulación de la respuesta que produciría un ser humano ante los estímulos recibidos imitando su expresión corporal, voz o gestos faciales. Por ejemplo los robots Geminoid \footnote{http://www.geminoid.jp/en/index.html}.%(IEEE Sprectrum, 08/04/2010).
+
+En este trabajo vamos a centrarnos en el último área, la accesibilidad. En particular, en facilitar a personas que padecen Trastornos del Espectro Autista (TEA), más en concreto a personas con Asperger, el entendimiento de las emociones de un texto, es decir, su carga emocional. En nuestro proyecto, nos centraremos en el reconocimiento de las emociones en un texto. Las emociones con las que trataremos son las emociones básicas: alegría, tristeza, miedo, asco y enfado.
+
+
+
+
+\subsection{Métodos para el marcado de texto emocional}
+
+Los métodos existentes para el marcado de texto emocional podrían clasificarse en cinco categorías básicas \citep{TesisVir}:
+
+
+\begin{itemize}
+	\item \textbf{Keyword spotting}: El marcado del texto se basa en la detección de palabras clave. Es decir, consiste en detectar la aparición de palabras emocionales como \textit{happy}, \textit{sad}... 
+	Las principales desventajas de este método son que causa problemas cuando aparece una negación en la frase y que depende de aspectos superficiales cuando en la práctica existen muchas frases cuyo contenido emocional no se encuentra en palabras emocionales.
+	\item \textbf{Afinidad léxica}: Este método no solo detecta palabras obviamente emocionales, sino que asigna al resto de palabras una afinidad con las distintas emociones. 
+	Este método tiene dos problemas fundamentales: emplea tan solo las palabras sin tener en cuenta el contexto en el que se encuentran por lo que puede fallar con la aparición de las negaciones, por ejemplo, y además este tipo de métodos suelen entrenarse con un corpus lo que dificulta el desarrollo de un modelo reutilizable e independiente del dominio.
+	\item \textbf{Procesamiento estadístico}: Consiste en alimentar a un algoritmo de aprendizaje automático con varios textos marcados emocionalmente. Este método ha sido empleado en el proyecto de Webmind \citep{goertzel} entre otros.
+	\item \textbf{Métodos manuales}: Estos métodos implican el modelado de distintos estado emocionales en términos de modelos afectivos basados en teorías psicológicas sobre las necesidades, los deseos y las metas de los seres humanos. El modelo DAYDREAMER \citep{MuellerDyer85}, una computadora que puede generar emociones, emplea este método.
+	\item \textbf{Métodos basados en el conocimiento del mundo real}: Este método no solo mira los aspectos superficiales del texto, sino que va más allá y evalúa la calidad afectiva de la semántica subyacente que contiene el texto. Un ejemplo es el marcador llevado a cabo por Liu, Lieberman y Selker (\citeyear{Liu2002}).
+
+\end{itemize}
+
+Las técnicas basadas en el procesamiento estadístico del lenguaje natural solo funcionan con un texto de entrada lo suficientemente extenso, los métodos manuales precisan un amplio análisis y entendimiento de los textos y hacen muy difícil la generalización y los métodos basados en el conocimiento del ``mundo real'' necesitan un amplio conocimiento \citep{FranciscoGervasTSD2006}. Es por ello que en este trabajo, emplearemos el método \textit{keyword spotting}, usando un diccionario con palabras emocionales que nos servirán para detectar la carga emocional del texto. En la siguiente sección analizaremos los diccionarios afectivos disponibles.
+	
+\section{Diccionarios Afectivos}
+\label{cap2:subsec:diccionarios}
+	
+	Un diccionario afectivo es un diccionario en el que las palabras se encuentran marcadas con etiquetas emocionales. Generalmente las etiquetas son categorías emocionales o dimensiones emocionales. A continuación se presentan los diccionarios afectivos más representativos.
+		
+\subsection{Diccionario de Hatzivassiloglou y Mckeown}
+	
+	Este diccionario fue creado en 1997, y marca palabras en inglés según su polaridad (positiva o negativa) de manera automatizada a través del análisis de un corpus.
+	Hatzuvassiloglou y McKeown (\citeyear{mckeown}) tomaron una serie de adjetivos que aparecían de manera frecuente y decidieron darles una orientación empleando un análisis estadístico. Así fueron capaces de obtener un diccionario de adjetivos clasificados como positivos y negativos. 
+	A partir de los adjetivos ya clasificados se predice la polaridad de éstos, analizándolos en pares unidos por conjunciones como: \textit{and}, \textit{or}, \textit{but}, \textit{either-or}, \textit{or} o \textit{neither-nor}.
+	Es decir, sí una palabra con polaridad conocida aparece unida por la conjunción ``y" (``and" en inglés) a una segunda palabra concluyo que la nueva palabra tendrá una polaridad similar. En cambio si vienen unidas por la conjunción ``pero" (``but" en inglés) la polaridad de la nueva palabra será opuesta.
+	Por ejemplo, si aparece \textbf{\textit{hermosa y divertida}} y sabemos que la palabra \textbf{\textit{hermosa}} es positiva la palabra \textbf{\textit{divertida}} pasará a ser positiva también; sin embrago si aparece \textbf{\textit{hermosa pero malvada}} la palabra \textbf{\textit{malvada}} tomará la orientación de negativa.
+
+
+\subsection{Clairvoyance Affect Lexicon}
+
+	Este diccionario fue desarrollado a mano \citep{HuettnerSubasic00} y contiene 4.000 palabras en inglés. Las entradas de este diccionario se dividen en cinco campos que caracterizan la palabra:
+	
+	\begin{itemize}
+		\item Lema de la palabra.
+		\item Categoría gramatical a la que pertenece la palabra.
+		\item Clase afectiva: Entre un pequeño conjunto de categorías emocionales como \textit{ira} (\textit{anger}), \textit{miedo} (\textit{fear}) o \textit{felicidad} (\textit{happiness}).
+		\item Centralidad: Valor entre 0 y 1 que trata de medir la relación de la palabra con la clase afectiva que se le ha asignado.
+		\item Intensidad: Mide la intensidad emocional de la palabra. Una palabra puede pertenecer a varias clases afectivas con distinta centralidad, por ejemplo, jubiloso tiene una centralidad de 0.7 para felicidad y de 0.3 para excitación, pero en ambos casos tiene la misma intensidad.
+	\end{itemize}
+	
+	Cada palabra aparece en el diccionario una vez por cada clase afectiva a la que pertenece. La centralidad varía en las diferentes apariciones mientras que la intensidad se mantiene igual. Por ejemplo la palabra \textbf{\textit{jubiloso}} tiene una centralidad de 0.7 para felicidad y una centralidad de 0.3 para excitación, pero en ambos casos tiene la misma intensidad 0.6.
+	
+	
+	\subsection{ANEW}
+	La Affective Norms for English Words (ANEW) contiene 1.034 palabras inglesas etiquetadas mediante las tres dimensiones emocionales (evaluación, activación y control) \citep{ANEW}. Para obtener este diccionario, se pidió a una serie de personas que marcasen un conjunto de palabras fuera de contexto con los valores para cada una de las tres dimensiones de una emoción en una escala Likert de 9 puntos. Para ello contaron con la ayuda del sistema de marcación SAM \citep{Lang80}. 
+	
+	En la tabla \ref{tabla:anew} podemos observar un ejemplo para la primera palabra del diccionario, \textit{``abduction"}.
+	
+	\begin{table}[htbp]
+		\begin{center}
+		\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		Descripcion & Nº palabra & Evaluación & Activación & Control & Frecuencia \\
+		\hline 
+		abduction & 621 & 2,76 & 5,53 & 3,49 & 1 \\ \hline
+		\end{tabular}
+		\caption{Primera palabra del ANEW y sus campos}
+		\label{tabla:anew}
+		\end{center}
+		\end{table}
+	
+	Este diccionario ha sido traducido a otros idiomas como el alemán \citep{Schmidtke14}, el francés \citep{Monnier13}, el portugués \citep{Kristensen2011} o el español \citep{ANEW_es}.
+	
+	\subsection{S-ANEW}
+	 Se trata de la traducción del diccionario ANEW al castellano. En él participaron 720 estudiantes de psicología que marcaron las 1.034 palabras que contiene ANEW.
+	Cada palabra debía ser marcada con las dimensiones emocionales (evaluación, activación y control) en una escala de 9 puntos, al igual que se hizo con el diccionario ANEW original
+		
+	Cada entrada en el diccionario contiene: un número que identifica a la palabra, de manera que esta numeración coincide con el número que dicha palabra tiene en el ANEW; la palabra inglesa (E-word), la palabra original en la base de datos ANEW; la palabra española (S-word); y las evaluaciones afectivas, los valores medios y la desviación estándar para cada dimensión emocional. 
+	
+	En la tabla \ref{tabla:s-anew} podemos observar un ejemplo para la primera palabra del diccionario, \textit{``abduction"}.
+	
+	\begin{table}[htbp]
+		\begin{center}
+		\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		Descripcion & Nº palabra & Evaluación & Activación & Control & Frecuencia \\
+		\hline 
+		abduction & 621 & 2,76 & 5,53 & 3,49 & 1 \\ \hline
+		\end{tabular}
+		\caption{Primera palabra del ANEW y sus campos}
+		\label{tabla:s-anew}
+		\end{center}
+		\end{table}
+\subsection{Diccionario de Hinojosa}
+
+Este diccionario \citep{Hinojosa2016} introduce normas afectivas para 875 palabras incluidas en la MADS (Madrid Affective Database for Spanish): 304 verbos, 301 sustantivos, 126 adjetivos y 144 palabras que pueden ser consideradas sustantivos o adjetivos. El objetivo de este diccionario es complementar los más importantes que ya existían, la traducción al español del ANEW y la base de datos de Ferré y por ello se incluyen palabras que no aparecen en ninguno de los dos. Estas palabras han sido marcadas para dos dimensiones emocionales (valencia y activación) y cinco categorías emocionales (alegría, enfado, tristeza, miedo y asco).
+En la marcación participaron 660 personas y cada palabra fue marcada por 30 personas. Para marcar las dimensiones se empleó una escala Likert de 9 puntos y para cada una de las emociones básicas se empleó una escala del 1 al 5 (donde 1 es \textit{para nada} y 5 \textit{extremadamente}). El diccionario incluye, además, la clase gramatical de la palabra, su frecuencia de aparición, su número de letras y sílabas y una serie de variables psicolingüísticas medidas de forma objetiva.  
+Una vez marcadas las palabras, éstas se clasifican en positivas, negativas o neutrales según su valor de valencia: de 1 a 4 son negativas, de 4 a 6 neutrales y de 6 a 9 positivas. De esta manera se obtuvieron 337 palabras negativas, 231 neutrales y 307 positivas. En cuanto a las categorías emocionales, se considera que una palabra denota una determinada emoción si tiene asignado un valor superior a 2,5 para dicha emoción. Así se obtienen 307 palabras que denotan alegría, 84 que denotan ira, 87 que denotan tristeza, 114 que denotan miedo y 30 que denotan asco. El resto de palabras o bien denotan dos emociones(40),tres emociones(31) o cuatro emociones(24).
+
+Por ejemplo, la palabra \textbf{abandono} tiene los siguientes valores para las categorías emocionales: 1,03 de alegría, 3,30 de ira, 4,43 de tristeza, 3,33 de miedo y 2,63 de asco. Tiene, además, un valor de valencia de 1,47 y un valor de activación de 6,47. Como se puede apreciar los valores obtenido en este diccionario para la palabra abandono son bastantes similares a los obtenidos por el diccionario de Ferré para la misma palabra.
+
+\subsection{Diccionario de Ferré}
+
+Este diccionario \citep{Ferre2017} está compuesto por 2.266 palabras, marcadas con las cinco categorías emocionales utilizadas en el diccionario de Hinojosa: alegría, ira, miedo, asco y tristeza. Las palabras con las que cuenta son las incluidas en otros tres diccionarios publicados en español: S-ANEW,  el Corpus de Ferré \citep{Ferre2012} y el de Guasch \citep{Guasch2016}. De las 2814 obtenidas se eliminaron las repetidas y aquellas que apareciesen en el diccionario de Hinojosa obteniendo las 2266. En el proceso de marcado participaron 1.380 personas. Para cada palabra debían asignar un valor de 1 a 5 para cada emoción básica, siendo el uno \textit{para nada} y el 5 \textit{extremadamente}. Las palabras que tienen un valor inferior a 2,5 para las cinco categorías se consideran neutrales mientras que las que tienen un valor superior al 2,5 en más de una categoría pertenecerán a aquella con mayor valor. Se obtuvieron 704 palabras para la categoría de alegría, 34 para la de ira, 58 para la de tristeza, 98 para la de miedo, 69 para la de asco y 856 palabras neutrales.
+	
+En este caso la palabra \textbf{abandono} tiene los siguientes valores para las cinco categorías emocionales: 1,03 de alegría, 2,83 de ira, 4,30 de tristeza, 3,33 de miedo y 1,77 de asco. 
+%-------------------------------------------------------------------
+\section{Servicios Web}
+%-------------------------------------------------------------------
+\label{cap2:sec:servicios_web}
+
+		La definición más general de Servicio Web es la que lo define como un conjunto de aplicaciones o tecnologías capaces de interoperar en la Web. Estas aplicaciones o tecnologías intercambian datos con el fin de ofrecer unos servicios. Los proveedores ofrecen sus servicios como procedimientos remotos y los usuarios solicitan un servicio llamando a estos procedimientos a través de la Web\footnote{https://www.w3c.es/Divulgacion/GuiasBreves/ServiciosWeb}. 
+	
+	\subsection{Características de los Servicios Web}	
+	\label{cap2:subsec:serviciosweb}
+	
+	Un servicio web debe poder ser accesible a través de la web. Para ello debe utilizar procotolos de transporte estándares como HTTP, y codificar los mensajes en un lenguaje estándar que pueda conocer cualquier cliente que quiera utilizar el servicio.
+	
+	Un servicio web, además, debe contener una descripción de sí mismo. De esta forma, una aplicación podrá saber cuál es la función de un determinado servicio. Un servicio web debe también poder ser localizado. Deberemos tener algún mecanismo que nos permita encontrar un servicio web que realice una determinada función. De esta forma tendremos la posibilidad de que una aplicación localice el servicio que necesite de forma automática, sin tener que conocerlo previamente el usuario\footnote{http://www.jtech.ua.es/j2ee/publico/servc-web-2012-13/sesion01-apuntes.html}.
+	
+	\subsection{Tipos de Servicios Web}
+	\label{cap2:subsec:serviciosweb}
+	A nivel técnico, los servicios pueden implementarse de varias formas. En este sentido, podemos distinguir dos tipos de servicios web: 
+	\begin{itemize}
+		\item SOAP: utilizan mensajes XML para intercomunicarse que siguen el estándar SOAP (Simple Object Access Protocol), un lenguaje XML que define la arquitectura y formato de los mensajes. Dichos sistemas normalmente contienen una descripción legible por la máquina de la descripción de las operaciones ofrecidas por el servicio, escrita en WSDL (lenguaje basado en XML para definir las interfaces sintácticamente).
+		\item RESTful: utilizan estándares conocidos como HTTP, SML, URI, MIME, y tienen una infraestructura ``ligera'' que permite que los servicios se construyan utilizando herramientas de forma mínima.
+	\end{itemize}
+		
+	\subsection{Arquitectura de los Servicios Web}
+	\label{cap2:subsec:serviciosweb}
+	
+	Los servicios web se componen de varias capas entre las que destacan\footnote{https://diego.com.es/introduccion-a-los-web-services},\footnote{http://www.jtech.ua.es/j2ee/publico/servc-web-2012-13/sesion01-apuntes.html}:
+	
+	\begin{itemize}
+		\item Servicios de transporte: Capa que se encarga de transportar los mensajes entre el servidor y el cliente. Normalmente se utiliza el protocolo HTTP para este transporte. 
+		\item Servicios de mensajería: Capa encargada de la codificación de los mensajes en formato estándar para que pueda ser interpretado en cualquiera de los nodos de la red. Decide la tipología del mensaje que se envía, puede ser en \textit{XML} o \textit{JSON}.
+		\item Servicios de descripción: Capa encargada de definir la interfaz pública de un determinado servicio. Esta definición se realiza mediante WSDL (Web Service Description Language), tipo de documento XML que describe lo que hace un servicio web, dónde se encuentra y la forma de ser invocado.
+		\item Servicios de descubrimiento: Capa encargada del registro centralizado de servicios, permitiendo que estos sean anunciados y localizados. Para ello se utiliza el protocolo UDDI, el cual define la especificación para construir un directorio distribuido de servicios web, donde los datos se almacenan en XML. Este registro también almacena información sobre las organizaciones que los proporcionan, la categoría en la que se encuentran, y sus instrucciones de uso. 
+		\end{itemize}
+	
+	\subsection{Ventajas e inconvenientes de los servicios web}
+	\label{cap2:subsec:serviciosweb}
+	
+	Las principales ventajas de los servicios web son las siguientes:
+		\begin{itemize}
+		\item Aportan interoperabilidad entre aplicaciones de software independientemente de sus propiedades o de las plataformas sobre las que se instalan.
+		\item Fomentan los estándares y protocolos basados en texto, de tal manera que facilitan su comprensión y accesibilidad.
+		\item Permiten la combinación e integración de distintos servicios y software independientemente de su ubicación.
+		\item  Al apoyarse en HTTP, los servicios web pueden esquivar las medidas de seguridad basadas en firewall sin necesidad de cambiar las reglas de filtrado.
+		\item Disminuyen el tiempo de desarrollo de las aplicaciones. Gracias a la filosofía de orientación a objetos utilizada, el desarrollo se convierte más bien en una labor de composición.
+	\end{itemize}
+	
+	Las dos principales desventajas de los servicios web son:
+	\begin{itemize}
+		\item Bajo rendimiento si se compara con otros modelos de computación distribuida.
+		\item Al apoyarse en HTTP, pueden esquivar medidas de seguridad basadas en firewall cuyas reglas tratan de bloquear la comunicación entre programas.
+	\end{itemize}
+	
+	
+%-------------------------------------------------------------------
+\section{Scrum}
+%-------------------------------------------------------------------
+	
+	Scrum es una metodología ágil para gestionar el desarrollo de software. Fue definida por \textit{Ikujiro Nonaka} e \textit{Hirotaka Takeuchi} a principios de los 80 \citep{ScrumManagerLibro}.
+	
+	Scrum divide el trabajo en diferentes unidades llamadas \textsl{sprints},  que tienen una duración preestablecida de entre dos y cuatro semanas obteniendo siempre al final una versión del software con nuevas prestaciones listas para ser usadas. En cada \textsl{sprint} se ajusta la funcionalidad y se añaden nuevas prestaciones priorizando aquellas que aporten más valor al producto \footnote{https://www.softeng.es/es-es/empresa/metodologias-de-trabajo/metodologia-scrum/proceso-roles-de-scrum.html} 
+	
+	Esta metodología hace mucho énfasis en el <<equipo de trabajo>>. Este equipo está formado por diferentes roles:
+	
+	\begin{itemize}
+		\item \textbf{Product Owner}: Representa al cliente. Se encarga de definir los objetivos y de dar valor al producto.
+		\item \textbf{Scrum Master}: Encargado de asegurar que se cumplen las buenas prácticas y valores descritos en el modelo Scrum.
+		\item \textbf{Scrum Team}: Encargado de desarrollar y entregar el producto. Es autogestionado y multidisciplinar.
+	\end{itemize}
+	
+	Los artefactos definidos en Scrum son:
+	
+	
+	\begin{itemize}
+		\item \textbf{Product backlog}: Contiene los requisitos del producto, ordenados por prioridad. Es creada por el Product Owner y a lo largo del desarrollo crece y evoluciona. En Scrum los requisitos se definen mediante historias de usuarios. Una historia de usuario es la descripción de una funcionalidad que debe incorporar el sistema de software, y cuya implementación aporta valor al producto.
+		\item \textbf{Sprint backlog}: Descomposición en tareas de las historias de usuario del product backlog seleccionadas para que el equipo las realice durante el sprint. 
+	\end{itemize}
+
+	Por último, Scrum también define una serie de eventos:
+	
+	
+	\begin{itemize}
+		\item \textbf{Sprint Planning}: Se trata de la reunión de planificación del sprint. Este evento consta de dos partes. En la primera parte el Product Owner presenta lo que quiere que se haga en el sprint y resuelve dudas acerca de las historias de usuario al equipo de desarrollo. Después, en la misma reunión, el equipo estima el tiempo que llevará desarrollar cada una de las historias de usuario propuestas para el sprint por el Product Owner y deciden cuántas van a implementar en el sprint.
+		En la segunda parte, el equipo de desarrollo divide las historias de usuario en tareas y crean el Sprint Backlog.
+		\item \textbf{Daily Scrum}: Reunión diaria de quince minutos, de pie, donde cada componente del equipo informa sobre cómo va en sus tareas, lo que hizo el día anterior, lo que hará ese día y los problemas que ha encontrado o los que cree que se va a encontrar.
+		\item \textbf{Sprint Review}: Reunión que se realiza al concluir el sprint centrándose en el producto. Se presenta el producto creado en el sprint al Product Owner y este lo analiza y da su feedback.
+		\item \textbf{Sprint Retrospective}: Reunión donde se habla de cómo ha funcionado el equipo en el sprint y qué cosas se pueden mejorar para el siguiente a nivel de proceso o metodología.
+	\end{itemize}
+	
+	\figura{Bitmap/Capitulo2/scrum}{width=.9\textwidth}{fig:scrum}{Flujo Scrum} 
+	
+	En la Figura \ref{fig:scrum} podemos ver un diagrama del flujo Scrum: el Product Owner crea el Product Backlog con los requisitos y características por orden de prioridades. A continuación, en un Sprint Planning, se presenta el Product Backlog y se decide qué actividades se van a desarrollar en el sprint. En esta reunión se elabora el Sprint Backlog con todas las historias de usuario que se van a realizar divididas en tareas. A continuación, se comienza el sprint con el tiempo establecido, cada componente del grupo se asigna una tarea y en cuanto acabe seguirá con la siguiente actividad que no esté hecha. Es muy importante el orden de las tareas, ya que el Product Owner ha ordenado en el Product Backlog las historias de usuario por prioridad y el equipo desarrollará estas siguiendo dicha ordenación. Cada día, el equipo se reunirá en una Daily Scrum. Al final del sprint se realiza la Sprint Review donde se entrega el incremento del producto al cliente. Por último, todo el equipo se vuelve a reunir para hacer el Sprint Retrospective.
+	
+
+%-------------------------------------------------------------------
+\section{Integración Continua}
+%-------------------------------------------------------------------
+\label{cap2:sec:integracion}
+
+La integración continua \citep{Fowler}, se basa en que los desarrolladores combinen todos los cambios que realicen en el código en un repositorio común de forma periódica (cada pocas horas, al menos una vez al día), de tal forma que una vez subidos estos cambios, se ejecutan una serie de pruebas automáticas sobre estos con el fin de validarlos y detectar errores de integración tan pronto como sea posible.
+
+En general, las metodologías ágiles y en particular la metodología Scrum enfoca su objetivo en tener versiones funcionando del producto al finalizar cada sprint; es por esto por lo que la integración continua es vital en proyectos que empleen estas metodologías. Empleando la integración continua, los desarrolladores se aseguran de encontrar los errores a tiempo para que el producto esté listo para la entrega al Product Owner o para ponerlo en producción si este así lo desea.
+
+
+Las principales ventajas de la integración continua son:
+
+\begin{itemize}
+	\item \textbf{Detección de errores:} Cada vez que el código cambia se compila y se somete a pruebas de forma inmediata para garantizar que no hay errores. Este proceso aumenta la calidad del software y minimiza los riesgos del proceso ya que se tiene control sobre las versiones en todo momento.
+	\item \textbf{Visibilidad del proceso:} Todos los pasos que se realizan en el desarrollo son visibles a todo el equipo, que tiene una estrategia común muy bien definida.
+	\item \textbf{Mejora del equipo:} Los desarrolladores no solo tienen una visión muy clara y estructurada del proceso sino que también aprenden a realizar todo tipo de pruebas, lo que les hace mejorar a nivel profesional. 
+\end{itemize}
+
+Lo primero para poder utilizar integración continua es tener definido un pipeline, es decir, un conjunto de fases por las que tiene que pasar el software y que están automatizadas. Se establecen criterios para que el código pase de una fase a otra y estrategias para gestionar errores que puedan surgir en las diferentes fases (control de versiones). Es importante tener bien definidas las pruebas que se van a realizar sobre cada fase y que estas puedan garantizar la máxima corrección posible sin tardar mucho, ya que se necesita un feedback rápido para poder seguir avanzando en el proceso. Cada fase es un grupo de pruebas y cada subida de código es un pipeline distinto que avanza de forma independiente por las fases. Por lo tanto se sabe en todo momento en qué punto se encuentra una versión específica. Esto permite tener una visión general de todo el proceso facilitando notablemente la detección de errores en fases y pipelines concretos.
+
+Para el correcto funcionamiento de esta práctica tiene que haber pequeñas integraciones de forma frecuente, una vez al día por ejemplo. Cuantos menos cambios haya más fácil es la integración en el producto general y solucionar los posibles errores que esta pueda generar. Cabe destacar que aunque una parte de código funcione de forma independiente no implica que vaya a funcionar al integrarlo en un programa más grande, por ello cuanto más frecuentes sean las integraciones mejor. 
+
+
+
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

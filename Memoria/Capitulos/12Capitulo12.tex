@@ -1,0 +1,63 @@
+%---------------------------------------------------------------------
+%
+%                          Capitulo 12
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{Conclusions and Future work}
+
+\begin{resumen}
+This chapter presents the conclusions of the FDP and the future work that we believe could be implemented if the development of this project were continued.
+\end{resumen}
+
+\section{Conclusions}
+%--------
+\label{cap12:sec:conclusiones}
+
+Nowadays we have access to a huge amount of information. All this information must be correctly interpreted to know if it is useful for us. At this point a problem arises because not everyone has the same facility to interpret a text. For example, the lack of emotional empathy in people with Autism Spectrum Disorders (ASD) prevents them from recognize the affective content in a text which can greatly alter the real meaning of the text. Something similar happens when these people want to write something on the network: the difficulties they have when expressing their emotions can cause misunderstandings. Because all of this it is necessary to develop tools which could ease the digital integration of people with this type of disability.
+
+The main goal of this project was to implement a series of web services that would automatically detect the affective content of a text in order to make it more accessible. The idea was to measure the presence of each one of the five basic emotional categories in the text: sadness, fear, joy, anger and disgust. In order to do it we used an affective dictionary which contained a series of words accompanied by its lexeme and five values (one for each emotional category) from one to five. The dictionary would help us marking the words from the text with their emotional degrees. It will do the basis for the analysis. The emotional degrees of the words will allow us to obtain the final emotional degrees of the sentences of the text and, from these, we will obtain the definitive degrees for each emotional category in the text.
+
+Once the services are developed, we are integrating them into an API to make them accessible to everyone in order to favor transfer of results. Then we are creating a web application so our services will can be easily used by anyone. This website will allow users to enter a text and it would display the results graphically, using emoticons and colors to make explicit the emotional categories contained in the text and marking the emotional words within the text.
+
+The web application has been evaluated with end users to test both its functionality and its interface. This evaluation showed us how useful the application is as well as many aspects that need to be improved.
+
+This project has been an opportunity to apply all the knowledge acquired in different subjects during the degree to a large project with real impact. Among all of these subjects we can highlight:
+
+\begin{itemize}
+	\item \textbf{Foundations of the Programming}, \textbf{Technology of the Programming} and \textbf{Structure of Data and Algorithms} that helped us to acquire a structured and efficient way of thinking when programming.
+	\item \textbf{Software Engineering}, which gave us the ability to manage a software project correctly.
+	\item \textbf{Computer Audit} and \textbf{Evaluation of Configurations}, which have helped us improve the performance of our web services.
+	\item  \textbf{Web Applications}, \textbf{Extension of Databases} and \textbf{Web Engineering}, which gave us the necessary knowledge of HTML, CSS and Javascript to develop our web application.
+	\item \textbf {Databases}, which helped us create the database that supports the model of Django.
+	\item \textbf{Operating Systems}, \textbf{Networks}, \textbf{Networks and Security} and \textbf{Amplification of Networks and Operating Systems}, which helped us to carry out the management of the configuration of our Apache server as well as to carry out the project deployment on it.
+	\item Finally, in the subject of \textbf{Ethics, Legislation and Profession} we learned everything necessary about licenses, both to protect our code and to know how to correctly use free software developed by third parties.
+\end{itemize}
+      
+We have also learned many new things: configuration of a virtual host on an Apache server, Python, Scrum methodology, Jenkins and Latex.
+
+In conclusion, during this FDP we have fulfilled all the objectives that we set ourselves at the beginning of it which can be consulted in section 1.2 of this document.
+
+\section{Future Work}
+%--------
+\label{cap12:sec:trabajo futuro}
+
+In order to meet the shortcomings of the project and make the application to be more complete, we consider that we can leave as future work the implementation of these goals that we could not cover and that arose after the realization of the final evaluation:
+
+\begin{itemize}
+	\item \textbf{Add the personalization of the images associated with the emotional categories}: Our application currently allows the user to customize the color associated with each emotional categories. It would be also possible to give users the possibility of customize the image associated to each category too. To do this, we should create a session for each user so that the selected images would be saved on his computer.
+	\item \textbf{Implementation of automatic detection of dark colors for emotional categories}: If a dark color is selected for an emotion, the image with the emoticon of that emotion must be inverted to get a correct visualization.
+	\item \textbf{Add voice recognition}: The implementation of voice recognition was attempted using the Google API, Speech Recognition (which converts the text recorded through the microphone into written text), but as the requests that we make to the server are HTTP and the browser (Chrome) recognizes them as not secure, access to the microphone is not allowed and we had to abort this goal. In the future we think it would be interesting to add this functionality.
+	\item \textbf{Change the type of requests made to the server}: The requests that are currently made to the server are using HTTP, this means that the use of external APIs (such as the voice recognition API) is restricted. For this reason and for security we believe that we should change the types of requests made to the servers by HTTPS requests.
+	\item \textbf{Calculate in a different way the values of the different types of sentences}: The project has been developed to recognize exclamatory, interrogative and affirmative sentences. As future work, the recognition of negative sentences, subordinates and adjective sentences should be implemented.
+	\item \textbf{Add the possibility of inserting new words in our dictionary}: After the preliminary evaluation with users, we could see the importance of including more colloquial terms in the dictionary. Therefore, it would be useful to implement the insertion of new words in our dictionary. A possible solution would be to create different roles, in order to give only the opportunity of insertion to the users who had the role of ``tutor''. Another possible solution could be the creation of a suggestions mailbox or something similar, so when a word is suggested by a minimum number of users it will be inserted in the dictionary.
+	\item \textbf{Insertion in the dictionary of phrases and expressions}: An important progress for the application would be the insertion in the dictionary of phrases and colloquial expressions in order to expand the coverage of our emotional translator.
+	\item \textbf{Implementation of a mobile application}: More and more users have a mobile device, so it would also be useful to develop a mobile application based on the current web application.
+	\item \textbf{Update the interface so that the level of compliance is AAA}: In order to make the web more accessible for people with some type of disability.
+	\item \textbf{Creation of a log}: To be able to save in the dictionary the new words of the texts that are entered in the application, as well as their results to ease the debugging of the errors and the analysis of the results.
+\end{itemize}
+
+
+
+The main factor that has impeded these new implementations from being implemented was the lack of time. In the near future we would like to improve the application and turn it into a tool with the maximum possible functionality which could really help people who need it.
+

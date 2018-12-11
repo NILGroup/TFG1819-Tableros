@@ -1,0 +1,198 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 6
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{EmoTraductor}
+
+\begin{resumen}
+En este capítulo se explicará el proceso de diseño y desarrollo de la aplicación web para detectar las emociones contenidas en un texto.
+En la sección 6.1, se presenta el problema que tratamos de resolver con esta aplicación. En la sección 6.2, se presentará el proceso de diseño de la interfaz. Finalmente, en la sección 6.3, se detalla la implementación de la aplicación final.
+\end{resumen}
+
+%-------------------------------------------------------------------
+\section{Descripción del problema a resolver}
+%-------------------------------------------------------------------
+\label{cap6:sec:problema}
+
+Según la Confederación Asperger España\footnote{https://www.asperger.es}, una de las principales dificultades a las que se enfrentan las personas con Asperger es detectar emociones y sentimientos ajenos así como dificultad para expresar los suyos propios. Esto hace que en su día a día se encuentren en situaciones en las que la correcta identificación de emociones es fundamental para integrarse socialmente. Por ejemplo, a la hora de opinar en un blog es muy posible que se expresen de tal manera que no cumplan los convencionalismos sociales, es decir, si les enfada lo que se haya publicado pondrán un comentario con un tono de enfado bastante elevado; también se encontrarán problemas en otras situaciones aún más normales como puede ser contestar a un correo de un jefe o un profesor pudiendo malinterpretar el tono de dicho correo y contestar de una manera incorrecta. En estos casos sería muy útil poder contar con una herramienta capaz de mostrarles las emociones del texto que están leyendo o escribiendo. Con esta herramienta podrán asegurarse de si la emoción que han extraído de un texto es correcta o si la emoción que transmite un texto que han escrito coincide con la emoción que deseaban trasmitir.
+ 
+Según la Confederación Asperger España, una de las cualidades de las personas con síndrome de Asperger es que son más eficientes en trabajos técnicos, por lo que una aplicación web les resultará fácil y útil para su día a día, a la hora de vencer la dificultad que les supone el reconocimiento correcto de las emociones. Nuestra aplicación no solo debe dar información acerca de la emoción global del texto, sino que también debe dar pistas sobre cuales son los elementos del texto que influyen en dicha emoción global. Estas pistas serán vitales si el usuario encuentra que la emoción que transmite el texto no es la deseada, pues le ayudarán a saber que tiene que cambiar para conseguir transmitir la emoción deseada correctamente.
+%-------------------------------------------------------------------
+\section{Diseño de la interfaz}
+%-------------------------------------------------------------------
+\label{cap6:sec:problema}
+
+Para crear la interfaz de la aplicación web hicimos dos iteraciones de diseño. Una primera iteración competitiva entre las tres integrantes del grupo y una segunda iteración con expertos de la Asociación Asperger Madrid. En las siguientes subsecciones explicaremos en detalle cada una de estas iteraciones y el resultado final de nuestra interfaz.
+
+\subsection{Primera iteración: Iteración competitiva}
+
+Cada una de nosotras diseñó un prototipo distinto para la aplicación web de forma independiente. El objetivo era proponer diferentes ideas sin que las ideas de una influyesen en las demás; de esta manera habría más variedad de funcionalidades así como distintos diseños para la misma funcionalidad. Una vez que los tres prototipos estuvieron listos hicimos una puesta en común para analizar los resultados. A continuación se muestra el resultado del análisis de los tres prototipos indicando sus semejanzas y diferencias.
+
+En los tres prototipos realizados, la manera de introducir el texto y la pantalla principal eran bastante semejantes, tenían un cuadro de texto donde introducir el texto a interpretar. Como se puede ver en las figuras \ref{fig:inicial_gema}, \ref{fig:inicial_elena}, \ref{fig:inicial_paloma}, en dos de los prototipos, además, hay un botón para ejecutar el intérprete, de igual manera que se implementó en nuestra interfaz final.
+
+
+\begin{figure}[H]
+	\includegraphics[width=.9\textwidth]{Imagenes/Bitmap/Capitulo6/inicial_gema}
+	\caption{Pantalla inicial del prototipo de Gema}
+	\label{fig:inicial_gema}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=.9\textwidth]{Imagenes/Bitmap/Capitulo6/inicial_elena}
+	\caption{Pantalla inicial del prototipo de Elena}
+	\label{fig:inicial_elena}
+\end{figure}
+
+
+\begin{figure}[H]
+	\includegraphics[width=.9\textwidth]{Imagenes/Bitmap/Capitulo6/inicial_paloma}
+	\caption{Pantalla inicial del prototipo de Paloma}
+	\label{fig:inicial_paloma}
+\end{figure}
+
+
+En cuanto a la forma de representar las emociones en la pantalla inicial había tres formas diferentes de hacerlo:
+\begin{itemize}
+		\item Mediante emoticonos que representaban las diferentes emociones debajo del cuadro de texto tal y como se ve en la figura \ref{fig:inicial_gema}.
+		\item Mediante emoticonos que representaban las diferentes emociones al lado derecho del texto como se puede ver en la figura \ref{fig:inicial_elena}.
+		\item No mostrando inicialmente ningún emoticono como se puede ver en la figura \ref{fig:inicial_paloma}.En este prototipo aparecían solo cuando había algún resultado que mostrar.
+\end{itemize}
+
+%\figura{Bitmap/Capitulo6/inicial_gema}{width=.9\textwidth}{fig:inicial_gema}{Pantalla inicial del prototipo de Gema}
+%\figura{Bitmap/Capitulo6/inicial_elena}{width=.9\textwidth}{fig:inicial_elena}{Pantalla inicial del prototipo de Elena}
+%\figura{Bitmap/Capitulo6/inicial_paloma}{width=.9\textwidth}{fig:inicial_paloma}{Pantalla inicial del prototipo de Paloma}
+
+Respecto a la manera de mostrar los resultados emocionales del texto, los tres prototipos coinciden en representar cada emoción básica con un emoticono y con un valor, en porcentaje, representando la intensidad de la emoción. Aún así los modelos difieren en algunos aspectos, como puede ser el marcado de las emociones presentes en el texto y la emoción mayoritaria.
+Tal y como se puede ver en la figura \ref{fig:analisis_paloma}, resaltaba los emoticonos correspondientes a las emociones que están presentes en el texto. Para conocer la emoción mayoritaria había que pulsar un botón situado en la parte superior de la pantalla, la opción de mostrar únicamente la emoción mayoritaria. 
+Por otra parte, los prototipos de Elena y Gema, tal y como se puede ver en las figuras \ref{fig:analisis_elena} y \ref{fig:analisis_gema}, modificaban el valor (en porcentaje) de la intensidad de la emoción para indicar que emociones se encontraban en el texto y mostraban una frase para indicar cuál era la emoción mayoritaria. También podías seleccionar las distintas emociones pulsando sobre el emoticono y marcaban visualmente las palabras del texto que transmitían la emoción que había sido seleccionada.
+
+
+\begin{figure}[H]
+	\includegraphics[width=.9\textwidth]{Imagenes/Bitmap/Capitulo6/analisis_paloma}
+	\caption{Resultado del análisis emocional del prototipo de Paloma}
+	\label{fig:inicial_gema}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=.9\textwidth]{Imagenes/Bitmap/Capitulo6/analisis_elena}
+	\caption{Resultado del análisis emocional del prototipo de Elena}
+	\label{fig:inicial_elena}
+\end{figure}
+
+
+\begin{figure}[H]
+	\includegraphics[width=.9\textwidth]{Imagenes/Bitmap/Capitulo6/analisis_gema}
+	\caption{Resultado del análisis emocional del prototipo de Gema}
+	\label{fig:inicial_gema}
+\end{figure}
+
+%\figura{Bitmap/Capitulo6/analisis_paloma}{width=.9\textwidth}{fig:analisis_paloma}{Resultado del análisis emocional del prototipo de Paloma}
+%\figura{Bitmap/Capitulo6/analisis_elena}{width=.9\textwidth}{fig:analisis_elena}{Resultado del análisis emocional del prototipo de Elena}
+%\figura{Bitmap/Capitulo6/analisis_gema}{width=.9\textwidth}{fig:analisis_gema}{Resultado del análisis emocional del prototipo de Gema}
+
+Los tres prototipos se pueden encontrar en nuestro repositorio de GitHub, en la rama correspondiente.\footnote{https://github.com/NILGroup/TFG-1718-Emociones/tree/Prototipos}
+\subsection{Segunda iteración: Evaluación con expertos}
+
+Tras comparar los tres prototipos se construyó uno común para que fuera analizado por expertos. La principal novedad de este prototipo respecto a los anteriores es que hemos añadido un menú de configuración para modificar la visualización de los resultados, del que hablaremos más adelante. 
+
+\begin{figure}[H]
+	\includegraphics[width=.9\textwidth]{Imagenes/Bitmap/Capitulo6/inicial1_final}
+	\caption{Pantalla inicial por defecto del segundo prototipo}
+	\label{fig:inicial1_final}
+\end{figure}
+
+La pantalla principal por defecto, tal y como puede verse en la figura \ref{fig:inicial1_final}, contiene un cuadro de texto para introducir el texto a evaluar y las emociones básicas representadas por emoticonos situadas debajo de este cuadro. Al evaluar los tres prototipos anteriores barajamos diferentes posibilidades de mostrar los resultados emocionales por lo que añadimos un menú de configuración para que los expertos pudieran orientarnos en cuál podría ser la manera más útil o intuitiva. Para acceder a esta configuración, hemos añadido en la pantalla principal, que podemos ver en la figura \ref{fig:inicial1_final}, un botón en la esquina superior derecha. En este menú de configuración añadido que podemos ver en la figura \ref{fig:configuracion} se muestran las diferentes opciones de visualización de los resultados; estas son:
+\begin{itemize}
+	\item Ver los resultados emocionales a la derecha, tal y como se puede ver en la figura \ref{fig:inicial2_final}.
+	\item Ver los resultados emocionales debajo del cuadro de texto donde se introduce el texto a evaluar como se puede ver en la pantalla por defecto de la figura \ref{fig:inicial1_final}.
+	\item Los resultados muestran únicamente las emociones presentes en el texto \ref{fig:analisis4_final}.
+	\item Mostrar únicamente la emoción mayoritaria del texto como se puede ver en la figura \ref{fig:analisis5_final}.
+	\item Mostrar la intensidad de las emociones con porcentajes al lado del emoticono de la emoción correspondiente como se puede ver en la pantalla por defecto, en la figura \ref{fig:inicial1_final}.
+	\item Mostrar información sobre las palabras emocionales indicando su emoción y grado como se puede ver en la figura \ref{fig:alegre_final}.
+	\item Mostrar los resultados con un gráfico como se puede ver en la figura \ref{fig:analisis3_final}.
+\end{itemize}
+Las diferentes opciones de visualización pueden combinarse para generar una interfaz personalizada para el usuario final.
+
+%\figura{Bitmap/Capitulo6/inicial1_final}{width=.9\textwidth}{fig:inicial1_final}{Pantalla inicial por defecto del segundo prototipo}
+\figura{Bitmap/Capitulo6/configuracion}{width=.9\textwidth}{fig:configuracion}{Menú de configuración del prototipo de la 2ª iteración}
+\figura{Bitmap/Capitulo6/inicial2_final}{width=.9\textwidth}{fig:inicial2_final}{Pantalla inicial personalizada del segundo prototipo}
+\figura{Bitmap/Capitulo6/analisis1_final}{width=.9\textwidth}{fig:analisis1_final}{Pantalla de análisis con los porcentajes abajo}
+\figura{Bitmap/Capitulo6/analisis2_final}{width=.9\textwidth}{fig:analisis2_final}{Pantalla de análisis con los porcentajes derecha y palabras marcadas}
+\figura{Bitmap/Capitulo6/analisis3_final}{width=.9\textwidth}{fig:analisis3_final}{Pantalla de análisis con gráfico}
+\figura{Bitmap/Capitulo6/analisis4_final}{width=.9\textwidth}{fig:analisis4_final}{Pantalla de análisis mostrando las emociones que aparecen}
+\figura{Bitmap/Capitulo6/analisis5_final}{width=.9\textwidth}{fig:analisis5_final}{Pantalla de análisis mostrando sólo la mayoritaria}
+\figura{Bitmap/Capitulo6/alegre_final}{width=.9\textwidth}{fig:alegre_final}{Información sobre la palabra contenta}
+
+El prototipo final de esta segunda iteración puede consultarse en en nuestro repositorio de GitHub, junto a los a prototipos iniciales.\footnote{https://github.com/NILGroup/TFG-1718-Emociones/tree/Prototipos}
+
+Una vez creado el prototipo se lo presentamos en una reunión a los expertos de Asperger Madrid.
+La reunión tuvo lugar el 22 de Marzo de 2018 en la Asociación Asperger Madrid. Acudimos las tres integrantes del grupo con nuestras directoras.
+
+Una vez allí, cuatro expertos que trabajan en la asociación probaron el prototipo y nos dieron su opinión como expertos. Las conclusiones principales que extrajimos de esta evaluación fueron:
+
+\begin{itemize}
+		\item Los porcentajes pueden despistar a los usuarios potenciales de la aplicación. Sería mucho mejor mostrarlo de manera visual, con una barra dividida por emociones, cada emoción con un color y repartir esta barra proporcionalmente entre las emociones según los resultados obtenidos del texto.
+		\item Es buena idea mostrar las emociones representadas con emoticonos pero nos recomendaron usar los que proporciona ARASAAC, ya que están más familiarizados con ellos que con los que habíamos usado en el prototipo.
+		\item El texto ``neutral" para identificar la ausencia de emociones puede ser ambiguo, nos recomendaron poner un texto más claro, como por ejemplo: ``Este texto no tiene emociones" o cambiar la palabra ``neutral" por ``tranquilo".
+		\item Respecto a la posición donde colocar el resultado emocional, nos explicaron que para ellos era indiferente y que estéticamente les gustaba más que apareciera el resultado debajo del texto. Nos aconsejaron dejar fijo el lugar y no dar opción a configurarlo ya que pensaban que no iba a aportar nigún beneficio.
+		\item Los expertos nos indicaron que sería muy útil permitir cambiar el color asociado a cada emoción ya que las personas con Asperger tienen mayor probabilidad de tener sinestesia\footnote{Condición por la que se experimenta una mezcla de los sentidos. Por ejemplo, se ven colores cuando se escuchan sonidos o se sienten emociones}. Los expertos tamibén indicaron que sería muy útil poder cambiar las imágenes asociadas a las emociones por las que los usuarios finales eligiesen y que les ayudasen a identificar mejor las emociones. 
+\end{itemize}
+\subsection{Tercera iteración: Prototipo final}
+Teniendo en cuenta las conclusiones obtenidas en la evaluación con los expertos creamos el prototipo final sobre el que realizar la interfaz de la aplicación. 
+
+La pantalla principal por defecto será muy similar a la propuesta en nuestro segundo prototipo, esta pantalla principal se puede ver en la figura \ref{fig:boceto_inifinal}, mostrando la información emocional por debajo del cuadro de texto. Para representar las emociones se mostrarán los pictogramas de ARASAAC correspondientes a cada una de ellas. A cada emoción le corresponderá, además, un color. Los colores por defecto son los utilizados en la película ``Del revés": amarillo para la alegría, azul para la tristeza, rojo para el enfado, morado para el miedo y verde para asco. El usuario podrá cambiar los colores si los que hemos elegido no le resultan claros. También podrá cambiar los pictogramas asociados a cada emoción por fotografías de personas o los emoticonos de WhatsApp. 
+
+\figura{Bitmap/Capitulo6/boceto}{width=.9\textwidth}{fig:boceto_inifinal}{Pantalla inicial de la aplicación web}
+
+Las emociones presentes en el texto estarán representadas en una barra repartida de forma proporcional a la intensidad de la emoción en el texto tal y como se puede ver en la figura \ref{fig:barraEmocional}
+
+\figura{Bitmap/Capitulo6/barraEmocional}{width=.9\textwidth}{fig:barraEmocional}{Pantalla con resultado del análisis en la barra emocional de la aplicación web}
+
+Con toda esta nueva información y la base que ya teníamos procedimos a comenzar con el desarrollo de la aplicación web.
+
+\section{Implementación de la aplicación final}
+
+El primer paso para comenzar a dar forma a nuestra aplicación web consistió en desplegar los servicios web en el servidor que nos proporcionó la universidad. Desplegamos la aplicación desarrollada en Django en el Apache del servidor usando mod\_wsgi, un módulo de Apache que le permite hospedar aplicaciones web desarrolladas en Python. 
+
+Comenzamos instalando Apache y el módulo en el servidor:
+
+\begin{lstlisting}[style=DOS]
+tfgvr1718@sesat:\~\$ sudo apt-get install apache2 libapache2-mod-wsgi
+\end{lstlisting}
+
+Una vez que ambos estuvieron instalados, habilitamos el módulo y reiniciamos Apache.
+
+\begin{lstlisting}[style=DOS]
+tfgvr1718@sesat:\~\$ sudo a2enmod wsgi
+tfgvr1718@sesat:/etc/apache2\$ sudo service apache2 restart
+\end{lstlisting}
+
+Para que nuestra aplicación quedara alojada en Apache hubo que crear un virtualhost para ésta (un dominio que apunte al directorio donde está nuestro proyecto).
+
+\figura{Bitmap/Capitulo6/conf}{width=.8\textwidth}{fig:conf}{Contenido del archivo .conf}
+
+Por último, activamos esta configuración y volvimos a reiniciar Apache.
+
+\begin{lstlisting}[style=DOS]
+tfgvr1718@sesat:/etc/apache2\$ sudo a2ensite djangoapp
+tfgvr1718@sesat:/etc/apache2\$ sudo service apache2 restart
+\end{lstlisting}
+
+
+Una vez concluido el despliegue de los servicios en el servidor y las iteraciones de diseño de la interfaz, comenzamos a desarrollar la aplicación web para la traducción emocional usando HTML, CSS, Ajax y JavaScript.
+
+HTML es un lenguaje de marcado que nos permite el desarrollo de la interfaz de nuestra aplicación web haciendo uso de archivos .css, en los cuales especificamos el formato de la misma (colores, tamaños...). Usamos Javascript y Ajax para realizar las peticiones al servidor y tratar los datos que nos devuelve.
+
+La interfaz se desarrolló siguiendo el aspecto del prototipo final que se puede consultar en el Apéndice C.
+
+El estilo de diseño seguido en nuestra interfaz es el diseño plano: es una interfaz simple, con formas limpias y funcionales. Usamos las figuras geométricas básicas para que los objetos parezcan simples visualmente.
+
+Nuestra interfaz web se apoya principalmente en tres principios de diseño:
+Principio de proximidad: si dos elementos están juntos están relacionados. En nuestra interfaz, existen dos áreas grandes juntas (una donde se escribe y otra donde se muestra el resultado), al estar juntas entendemos que tienen relación y una vez pulsado el botón de traducir entenderemos cual es la relación. También empleamos este principio con la ayuda que aparece debajo del cuadro donde se va a escribir, al estar situados juntos, el usuario entenderá rápidamente que la ayuda es con respecto al cuadro de texto. Seguir este principio, nos parecía importante ya que facilita el aprendizaje.
+
+Principo de consistencia externa: consiste en mantener las expresiones habituales dentro de un sistema como clicks, pulsaciones, menús, atajos de teclado, elementos visuales o procedimientos. En nuestra interfaz, se pueden utilizar los atajos de teclado copiar, pegar o seleccionar. También tiene una consistencia con Google, ya que creemos que el traductor de Google es una aplicación que se utiliza mucho y con gran facilidad; si nuestra aplicación se asemeja en algunos aspectos ayudará a que el usuario sea capaz de entender la aplicación más rápido.
+
+Principio de libertad y control del usuario: El usuario debe sentir el control sobre la aplicación, haciendo que se sienta más cómodo y capaz. Nos apoyamos en este principio al crear la personalización de la interfaz de la web, haciéndoles entender a los usuarios que cada uno es capaz de controlar la aplicación y amoldarla a sus gustos.
+

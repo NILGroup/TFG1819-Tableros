@@ -1,0 +1,91 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 1
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{Introducción}
+
+\begin{resumen}
+	En este capítulo se va a realizar una introducción al trabajo que vamos a presentar.
+	En primer lugar, en la sección 1.1 se explicará en qué consiste el trabajo. A continuación, en la sección 1.2 se expondrán las principales dificultades a las que nos hemos enfrentado y las decisiones que se han tomado para afrontarlas. Por último, en la sección 1.3 se presentará la estructura del trabajo.
+
+\end{resumen}
+
+%------------------------------------------------------------------
+\section{Motivación}
+%-------------------------------------------------------------------
+\label{cap1:sec:motivacion}
+
+El tabajo se centra en la detección automática del contenido emocional de un texto, una parte de la computación afectiva que dado un un texto permite identificar el grado de carga afectiva que contiene. Esto nos va a ayudar a evitar ambigüedades emocionales a la hora de interpretar texto facilitando su lectura a personas con algún déficit en la percepción de emociones, como aquellas con Trastornos del Espectro Autista.
+	
+%------------------------------------------------------------------
+\section{Objetivos}
+%-------------------------------------------------------------------
+\label{cap1:sec:objetivos}
+
+El objetivo principal es implementar una serie de servicios web que permitan analizar emocionalmente un texto, identificando las emociones básicas que contiene y su intensidad. Estos servicios permitirán hacer más explicito el significado emocional de una palabra, una frase o un texto facilitando su interpretación. 
+
+Una vez desarrollados los servicios web los utilizaremos para llevar a cabo una API que los contenga y una aplicación web, lo que facilitará el uso de nuestro trabajo a los usuarios.
+
+%------------------------------------------------------------------
+\section{Estructura de la memoria}
+%-------------------------------------------------------------------
+\label{cap1:sec:estructura}
+
+	La memoria de este trabajo contendrá un total de 11 capítulos, incluído este introductorio. A continuación se detallará el contenido de cada uno de los capítulos.
+	
+	
+	\begin{itemize}
+		\item Capítulo 2: Estado del arte
+		
+		En este capítulo se presentarán los aspectos más importantes de la computación afectiva. Además se introducirán los servicios web, la metodología scrum y la integración continua; tecnología y metodologías que se van a utilizar a lo largo del trabajo.
+		
+		\item Capítulo 3: Herramientas empleadas
+		
+		En este capítulo se describirán las herramientas que utilizaremos a lo largo del trabajo: las herramientas básicas como el repositorio GitHub, el diccionario emocional con el que haremos el análisis, la herramienta que nos permitirá desarrollar los servicios web (Django), Trello que nos ayudará a seguir la metodología scrum, las herramientas que utilizaremos para realizar las pruebas y la integración continua (Doctest y Jenkins) y las herramientas que usaremos para la lematización de las palabras y su filtrado (SpaCy y PyStemmer).
+		
+		\item Capítulo 4: Análisis del Contenido Afectivo de un Texto
+		
+		En este capítulo se explica cada uno de los servicios web desarrollados durante el trabajo, dedicados tanto al análisis de palabras como al de frases o textos.
+		
+		\item Capítulo 5: EmoTraductor
+		
+		Este capítulo detalla la aplicación web que hemos desarrollado haciendo uso de los servicios web así como el proceso de diseño de su interfaz y su desarrollo.
+		
+		\item Capítulo 6: Evaluación
+		
+		En este capítulo aparecen los resultados obtenidos tras las evaluaciones que realizamos de la aplicación: una evaluación general del método y dos evaluaciones de la aplicación con usuarios finales, una preliminar y otra final.
+		
+		\item Capítulo 7: Así se hizo...
+		
+		En este capítulo se comentan cada uno de los sprints llevados a cabo a lo largo del desarrollo del proyecto.
+		
+		\item Capítulo 8: Conocimientos Aplicados
+		
+		En este capítulo se explica la manera en la que se han aplicado los conocimientos que hemos adquirido a lo largo de todo el grado, comentando en qué nos han ayudado las diferentes asignaturas.
+		
+		\item Capítulo 9: Trabajo Individual
+		
+		Este capítulo contiene un resumen del trabajo realizado de forma individual por cada una de nosotras.
+		
+		\item Capítulo 10: Trabajo Futuro
+		
+		En este capítulo se presentan las ideas que han surgido a lo largo del desarrollo o la evaluación y que pueden ser llevadas a cabo en un futuro utilizando el trabajo que hemos realizado.
+		
+		\item Capítulo 11: Resumen
+		
+		Este capítulo es un resumen de la memoria del Trabajo de Fin de Grado.
+		
+	\end{itemize}
+	
+	
+	%Finalmente, en el capítulo 9 explicamos de qué manera hemos aplicado los conocimientos adquiridos a lo largo de la carrera.
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

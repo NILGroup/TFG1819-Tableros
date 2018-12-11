@@ -1,0 +1,62 @@
+
+%---------------------------------------------------------------------
+%
+%                          Capitulo 10
+%
+%---------------------------------------------------------------------
+
+\chapter{Trabajo futuro}
+
+\begin{resumen}
+En este capítulo se presenta el trabajo futuro (hasta el momento) que consideramos que podría implementarse si se continuara con el desarrollo de este proyecto. Junto con los objetivos que presentamos a continuación otros muchos que pudieran ir surgiendo.
+\end{resumen}
+
+\section{Trabajo futuro}
+%--------
+\label{cap10:sec:trabajo futuro}
+
+Dada la magnitud de nuestro proyecto, muchos de los objetivos inicialmente propuestos no pudieron desarrollarse, así como muchos otros que fueron surgiendo a lo largo del desarrollo del mismo.Por ello, con el fin de suplir las carencias del proyecto y dotarlo de mayor funcionalidad para que la aplicación sea más completa, consideramos que podemos dejar como trabajo fuero la implementación de estos objetivos que no llegamos a cubrir. \\
+
+
+A continuación detallamos algunos de los objetivos que quedarían para trabajo futuro:\\
+
+
+
+- \textbf{Añadir cambio de imágenes asociadas a las emociones}: al igual que nuestra aplicación permite el cambio de colores (diferente al que está seleccionado por defecto, sugeridos por la Asociación Asperger de Madrid) para las distintas emociones, se implementaría la posibilidad de realizar el cambio de imagen. Para ello, deberíamos crear una sesión por cada usuario que utilizara nuestra aplicación con el fin de que las imágenes que seleccionase quedaran guardadas en su ordenador.
+
+
+
+- \textbf{Implementación de detección automática de colores oscuros para las emociones}: tras la evaluación preliminar con usuarios, uno de ellos observó que, si seleccionaba un color oscuro para cualquiera de las emociones, las imágenes asociadas no se veían. Por tanto, consideramos un buen trabajo futuro, el hecho de que si seleccionamos alguno de estos colores, la imagen invierta su color de manera automática y de esta forma sea posible visualizarlas. Por ejemplo: actualmente nuestras imágenes son negras, si seleccionamos el color azul oscuro, la imagen no se aprecia, esto se solucionaría poniendo la imagen de color blanco de manera automática.
+
+
+
+- \textbf{Añadir reconocimiento por voz}: se intentó realizar la implementación del reconocimiento por voz haciendo uso de la API de Google, Speech Recognition (la cual convierte el texto que escucha por el micrófono en texto escrito), pero como las peticiones que nosotras realizamos al servidor son HTTP y el explorador (Chrome) las reconoce como no seguras, no se permite el acceso al micrófono y tuvimos que abortar este objetivo. De ahí, surge este objetivo. No obstante, otra solución a este problema sería implementar nuestra propia API de reconocimiento de voz.
+
+
+
+- \textbf{Cambiar tipo de peticiones al servidor}: las peticiones que actualmente se realizan al servidor son HTTP, lo que hace que se restrinja en cierta medida hacer uso de APIs externas (como por ejemplo la API de reconocimiento por voz), es por eso y por temas de seguridad por lo que quedaría justificado cambiar los tipos de peticiones a HTTPs.
+
+
+
+- \textbf{Calcular de diferente manera los valores de los distintos tipos de frases}: el proyecto ha sido desarrollado para reconocer frases exclamativas, interrogativas y afirmativa. Coomo trabajo futuro, debería implementarse el reconocimiento de frases negativas, subordinada, adjetivas... modificando el algoritmo que calcula el peso de las diferentes frases, ya que actualmente todas ellas tienen el mismo peso. 
+
+
+- \textbf{Añadir posibilidad de insertar palabras que no aparecen en nuestro diccionario}: tras la evaluación preliminar con usuarios, se observó la necesidad de incluir en el diccionario términos más coloquiales. Por ello, sería útil la implementación de la inserción de nuevas palabras. Una posible solución sería crear diferentes roles, con el fin de darle solo la oportunidad de inserción a aquel usuario que tuviera el rol de "tutor". Otra solución podría ser la creación de un buzón de sugerencia o similar, con el fin de que cuando una palabra fuera sugerida por un mínimo de usuarios con un grado aproximado para cada emoción ésta se insertara en el diccionario.
+
+
+-\textbf{ Desarrollo de un algoritmo para descubrir el contexto}:  un avance en el progreso de la aplicación sería desarrollar un algoritmo que descubriera el contexto del texto. Una solución podría ser la \textbf{inserción de frases hechas y expresiones} en el diccionario, lo cual también sería un objetivo futuro.
+
+
+
+- \textbf{Implementación de una aplicación móvil}: actualmente nuestro proyecto es una aplicación web. Cada vez son más los usuarios que disponen de un dispositivo móvil, por ello también sería útil el desarrollo de una aplicación móvil.
+
+
+- \textbf{Posibilidad de selección del idioma}: el idioma disponible en nuestro traductor es el español. A lo largo del desarrollo del proyecto surgió la idea de hacerlo multilenguaje. Para el desarrollo de este objetivo únicamente se necesitaría la versión del diccionario en los diferentes idiomas que fueran a estar disponibles.
+
+
+- Por último, también podría ser interesante la \textbf{creación de un log} con el fin de guardar los textos que se introducen en el diccionario, de esta forma sería más fácil el desarrollo de todos los objetivos mencionados anteriormente.
+
+
+El principal factor que ha impedido realizar estas nuevas implementaciones ha sido el factor tiempo.  En un futuro próximo nos gustaría realizar el desarrollo de la aplicación de forma completa para que ésta sea una herramienta con la máxima funcionalidad posible y proporcione una ayuda precisa para todos los usuarios.
+
+

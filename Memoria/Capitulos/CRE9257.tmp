@@ -1,0 +1,72 @@
+
+%---------------------------------------------------------------------
+%
+%                          Capitulo 9
+%
+%---------------------------------------------------------------------
+
+\chapter{Trabajo Individual}
+
+\begin{resumen}
+En este capítulo se presentará el trabajo individual realizado por cada una de nosotras durante el proyecto.
+\end{resumen}
+
+% Están provisionalmente por orden alfabético, cuando hablemos de qué poner los podemos cambiar de orden para que cuadre mejor.
+El trabajo ha sido desarrollado siguiendo la metodología SCRUM, con el fin de poder trabajar colaborativamente, en equipo y obtener los mejores resultados posibles, lo que justifica que todas hayamos trabajado en el desarrollo de todas y cada una de las tareas existentes en el proyecto.
+
+%--------
+\section{Gema}
+%--------
+\label{cap9:sec:gema}
+
+Lo primero que hicimos al comenzar el Trabajo de Fin de Grado fue investigar el estado del arte y empezar a documentarlo en la memoria. Yo me encargué de investigar los distintos diccionarios utilizados para marcar textos y el funcionamiento de los servicios web, centrándome en los REST ya que eran los que íbamos a usar. Además de añadir el primer capítulo a la memoria tuvimos que desarrollar los primeros servicios web (obtener la lista de palabras y obtener una palabra). Una vez que Paloma hizo el modelo y teníamos los datos en el servidor programé ambas vistas y lo documenté en la memoria. 
+
+También desarrolle el servicio que nos proporcionaba la emoción consensuada de una palabra y lo añadí a la memoria. Cuando acabé corregí los capítulos de investigación que había añadido a la memoria tras la primera corrección de las profesoras y cuando mi compañera Paloma terminó con el servicio de la emoción mayoritaria diseñé el fichero de pruebas que nos permitía ver que la salida era la esperada. Estas pruebas nos permitieron dejar por cerrada la parte de las palabras y empezar a aplicar los servicios desarrollados al análisis emocional de una frase. Mis compañeras desarrollaron el servicio web que nos permitía obtener los valores de cada emoción para la frase mientras yo diseñaba las pruebas que íbamos a utilizar para comprobar que funcionaba correctamente. Una vez terminadas las pruebas comencé a desarrollar el segundo servicio, el que nos permitía obtener la emoción mayoritaria de una frase y lo documenté en la memoria.
+
+Llegados a este punto se planeó una reunión con la Asociación Asperger Madrid en la que íbamos a enseñar un prototipo de la aplicación web que pensábamos desarrollar. Antes había que acordar cómo iba a ser este prototipo así que cada una de nosotras diseñó su propio prototipo para luego compararlos. Tras la reunión de equipo en la que los comparamos y acordamos cómo iba a ser el prototipo final me encargué de diseñarlo antes de llevarlo a la reunión. Asistí a la reunión junto a mis compañeras y tomé notas que más tarde usaríamos para desarrollar la interfaz.
+
+Antes de comenzar con el desarrollo de la aplicación web teníamos que dejar acabados todos los servicios web. Mis compañeras se centraron en el anális emocional de un texto, mientras, yo me dediqué a corregir la memoria tras una nueva corrección de las profesoras y añadí los servicios web que utilizamos para el anális del texto cuando estuvieron acabados.
+
+Teniendo todos los servicios web implementados y probados comenzamos con el desarrollo de la aplicación web. Lo primero que tuvimos que hacer fue desplegar el proyecto Django con el que estábamos trabajando en el servidor. Me encargué de ello, configurando el Apache del servidor. Tras esto las tres comenzamos el desarrollo de la interfaz, bastante en paralelo hasta que tuvimos que parar para realizar una serie de cambios tanto en el diccionario como en los servicios web. Estos cambios se debieron a que aparecieron diccionarios que daban mejores resultados que el que nosotras utilizábamos. Por ello, cogimos estos dos diccionarios y los juntamos. Creé el CSV que unía estos dos diccionarios y lo subí al servidor, actualizando así la base de datos. Implementados todos los cambios necesarios pudimos acabar la aplicación web.
+
+Finalmente, el día 22 de mayo del 2018, realizamos una evaluación con usuarios finales con los miembros de la Asociación Asperger Madrid. Utilizamos un formulario que Elena y yo elaboramos para poder recoger los datos de la evaluación y juntas interpretamos los resultados y los añadimos a la memoria.
+
+%--------
+\section{Paloma}
+%--------
+\label{cap9:sec:paloma}
+
+Todas comenzamos redactando el capítulo de la memoria relativo al estado del arte investigando una serie de puntos que nos marcaron las profesoras y nos repartimos entre las tres. Mi aportación fue investigar el funcionamiento del diccionario con el que íbamos a trabajar y la metodología que íbamos a utilizar (Scrum). Para empezar a desarrollar los servicios web necesitábamos un modelo que utilizase la base de datos de Django para representar las palabras por lo que yo me encargué de desarrollar este modelo y documentarlo en la memoria. 
+
+Cuando Elena terminó el servicio web para obtener los grados de certeza de cada emoción de una palabra, al igual que hizo ella para probar los servicios que hizo Gema, hice un fichero para comprobar que el comportamiento era el esperado. Cuando acabé con las pruebas me encargué del desarrollo del último servicio web, el que nos permitía obtener la emoción mayoritaria de una palabra y, una vez terminado lo añadí a la memoria tras corregir los capítulos que había añadido anteriormente gracias a las correcciones de las profesoras.
+
+Terminados los tres servicios básicos para las palabras comenzamos a desarrollar los de las frases. Yo me encargué del desarrollo del primero de ellos, el que nos permitía obtener los grados de certeza de cada emoción para la frase, utilizando el programa desarrollado por mi compañera Elena para la lematización y filtrado de las palabras. Cuando acabé con el desarrollo de este servicio y su documentación empecé a diseñar las pruebas que íbamos a aplicar sobre el servicio que nos proporcionaba la emoción mayoritaria de la frase.
+
+En la reunión de equipo para planificar el quinto sprint las profesoras nos comunicaron que íbamos a tener una reunión con la Asociación Asperger Madrid y que cada una de nosotras tenía que diseñar un prototipo de la interfaz de la aplicación web que desarrollaríamos más adelante. En la siguiente reunión de equipo comparamos los tres prototipos y llegamos a uno común, bastante similar a los que teníamos. El día 22 de marzo del 2018 tuvo lugar la reunión con la Asociación en la que presenté el prototipo ante los psicólogos mientras mis compañeras tomaban notas.
+
+Tras la reunión nos centramos en acabar con los servicios que aún faltaban por desarrollar, los que nos permitirían analizar emocionalmente un texto. Mientras Elena trabajaba en el desarrollo de este servicio busqué textos que pudiésemos usar como casos de prueba y realicé un script que nos permitiese automatizar las pruebas. Además, una vez acabado el primer servicio web para textos empecé el desarrollo del segundo, el que nos permitiría obtener la emoción mayoritaria. Acabado este servicio ya pudimos comenzar a trabajar en el desarrollo de la aplicación web.
+
+Durante esta parte las tres trabajamos en paralelo. Comenzamos creando la interfaz básica y conseguimos que la aplicación funcionase para palabras. Tras conseguir esto paramos el desarrollo de la aplicación ya que tuvimos que realizar algunos cambios sustanciales tanto en el diccionario que utilizaban los servicios web como en los servicios en sí mismos. Me dediqué a corregir la memoria y añadir los nuevos contenidos (casos de prueba, proceso de desarrollo de la aplicación web...) mientras mis compañeras adaptaban el diccionario y los servicios y, cuando acabaron, adapté la aplicación web y continuamos con el desarrollo hasta acabar la aplicación. Una vez acabada comencé a diseñar la API para favorecer la transferencia de resultados.
+
+Terminamos el proyecto con la evaluación de usuarios finales por parte de los miembros de la Asociación Asperger Madrid, realizada el 22 de mayo de 2018. Mis compañeras recogieron los datos de esta evaluación y los interpretaron mientras yo terminaba la API.
+
+%--------
+\section{Elena}
+%--------
+\label{cap9:sec:elena}
+
+Al igual que mis compañeras comencé el proyecto investigando una parte del estado del arte: la computación afectiva, en qué consistía y sus aplicaciones, y el modelo informático de integración continua. Para comenzar con la parte técnica lo primero que teníamos que hacer era conseguir tener los datos del diccionario en el servidor, yo me encargué de crear un fichero en Python que leyese el CSV que contenía las palabras del diccionario y las subiese a la base de datos de Django. Una vez que mi compañera Gema terminó los servicios web hice un fichero de pruebas para comparar la salida esperada con lo que devolvía el servidor. Además, documenté lo que había hecho en la memoria. 
+
+Cuando ya teníamos la estructura montada y funcionaban los servicios básicos teníamos que empezar a desarrollar los que íbamos a usar. El primero que hicimos fue el que nos permitía obtener los porcentajes de certeza para cada emoción, yo lo desarrollé y documenté en la memoria. Lo siguiente que hice fue realizar las pruebas sobre el servicio de la emoción consensuada y cuando estuvo acabado hice los cambios sugeridos por las profesoras en la memoria (corregir ciertas cosas de mi investigación y añadir un capítulo nuevo que iba a contener las herramientas utilizadas a lo largo del TFG).
+
+Cuando la parte de las palabras estuvo terminada y documentada comenzamos a trabajar en el anális emocional de una frase. Necesitábamos una herramienta que nos permitiese obtener los lemas de las palabras y filtrase las no-emocionales. Nos decidimos inicialmente por SpaCy y más tarde decidimos utilizar también PyStemmer. Investigué ambas herramientas y las añadí a la memoria. También diseñé un programa en Python que nos permitía lematizar las palabras y filtrarlas mediante esta herramienta.
+
+Terminada también la parte de las frases sólo quedaba el análisis emocional de un texto. Antes de eso nos reunimos con la asociación Asperger Madrid ya que necesitábamos la opinión de expertos para diseñar la interfaz de la aplicación web que iba a contener todos los servicios web. A la reunión había que llevar un prototipo para que, nos ayudasen a hacerlo lo más usable posible. Cada una de nosotras diseño su propio prototipo para luego juntar los tres en uno común, que fue el que enseñamos a los psicólogos de la Asociación. Durante la reunión, Gema y yo tomamos notas de lo que nos dijeron para luego aplicarlo a la interfaz. Además, añadí todo el proceso a la memoria.
+
+Una vez decidida la interfaz de la aplicación terminamos la parte de anális de textos. Comencé desarrollando un programa en Python que nos permitía dividir el texto en frases, diferenciando entre enunciativas, interrogativas o exclamativas para aplicarlo a un servicio web que nos permitía obtener el peso de cada emoción en el texto. 
+
+Pasadas todas las pruebas para todos los servicios empezamos a desarrollar la aplicación web. En esta etapa comenzamos a trabajar en paralelo, aportando todas al desarrollo de la interfaz y la integración. Trabajamos en ello hasta que tuvimos que pausar el desarrollo de la aplicación web para realizar unos cambios en el diccionario y los servicios web al cambiar el diccionario utilizado. Mi compañera Gema generó el nuevo diccionario y yo pude, a partir de ello, adaptar los servicios web que teníamos. Tras estos cambios, Paloma adaptó la interfaz a los nuevos servicios y pudimos continuar con el desarrollo de la aplicación web hasta acabarla.
+
+Tras acabar la aplicación web realizamos una evaluación de usuarios finales el día 22 de mayo del 2018. Esta evaluación consistió en una visita de varias personas de la Asociación Asperger Madrid a nuestra facultad para que puediésen probar la aplicación y completasen un formulario, diseñado por mí y por mi compañera Gema, que nos ayudase a analizar los resultados de la evaluación. Gema y yo nos encargamos de reunir e interpretar toda la información obtenida para documentar los resultados en la memoria.
+
+

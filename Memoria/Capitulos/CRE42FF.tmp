@@ -1,0 +1,101 @@
+
+%---------------------------------------------------------------------
+%
+%                          Capitulo 11
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{Conclusiones y Trabajo futuro}
+
+\begin{resumen}
+En este capítulo se presenta el trabajo futuro que consideramos que podría implementarse si se continuara con el desarrollo de este proyecto. Junto con los objetivos que presentamos a continuación otros muchos que pudieran ir surgiendo.
+\end{resumen}
+
+\section{Conclusiones}
+%--------
+\label{cap11:sec:conclusiones}
+
+\subsection{Motivación}
+%--------
+\label{cap11:sec:motivacion}
+
+En la actualidad, gracias a Internet, vivimos rodeados de información. Tenemos acceso fácil y rápido a toda la información que necesitamos a través de diversos canales: blogs, redes sociales, sitios web, foros... Aunque no busquemos la información, esta nos acaba llegando debido a la naturaleza de la red. Tener mucha información del entorno que nos rodea es una gran ventaja ya que nos permite adaptarnos a él pero conlleva un nuevo reto: lo complicado ya no es obtener la información sino ser capaces de interpretar toda la información que recibimos de incontables fuentes y quedarnos con lo que realmente nos resulta útil. Para ello realmente no contamos con ninguna herramienta, sólo podemos confiar en nuestra capacidad de análisis textual para comprender lo que dice un texto y cómo lo dice para así darle la importancia y el significado que debería tener para nosotros.
+
+Para una persona adulta con un buen conocimiento de su entorno puede resultar fácil llevar a cabo un proceso de análisis automático que le permita interpretar toda la información con la que se encuentra a lo largo de un día, pero, ¿qué pasa si alguien no tiene las capacidades necesarias para ello? Por ejemplo, la falta de empatía cognitiva que sufren las personas con Transtornos del Espectro Autista (TEA) puede llevarles a interpretar de forma errónea un texto ya que no entender el contexto o el tono de este puede alterar en gran medida su significado, sobre todo si se trata de un blog personal o un post en redes sociales. Estas dificultades a la hora de interpretar un texto generan confusiones y malentendidos impidiendo a la gente con esta discapacidad acceder a la información en igualdad de condiciones. Es necesario desarrollar herramientas que permitan la inclusión digital a estas personas. 
+
+\subsection{Objetivo}
+%--------
+\label{cap11:sec:objetivo}
+
+El objetivo principal de este trabajo es implementar una serie de servicios web que permitan detectar automáticamente el grado de carga afectiva que tiene un texto. Se medirá, especificamente, el grado de intensidad que presenta para las cinco categorías emocionales básicas con las que hemos decidido trabajar: tristeza, miedo, alegría, enfado y asco. Para ello contaremos con un diccionario emocional que contará con una serie de palabras acompañadas de su lexema y cinco valores del uno al cinco (uno para cada categoría emocional). Desarrollaremos servicios para analizar palabras, frases y textos haciendo explícito el contenido afectivo en cada caso: mostrando los grados emocionales y/o la emoción mayoritaria. Una vez desarrollados los servicios los integraremos en una API para hacerlos accesibles a todo aquel que los necesite. Además, crearemos una aplicación web para que puedan ser utilizados por cualquier usuario de manera sencilla. Esta web permitirá introducir texto y mostrará los resultados de forma gráfica, utilizando emoticonos y colores para hacer explicitas las categorías emocionales que contiene el texto introducido y marcando las palabras de este que consideramos emocionales porque se pueden encontrar en nuestro diccionario. 
+
+Este trabajo es una oportunidad para aplicar todos los conocimientos adquiridos durante la carrera a un proyecto grande y de impacto real. Vamos a seguir una metodología ágil que nos permita trabajar como un equipo multidisciplinar en el que todas podamos aprender lo máximo posible mientras desarrollamos una herramienta que ayude a cualquier persona que encuentre dificultades a la hora de interpretar el contenido emocional de un texto.
+
+\subsection{¿Qué hemos realizado?}
+%--------
+\label{cap11:sec:que hemos realizado}
+
+\subsection{Evaluación}
+%--------
+\label{cap11:sec:evaluacion}
+
+\subsection{¿Qué hemos conseguido?}
+%--------
+\label{cap11:sec:que hemos conseguido}
+
+\subsection{Conocimientos aplicados}
+%--------
+\label{cap11:sec:conocimientos aplicados}
+
+
+\subsection{Conocimientos adquiridos}
+%--------
+\label{cap11:sec:conocimientos adquiridos}
+
+\section{Trabajo futuro}
+%--------
+\label{cap11:sec:trabajo futuro}
+
+Dada la magnitud de nuestro proyecto, muchos de los objetivos inicialmente propuestos no pudieron desarrollarse, así como muchos otros que fueron surgiendo a lo largo del desarrollo del mismo.
+Por ello, con el fin de suplir las carencias del proyecto y dotarlo de mayor funcionalidad para que la aplicación sea más completa, consideramos que podemos dejar como trabajo futuro la implementación de estos objetivos que no llegamos a cubrir: \\
+
+
+
+- \textbf{Añadir cambio de imágenes asociadas a las emociones}: al igual que nuestra aplicación permite el cambio de los colores asociados a cada emoción, se implementaría la posibilidad de realizar el cambio de imagen que también llevan asociadas las emociones. Para ello, deberíamos crear una sesión por cada usuario que utilizara nuestra aplicación con el fin de que las imágenes que seleccionase quedaran guardadas en su ordenador. \\
+
+
+- \textbf{Implementación de detección automática de colores oscuros para las emociones}: tras la evaluación preliminar con usuarios, uno de ellos observó que, si seleccionaba un color oscuro para cualquiera de las emociones, las imágenes asociadas no se veían. Por tanto, consideramos un buen trabajo futuro, el hecho de que si seleccionamos un color oscuro, la imagen invierta su color de manera automática y de esta forma sea posible visualizarlas.\\ 
+
+
+
+- \textbf{Añadir reconocimiento por voz}: se intentó realizar la implementación del reconocimiento por voz haciendo uso de la API de Google, Speech Recognition (la cual convierte el texto que escucha por el micrófono en texto escrito), pero como las peticiones que nosotras realizamos al servidor son HTTP y el explorador (Chrome) las reconoce como no seguras, no se permite el acceso al micrófono y tuvimos que abortar este objetivo. De ahí, surge este objetivo y dejarlo como trabajo futuro. \\
+
+
+
+- \textbf{Cambiar tipo de peticiones al servidor}: las peticiones que actualmente se realizan al servidor son HTTP, lo que hace que se restrinja en cierta medida hacer uso de APIs externas (como por ejemplo la API de reconocimiento por voz), es por eso y por temas de seguridad por lo que quedaría justificado cambiar los tipos de peticiones a HTTPs.\\
+
+
+
+- \textbf{Calcular de diferente manera los valores de los distintos tipos de frases}: el proyecto ha sido desarrollado para reconocer frases exclamativas, interrogativas y afirmativa. Como trabajo futuro, debería implementarse el reconocimiento de frases negativas, subordinadas, adjetivas... \\
+
+
+- \textbf{Añadir posibilidad de insertar palabras que no aparecen en nuestro diccionario}: tras la evaluación preliminar con usuarios, se observó la necesidad de incluir en el diccionario términos más coloquiales. Por ello, sería útil la implementación de la inserción de nuevas palabras en nuestro diccionario. Una posible solución sería crear diferentes roles, con el fin de darle solo la oportunidad de inserción a aquel usuario que tuviera el rol de "tutor". Otra solución podría ser la creación de un buzón de sugerencia o similar, con el fin de que cuando una palabra fuera sugerida por un mínimo de usuarios con un grado aproximado para cada emoción ésta se insertara en el diccionario.\\
+
+
+-\textbf{ Inserción de frases hechas y expresiones en el diccionario}:  un avance en el progreso de la aplicación sería la inserción en el diccionario de frases hechas y expresiones, con el fin de que el traductor fuera capaz de interpretar parte de la complejidad del castellano.\\
+
+
+
+- \textbf{Implementación de una aplicación móvil}: actualmente nuestro proyecto es una aplicación web. Cada vez son más los usuarios que disponen de un dispositivo móvil, por ello también sería útil el desarrollo de una aplicación móvil.\\
+
+- \textbf{Actualización de la interfaz para que el nivel de conformidad sea AAA} con el fin de que la web más accesible para personas con algún tipo de discapacidad.  \\
+
+
+
+
+- \textbf{Creación de un log} para poder guardar los textos que se introducen en el diccionario, así como sus resultados para facilitar la depuración de éstos.\\
+
+
+El principal factor que ha impedido realizar estas nuevas implementaciones ha sido el factor tiempo.  En un futuro próximo nos gustaría realizar el desarrollo de la aplicación de forma completa para que ésta sea una herramienta con la máxima funcionalidad posible y proporcione una ayuda precisa para todos los usuarios.\\
+
+

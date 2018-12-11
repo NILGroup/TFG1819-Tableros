@@ -1,0 +1,85 @@
+%---------------------------------------------------------------------
+%
+%                          Capitulo 7
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{Así se hizo...}
+\label{cap7:AsiSeHizo}
+
+\begin{resumen}
+Como ya se comentó en el capítulo 2, durante el proyecto se ha seguido la metodología Scrum. En este capitulo se presentan todos los sprints que han tenido lugar a lo largo del desarrollo.
+
+\end{resumen}
+
+\begin{itemize}
+	\item Sprint 1 (14/11/2017 - 28/11/2017)
+
+El primer sprint consistió mayoritariamente en investigar el estado del arte y las herramientas que vamos a utilizar y añadir la información obtenida a la memoria (Sección 2). También se comenzó a realizar el primer servicio web, obtener los grados de cada emoción para una palabra, y documentarlo (Sección 4.2.2).
+
+Al acabar el sprint quedaba por acabar el servicio y ejecutar las pruebas pertinentes sobre él.
+
+	\item Sprint 2 (28/11/2017 - 19/12/2017)
+El segundo sprint consistió en terminar el servicio web que se comenzó en el sprint 1 y desarrollar uno nuevo que nos permita obtener la emoción consensuada de una palabra (Sección 4.2.3).
+
+Al acabar el sprint quedaba realizar las pruebas sobre los servicios desarollados, tanto manuales como automáticas, y resolver un problema que teníamos al subir las palabras al servidor ya que no reconocía las tildes correctamente.
+
+
+	\item Sprint 3 (19/12/2017 - 09/01/2017)
+El tercer sprint consistió en realizar las pruebas sobre los servicios web que ya teníamos dejándolos así acabados, desarrollar uno nuevo que nos proporcione la emoción mayoritaria de una palabra (Sección 4.2.4) y documentar todos los servicios. Antes de añadir los servicios nuevos a la memoria tuvimos que corregirla tras una primera revisión.
+  
+Al acabar el sprint quedaba por acabar las pruebas sobre los tres servicios utilizando Jenkins para acabar así el pipeline de integración continua.
+
+
+	\item Sprint 4 (09/01/2018 - 21/02/2018)
+El cuarto sprint consistió en acabar las pruebas sobre todos los servicios realizados hasta el momento y desarrollar los servicios relacionados con el análisis emocional de una frase, obtener los grados emocionales y la emoción mayoritaria (Sección 4.3).
+
+Al acabar el sprint quedaba por desarrollar y probar el servicio que nos proporcionase la emoción mayoritaria de una frase.
+
+	\item Sprint 5 (21/02/2018 - 07/03/2018)
+
+El quinto sprint consistió en terminar el servicio sobre la emoción mayoritaria de una frase, corregir la memoria tras la segunda revisión y diseñar tres prototipos, uno cada una, de la interfaz de la aplicación web a desarrollar (Sección 5.1.1).
+
+Al acabar el sprint quedaba corregir la memoria.
+
+	\item Sprint 6 (07/03/2018 - 21/03/2018)
+
+El sexto sprint consistió en terminar de corregir la memoria, revisar la codificación de los servicios y hacer ciertas modificaciones (como añadir más peso a los verbos) para depurarlos, buscar una serie de textos para usarlos como casos de prueba y generar el prototipo final para presentarselo a la Asociasión Asperger Madrid (Sección 5.1.2).
+
+Al acabar el sprint quedaba por analizar los resultados obtenidos al interpretar los casos de prueba.
+
+	\item Sprint 7 (21/03/2018 - 25/04/2018)
+
+El séptimo sprint consistió en realizar el análisis de los casos de prueba y añadirlos a la memoria (Apéndice B), desarrollar la aplicación web y documentar todo (Sección 5.2) después de haber corregido la memoria tras la tercera revisión.
+
+Al acabar el sprint quedaba añadir unos últimos detalles a la interfaz, integrar la funcionalidad para las frases y los textos ya que sólo funcionaba para palabras y documentar todo.
+
+	\item Sprint 8 (25/04/2018 - 09/05/2018)
+
+En el octavo sprint tuvimos que modificar gran parte del proyecto ya que encontramos dos nuevos diccionarios emocionales que ofrecían mejores resultados que el que estábamos utilizando. Investigamos los nuevos diccionarios y los documentamos en las secciones 3.8 y 3.9. Tuvimos que adaptar los servicios y la aplicación web para cambiar la categoría emocional "`sorpresa"' con la que estábamos trabajando por "`asco"'. También cambia la forma de presentar los resultados, ya que el diccionario con el que trabajábamos mostraba el porcentaje de certeza que se tenía de que una palabra pertenece a una categoría emocional concreta mientras que los nuevos muestran el grado del 1 al 5 de pertenencia en la categoría. Una vez realizados estos cambios había que acabar la aplicación web y documentarla. 
+
+Al acabar el sprint habíamos conseguido realizar los cambios en el diccionario y los servicios web pero al centrarnos en eso no tuvimos tiempo para acabar de depurar la aplicación web. Por eso, tanto la parte de la web como la correción de la memoria quedaron pendientes para el sprint siguiente.
+
+	\item Sprint 9 (09/05/2018 - 16/05/2018)
+	
+	El noveno sprint consistió en dejar acabada la aplicación web, tanto su interfaz como la funcionalidad y documentar todo en la memoria (Sección 5.2). También comenzamos con el desarrollo de la API en una web en vez de incluirla a la memoria ya que pensamos que es más útil de esta manera.
+	
+	Al acabar el sprint la aplicación estaba prácticamente acabada, faltaba pulir algunos detalles meramente estéticos. También faltaba documentar todo y acabar la mitad de la API.
+	
+	\item Sprint 10 (16/05/2018 - 22/05/2018)
+
+El décimo sprint consistió en terminar todos los detalles de la aplicación web antes de la evaluación con usuarios finales que iba a tener lugar el día 22 de mayo además de preparar un formulario para esta. También había que documentar el desarrollo de la aplicación en la memoria.
+
+Al acabar el sprint todo estaba acabado y procedimos a realizar la evaluación.
+
+	\item Sprint Final (22/05/2018-08/06/2018)
+	
+El último sprint no estuvo estrictamente planificado, simplemente nos encargamos de acabar la memoria trabajando en paralelo.
+\end{itemize}
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

@@ -1,0 +1,293 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 5
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{Análisis del Contenido Afectivo de un Texto}
+
+\begin{resumen}
+En este capítulo se explicarán los servicios web que se han desarrollado con el fin de analizar el contenido afectivo de un texto.
+Primero, en la sección 5.1, se explica la base sobre la que trabajaran todos los servicios. En la sección 5.2, se presentarán los servicios orientados a identificar las emociones predominantes en una palabra concreta. Seguidamente, en la sección 5.3, se explica como el análisis de la palabra se aplica a determinar la emoción de una frase para después, en la sección 5.4, aplicar todo lo anterior al análisis de un texto. Por último, en la sección 5.5 se presentará la API Web que contiene todos los servicios web hemos desarrollado. 
+\end{resumen}
+
+%-------------------------------------------------------------------
+\section{Base para los servicios web}
+%-------------------------------------------------------------------
+\label{cap5:sec:base}
+
+El diccionario que vamos a utilizar, explicado en la sección 4.2, contiene las palabras que nos servirán como base para el análisis. Para ampliar el diccionario original añadiremos una columna donde se guardará el lema de las palabras. Para obtener este lema usaraemos la herramienta PyStemmer. A la hora de buscar una palabra en el diccionario lo haremos consultando esta nueva columna, el lema, lo que nos permite procesar no solo las 3.141 palabras del diccionario sino también sus derivadas. Por ejemplo, en el diccionario está incluida la palabra ``aborto", si en un texto aparece la palabra ``abortista", como tienen el mismo lema, diremos que ``abortista" tiene la misma carga emocional que ``aborto".
+
+Una vez que tenemos el diccionario definitivo necesitamos almacenarlo en algún servidor para poder acceder a él ya que los servicios web utilizarán la información que contiene para realizar el análisis. Django nos permite crear un servidor y nos facilita la creación de una base de datos para poder almacenar las palabras junto a su lema y sus grados. La base de datos será creada automáticamente por Django en SQLite, un sistema de gestión de bases de datos relacional que se integra en el programa en vez de ser un proceso independiente con el que el programa se comunique. Para que la base de datos pueda ser creada necesitamos definir un modelo y unas vistas.
+
+Los campos que tiene el modelo para cada palabra son los mismos que en el diccionario: la propia palabra, el lema de ésta y un valor del uno al cinco para cada una de las cinco categorías básicas. Los grados se guardarán en una lista de cinco enteros del 100 al 500, esto nos facilitará obtener todos los grados a la vez. Decidimos guardar los números como enteros porque las listas que proporciona Django para los modelos son de enteros, cada vez que se realice una consulta se dividirán los valores entre 100 obteniendo los valores reales. El modelo se define en un fichero Python y permite que cada una de las palabras que tenemos recogidas se encapsulen en este modelo para ser almacenadas en el servidor.
+
+Django utiliza un fichero Python para declarar una serie de ``vistas'' que servirán para realizar las consultas necesarias sobre la base de datos. Cada vez que necesitemos alguna información específica se creará una nueva vista en la que se especifique la información que necesitamos de la base de datos y el tratamiento que esta recibirá así como la salida que se producirá. Inicialmente disponemos de una vista general (Figura \ref{fig:vista_general}) que muestra la lista entera de palabras almacenadas con el valor de todos sus campos y una vista detalle (Figura \ref{fig:vista_det}) para cada una de ellas en la que sólo se muestran los campos de esa palabra en particular.
+
+
+\figura{Bitmap/Capitulo4/listaPalabrasServidor}{width=0.7\textwidth}{fig:vista_general}{Vista general de la lista de palabras del diccionario almacenado en Django.}
+\figura{Bitmap/Capitulo4/vista_detalle}{width=0.6\textwidth}{fig:vista_det}{Vista detalle de la palabra ``Alegre''.}
+
+Una vez que estos dos ficheros hayan sido creados, Django puede crear la base de datos vacía y alojarla en el servidor. Para rellenar la base de datos con las palabras de nuestro diccionario necesitamos desarrollar un programa en Python que se encargue de leer cada línea del CSV en el que este se encuentra y encapsular la información, utilizando el modelo, para guardarla en los distintos campos de la base de datos que ya está en el servidor. Una vez que todas las palabras estén subidas ya se pueden comenzar a desarrollar los servicios web.
+
+%-------------------------------------------------------------------
+\section{Análisis afectivo de una palabra}
+%-------------------------------------------------------------------
+\label{cap5:sec:palabra}
+
+La primera tarea a resolver fue obtener el contenido emocional de una palabra aislada, dicho contenido emocional puede ser de dos tipos: los grados emocionales y la emoción mayoritaria. A continuación se explica la información que nos aporta cada uno de estos tipos.
+
+\begin{itemize}
+	\item \textbf{Grados emocionales}: Una lista de cinco valores del uno al cinco, cada uno de los cuales se corresponde con una de las cinco categorías emocionales básicas con las que trabajamos: tristeza, miedo, alegría, enfado y asco. Estos grados nos permiten ver en qué medida están presentes estas emociones en una palabra. Por ejemplo, los grados emocionales de la palabra ``abejas'' son los que indica la tabla \ref{tabla:abejaEmocion}
+	
+	\begin{table}[htbp]
+		\begin{center}
+		\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		 & Tristeza & Miedo & Alegría & Enfado & Asco \\
+		\hline 
+		abejas & 1,17 & 3,47 & 1,37 & 2,0 & 2,2 \\
+		\end{tabular}
+		\caption{Grados emocionales de la palabra ``abejas".}
+		\label{tabla:abejaEmocion}
+		\end{center}
+\end{table}
+
+	\item \textbf{Emoción mayoritaria}: Nos permite conocer cual es la categoría emocional con mayor grado para una palabra. La información que aporta es la emoción, o emociones si hay más de una categoría con el grado mayor, y el grado que tiene. Por ejemplo, la palabra ``tormenta'', como podemos ver en la tabla \ref{tabla:mayoritarias} tiene dos emociones mayoritarias, tristeza y miedo, que comparten el grado 2.52, mientras que la palabra ``madre'' tiene, como vemos en la tabla \ref{tabla:mayoritarias}, una única emoción mayoritaria, alegría, con un grado de 4.79.
+	
+	\begin{table}[htbp]
+		\begin{center}
+			\begin{tabular}{|l|l|l|l|l|l|}
+				\hline
+				& Tristeza & Miedo & Alegría & Enfado & Asco \\
+				\hline 
+				tormenta & 2,52 & 2,52 & 1,53 & 1,5 & 1,2 \\ \hline
+				madre & 1,86 & 1,52 & 4,79 & 1,48 & 1,0 \\ \hline
+			\end{tabular}
+					\caption{Grados emocionales de las palabras ``tormenta" y ``madre".}
+
+			\label{tabla:analisis_alegre}
+		\end{center}
+\end{table}
+\end{itemize}
+
+Para cada tipo de contenido emocional hemos desarrollado un servicio web diferente. Los dos servicios tienen la misma URL raíz\footnote{http://sesat.fdi.ucm.es/emociones/palabra/}. A continuación, se explicará cómo tratamos las palabras introducidas por los usuarios en nuestros servicios y como funciona cada uno de ellos.
+
+\subsection{Lematización}
+Como ya hemos comentado, lo primero que tenemos que hacer para obtener el contenido afectivo de cualquier palabra es obtener su lema para poder compararlo con los lemas de las palabras que tenemos almacenadas en nuestro diccionario. Para ello, utilizaremos la misma herramienta que nos sirvió para añadir los lemas al diccionario: PyStemmer. Cada vez que el servidor reciba una petición mediante un palabra hará una llamada al método ``stemWord'' de la PyStemmer y utilizará el resultado para realizar la búsqueda de la palabra en el diccionario. Por ejemplo, con la palabra ``abortista", que no está en el diccionario, PyStemmer reconocerá su lema como ``abort" y encontrará sus emociones gracias a la palabra ``aborto", existente en el diccionario y con lema ``abort".
+
+\subsection{Servicio web para obtener los grados para cada emoción de una palabra}
+Dada una palabra, este servicio nos devuelve la información sobre los grados o valores en cada categoría emocional. Para ello se realiza la siguiente peticion:
+
+http://sesat.fdi.ucm.es/emociones/palabra/gradosEmo?palabra=\textit{palabra\_buscada}
+
+Cambiando \textit{palabra\_buscada} por la palabra correspondiente. Por ejemplo: si quisiéramos buscar la palabra ``enfermedad" pondríamos lo siguiente:
+
+http://sesat.fdi.ucm.es/emociones/palabra/gradosEmo?palabra=enfermedad
+
+En la figura (Figura \ref{fig:grados}) se puede ver el JSON de respuesta para la anterior petición, devuelto por el servicio para la palabra ``enfermedad''. Si la palabra está en nuestro diccionario, la salida sería el grado de cada emoción. Si la palabra no existe en nuestro diccionario el servicio devolverá dicha palabra como si apareciese en el diccionario devolviendo para cada emoción el grado uno, considerado neutral al ser el valor mínimo que puede tener el grado (Figura \ref{fig:notfound}). Es decir, tratamos a las palabras que no están en nuestro diccionario como carentes de emoción.
+
+\figura{Bitmap/Capitulo4/gradosEnfermedad}{width=0.6\textwidth}{fig:grados}{JSON devuelto al buscar los grados emocionales de la palabra ``enfermedad''.}
+	
+\figura{Bitmap/Capitulo4/gradosNoExiste}{width=0.6\textwidth}{fig:notfound}{JSON devuelto al buscar los grados de una palabra que no está en el diccionario.}
+
+\subsection{Servicio web para obtener la emoción mayoritaria de una palabra}
+Dada una palabra el servicio nos devuelve la emoción mayoritaria. La emoción mayoritaria será aquella que tiene el mayor grado asociado, como ya hemos comentado. Para ello se realiza la siguiente petición:
+
+http://sesat.fdi.ucm.es/emociones/palabra/mayoritariaEmo?palabra=\textit{palabra\_buscada}
+
+Cambiando \textit{palabra\_buscada} por la palabra correspondiente. Por ejemplo: si quisiéramos buscar la palabra ``tormenta" pondríamos lo siguiente:
+
+http://sesat.fdi.ucm.es/emociones/palabra/mayoritariaEmo?palabra=tormenta
+
+Como entrada tendríamos la palabra, en este caso ``tormenta", y nos devolvería lo que podemos ver en la figura \ref{fig:mayoritarias2}.
+En caso de que la palabra buscada tenga una emoción mayoritaria, el resultado será como el que podemos ver en la figura \ref{fig:mayoritaria}, respuesta para la petición con ``abejas" como \textit{palabra\_buscada}.
+En el caso de que la palabra no se haya encontrado en el diccionario se devolverá una lista vacía de emociones ya que no hay y el grado cero, como podemos ver en la figura \ref{fig:mno}, respuesta para la petición con ``te" como \textit{palabra`\_buscada}.
+
+\figura{Bitmap/Capitulo4/mayoritarias}{width=0.6\textwidth}{fig:mayoritarias2}{Respuesta si hay dos emociones mayoritarias.}
+\figura{Bitmap/Capitulo4/mayoritariaAbeja}{width=0.6\textwidth}{fig:mayoritaria}{Respuesta al encontrar la emoción mayoritaria.}
+\figura{Bitmap/Capitulo4/mayoritariasNo}{width=0.6\textwidth}{fig:mno}{Respuesta cuando se pide la mayoritaria de una palabra que no está en el diccionario.}
+
+%-------------------------------------------------------------------
+\section{Análisis afectivo de una frase}
+%-------------------------------------------------------------------
+\label{cap5:sec:frase}
+
+El anális emocional de una frase se sustenta en los servicios web desarrollados para hallar la carga afectiva de las palabras. Partimos de la base de que cualquier frase es, de primeras, carente de emoción, así que si no contiene ninguna palabra emocional el resultado será que es una frase 100\% neutral. Es decir, el valor para cada una de las categorías emocionales es uno. Para el resto de frases, además de los resultados del análisis emocional devolvemos la lista de palabras que nos han llevado a dichos resultados. Por ejemplo, si queremos obtener los grados emocionales finales de la frase: ``Estoy alegre porque mañana es mi boda'' no sólo se devolverían los grados para cada emoción sino también una lista con las palabras ``alegre'' y ``boda'' ya que son palabras emocionales que están dentro de nuestro diccionario.
+
+\subsection{Obtención de palabras relevantes}
+
+Comenzaremos dividiendo la frase en las palabras que la forman y procesaremos cada una de estas utilizando la herramienta SpaCy, como ya se explicó en la sección 4.5, para obtener una lista de palabras candidatas. Consideraremos una palabra como candidata si su etiqueta gramatical es verbo, adjetivo o nombre. Hemos elegido los verbos, los adjetivos y los sustantivos ya que son las categorías que consideramos que pueden tener contenido afectivo. El resto de categorías se utilizan para construir la sintáxis del lenguaje. 
+
+Para cada una de las palabras de la lista obtenemos la información emocional mediante el servicio web que devuelve los grados para cada emoción de una palabra (ver sección 5.2.2) y, vamos sumando los valores devueltos para cada una de las emociones. Por ejemplo, para la frase ``Mi casa es bonita", el servicio elegirá como candidatas a palabras emocionales ``casa", ``es" y ``bonita", por ser un nombre, un verbo y un adjetivo respectivamente y llamará al servicio de web de grados para cada palabra candidata y sumará los resultados por emociones básicas.
+
+
+\subsection{Grados emocionales finales de una frase}
+Una vez que tenemos la suma de los grados para cada una de las categorías emocionales tendremos que dividir dicho valor entre el número de palabras emocionales que hemos encontrado dentro de la frase. Por ejemplo, para la frase: ``\textit{Estoy alegre y feliz.}'' en la que tenemos las palabras emocionales: ``alegre'' y ``feliz'', se dividiría la suma de los grados entre dos. El resultado se puede ver en la tabla \ref{tabla:analisis_alegre}. En ella se observa en detalle el proceso que seguimos para calcular los grados, primero obtenemos los grados emocionales para cada categoría y los sumamos. Después dividimos cada valor entre el número de palabras, en este caso dos, obteniendo así el valor final para cada emoción. Los valores para la frase son muy similares a los valores para cada una de las palabras, esto se debe a que ambas palabras son prácticamente idénticas en cuanto a contenido afectivo.
+
+\begin{table}[htbp]
+		\begin{center}
+		\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		 & Tristeza & Miedo & Alegría & Enfado & Asco \\
+		\hline 
+		alegre & 1,1 & 1,23 & 4,83 & 1,1 & 1,03 \\ \hline
+		feliz & 1,1 & 1,2 & 4,63 & 1,0 & 1,0 \\ \hline
+		\textit{Suma} & \textit{2,2} & \textit{2,43} & \textit{9,46} & \textit{2,1} & \textit{2,03} \\ \hline
+		\textit{Número de palabras} & \multicolumn{5}{|c|}{\textit{2}} \\ \hline
+		\textbf{Valor final frase} & \textbf{1,1} & \textbf{1,21} & \textbf{4,73} & \textbf{1,05} & \textbf{1,02} \\ \hline
+		\end{tabular}
+		\caption{Resultado del anális de la frase "`Estoy alegre y feliz"'.}
+		\label{tabla:analisis_alegre}
+		\end{center}
+\end{table}
+		
+		Si la frase fuera: ``\textit{Estoy alegre y triste}'', las palabras emocionales serían ``alegre'' y ``triste'' y el resultado final sería el que se puede ver en la tabla \ref{tabla:analisis_bipolar}. El proceso que se sigue para realizar el análisis emocional de la frase es el mismo que en el ejemplo anterior pero en este caso vemos como los valores de los grados emocionales para la frase se quedan en un punto intermedio entre los grados de las palabras emocionales. Así, la frase pertenece a la categoría emocional tristeza y a la de alegría a la vez, pero en menor grado que ``triste'' y ``alegre'' respectivamente ya que ambas se contrarrestan al hacer la media.
+
+\begin{table}[htbp]
+		\begin{center}
+		\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		 & Tristeza & Miedo & Alegría & Enfado & Asco \\
+		\hline 
+		alegre & 1,1 & 1,23 & 4,83 & 1,1 & 1,03 \\ \hline
+		triste & 4,47 & 2,17 & 1,03 & 2,06 & 1,5 \\ \hline
+		\textit{Suma} & \textit{5,57} & \textit{3,4} & \textit{5,86} & \textit{3,16} & \textit{2,53} \\ \hline
+		\textit{Número de palabras} & \multicolumn{5}{|c|}{\textit{2}} \\ \hline
+		\textbf{Valor final de la frase} & \textbf{2.78} & \textbf{1,7} & \textbf{2,93} & \textbf{1,58} & \textbf{1,26} \\ \hline
+		\end{tabular}
+		\caption{Resultado del análisis de la frase "`Estoy alegre y triste"'.}
+		\label{tabla:analisis_bipolar}
+		\end{center}
+\end{table}
+
+Teniendo en cuenta que no hay ninguna palabra totalmente carente de emoción (con todos sus grados a uno) en nuestro diccionario, si alguna de las palabras que se procesan a la hora de realizar estos cálculos tiene todos sus grados a uno sabremos que es una palabra que no está en nuestro diccionario y no la tendremos en cuenta: restaremos uno al número de palabras emocionales que hay en la frase. Por ejemplo, si tenemos que analizar la frase ``He quedado con mi madre para tomar un té.'' ésta tiene tres palabras relevantes que no descartamos por su categoría gramatical: ``quedado'', ``madre'' y ``té''. La palabra ``té'' no está en nuestro diccionario así que el número de palabras emocionales es dos y, por lo tanto, se dividirían las sumas obtenidas entre este valor.
+
+ 
+\subsection{Emoción mayoritaria de una frase}
+Para hallar la emoción mayoritaria de una frase necesitamos primero obtener los grados finales para cada categoría emocional, es decir hacemos uso del servicio web explicado en la sección 5.3.2. Necesitamos estos grados ya que es la única manera de saber cuál de ellos es el mayor. Una vez que los tenemos, comparamos sus valores y nos quedamos con el mayor. Por ejemplo, la frase ``Me gustan las naranjas'' tiene los siguientes grados finales:
+\begin{table}[htbp]
+	\begin{center}
+	\begin{tabular}{|l|l|l|l|l|l|}
+	\hline
+	 Tristeza & Miedo & Alegría & Enfado & Asco \\
+	\hline 
+	1,17 & 1,6 & 4,43 & 1,2 & 1,17 \\ \hline
+	\end{tabular}
+	\caption{Grados emocionales de la frase ``Me gustan las naranjas".}
+	\end{center}
+\end{table}
+
+Al comparar los grados observamos que la emoción mayoritaria es alegría con un grado de 4,43. La respuesta que daría nuestro servicio web en este caso se puede ver en la figura \ref{fig:mayAlegre}.
+
+\figura{Bitmap/Capitulo4/mayAlegre}{width=0.6\textwidth}{fig:mayAlegre}{Respuesta JSON para una frase con una emoción mayoritaria.}
+
+Al igual que ocurría en el caso de las palabras puede haber más de una emoción mayoritaria. Por ejemplo, la frase ``Me caes mal'' tiene los siguientes grados emocionales:
+
+\begin{table}[htbp]
+	\begin{center}
+	\begin{tabular}{|l|l|l|l|l|l|}
+	\hline
+	 Tristeza & Miedo & Alegría & Enfado & Asco \\
+	\hline 
+	3,2 & 3,33 & 1,07 & 3,3 & 2,57 \\ \hline
+	\end{tabular}
+	\caption{Grados emocionales de la frase ``Me caes mal".}
+	\end{center}
+\end{table}
+
+Es decir, tiene dos emociones mayoritarias: miedo y enfado con un grado de 3,33. En la figura \ref{fig:mayVarias} se puede observar como respondería el servidor ante esta petición.
+
+\figura{Bitmap/Capitulo4/mayVarias}{width=0.6\textwidth}{fig:mayVarias}{Respuesta JSON para una frase con dos emociones mayoritarias.}
+%-------------------------------------------------------------------
+\section{Análisis afectivo de un texto}
+%-------------------------------------------------------------------
+\label{cap5:sec:texto}
+
+Para obtener la carga emocional de un texto lo primero que tenemos que hacer es dividirlo en frases y obtener la carga afectiva de cada una de las frases. 
+
+Las frases se obtienen partiendo el texto cada vez que se encuentre un ``.''. Una vez que se tienen todas las frases del texto hay que realizar un análisis más profundo ya que las frases interrogativas y las exclamativas al no acabar en un punto no están debidamente separadas, aparecen unidas a otra frase. Por lo tanto, tenemos que realizar una segunda partición que se aplicará a cada una de las frases obtenidas. En esta ocasión la frase se partirá cada vez que se encuentre un signo de exclamación o de interrogación. De esta manera ya tenemos todas las frases que forman el texto. A cada frase del texto le asignaremos un tipo: enunciativa, interrogativa o exclamativa y según su tipo tendrá más o menos peso en el cálculo de la carga afectiva del texto. Las exclamativas tienen el doble de peso que las enunciativas mientras que las interrogativas tienen la mitad. 
+
+\subsection{Grados emocionales finales de un texto}
+El análisis afectivo se realiza siguiendo un procedimiento bastante similar al seguido a la hora de analizar las frases. En este caso, obtenemos los grados emocionales finales para cada una de las frases mediante el servicio web dedicado a ello (ver sección 5.3.2) y los sumamos teniendo en cuenta el peso de cada frase: si es enunciativa se suman los grados tal cual, si es exclamativa antes de sumar los grados se multiplican por dos y si es interrogativa antes de sumar los grados se dividen entre dos. Una vez tenemos la suma total de todas las frases que componen el texto se dividen los valores obtenidos entre el número de frases que tiene el texto. Por ejemplo, consideremos el siguiente texto:
+
+``Ayer ví a tu hermano. ¡Qué guapo está! ¿Cuándo ha vuelto de Londres?''
+
+Este texto está compuesto por tres frases:
+
+Frase 1: Ayer ví a tu hermano.
+
+Frase 2: ¡Qué guapo está!
+
+Frase 3: ¿Cuándo ha vuelto de Paris?
+
+En la tabla \ref{tabla:analisis_texto} se puede observar el proceso de análisis del texto. Primero obtenemos los grados finales para cada frase, después los adaptamos al peso de la frase y sumamos todos los pesos para, finalmente, dividir los valores obtenidos entre el número de frases, en este caso tres. La tercera frase es carente de emoción, ningua de sus palabras aparece en nuestro diccionario, por ello se le asignan ceros a los grados emocionales ya que si tuviesen valores podría alterar la media realizada. El texto resulta ser alegre con un grado de 3,95. 
+
+\begin{table}[htbp]
+		\begin{center}
+		\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		 & Tristeza & Miedo & Alegría & Enfado & Asco \\
+		\hline 
+		Frase 1 & 1,47 & 1,1 & 4,3 & 1,47 & 1,1  \\ \hline
+		Enunciativa(x1) & 1,47 & 1,1 & 4,3 & 1,47 & 1,1 \\ \hline
+		Frase 2 & 1,12 & 1,27 & 3,77 & 1,17 & 1,07 \\ \hline
+		Exclamativa(x2) & 2,24 & 2,54 & 7,54 & 2,34 & 1,14 \\ \hline
+		Frase 3 & 0 & 0 & 0 & 0 & 0 \\ \hline
+		Interrogativa(/2) & 0 & 0 & 0 & 0 & 0 \\ \hline
+		Suma frases & 2,59 & 3,64 & 11,84 & 3,81 & 2,24 \\ \hline
+		Nº de frases & \multicolumn{5}{|c|}{3} \\ \hline
+		Valor final del texto & 0.86 & 1,21 & 3,95 & 1,27 & 0.75 \\ \hline
+		\end{tabular}
+		\caption{Resultado del análisis del texto.}
+		\label{tabla:analisis_texto}
+		\end{center}
+\end{table}
+
+\subsection{Emoción mayoritaria de un texto}
+Para calcular la emoción mayoritaria de un texto hay que obtener sus grados finales y compararlos para quedarnos con el mayor. Este servicio es, por lo tanto, el equivalente del descrito en la sección 5.3.3 pero aplicado a textos. Por ejemplo, si el texto que queremos analizar es: ``Me he encontrado con Ana esta mañana. Me ha dicho que su madre está mejor. Me alegro mucho por ella.'' el servicio presentado en la sección 5.4.1 nos devuelve los grados que se pueden ver en la figura \ref{fig:gradostxt}. Se ve que la emoción mayoritaria del texto es alegría con un grado de 4,26. Podemos ver que esta es precisamente la información que devuelve el servicio para la emoción mayoritaria de un texto en la figura \ref{fig:maytxt} y que la forma en la que se muestra es idéntica a la del servicio para la emoción mayoritaria de una frase.
+
+\figura{Bitmap/Capitulo4/gradostxt}{width=0.6\textwidth}{fig:gradostxt}{Respuesta JSON para los grados de un texto.}
+\figura{Bitmap/Capitulo4/maytxt}{width=0.6\textwidth}{fig:gradostxt}{Respuesta JSON para la emoción mayoritaria de un texto.}
+
+\subsection{Palabras emocionales de un texto}
+Este servicio se encarga de combinar los resultados devueltos por el servicio de la sección 5.4.1, los grados emocionales finales de un texto, con una lista de las palabras emocionales que contiene el texto. Esta lista se obtiene juntando las listas de palabras emocionales de todas las frases que componen el texto. Por ejemplo, para el texto ``Luis es un chico muy agradable. No me gusta verle tan triste.'' los grados emocionales finales que obtenemos con el servicio correspondiente son:
+
+\begin{table}[htbp]
+	\begin{center}
+	\begin{tabular}{|l|l|l|l|l|l|}
+	\hline
+	 Tristeza & Miedo & Alegría & Enfado & Asco \\
+	\hline 
+	1,98 & 1,57 & 3,17 & 1,4 & 1,22 \\ \hline
+	\end{tabular}
+	\caption{Grados emocionales del texto ``Luis es un chico muy agradable. No me gusta verle triste".}
+	\end{center}
+\end{table}
+
+Además de esta lista de grados se devuelve la lista de palabras que han llevado al resultado obtenido (Figura \ref{fig:pal}).
+
+\figura{Bitmap/Capitulo4/p}{width=0.6\textwidth}{fig:pal}{Respuesta JSON que contiene la lista de palabras emocionales.}
+
+%-------------------------------------------------------------------
+\section{API EmoTraductor}
+%-------------------------------------------------------------------
+\label{cap5:sec:api}
+
+Con el objetivo de facilitar a los desarrolladores el uso de todos nuestros servicios hemos creado un API\footnote{http://sesat.fdi.ucm.es/apiEmoTraductor/}. Esta API favorecerá la transferencia de resultados. Para ello es muy importante que exista esta API ya que nos permite mostrar una breve explicación de cada uno de los servicios junto la URL de su petición, la información sobre la respuesta que devuelve y varios ejemplos. La estructura que tiene nuestra API se puede apreciar en la figura \ref{fig:api}. Como se puede observar los servicios están divididos en tres bloques. El primer bloque contiene los servicios desarrollados para las palabras, el segundo contiene los servicios desarrollados para las frases y el último contiene aquellos desarrollados para los textos.
+
+\figura{Bitmap/Capitulo4/api}{width=0.8\textwidth}{fig:api}{Estructura general de la API.}
+
+Cada servicio aparece acompañado de una etiqueta ``(ver más)'' que lleva a una sección dedicada al servicio en cuestión. En esta sección aparece toda la información necesaria para comprender qué hace el servicio, qué recibe y qué devuelve. Aparece también el tipo de servicio que es (GET o POST), sus parámetros, la URL que hay que utilizar para acceder a él y algunos ejemplos de peticiones y respuestas. En las figuras \ref{fig:apiEj} y \ref{fig:apiEj2}, podemos ver toda la información proporcionada sobre el servicio de grados de una palabra.
+
+\figura{Bitmap/Capitulo4/apiEj}{width=0.6\textwidth}{fig:apiEj}{Información mostrada en la api para el servicio de obtener los grados para las categorías emocionales de una palabra.}
+\figura{Bitmap/Capitulo4/apiEj2}{width=0.6\textwidth}{fig:apiEj2}{Ejemplos mostrados en la api para el servicio de obtener los grados para las categorías emocionales de una palabra.}
+
+Esta API es pública y seguirá ampliándose con los servicios que se desarrollen más allá de este TFG. 
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

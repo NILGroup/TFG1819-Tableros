@@ -1,0 +1,595 @@
+%---------------------------------------------------------------------
+%
+%                          Capitulo 7
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\usepackage{multirow}
+\chapter{Evaluación}
+\label{cap7:Evaluacion}
+
+\begin{resumen}
+Una vez finalizada la implementación de todos los servicios y la interfaz web hemos realizado pruebas para valorar nuestra aplicación. Hemos hecho dos tipos de evaluaciones diferentes: evaluación del método y la evaluación de la aplicación.
+\end{resumen}
+
+%-------------------------------------------------------------------
+\section{Evaluación del método}
+%-------------------------------------------------------------------
+\label{cap7:sec:metodo}
+
+Llamamos evaluación del método a la evaluación realizada sobre la aplicación sobre los aciertos que tiene al determinar las emociones de un texto. Para esto, hemos escogido una serie de noticias, blogs y cuentos a evaluar y a raíz de estos sacar conclusiones sobre su eficacia y los puntos a mejorar.
+Los textos los podemos encontrar en el apéndice B. A continuación se muestran los resultados, para cada texto mostramos las palabras emocionales que posee, el grado de cada emoción y sus emociones mayoritarias.
+
+\subsection{Cuentos}
+
+\subsubsection{Blancanieves}
+Este cuento fue publicado por Louis Weber, Disney Enterprises, Inc.
+
+
+Lista de palabras emocionales:
+'vez', 'princesa', 'dulce', 'gentil', 'llamada', 'malvada', 'reina', 'celosa', 'belleza', 'tuvo', 'huir', 'refugió', 'casa', 'enanitos', 'reina', 'engañó', 'manzana', 'envenenada', 'llegó', 'príncipe', 'despertó', 'beso', 'vivieron', 'felices'
+
+Grado de tristeza: 1.9
+
+Grado de miedo: 2.02
+
+Grado de alegría: 3.02
+
+Grado de enfado: 1.81
+
+Grado de asco: 1.51
+
+La mayoritaria es alegría con un grado 3.02
+
+\subsubsection{Blancanieves y sus amigos}
+Este cuento fue publicado por Louis Weber, Disney Enterprises, Inc.
+
+
+Lista de palabras emocionales:
+'amable', 'gentil', 'tenía', 'amigos', 'animales', 'bosque', 'amigos', 'pequeño', 'pajarito', 'amigo', 'príncipe', 'azul', 'amigo', 'enanitos', 'mejores', 'amigos'
+
+Grado de tristeza: 1.33
+
+Grado de miedo: 1.5
+
+Grado de alegría: 4.14
+
+Grado de enfado: 1.17
+
+Grado de asco: 1.1
+
+La mayoritaria es alegría con un grado 4.14
+
+\subsubsection{La sirenita}
+Este cuento fue publicado por Louis Weber, Disney Enterprises, Inc.
+
+
+Lista de palabras emocionales:
+'sirenita', 'vivía', 'mar', 'sentía', 'fascinada', 'humanos', 'sobretodo', 'príncipe', 'pidió', 'bruja', 'mar', 'transformara', 'humana', 'estar', 'príncipe', 'besaba', 'pasarn', 'días', 'volvería', 'convertirse', 'sirena', 'magia', 'bruja', 'mar', 'separar'
+
+Grado de tristeza: 1.92
+
+Grado de miedo: 2.12
+
+Grado de alegría: 3.89
+
+Grado de enfado: 1.4
+
+Grado de asco: 1.33
+
+La mayoritaria es alegría con un grado 3.89
+
+\subsubsection{La bella durmiente}
+Este cuento fue publicado por Louis Weber, Disney Enterprises, Inc.
+
+
+Lista de palabras emocionales:
+'nació', 'princesa', 'hadas', 'buenas', 'hicieron', 'maravillosos', 'regalos', 'regalo', 'malvada', 'maldición', 'cumplir', 'años', 'princesa', 'pincharía', 'rueca', 'hadas', 'llevaron', 'vivir', 'bosque', 'Querían', 'protegerla', 'maldición', 'fuerte', 'Hizo', 'pinchara', 'dedo', 'durmiera', 'príncipe', 'rompió', 'hechizo', 'despertó'
+
+Grado de tristeza: 1.82
+
+Grado de miedo: 2.12
+
+Grado de alegría: 2.29
+
+Grado de enfado: 1.8
+
+Grado de asco: 1.26
+
+La mayoritaria es alegría con un grado 2.29
+
+\subsubsection{La margarita}
+Este texto es un fragmento de un cuento que se llama 'La margarita' cuyo autor es Hans Christian Andersen.
+
+
+Lista de palabras emocionales:
+'vez', 'casa', 'campo', 'jardín', 'lleno', 'flores', 'pintada', 'medio', 'bello', 'verde', 'césped', 'crecía', 'pequeña', 'margarita', 'sol', 'igual', 'generoso', 'pequeña', 'margarita', 'grandes', 'suntuosas', 'flores', 'jardín', 'margarita', 'crecía', 'hora', 'hora', 'mañana', 'margarita', 'recibiendo', 'calor', 'sol', 'despreocupada', 'dolerse', 'pobre', 'flor', 'insignificante', 'contenta', 'mirando', 'sol', 'escuchaba', 'alegre', 'canto', 'alondra', 'feliz', 'día', 'fiesta', 'niños', 'estaban', 'escuela', 'estudiaban', 'margarita', 'aprendía', 'conocer', 'bondad', 'calor', 'sol', 'belleza', 'rodeaba'
+
+Grado de tristeza: 1.45
+
+Grado de miedo: 1.47
+
+Grado de alegría: 3.79
+
+Grado de enfado: 1.17
+
+Grado de asco: 1.13
+
+La mayoritaria es alegría con un grado 3.79
+
+
+Fuente: http://www.cuentoscortos.com/cuentos-clasicos/la-margarita
+
+\subsubsection{La bella y la bestia}
+Este cuento fue publicado por Louis Weber, Disney Enterprises, Inc.
+
+
+Lista de palabras emocionales:
+'vivía', 'pequeña', 'aldea', 'encantaba', 'leer', 'quería', 'padre', 'desapareció', 'salió', 'buscarlo', 'encontró', 'padre', 'castillo', 'aprendieron', 'amigos', 'enamoró', 'volvió', 'convertirse', 'príncipe'
+
+Grado de tristeza: 1.62
+
+Grado de miedo: 1.87
+
+Grado de alegría: 3.9
+
+Grado de enfado: 1.37
+
+Grado de asco: 1.19
+
+La mayoritaria es alegría con un grado 3.9
+
+\subsubsection{El castillo de Bestia}
+Este cuento fue publicado por Louis Weber, Disney Enterprises, Inc.
+
+
+Lista de palabras emocionales:
+'vivía', 'castillo', 'encantado', 'dieron', 'bienvenida', 'esforzaron', 'sintiera', 'casa', 'disfrutaba', 'cenas', 'gran', 'comedor', 'castillo', 'sintió', 'feliz', 'castillo', 'hogar'
+
+Grado de tristeza: 1.11
+
+Grado de miedo: 1.13
+
+Grado de alegría: 3.14
+
+Grado de enfado: 1.0
+
+Grado de asco: 1.0
+
+La mayoritaria es alegría con un grado 3.14
+
+\subsubsection{Cenicienta}
+Este cuento fue publicado por Louis Weber, Disney Enterprises, Inc.
+
+
+Lista de palabras emocionales:
+'trabajaba', 'día', 'noche', 'pesar', 'alegre', 'divertía', 'amigos', 'ratones', 'ponía', 'contenta', 'cantaba', 'creer', 'sueños', 'hacía', 'sentirse', 'feliz'
+
+Grado de tristeza: 1.43
+
+Grado de miedo: 1.53
+
+Grado de alegría: 4.05
+
+Grado de enfado: 1.27
+
+Grado de asco: 1.16
+
+La mayoritaria es alegría con un grado 4.05
+
+\subsubsection{Mulán}
+Este cuento fue publicado por Louis Weber, Disney Enterprises, Inc.
+
+
+Lista de palabras emocionales:
+'quería', 'llevar', 'honor', 'familia', 'veces', 'difícil', 'día', 'padre', 'enteró', 'tenía', 'ir', 'guerra', 'fingió', 'muchacho', 'unió', 'ejército', 'padre', 'tuviera', 'hacerlo', 'entrenó', 'Ayudó', 'ejército', 'chino', 'ganar', 'guerra', 'familia', 'sintió', 'orgullosa'
+
+Grado de tristeza: 1.39
+
+Grado de miedo: 1.36
+
+Grado de alegría: 1.94
+
+Grado de enfado: 1.23
+
+Grado de asco: 0.96
+
+La mayoritaria es alegría con un grado 1.94
+
+\subsubsection{Pinocho}
+Este cuento fue publicado por Ediciones Orbis, S.A.
+
+
+Lista de palabras emocionales:
+'vez', 'artesano', 'labraba', 'madera', 'juguetes', 'bellos', 'tenían', 'escultor', 'maestro', 'llamaba', 'anciano', 'virtudes', 'figuraba', 'buen', 'carácter', 'envejecido', 'solo', 'día', 'sinténdose', 'viejo', 'solo', 'costumbre', 'ahuyentar', 'soledad', 'decidió', 'tallar', 'madera', 'muñeco', 'hiciera', 'compañía', 'construido', 'transformar', 'aburrimiento', 'niños', 'momentos', 'maravillosos', 'fabricaría', 'taller', 'colega', 'consiguió', 'tronco', 'pino', 'dispuso', 'fabricar', 'muñeco', 'Corta', 'talla', 'he', 'cabeza', 'nariz', 'boca', 'cuanto', 'modelar', 'boca', 'madera', 'muñeco', 'rompió', 'hablar', 'excalamndo', 'abuelito', 'Superado', 'asombro', 'maese', 'apresuró', 'completar', 'obra', 'tallado', 'muñeco', 'tronco', 'pino', 'pensó', 'llamarlo', 'reparar', 'traviesa', 'mirada', 'decidió', 'iría', 'nombre', 'cuanto', 'tuvo', 'par', 'piernas', 'madera', 'incorporó', 'salto', 'cogió', 'impulso', 'marchó'
+
+Grado de tristeza: 1.36
+
+Grado de miedo: 1.54
+
+Grado de alegría: 2.59
+
+Grado de enfado: 1.12
+
+Grado de asco: 1.0
+
+La mayoritaria es alegría con un grado 2.59
+
+\subsubsection{Pocahontas}
+Este cuento fue publicado por Louis Weber, Disney Enterprises, Inc.
+
+
+Lista de palabras emocionales:
+'Pocahontas', 'indígena', 'Amaba', 'naturaleza', 'día', 'barco', 'llegó', 'ingleses', 'codiciosos', 'malvados', 'bondadoso', 'amable', 'tribu', 'quería', 'ingleses', 'fueran', 'ingleses', 'fueron', 'barco', 'olvidarían'
+
+Grado de tristeza: 1.55
+
+Grado de miedo: 1.54
+
+Grado de alegría: 2.07
+
+Grado de enfado: 1.16
+
+Grado de asco: 0.99
+
+La mayoritaria es alegría con un grado 2.07
+
+\subsubsection{Aladdín}
+Este cuento fue publicado por Louis Weber, Disney Enterprises, Inc.
+
+
+Lista de palabras emocionales:
+'princesa', 'vivía', 'palacio', 'real', 'padre', 'quería', 'casar', 'enamorada', 'escapó', 'palacio', 'Deseaba', 'libre', 'conoció', 'bazar', 'ayuda', 'enamoraron'
+
+Grado de tristeza: 1.47
+
+Grado de miedo: 1.71
+
+Grado de alegría: 3.81
+
+Grado de enfado: 1.26
+
+Grado de asco: 1.14
+
+La mayoritaria es alegría con un grado 3.81
+
+\subsubsection{El ratoncito Pérez}
+
+Este cuento es 'La fantástica historia del Ratoncito Pérez' de Meritxell Martí y Xavier Salomó.
+
+
+Lista de palabras emocionales:
+'barrio', 'pobre', 'bosque', 'vivía', 'ratón', 'familia', 'padres', 'pasaban', 'día', 'buscando', 'rinconnes', 'pedazo', 'queso', 'alimentar', 'fiamilia', 'fácil', 'escobazo', 'trampa', 'día', 'llegaban', 'casa', 'magullados', 'vida', 'ratones', 'envidiable', 'pequeñor', 'roedor', 'lamentaba', 'nacido', 'gato', 'pantera', 'rico', 'viviría', 'barrio', 'queso', 'trampas', 'día', 'decidió', 'tenía', 'dar', 'modo', 'salir', 'pensativo', 'llegó', 'bosque', 'árboles', 'llegó', 'sonido', 'aleteo', 'anda', 'susurró', 'escondido', 'mata', 'abrió', 'ojos', 'platos', 'niña', 'acercó', 'tocar', 'suelo', 'volando', 'niña', 'presentó', 'hada', 'bosque', 'visto', 'salió', 'hipnotizado', 'saludó', 'miraba', 'alas', 'movían', 'parar', 'llamo', 'cierto', 'hada', 'ser', 'mágico', 'respondió', 'sorprendida', 'contado', 'cuento', 'hadas', 'contestó', 'padres', 'llegaban', 'acasa', 'ánimo', 'contar', 'cuentos', 'sintió', 'lástima', 'pobre', 'ratoncito', 'verdad', 'gente', 'temía', 'ratones', 'ponía', 'cosas', 'fáciles', 'hada', 'pensó', 'instantes', 'continuación', 'hizo', 'propuesta', 'asombrosa', 'ratón', 'escuchado', 'Mira', 'hacer', 'trato', 'podrías', 'traerme', 'cambio', 'haré', 'regalo', 'mágico', 'dices', 'creer', 'hacer', 'tratos', 'hada', 'seguida', 'reaccionó', 'tendría', 'traerte', 'espero', 'queso', 'hada', 'rió', 'dijo', 'esperaba', 'roedor', 'quedó', 'piedra', 'repitió', 'aturdido', 'Quieres', 'traiga', 'dientes', 'niñas', 'niños', 'mundo', 'explicó', 'Querido', 'asustes', 'niños', 'caen', 'dientes', 'leche', 'pudan', 'salirles', 'nuevos', 'resistentes', 'tendrás', 'entrar', 'casas', 'duerman', 'recoger', 'dientecitos', 'traérmelos', 'seguía', 'verlo', 'claro', 'preguntó', 'entraría', 'casas', 'fin', 'cabo', 'pequeño', 'ratón', 'sacó', 'bolso', 'llave', 'dorada', 'dijo', 'abrir', 'puertas', 'mundo', 'relamió', 'entrar', 'noche', 'gran', 'quesería', 'hada', 'leyó', 'pensaiento', 'queso', 'cambio', 'dientes', 'daré', 'cosa', 'sacó', 'bolos', 'cofre', 'madera', 'cofre', 'saldrán', 'monedas', 'regalos', 'regalos', 'niñas', 'niños', 'agradecimiento', 'llevarte', 'dientecillos', 'monedas', 'ayudar', 'ratones', 'creerlo', 'ayudante', 'hada', 'viajaría', 'mundo', 'tendría', 'gran', 'recompensa', 'quieres', 'dientes', 'hacer', 'magia', 'polvo', 'dientes', 'leche', 'lava', 'volcán', 'hago', 'pócima', 'reduce', 'objetos', 'Mezclado', 'trébol', 'hojas', 'polvo', 'hace', 'invisible', 'diente', 'agua', 'luna', 'viajar', 'sitio', 'segundo', 'hechizos', 'decir', 'sacó', 'bolso', 'puñado', 'polvo', 'sopló', 'llave', 'cofre', 'volvieron', 'diminutos', 'trato', 'hecho', 'dijo', 'ofreciendo', 'ratón', 'pequeñísima', 'llave', 'diminuto', 'cofre', 'tomó', 'chocó', 'mano', 'Trato', 'hecho', 'dijo', 'ratón', 'quedaron', 'charlando', 'anochecer', 'ratón', 'frotó', 'llave', 'indicó', 'hada', 'desapareció', 'bosque', 'noche', 'entró', 'casas', 'pequeño', 'caído', 'diente', 'despertar', 'dinete', 'desaparecido', 'lugar', 'regalo', 'noticia', 'corrió', 'pólvora', 'casas', 'niños', 'niñas', 'mundo', 'saben', 'ratoncito', 'dejan', 'dientes', 'leche', 'almohada', 'pase', 'cofre', 'mágico', 'ven', 'ratón', 'asustan'
+
+Grado de tristeza: 1.28
+
+Grado de miedo: 1.45
+
+Grado de alegría: 2.27
+
+Grado de enfado: 1.12
+
+Grado de asco: 1.03
+
+La mayoritaria es alegría con un grado 2.27
+
+\subsection{Noticias}
+
+\subsubsection{Noticia asesinato}
+
+Lista de palabras emocionales:
+'brutal', 'caso', 'violencia', 'machista', 'paraliza', 'centros', 'comerciales', 'concurridos', 'controles', 'seguridad', 'Subió', 'segunda', 'planta', 'centro', 'comercial', 'disparos', 'pecho', 'abdomen', 'dejó', 'nota', 'mostrador', 'tienda', 'trabajaba', 'esposa', 'disparó', 'cara', 'feminicidio', 'intento', 'suicidio', 'paralizó', 'lunes', 'centros', 'comerciales', 'concurridos', 'Selene', 'años', 'falleció', 'horas', 'agresor', 'sobrevivió', 'encuentra', 'grave', 'estable', 'hospital', 'capital', 'detonaciones', 'trabajadores', 'tiendas', 'clientes', 'corrieron', 'protegerse', 'resguardarse', 'hechos', 'produjeron', 'tarde', 'anodina', 'puente', 'primeras', 'versiones', 'barajaban', 'tratado', 'robo', 'zapatería', 'plaza', 'comercial', 'encuentra', 'avenidas', 'transitadas', 'icónicas', 'capital', 'autoridades', 'dieron', 'homicidio', 'local', 'iniciado', 'investigaciones', 'delito', 'homicidio', 'calificado', 'pedido', 'divorcio', 'custodia', 'hijo', 'agresor', 'preso', 'veces', 'robo', '2002', '2004', '2012', 'amenazado', 'días', 'vas', 'destruir', 'vida', 'puta', 'pasó', 'lee', 'supuesta', 'nota', 'dejó', 'feminicida', 'divulgada', 'prensa', 'mexicana', 'mujer', 'lesionada', 'manifestó', 'hombre', 'amenazado', 'causa', 'conflicto', 'pasional', 'señaló', 'policía', 'capitalina', 'país', 'asesinadas', 'mujeres', 'diario', 'violencia', 'machista', 'crímenes', 'pasionales', 'vistos', 'excusas', 'detonantes', 'atacar', 'mujeres', 'hecho', 'mujeres'
+
+Grado de tristeza: 2.28
+
+Grado de miedo: 2.4
+
+Grado de alegría: 1.78
+
+Grado de enfado: 2.13
+
+Grado de asco: 1.65
+
+La mayoritaria es Miedo con un grado 2.4
+
+
+Fuente: https://elpais.com/internacional/2018/03/20/mexico/1521567442\_844144.html
+
+\subsubsection{Noticia nacimiento}
+
+Lista de palabras emocionales:
+'madre', 'primer', 'hijo', 'sabemos', 'nombre', 'influencer', 'pronunciado', 'redes', 'sociales', 'medios', 'italianos', 'confirman', 'nacimiento', 'pequeño', 'fin', 'mamá', 'influencer', 'italiana', 'pronunciado', 'través', 'cotizadas', 'redes', 'sociales', 'portal', 'italiano', 'confirmado', 'noticia', 'italiano', 'anunciado', 'hijo', 'rapero', 'llegó', 'mundo', 'noche', 'marzo', 'italiana', 'dio', 'luz', 'hospital', 'dio', 'luz', 'través', 'parto', 'programado', 'millones', 'seguidores', 'influencer', 'apuntaban', 'últimas', 'horas', 'dando', 'luz', 'desaparición', 'redes', 'sociales', 'final', 'noticia', 'confirmaba', 'horas', 'apodando', 'redes', 'sociales', 'pequeño', 'baby', 'origen', 'padres', 'anunciaron', 'nombre', 'pequeño', 'medio', 'parto', 'adelantado', 'semanas', 'bebé', 'madre', 'encuentran', 'perfecto', 'estado', 'encargada', 'desvelar', 'sexo', 'nombre', 'primer', 'hijo', 'seguidores', 'considerada', 'influencer', 'poderosa', 'mundo', 'moda', 'dándose', 'conocer', 'gracias', 'web'
+
+Grado de tristeza: 1.63
+
+Grado de miedo: 1.8
+
+Grado de alegría: 3.09
+
+Grado de enfado: 1.38
+
+Grado de asco: 1.29
+
+La mayoritaria es alegría con un grado 3.09
+
+
+Fuente: https://www.elespanol.com/corazon/celebrities/20180320/chiara-ferragni-madre-primer-hijo-sabemos-nombre/293471460\_0.html 
+
+\subsubsection{Noticia OMS}
+
+Lista de palabras emocionales:
+'Expertos', 'recomiendan', 'declarar', 'país', 'libre', 'malaria', 'grupo', 'expertos', 'recomendó', 'declarar', 'país', 'libre', 'malaria', 'verificar', 'situación', 'enfermedad', 'terreno', 'semanas', 'informó', 'domingo', 'cartera', 'sanitaria', 'explicó', 'través', 'comunicado', 'expertos', 'comprobaron', 'país', 'suramericano', 'registran', 'casos', 'transmisión', 'local', 'malaria', 'últimos', 'años', 'sistema', 'sanitario', 'prevenir', 'eventuales', 'casos', 'enfermedad', 'recomendación', 'cierra', 'esfuerzo', 'sistema', 'sanitario', 'paraguayo', 'últimos', 'años', '2012', 'registra', 'casos', 'autóctonos', 'enfermedad', 'gran', 'logro', 'nacional', 'posibilita', 'privilegiado', 'sitial', 'primer', 'país', 'sudamericano', 'erradicar', 'enfermedad', 'indicaron', 'malaria', 'pasó', 'historia', 'registros', 'médicos', 'país', '2011', 'último', 'caso', 'registrado', 'datos', 'presentados', 'septiembre', 'fundó', 'raíz', 'brote', 'malaria', 'sufrió', '1957', '90', 'personas', 'territorio', 'país', 'contrajeran', 'enfermedad', 'paludismo', 'malaria', 'enfermedad', 'letal', 'causada', 'parásitos', 'género', 'plasmodium', 'transmiten', 'ser', 'humano', 'picadura', 'mosquitos', 'infectados', 'paludismo', 'mantiene', 'presente', 'países', 'calcula', '2016', 'fallecidos', 'mundo', 'millones', 'casos', 'datos'
+
+Grado de tristeza: 2.63
+
+Grado de miedo: 2.69
+
+Grado de alegría: 2.37
+
+Grado de enfado: 2.02
+
+Grado de asco: 1.87
+
+La mayoritaria es Miedo con un grado 2.69
+
+
+Fuente: https://www.efe.com/efe/cono-sur/destacada-cono-sur/expertos-de-la-oms-recomiendan-declarar-a-paraguay-pais-libre-malaria/50000832-3556530
+\subsubsection{Noticia política}
+
+Lista de palabras emocionales:
+'estancamiento', 'político', 'agobia', 'meses', 'llegar', 'fin', 'espera', 'parlamento', 'apruebe', 'gobierno', 'liderado', 'presidente', 'interino', 'necesitaba', 'mayoría', 'parlamento', 'escaños', 'primera', 'votación', 'realizada', 'jueves', 'logró', 'sábado', 'realiza', 'segunda', 'votación', 'necesita', 'votos', 'favor', 'contra', 'Cuenta', 'apoyo', 'legisladores', 'partido', 'centroderechista', 'dependerá', 'accedido', 'abstenerse', 'votación', 'sábado', 'diputados', 'dicho', 'votarán', 'contra', 'elegido', 'juramentado', 'rey', 'domingo', 'lunes', 'gobierno', 'convocará', 'tercera', 'elección'
+
+Grado de tristeza: 1.44
+
+Grado de miedo: 1.33
+
+Grado de alegría: 1.94
+
+Grado de enfado: 1.39
+
+Grado de asco: 1.17
+
+La mayoritaria es alegría con un grado 1.94
+
+
+Fuente: https://www.animalpolitico.com/el-pulso/crisis-politica-en-espana-podria-llegar-a-su-fin/ 
+\subsection{Blogs}
+
+\subsubsection{Blog agradecimiento}
+
+Lista de palabras emocionales:
+'vez', 'gracias', 'vez', 'dejáis', 'palabras', 'hacéis', 'merezca', 'pena', 'verdad', 'gracias', 'regalo', 'muñeca', 'especial', 'Significa', 'estáis', 'apoyáis', 'sabéis', 'ganas', 'comerme', 'mundo', 'siento', 'Os', 'dejo', 'fotos', 'paso', 'paso', 'veáis', 'detalles', 'cuidado', 'Menudo', 'trabajazo', 'solo', 'marca', 'hecho', 'vuestro', 'calor', 'Gracias', 'vosotros', 'PedrocheCampanadas', 'tienen', 'sentido', 'adoro'
+
+Grado de tristeza: 1.29
+
+Grado de miedo: 1.21
+
+Grado de alegría: 2.77
+
+Grado de enfado: 1.04
+
+Grado de asco: 0.95
+
+La mayoritaria es alegría con un grado 2.77
+
+Fuente: Twitter: @cristipedroche
+
+\subsubsection{Blog moda}
+
+Lista de palabras emocionales:
+'dejo', 'outfit', 'entretiempo', 'blanco', 'negro', 'llevo', 'blusa', 'blanca', 'volantes', 'enseñado', 'vez', 'instagram', 'combiné', 'negro', 'zapatos', 'abrigo', 'línea', 'oversize', 'paño', 'fino', 'usando', 'días', 'frío', 'calor'
+
+Grado de tristeza: 1.1
+
+Grado de miedo: 0.93
+
+Grado de alegría: 2.05
+
+Grado de enfado: 0.96
+
+Grado de asco: 0.9
+
+La mayoritaria es alegría con un grado 2.05
+
+Fuente: https://stylelovely.com/ladyaddict/2018/04/black-and-white
+
+\subsubsection{Blog reflexión}
+
+Lista de palabras emocionales:
+'bueno', 'sabéis', 'encanta', 'compartir', 'vosotros', 'pese', 'quiero', 'hablaros', 'tema', 'preocupando', 'últimas', 'semanas', 'entendéis', 'vosotros', 'autoestima', 'contestármelo', 'gente', 'critica', 'tenemos', 'supuesto', 'verdad', 'opinión', 'universales', 'forma', 'ver', 'vida', 'creo', 'verdad', 'tenga', 'autoestima', 'veo', 'negativo', 'vivido', 'situaciones', 'vida', 'determinadas', 'personas', 'seguro', 'quisiese', 'formarían', 'parte', 'vida', 'embargo', 'haciendo', 'arrepiento', 'llamar', 'quererse', 'mismo', 'diría', 'querer', 'mismo', 'Frase', 'cierto', 'recuerda', 'enseñanza', 'ama', 'prójimo', 'día', 'diferente', 'tener', 'autoestima', 'evitar', 'problemas', 'preferir', 'tener', 'trato', 'cordial', 'personas', 'importantes', 'vida', 'todas', 'formas', 'decisión', 'personal', 'injusto', 'critique', 'comente', 'quiera', 'conocer', 'persona', 'saber', 'situaciones', 'pasado', 'creo', 'tenga', 'autoestima', 'alto', 'momento', 'situaciones', 'vivimos', 'diario', 'hacer', 'suba', 'baje', 'creo', 'inteligente', 'mantener', 'autoestima', 'límites', 'persona', 'orgullosa', 'verdad', 'enfados', 'pasan', 'rápido', 'prefiero', 'pedir', 'disculpas', 'tenga', 'culpa', 'tal', 'poner', 'fin', 'discusión', 'definir', 'virtud', 'quiero', 'tengo', 'autoestima', 'baja', 'encanta', 'padres', 'enseñado', 'tipo', 'valores', 'educación', 'seguir', 'hacina', 'hagan', 'hagan', 'perdonando', 'odiar', 'guardar', 'rencor', 'consumiendo', 'personas', 'día', 'rencor', 'envidia', 'fin', 'gustaría', 'saber', 'anda', 'vuestro', 'autoestima', 'vez', 'dicho', 'tenéis', 'alto', 'bajo', 'queriendo', 'valorando', 'justa', 'medida', 'perder', 'visión', 'realidad'
+
+Grado de tristeza: 2.0
+
+Grado de miedo: 1.99
+
+Grado de alegría: 3.12
+
+Grado de enfado: 1.8
+
+Grado de asco: 1.56
+
+La mayoritaria es alegría con un grado 3.12
+
+Fuente:  http://www.martacarriedo.com/la-diary-003/
+
+\subsubsection{Blog muerte}
+
+Lista de palabras emocionales:
+'año', 'enero', 'página', 'blanco', 'llena', 'palabras', 'brotan', 'interior', 'salpicadas', 'cosas', 'contar', 'escapan', 'entendimiento', 'año', 'pasado', 'mañana', 'fría', 'cuerpos', 'separaban', 'almas', 'conectadas', 'verte', 'escucharte', 'achucharte', 'embargo', 'sentirte', 'través', 'personas', 'llegando', 'través', 'través', 'historias', 'entremezclan', 'convierten', 'lágrimas', 'vida', 'besarte', 'olerte', 'achucharte', 'forman', 'parte', 'instante'
+
+Grado de tristeza: 2.16
+
+Grado de miedo: 1.91
+
+Grado de alegría: 2.7
+
+Grado de enfado: 1.61
+
+Grado de asco: 1.33
+
+La mayoritaria es alegría con un grado 2.7
+
+
+Fuente: http://blogs.21rs.es/muertevida/
+
+\subsubsection{Blog enfado}
+
+Lista de palabras emocionales:
+
+'conocéis', 'seguido', 'redes', 'sabréis', 'críticas', 'llevado', 'aguantado', 'obvio', 'agradable', 'leer', 'mentiras', 'semana', 'semana', 'hacer', 'oídos', 'sordos', 'seguir', 'trabajo', 'familia', 'amigos', 'personajes', 'públicos', 'tenemos', 'riesgo', 'rosa', 'exponemos', 'gente', 'hable', 'regular', 'quieran', 'existe', 'tipo', 'límite', 'pone', 'nochecita', 'prensa', 'visto', 'desde', 'existe', 'límite'
+
+Grado de tristeza: 0.68
+
+Grado de miedo: 0.91
+
+Grado de alegría: 1.4
+
+Grado de enfado: 0.63
+
+Grado de asco: 0.56
+
+La mayoritaria es alegría con un grado 1.4
+
+Fuente: https://lauraescan.es/respeto/
+
+\subsection{Conclusiones}
+
+Podemos ver, como en todos los cuentos la emoción mayoritaria es alegría. Este es el resultado que esperábamos dado que son cuentos para niños y los autores no quieren reflejar tristeza, miedo, enfado o asco.
+También para el resto de artículos y blogs las emociones son las que esperábamos excepto en el blog de muerte y de enfado.
+
+En el caso del blog de muerte vemos que el resultado es alegría en vez de miedo o tristeza y esto se debe a que el EmoTraductor no entiende de contextos, en el blog una mujer recuerda el día en que perdió a uno de sus hijos y lamenta que no puede besarle o abrazarle. Estas palabras en el diccionario son alegres y al no tener en cuenta la negación asume que es un texto alegre.
+
+En el cado del blog de enfado vemos que el resultado es alegría en vez de enfado. No es un caso alarmante, ya que como se ha explicado anteriormente, el EmoTraductor tiene en cuenta las emociones por encima del 2.5 y en este caso en concreto no supera este límite ninguna de las emociones, aunque indique que la mayoritaria es la alegría, realmente la interfaz web diría que no existe ninguna emoción.
+
+
+%-------------------------------------------------------------------
+\section{Evaluación de la aplicación}
+%-------------------------------------------------------------------
+\label{cap7:sec:aplicacion}
+
+Como ya hemos comentado anteriormente, gracias a la Asociación Asperger Madrid hemos podido probar esta aplicación con usuarios finales. Hemos realizado dos evaluaciones, una preliminar y otra final. Todo el proceso de evaluación se explica a continuación:
+
+\subsection{Diseño de la evaluación}
+
+Para comenzar, decidimos crear dos formularios de Google para realizar a cabo cada evaluación. Finalmente hicimos dos formularios de cada evaluación para que se hicieran dependiendo del rol que iba a tomar el evaluador en la aplicación: experto o usuario. Todos formularios eran similares con la diferencia de que en los formularios de exertos tenían que indicarnos su papel en la asociación.
+
+El objetivo de estas evaluaciones no era otra que conocer qué opinaban los usuarios finales de la utilidad y usabilidad de la aplicación y no tanto evaluar el método porque ya estaba evaluado con anterioridad.
+
+La estructura de los formularios es parecida en la evaluación preliminar y en la final.
+Al comienzo teníamos textos para introducir en la aplicación, con preguntas relativas a los resultados, cuál es la emoción mayoritaria y minoritaria o qué emociones transmite el texto, para saber si los usuarios eran capaces de interpretarlos.
+A continuación, en la evaluación preliminar dejábamos libre al usuario final para que explorase todas las posibles funcionalidades de la aplicación; esto se cambió para la evaluación final dado que los usuarios en las pruebas preliminares no encontraron la opción de cambiar el color de las emociones por lo que decidimos guiarles en la evaluación final para que no se les pasase probar todas las funcionalidades.
+Después del tiempo de exploración o los cambios de colores guiados, los formularios contaban con escalas \textit{likert} para que nos dieran entre 1 y 5 cómo de útil o correcto les habían parecido algunas de las decisiones tomadas. Estas sentencias a evaluar fueron:
+
+\begin{itemize}
+		\item La aplicación es fácil de usar
+		\item Me gustaría usar la aplicación en mi día a día
+		\item Recomendaría la aplicación a otras personas
+		\item Los colores asociados a las emociones por defecto son adecuados
+		\item Las imágenes asociadas a las emociones por defecto son adecuadas
+		\item Me parece útil poder cambiar los colores asociados a las emociones
+		\item Me gustaría poder cambiar las imágenes asociadas a las emociones
+		\item La barra emocional es intuitiva
+		\item Me parece útil tener información sobre las palabras con carga emocional del texto
+		\item Me parece útil tener información sobre la emoción concreta que transmiten las palabras con carga emocional del texto	
+		
+\end{itemize}
+
+Una vez concluido el diseño de los formularios, los probamos y pasamos a la realización de las evaluaciones.
+
+\subsection{Evaluación preliminar}
+
+La evaluación preliminar se realizó el día 22 de Mayo de 2018 en la Facultad de Informática de la Universidad Complutense de Madrid, fue realizada por cuatro de los integrantes de la Asociación Asperger Madrid, dos expertos y dos usuarios. Y asistimos tanto las integrantes del grupo como las directoras de nuestro trabajo para ir apuntando las conclusiones y resolviendo las posibles dudas a los evaluadores.
+
+En rasgos generales, el porcentaje de aciertos en las respuestas de los usuarios es de un 78.13\%, lo que nos indica que la aplicación es intuitiva y sencilla. Por otra parte, los expertos no solo valoraron la interfaz sino que algunos entendieron que tenían que valorar también los resultados del EmoTraductor por lo que su porcentaje de aciertos es bastante menor 56.25\% ya que marcaban las repuestas que ellas creían que eran las acertadas según su opinión y no sobre lo que el EmoTraductor indicaba. 
+
+A raíz de esta evaluación sacamos bastantes conclusiones que nos hicieron modificar el funcionamiento de la aplicación y el fromulario de evaluación.
+
+A nivel de aplicación: Uno de los usuarios nos preguntó el porqué de que en el cuadro derecho de la pantalla donde aparecen las palabras emocionales aparecían emociones mientras que en la barra emocional salía que era un texto tranquilo; esto nos llevó a pensar que quizá era mejor solo mostrar en negrita las palabras que tienen el mismo contenido emocional que la barra que indica el resultado global.
+Por otra parte, cuando las expertas estuvieron escribiendo sobre conflictos que habían tenido algunos de los asperger del centro hablando por WhatsApp se dieron cuenta que el EmoTraductor ponía que todas las frases eran tranquilas y no expresaban emociones; con esto decidimos modificar la manera de calcular las emociones que se mostraban en la barra a como actualmente se calcula.
+
+A nivel de formulario: Nos dimos cuenta que cuando los evaluadores llegaban a las preguntas de la escala likert y les preguntaban por la personalización de los colores todos respondían al azar dado que no encontraron la opción solos, por lo que decidimos modificar el formulario para la siguiente evaluación añadiendo una pregunta de si han encontrado esa funcionalidad y en caso de responder que no se les explica como acceder a ella.
+
+Estas modificaciones se llevaron a cabo para la siguiente evaluación el día 24 de Mayo de 2018
+
+\subsection{Evaluación final}
+
+El día 24 de Mayo de 2018 en uno de los talleres de la Asociación Asperger Madrid evaluaron nuestra aplicación con todas las mejoras hechas para ver si la aplicación era mejor de esta manera. En esta evaluación participaron un experto de 26 años y siete usuarios de entre 16 y 31 años.
+
+La evaluación consistía en lo mismo que la preliminar, los textos y las preguntas eran las mismas, aunque al variar la manera de calcular las emociones, las respuestas cambian. El primer texto se trataba de un texto 100\% alegre; el segundo texto era un texto tranquilo, sin contenido emocional; el tercer texto tenía dos emociones tristeza y miedo donde tristeza era la mayoritaria y miedo la minoritaria; el cuarto texto, a diferencia que en la evaluación preliminar tenía cuatro emociones tristeza, miedo, enfado y asco, donde la mayoritaria era enfado y la minoritaria asco. Al igual que en la evaluación preliminar también teníamos preguntas para responder con una escala likert del 1 al 5.
+A continuación se muestran los resultados obtenidos para los usuarios; después se expondrá una breve conclusión con los resultados del experto que la evaluó.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+																				& Aciertos/Respuestas & Porcentajes \\ \hline
+	
+			Emociones en el texto 1		& 7/7 & 100\% 	\\ \hline
+			Emociones en el texto 																		& 5/7 & 71.43\% \\ \hline
+			Emociones en el texto 3 					& 4/7 & 57.14\% \\ \hline
+			Emoción mayoritaria texto 3 			& 6/7 & 65.71\% \\ \hline
+			Emoción minoritaria texto 3 			& 4/7 & 42.86\% \\ \hline
+			Palabras emocionales del texto 3 	& 3/7 & 42.86\% \\ \hline 
+			Emociones de accidente 						& 3/7 & 42.86\% \\ \hline
+			Emociones de herida 							& 3/7 & 42.86\% \\ \hline
+			Emociones en el texto 4 					& 6/7 & 85.71\% \\ \hline
+			Emoción mayoritaria texto 4 			& 2/7 & 28.57\% \\ \hline
+			Emoción minoritaria texto 4 			& 0/7 & 0\% 		\\ \hline
+			Encontrado el cambio de color 		& 5/7 & 71.43\% \\ \hline
+		\end{tabular}
+		\caption{Resultado evaluación final I}
+		\label{tabla:evaluacionFinalI}
+	\end{center}
+\end{table} 
+
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{lllll}
+\multirow{2}{*}{} &  &  &  &  \\
+                  &  &  &  &  \\
+\multirow{2}{*}{} &  &  &  &  \\
+                  &  &  &  & 
+\end{tabular}
+\end{table}
+
+En este caso, el experto que evaluó acertó en todas las preguntas excepto en las de emociones mayoritarias y minoritarias que no apostó por ninguna. 
+
+Con todos estos resultados concluimos que no es demasiado intuitivo encontrar las emociones mayoritarias y minoritarias dado el resultado en la barra emocional, ya que es complicado ver el porcentaje exacto que representa pero que si se refleja claramente las emociones que representa.
+
+A continuación veremos los resultados de las preguntas de usabilidad dando la media, la mediana y la desviación típica.
+
+\begin{table}[htbp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+																								& Media & Mediana & Desviación típica \\ \hline
+			Es fácil de usar 													& 4.29 & 4 & 0.76	\\ \hline
+			Uso diario 																& 3.43 & 3 & 1.27 \\ \hline
+			Recomendación a otros											& 3.43 & 4 & 1.27 \\ \hline
+			Colores adecuados 												& 4.29 & 5 & 0.95 \\ \hline
+			Imágenes adecuadas 												& 3.71 & 4 & 1.50 \\ \hline
+			Utilidad cambiar color 										& 3.57 & 4 & 1.62 \\ \hline
+			Cambiar imágenes 													& 3.86 & 3 & 1.07 \\ \hline
+			Barra emocional intuitiva 								& 4.43 & 5 & 0.79 \\ \hline
+			Utilidad informacion de las palabras 			& 4.29 & 5 & 0.95 \\ \hline
+			Utilidad emoción concreta de las palabras	& 4.29 & 4 & 0.76	\\ \hline
+		\end{tabular}
+		\caption{Resultado evaluación finalII}
+		\label{tabla:evaluacionFinalII}
+	\end{center}
+\end{table} 
+
+Como se puede ver en los resultados ninguno baja del 3, valor medio de la escala likert, lo que nos da una buena señal para ver que la aplicación cumple bastantes expectativas. Vamos a reflejar los de menor valor: el uso diario y la recomendación a otros; pensamos que esto puede ser así porque es una herramienta completamente nueva y nadie está acostumbrado a usar algo así antes de escribir.
+
+También añadimos una última pregunta por si querían poner alguna observación y ha habido una que nos ha llamado mucho la atención; es la siguiente: ''He tenido algunas dificultades porque no está adaptado para personas con discapacidad visual.'', lo que nos ha llevado a añadir esto al trabajo futuro.
+
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

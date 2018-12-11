@@ -1,0 +1,32 @@
+
+%---------------------------------------------------------------------
+%
+%                          Capitulo 9
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{Conocimientos Aplicados y Aprendidos}
+
+\begin{resumen}
+En este capítulo se explica la manera en la que se han aplicado los conocimientos adquiridos a lo largo de la carrera y se explican los nuevos conocimientos aprendidos durante el desarrollo de este trabajo.
+\end{resumen}
+
+
+A lo largo de la carrera hemos tenido la oportunidad de estudiar una serie de asignaturas que nos han sido de gran utilidad para el desarrollo de este Trabajo de Fin de Grado.
+
+Para empezar, han sido fundamentales las asignaturas de \textbf{Fundamentos de la Programación} y \textbf{Tecnología de la Programación}, ya que nos han ayudado a adquirir una forma de pensar estructurada y eficiente a la hora de programar además de enseñarnos potentes lenguajes de programación. Conocer estos lenguajes nos ha hecho más fácil aprender Python, un lenguaje al que no nos habíamos enfrentado antes. La asignatura de \textbf{Estructura de Datos y Algoritmos} nos ha permitido hacer nuestros programas lo más eficientes posible, algo que se puede ver reflejado en el código del proyecto.
+
+Al ser este un proyecto tan grande y realizado a lo largo de todo un año hemos tenido que ser capaces de gestionar todo lo relacionado con él: equipo, planificación, pruebas... Todos estos conocimientos los hemos obtenido en la asignatura de \textbf{Ingeniería del Software} donde ya tuvimos la oportunidad de llevar a cabo un proyecto anual gestionando cada parte de este siguiendo las metodologías que más se adaptaban al proyecto en cuestión. En esta asignatura también aprendimos los diferentes tipos de pruebas que existen para software (unitarias, integrales, sistema...) y aprendimos a aplicarlas. Otras asignaturas que nos ha ayudado a diseñar y realizar las pruebas son \textbf{Auditoría Informática} y \textbf{Evaluación de Configuraciones} que nos han permitido poner a prueba tanto los servicios web como la aplicación desde distintos puntos de vista.
+
+Otro módulo muy importante de asignaturas es el compuesto por las asignaturas relacionadas con desarrollo web: \textbf{Aplicaciones Web}, \textbf{Ampliación de Bases de Datos} e \textbf{Ingeniería Web}. Estas asignaturas nos han aportado los conocimientos necesarios de HTML, CSS y JavaScript para ser capaces de desarrollar la aplicación web del EmoTraductor así como las herramientas necesarias para poder integrar en esta aplicación los servicios web mediante el uso de JQuery.
+
+Antes de desarrollar la aplicación web tuvimos que diseñar su interfaz para lo que nos resultó realmente útil la asignatura de \textbf{Desarrollo de Sistemas Interactivos} donde aprendimos el proceso a seguir a la hora de desarrollar una aplicación. Aprendimos a diseñar prototipos como los que hemos diseñado para este proyecto y a realizar evaluaciones con usuarios reales para probar tanto los prototipos como la aplicación, lo que también ha sido aplicado en nuestro proyecto durante la evaluación de la aplicación con usuarios finales.
+
+En cuanto al desarrollo de los servicios web, nos ha ayudado la asignatura de \textbf{Bases de Datos} para poder crear la base de datos que forma el modelo de Django y realizar las distintas consultas necesarias sobre ella. Si bien estas consultas no se hacen de forma directa por nosotras los conocimientos adquiridos en esta asignatura nos han ayudado a entender como funciona la base de datos y como se almacenan y obtienen los datos.
+
+Para tener todo disponible en Internet necesitábamos utilizar un servidor que nos fue proporcionado por nuestras directoras del TFG. Este servidor tenía el sistema operativo GNU/Linux que aprendimos a manejar en la asignatura de \textbf{Sistemas Operativos}. Para realizar el despliegue de nuestro proyecto en Apache y gestionar todo lo relacionado con el servidor nos ayudaron los conocimientos adquiridos en las asignaturas relacionadas con redes: \textbf{Redes}, \textbf{Redes y Seguridad} y \textbf{Ampliación de Redes} y \textbf{Sistemas Operativos}.
+
+Por último, en la asignatura de \textbf{Ética, Legislación y Profesión} aprendimos todo lo necesario sobre licencias tanto para proteger nuestro código como para saber utilizar de forma correcta el software libre desarrollado por otras personas.
+
+En resumen, en este TFG hemos aplicado los conocimientos adquiridos en muchas de las asignaturas de la carrera pero también hemos aprendido muchas cosas nuevas, entre las que cabe destacar: configuración de un host virtual en un servidor Apache, python como lenguaje de programación así como hacer uso de varias de las bibliotecas que éste posee, como por ejemplo Spacy y PyStemmer, las cuales facilitan el procesamiento de lenguaje natural, metodología SCRUM, mediante la cual hemos mejorado nuestra forma de trabajo de manera paralela. También hemos conocido herramientas que nos han facilitado el desarrollo del proyecto, como podrían ser, entre otras, Jenkins, herramienta que realiza pruebas unitarias e integradas de nuestro proyecto o Latex, un compilador que nos ayudó a realizar esta memoria.
+

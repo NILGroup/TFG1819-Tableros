@@ -1,0 +1,111 @@
+%---------------------------------------------------------------------
+%
+%                          Capítulo 4
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{Herramientas empleadas}
+
+\begin{resumen}
+En este capítulo se profundizará en las herramientas que utilizaremos a lo largo del trabajo. En la sección 4.1 se muestran las herramientas básicas que vamos a usar para el desarrollo de nuestro proyecto. En la sección 4.2 se presenta el diccionario que vamos a utilizar para el marcado emocional. En la sección 4.3 se introduce el framework que vamos a utilizar para el desarrollo de los servicios web, Django. En la sección 4.4 se explica cómo vamos a utilizar Trello para seguir la metodología Scrum. En la sección 4.5 se expone la forma de realizar las pruebas utilizando Jenkins y Doctest. En la sección 4.6 se presentan SpaCy y PyStemmer, las herramientas que se utilizarán para poder procesar las palabras que forman una frase para poder realizar el análisis emocional sobre ella.
+\end{resumen}
+
+%-------------------------------------------------------------------
+\section{Herramientas básicas}
+%-------------------------------------------------------------------
+\label{cap4:sec:basico}
+
+Las herramientas básicas utilizadas para el desarrollo del proyecto son:
+
+\begin{itemize}
+	\item \textbf{Repositorio:} Se utilizará un repositorio común de \textit{GitHub} cuya dirección es https://github.com/NILGroup/TFG-1718-Emociones, en él se subirán todos los cambios realizados en el código. A pesar de ser un equipo de desarrollo pequeño y estar utilizando la metodología Scrum usaremos una rama por historia de usuario. Tendremos además dos ramas adicionales, una para la memoria y otra para los prototipos.
+	
+		\item \textbf{Pruebas automáticas:} Haremos uso de Jenkins con el fin de controlar la ejecución de pruebas y la comparación entre los resultados obtenidos y los resultados esperados. Esto nos permitirá automatizar la ejecución de pruebas necesarias a los distintos módulos que resultaría muy costoso realizar a mano.
+\end{itemize}
+
+
+%-------------------------------------------------------------------
+\section{Diccionario emocional}
+%-------------------------------------------------------------------
+\label{cap3:sec:diccionario emocional}
+
+Nuestro objetivo es analizar texto en castellano por lo que necesitamos un diccionario afectivo que contenga palabras en castellano. Además, nos interesa que las palabras estén marcadas con un determinado valor para cada una de las categorías emocionales con las que queremos trabajar: tristeza, miedo, alegría, enfado y asco. De todos los diccionarios presentados en la sección 3.3 solamente hay dos que cumplan con ambos requisitos: el diccionario de Hinojosa y el de Ferré. Una vez decidido que íbamos a trabajar con estos diccionarios los exportamos utilizando \textit{EmoFinder}\footnote{http://www.usc.es/pcc/app/emofinder/index.php?lang=es}, una herramienta en línea que contiene diferentes bases de datos de palabras y sus propiedades (dimensiones emocionales, categorías emocionales...). La propia herramienta nos permitió combinar ambos diccionarios en un mismo CSV del que tuvimos que solapar las columnas: las palabras que están en un diccionario no están en el otro, por lo que para cada palabra sólo tenemos que quedarnos con las cinco columnas del diccionario al que pertenecen. Obtuvimos así un diccionario afectivo compuesto por 3.141 palabras marcadas con un grado del uno al cinco, siendo uno \textit{para nada} y el 5 \textit{extremadamente}, para las cinco categorías emocionales ya comentadas.
+	
+En la Tabla \ref{tabla:diccionario} podemos ver un ejemplo de los valores obtenidos para tres de las palabras del diccionario. Cada columna representa los grados asociados a cada categoría emocional para la palabra dada.
+
+		\begin{table}[htbp]
+		\begin{center}
+		\begin{tabular}{|l|l|l|l|l|l|}
+		\hline
+		Palabra & Tristeza & Miedo & Alegría & Enfado & Asco \\
+		\hline 
+		abismo & 2,47 & 4,13 & 1,30 & 1,53 & 1,12 \\ \hline
+		abandono & 4,43 & 3,33 & 1,03 & 3,3 & 2,63 \\ \hline
+		abanico & 1 & 1 & 2,67 & 1 & 1 \\ \hline
+		\end{tabular}
+		\caption{Fragmento de la adaptación del diccionario}
+		\label{tabla:diccionario}
+		\end{center}
+		\end{table}
+
+Al igual que en los diccionarios en los que nos basamos, consideraremos que una palabra pertenece a una categoría emocional únicamente cuando el valor para dicha categoría sea superior a 2,5. Por ejemplo, la palabra abandono pertenece a las categorías emocionales Tristeza, Miedo, Enfado y Asco mientras que abanico solo pertenece a la categoría emocional Alegría. 
+
+%-------------------------------------------------------------------
+\section{Django}
+%-------------------------------------------------------------------
+\label{cap3:sec:django}
+
+La implementación de los servicios web desarrollados se hará utilizando Django\footnote{https://docs.djangoproject.com/en/2.0/}, un framework para aplicaciones web gratuito y open source escrito en Python. Django se organiza según el patrón MVC, por lo que fomenta el desarrollo rápido y el diseño limpio y pragmático. Tiene una comunidad próspera y activa, una gran documentación y muchas opciones de soporte gratuito y de pago. El software que Django nos ayudará a escribir será completo, versátil, seguro, escalable, mantenible y portable. 
+
+Este framework nos proporciona un servidor web, en el que se almacena la base de datos que contiene las palabras de nuestro diccionario.
+Para realizar las diferentes consultas sobre las palabras existen una serie de clases que implementan los diferentes métodos de un servicio web REST típico: \textbf{GET, POST, DELETE}. 
+Cada una de las diferentes clases nos aportarán una manera diferente de acceder a la información, como pueden ser: acceso a todo el diccionario de palabras, a una palabra concreta o a un campo de una palabra concreta.
+Los resultados serán devueltos en formato JSON.
+
+%-------------------------------------------------------------------
+\section{Trello}
+%-------------------------------------------------------------------
+\label{cap3:sec:trello}
+
+Trello sirve para organizar proyectos y actividades. Para representar las tareas y las historias de usuario se usan tarjetas virtuales que podemos asignar a los miembros del equipo. En la Figura \ref{fig:sprint} podemos ver el tablero al inicio del proyecto.En este tablero tenemos cinco columnas: \textbf{Backlog}, \textbf{To Do}, \textbf{Sprint Backlog}, \textbf{In Progress} y \textbf{Done}. El Product Owner crea el \textbf{Backlog} del que se van sacando las historias de usuario de cada sprint. Las historias de usuario seleccionadas en la reunión de planificación para el sprint pasa a la columna \textbf{To Do} del tablero. En la Figura \ref{fig:sprint2} se puede ver un ejemplo del tablero en un estado más avanzado del proyecto. En este segundo tablero se ve como las historias de usuario han sido divididas en tareas para formar el \textbf{Sprint Backlog}, del que las tareas van saliendo en orden hacia la columna \textbf{In Progress}  cada vez que se asigna una tarea a un miembro del equipo de desarrollo. Cuando una tarea se termina pasa a la columna \textbf{Done}.
+
+	\figura{Bitmap/Capitulo3/Sprint1Plan}{width=\textwidth}{fig:sprint}{Tablero trello al inicio del proyecto.}
+	
+	\figura{Bitmap/Capitulo3/Sprint1Fin}{width=\textwidth}{fig:sprint2}{Final del sprint inicial.}
+
+%-------------------------------------------------------------------
+\section{Doctest y Jenkins}
+%-------------------------------------------------------------------
+\label{cap3:sec:pruebas}
+
+Utilizaremos Jenkins\footnote{https://jenkins.io/doc/} para la parte de la integración continua del proyecto. Esto nos permitirá asegurarnos de que la unión de las partes desarrolladas por los diferentes miembros del equipo de desarrollo es correcta y realizar las pruebas automáticas. Esto último se llevará a cabo mediante una orden shell que Jenkins ejecutará cada vez que se detecte un cambio en el repositorio Github. La orden únicamente se encarga de ejecutar el script de pruebas que contendrá las llamadas a los diferentes programas de pruebas que se desarrollen.
+
+Los programas de pruebas utilizarán Doctest para hacer las pruebas, tanto las de unidad como las de integración. Doctest es un módulo incluido en la librería estándar de Python. Su funcionamiento se basa 
+en definir la función que se quiera probar y, dentro de un comentario al inicio de esta, poner una serie de llamadas y el resultado que se espera obtener de ellas. Tiene una función testmod que realiza las pruebas y devuelve el número de fallos y el resultado de todas las pruebas. Si el número de fallos es mayor que cero provocamos una excepción que Jenkins detectará para notificar a todo el equipo que hay algún fallo. Los resultados de las pruebas se muestran por consola al acabar y Jenkins los guardará para ayudar a encontrar el problema. Tendremos un archivo de pruebas por cada uno de los servicios web que vayamos desarrollando. Cada vez que se termine el desarrollo de un servicio nuevo creemos un nuevo archivo de pruebas que utilice Doctest para hacer las pruebas. Teniendo en cuenta que cada módulo es utilizado por otro, las pruebas de unidad de un módulo sirven como pruebas de integración para el módulo inferior.
+
+%-------------------------------------------------------------------
+\section{SpaCy y PyStemmer}
+%-------------------------------------------------------------------
+\label{cap3:sec:lematizacion}
+
+El objetivo de nuestro proyecto es interpretar la emoción de frases y textos, no sólo palabras. Para ello se necesita una herramienta que nos facilite trabajar con frases, etiquetando cada una de las palabras que las forman para conocer su categoría gramatical con el fin de descartar aquellas que no tengan caracter emocional (como podrían ser los articulos, los pronombres...). \textbf{SpaCy} es una librería open source escrita en Python y dedicada al Procesamiento de Lenguaje Natural. Soporta, entre otros idiomas, el español y nos permite etiquetar las palabras con las siguientes categorías: NOUN, PROPN, PART, INTJ, SPACE, PRON, SCONJ, AUX, CONJ, VERB, ADV, ADJ...
+
+SpaCy recibirá un texto y devolverá un objeto de tipo ``Doc'', propio de la librería, que contendrá la frase con una serie de anotaciones sobre cada una de las palabras que la forman (lema, etiqueta, dependencias sintácticas, forma...). 
+
+%https://github.com/explosion/spacy/blob/master/spacy/lang/es/tag_map.py aquí están todas las etiquetas
+
+
+Para poder realizar el análisis emocional del texto, necesitamos obtener el lema de cada una de las palabras, para que sí alguna de las palabras del texto no se encuentra en nuestro diccionario pero deriva de una que sí que está, pueda ser reconocida. A pesar de que SpaCy nos proporciona el lema de una palabra, tras estar haciendo pruebas descubrimos que los resultados que nos devuelve no son del todo correctos. Por ejemplo, para la palabra alegría SpaCy devuelve alegrar como lema, cuando lo correcto sería devolver alegr.
+
+
+ Para solventar los problemas con los lemas devueltos por SpaCy decidimos utilizar la librería de Python \textbf{PyStemmer} que obtenía mejores resultados. PyStemmer es una adaptación de Snowball para Python. Snowball es un pequeño lenguaje de procesamiento que permite crear algoritmos de lematización. PyStemmer, soporta varios idiomas incluido el español y nos ofrece mejores resultados a la hora de obtener los lemas de las palabras. Por ejemplo, para la palabra alegre para la que Spacy nos devolvía alegrar, PyStemmer devuelve alegr, que es el valor correcto.
+
+PyStemmer funciona de manera similar a Spacy, primero importamos el módulo stemmer, seleccionamos el idioma para el cual queremos que nos seleccione el lema e introducimos la palabra. Como SpaCy, nos devuelve el lema de la palabra dada. El problema de esta librería es que no nos permite saber la etiqueta gramatical de la palabra (cosa que si devuelve SpaCy), por eso vamos a combinar ambas herramientas para procesar las palabras: usaremos PyStemmer cuando necesitemos obtener el lema de una palabra y SpaCy cuando necesitemos conocer la etiqueta gramatical de ésta.
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:

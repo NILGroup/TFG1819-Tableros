@@ -1,0 +1,65 @@
+%---------------------------------------------------------------------
+%
+%                          Capitulo 8
+%
+%---------------------------------------------------------------------
+\setlength{\parskip}{10pt}
+\chapter{Así se hizo...}
+\label{cap8:AsiSeHizo}
+
+\begin{resumen}
+ En este capitulo se presenta como se ha gestionado el proyecto siguiente la metodología ágil Scrum.
+\end{resumen}
+
+En nuestro proyecto los roles propios de la metodología Scrum se asignaron de la siguiente forma:
+\begin{itemize}
+	\item Product Owner: Raquel Hervás
+	\item Scrum Master: Virginia Francisco
+	\item Scrum Team: Gema Eugercios, Elena Kaloyanova y Paloma Gutiérrez. 
+\end{itemize}
+
+Hemos seguido esta metodología ayudándonos de la herramienta Trello, para el tablero, en el que teníamos las siguientes columnas: Backlog donde el Product Owner colocaba las historias de usuario del Product Backlog; la columna del To Do donde se encontraban las historias de usuario que íbamos a realizar en cada sprint; el Spring Backlog donde teníamos dividida cada historia de usuario en pequeñas tareas; In Progress columna en la que poníamos la tarea que estaba en progreso por cada componente del Scrum Team y la columna Done donde teníamos las historias de usuario y las tareas ya terminadas.
+
+Para la planificación de cada sprint teniamos una reunión de planificación donde el Product Owner había definido unas historias de usuario que quería que se ralizaran en el sprint y se encontraban en el Product Backlog y podían estar relacionadas tanto con el desarrollo de los servicios o la aplicación o con el desarrollo de la memoria. Al comienzo de esta reunión el Product Owner nos explicaba qué historias de usuario quería que se realizaran y nos resolvía las dudas que iban surgiendo sobre estas. A continuación, el Scrum Team comentábamos cuánto tiempo nos podría llevar cada historia de usuario, decidíamos cuántas ibámos a realizar y cuánto tiempo necesitábamos. Una vez decidido esto, las historias de usuario se movían en Trello desde la columna Backlog a la columna To Do. Después el Scrum Team dividíamos cada historia de usuario en pequeñas tareas que iríamos realizando indistintamente cualquiera de las integrantes del equipo, ya que en Scrum se emplean equipos multidisciplinales; estas pequeñas tareas se colocaban en la columna Sprint Backlog. Cada día el equipo comentábamos como nos había ido el día anterior realizando nuestras tareas y qué ibámos a realizar ese día, cuando en una de estas reuniones hablábamos de haber finalizado una tarea, la tarea finalizada la movíamos en la aplicación Trello desde la columna In Progress a la columna Done y la nueva tarea del Sprint Backlog a la columna In Progress; en caso de ser una tarea que finaliza toda una historia de usuario, movíamos esta historia de usuario desde la columna To Do a la columna Done.
+
+Al final de cada sprint teníamos una Sprint Review, reunión donde enseñábamos al Product Owner y al Scrum Master lo realizado en el sprint, la aplicación hasta ese momento o la memoria en caso de ser una historia de usuario relacionada con esta. El Product Owner y el Scrum Master analizaban los resultados preguntándonos cualquier duda en caso de tenerla y nos devolvían su feedback.
+Después de esta reunión procedíamos a tener la Spring Retrospective, una reunión donde analizábamos cómo el equipo, había seguido la metodología Scrum y entre todos decidíamos si había algo que cambiar para mejorar en el siguiente sprint. 
+
+Al comienzo del proyecto las dos reuniones finales del sprint las realizábamos separadas, pero conforme fuimos avanzando las fusionamos ya que era más sencillo y más ágil. Cada vez que nos reuníamos hacíamos tres reuniones en una con el siguiente orden: Sprint Review, Sprint Retrospective y Sprint Planning.
+
+A continuación se explican los resultados de los diez sprints realizados. En el Apéndice F se puede consultar el estado del tablero al inicio y al final de cada sprint.
+ 
+\begin{itemize}
+	\item Sprint 1 (14/11/2017 - 28/11/2017): Consistió mayoritariamente en investigar el estado del arte y las herramientas que íbamos a utilizar y añadir la información obtenida a la memoria. También se comenzó a realizar el primer servicio web: obtener los grados de cada emoción para una palabra, y documentarlo. Al acabar el sprint aún faltaba terminar el servicio y ejecutar las pruebas pertinentes sobre él.
+
+	\item Sprint 2 (28/11/2017 - 19/12/2017): Consistió en terminar el servicio web que se comenzó en el sprint 1 y en desarrollar un nuevo servicio que nos permitiera obtener la emoción consensuada de una palabra. Al acabar el sprint quedó por realizar las pruebas sobre los servicios desarrollados, tanto manuales como automáticas, y resolver un problema que teníamos al subir las palabras al servidor ya que no reconocía las tildes correctamente.
+
+
+	\item Sprint 3 (19/12/2017 - 09/01/2018): Consistió en realizar las pruebas sobre los servicios web que ya teníamos dejándolos así acabados, y en desarrollar uno nuevo que nos proporcione la emoción mayoritaria de una palabra y documentar todos los servicios. Antes de añadir los servicios nuevos a la memoria tuvimos que corregirla tras una primera revisión. Al acabar el sprint quedaban por terminar las pruebas sobre los tres servicios utilizando Jenkins para acabar así el pipeline de integración continua.
+
+
+	\item Sprint 4 (09/01/2018 - 21/02/2018): Consistió en acabar las pruebas sobre todos los servicios realizados hasta el momento y desarrollar los servicios relacionados con el análisis emocional de una frase. Al acabar el sprint quedaba por desarrollar y probar el servicio que nos proporcionase la emoción mayoritaria de una frase.
+
+	\item Sprint 5 (21/02/2018 - 07/03/2018): Consistió en terminar el servicio sobre la emoción mayoritaria de una frase, corregir la memoria tras la segunda revisión y diseñar tres prototipos, uno cada una, de la interfaz de la aplicación web a desarrollar (Sección 5.1.1). Al acabar el sprint quedaba pendiente la corrección de la memoria.
+
+	\item Sprint 6 (07/03/2018 - 21/03/2018): Consistió en terminar de corregir la memoria, revisar la codificación de los servicios y hacer ciertas modificaciones (como añadir más peso a los verbos) para depurarlos, buscar una serie de textos para usarlos como casos de prueba y generar el prototipo final para presentarselo a la Asociasión Asperger Madrid. Al acabar el sprint quedaba pendiente analizar los resultados obtenidos en los casos de prueba.
+
+	\item Sprint 7 (21/03/2018 - 25/04/2018): Consistió en realizar el análisis de los casos de prueba y añadirlos a la memoria, desarrollar la aplicación web y documentar todo después de haber corregido la memoria tras la tercera revisión. Al acabar el sprint quedaba por añadir los últimos detalles a la interfaz, integrar la funcionalidad para las frases y los textos ya que sólo funcionaba para palabras y documentar todo.
+
+	\item Sprint 8 (25/04/2018 - 09/05/2018): Tuvimos que modificar gran parte del proyecto ya que encontramos dos nuevos diccionarios emocionales que ofrecían mejores resultados que el que estábamos utilizando. Investigamos los nuevos diccionarios y los documentamos en la memoria. Tuvimos que adaptar los servicios y la aplicación web para cambiar la categoría emocional "`sorpresa"' con la que estábamos trabajando por "`asco"'. También cambiamos la forma de presentar los resultados, ya que el diccionario con el que trabajábamos mostraba el porcentaje de certeza que se tenía de que una palabra perteneciese a una categoría emocional concreta mientras que con el nuevo diccionario mostrábamos el grado del 1 al 5 de pertenencia en la categoría. Una vez realizados estos cambios había que acabar la aplicación web y documentarla. Al acabar el sprint habíamos conseguido realizar los cambios en el diccionario y los servicios web pero al centrarnos en eso no tuvimos tiempo para acabar de depurar la aplicación web. Por eso, tanto la parte de la web como la correción de la memoria quedaron pendientes para el sprint siguiente.
+
+	\item Sprint 9 (09/05/2018 - 16/05/2018): Consistió en dejar acabada la aplicación web, tanto su interfaz como la funcionalidad y documentar todo en la memoria. También comenzamos con el desarrollo de la API. Al acabar el sprint la aplicación estaba prácticamente acabada, faltaba pulir algunos detalles meramente estéticos. También faltaba documentar todo y acabar la API.
+	
+	\item Sprint 10 (16/05/2018 - 22/05/2018): Consistió en terminar todos los detalles de la aplicación web antes de la evaluación con usuarios finales que iba a tener lugar el día 22 de mayo además de preparar un formulario para esta. También había que documentar el desarrollo de la aplicación en la memoria.Al acabar el sprint todo estaba acabado y procedimos a realizar la evaluación. 
+	
+\end{itemize}
+
+A partir del 22 de mayo nos dedicamos a terminar la memoria y a preparar la presentación. 
+
+% Variable local para emacs, para  que encuentre el fichero maestro de
+% compilación y funcionen mejor algunas teclas rápidas de AucTeX
+%%%
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../Tesis.tex"
+%%% End:
