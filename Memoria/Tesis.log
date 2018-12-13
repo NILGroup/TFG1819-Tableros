@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.24)  9 DEC 2018 14:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.24)  13 DEC 2018 21:57
 entering extended mode
 **./Tesis.tex
 (Tesis.tex
@@ -553,11 +553,7 @@ LaTeX Info: Redefining \% on input line 25.
  (Cascaras/agradecimientos.aux)
 (Cascaras/resumen.aux) (Cascaras/summary.aux) (TeXiS/TeXiS_toc.aux)
 (Capitulos/01Capitulo1.aux) (Capitulos/02Capitulo2.aux)
-(Capitulos/03Capitulo3.aux
-
-LaTeX Warning: Label `cap3:sec:saacs' multiply defined.
-
-) (Cascaras/bibliografia.aux) (Cascaras/fin.aux))
+(Capitulos/03Capitulo3.aux) (Cascaras/bibliografia.aux) (Cascaras/fin.aux))
 \openout1 = `Tesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
@@ -687,7 +683,10 @@ Type  H <return>  for immediate help.
                                                   
 l.157 \makeCover
                 
-? 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
 [3]) [4]
 \openout2 = `Cascaras/agradecimientos.aux'.
 
@@ -789,13 +788,13 @@ LaTeX Warning: Characters dropped after `\end{comment}' on input line 67.
 ]
 Cap\'itulo 3.
 [5]
-<Imagenes/Bitmap/Capitulo3/pictograma1.png, id=209, 359.3425pt x 83.31125pt>
+<Imagenes/Bitmap/Capitulo3/pictograma1.png, id=211, 359.3425pt x 83.31125pt>
 File: Imagenes/Bitmap/Capitulo3/pictograma1.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/pictograma1.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/pictograma1.png  used on inp
 ut line 38.
 (pdftex.def)             Requested size: 323.9978pt x 75.1218pt.
-<Imagenes/Bitmap/Capitulo3/distintoHola.png, id=211, 361.35pt x 120.45pt>
+<Imagenes/Bitmap/Capitulo3/distintoHola.png, id=213, 361.35pt x 120.45pt>
 File: Imagenes/Bitmap/Capitulo3/distintoHola.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/distintoHola.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/distintoHola.png  used on in
@@ -807,13 +806,24 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Info: Redefining \. on input line 54.
 LaTeX Info: Redefining \% on input line 54.
-[6 <./Imagenes/Bitmap/Capitulo3/pictograma1.png>])
+[6 <./Imagenes/Bitmap/Capitulo3/pictograma1.png>]
+<Imagenes/Bitmap/Capitulo3/picto-selector.png, id=226, 977.6525pt x 688.5725pt>
+
+File: Imagenes/Bitmap/Capitulo3/picto-selector.png Graphic file (type png)
+<use Imagenes/Bitmap/Capitulo3/picto-selector.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/picto-selector.png  used on 
+input line 73.
+(pdftex.def)             Requested size: 323.9978pt x 228.19624pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
+[7 <./Imagenes/Bitmap/Capitulo3/distintoHola.png>])
 LaTeX Info: Redefining \. on input line 176.
 LaTeX Info: Redefining \% on input line 176.
- [7 <./Imagenes/Bitmap/Capitulo3/distintoHola.png>] [8
-
-
-]
+ [8 <./Imagenes/Bitmap/Capitulo3/picto-selector.png>]
 \openout2 = `Cascaras/bibliografia.aux'.
 
  (Cascaras/bibliografia.tex (Tesis.bbl
@@ -871,6 +881,8 @@ on-[]saac/$[]
 )) [9
 
 
+
+
 ]
 \openout2 = `Cascaras/fin.aux'.
 
@@ -890,21 +902,17 @@ LaTeX Info: Redefining \% on input line 25.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 241.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 241.
 Package rerunfilecheck Info: File `Tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3186086C7D060F05F84F1301A47873F6;1070.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: D5B657B1963A3BE4FEC9747B37E404EC;1078.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 241.
  ) 
 Here is how much of TeX's memory you used:
- 11604 strings out of 492970
- 175224 string characters out of 3126149
- 284065 words of memory out of 3000000
- 14909 multiletter control sequences out of 15000+200000
+ 11615 strings out of 492970
+ 175567 string characters out of 3126149
+ 284116 words of memory out of 3000000
+ 14917 multiletter control sequences out of 15000+200000
  20060 words of font info for 42 fonts, out of 3000000 for 9000
  1379 hyphenation exceptions out of 8191
- 55i,11n,47p,1130b,510s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,47p,1130b,510s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \ecti1095.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\ectt1095.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
@@ -924,9 +932,9 @@ rmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <
 C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
 x1200.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
 \dpi600\ecbx2074.pk>
-Output written on Tesis.pdf (26 pages, 621608 bytes).
+Output written on Tesis.pdf (26 pages, 810853 bytes).
 PDF statistics:
- 732 PDF objects out of 1000 (max. 8388607)
- 57 named destinations out of 1000 (max. 500000)
- 152 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 740 PDF objects out of 1000 (max. 8388607)
+ 59 named destinations out of 1000 (max. 500000)
+ 157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
