@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.24)  19 DEC 2018 20:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.24)  1 FEB 2019 01:21
 entering extended mode
 **./Tesis.tex
 (Tesis.tex
@@ -789,127 +789,165 @@ LaTeX Warning: Characters dropped after `\end{comment}' on input line 67.
 ]
 Cap\'itulo 3.
 [5]
-<Imagenes/Bitmap/Capitulo3/pictograma1.png, id=228, 359.3425pt x 83.31125pt>
+<Imagenes/Bitmap/Capitulo3/pictograma1.png, id=236, 359.3425pt x 83.31125pt>
 File: Imagenes/Bitmap/Capitulo3/pictograma1.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/pictograma1.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/pictograma1.png  used on inp
 ut line 38.
 (pdftex.def)             Requested size: 323.9978pt x 75.1218pt.
-<Imagenes/Bitmap/Capitulo3/distintoHola.png, id=230, 361.35pt x 120.45pt>
+LaTeX Info: Redefining \. on input line 52.
+LaTeX Info: Redefining \% on input line 52.
+ [6 <./Imagenes/Bitmap/Capitulo3/pictograma1.png>]
+<Imagenes/Bitmap/Capitulo3/SPCcolores.png, id=250, 307.1475pt x 291.0875pt>
+File: Imagenes/Bitmap/Capitulo3/SPCcolores.png Graphic file (type png)
+<use Imagenes/Bitmap/Capitulo3/SPCcolores.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/SPCcolores.png  used on inpu
+t line 57.
+(pdftex.def)             Requested size: 323.9978pt x 307.07664pt.
+LaTeX Info: Redefining \. on input line 64.
+LaTeX Info: Redefining \% on input line 64.
+ [7 <./Imagenes/Bitmap/Capitulo3/SPCcolores.png>]
+<Imagenes/Bitmap/Capitulo3/bliss.png, id=261, 263.48438pt x 225.84375pt>
+File: Imagenes/Bitmap/Capitulo3/bliss.png Graphic file (type png)
+<use Imagenes/Bitmap/Capitulo3/bliss.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/bliss.png  used on input lin
+e 71.
+(pdftex.def)             Requested size: 323.9978pt x 277.72755pt.
+LaTeX Info: Redefining \. on input line 78.
+LaTeX Info: Redefining \% on input line 78.
+ [8 <./Imagenes/Bitmap/Capitulo3/bliss.png>]
+<Imagenes/Bitmap/Capitulo3/distintoHola.png, id=271, 361.35pt x 120.45pt>
 File: Imagenes/Bitmap/Capitulo3/distintoHola.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/distintoHola.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/distintoHola.png  used on in
-put line 44.
+put line 81.
 (pdftex.def)             Requested size: 323.9978pt x 107.99963pt.
+<Imagenes/Bitmap/Capitulo3/sclera.png, id=272, 338.76563pt x 197.98969pt>
+File: Imagenes/Bitmap/Capitulo3/sclera.png Graphic file (type png)
+<use Imagenes/Bitmap/Capitulo3/sclera.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/sclera.png  used on input li
+ne 89.
+(pdftex.def)             Requested size: 323.9978pt x 189.36401pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 95.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 95.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 95.
+("C:\Users\Carmen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 59.
-LaTeX Info: Redefining \% on input line 59.
- [6 <./Imagenes/Bitmap/Capitulo3/pictograma1.png>]
-LaTeX Info: Redefining \. on input line 79.
-LaTeX Info: Redefining \% on input line 79.
- [7 <./Imagenes/Bitmap/Capitulo3/distintoHola.png>]
-<Imagenes/Bitmap/Capitulo3/picto-selector.png, id=252, 977.6525pt x 688.5725pt>
+[9 <./Imagenes/Bitmap/Capitulo3/distintoHola.png>]
+<Imagenes/Bitmap/Capitulo3/mulberry.png, id=290, 376.40625pt x 51.19125pt>
+File: Imagenes/Bitmap/Capitulo3/mulberry.png Graphic file (type png)
+<use Imagenes/Bitmap/Capitulo3/mulberry.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/mulberry.png  used on input 
+line 99.
+(pdftex.def)             Requested size: 323.9978pt x 44.06656pt.
+LaTeX Info: Redefining \. on input line 123.
+LaTeX Info: Redefining \% on input line 123.
+ [10 <./Imagenes/Bitmap/Capitulo3/sclera.png> <./Imagenes/Bitmap/Capitulo3/mulb
+erry.png>]
+<Imagenes/Bitmap/Capitulo3/picto-selector.png, id=301, 977.6525pt x 688.5725pt>
 
 File: Imagenes/Bitmap/Capitulo3/picto-selector.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/picto-selector.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/picto-selector.png  used on 
-input line 81.
+input line 128.
 (pdftex.def)             Requested size: 323.9978pt x 228.19624pt.
-LaTeX Info: Redefining \. on input line 102.
-LaTeX Info: Redefining \% on input line 102.
- [8 <./Imagenes/Bitmap/Capitulo3/picto-selector.png>]
-LaTeX Info: Redefining \. on input line 130.
-LaTeX Info: Redefining \% on input line 130.
- [9]
-<Imagenes/Bitmap/Capitulo3/piktoplus.jpg, id=266, 1606.0pt x 903.375pt>
+LaTeX Info: Redefining \. on input line 136.
+LaTeX Info: Redefining \% on input line 136.
+ [11 <./Imagenes/Bitmap/Capitulo3/picto-selector.png>]
+LaTeX Info: Redefining \. on input line 173.
+LaTeX Info: Redefining \% on input line 173.
+ [12]
+<Imagenes/Bitmap/Capitulo3/piktoplus.jpg, id=315, 1606.0pt x 903.375pt>
 File: Imagenes/Bitmap/Capitulo3/piktoplus.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/Capitulo3/piktoplus.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/piktoplus.jpg  used on input
- line 131.
+ line 178.
 (pdftex.def)             Requested size: 323.9978pt x 182.24321pt.
 )
 LaTeX Info: Redefining \. on input line 176.
 LaTeX Info: Redefining \% on input line 176.
- [10 <./Imagenes/Bitmap/Capitulo3/piktoplus.jpg>]
+ [13 <./Imagenes/Bitmap/Capitulo3/piktoplus.jpg>]
+LaTeX Info: Redefining \. on input line 176.
+LaTeX Info: Redefining \% on input line 176.
+ [14]
 \openout2 = `Capitulos/04-Capitulo4.aux'.
 
  (Capitulos/04-Capitulo4.tex
 Cap\'itulo 4.
-) [11
+) [15
 
 
 
-] [12
+] [16
 
 
 ]
 \openout2 = `Cascaras/bibliografia.aux'.
 
  (Cascaras/bibliografia.tex (Tesis.bbl
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 9.
-
-("C:\Users\Carmen\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-Underfull \hbox (badness 10000) in paragraph at lines 5--11
+Underfull \hbox (badness 10000) in paragraph at lines 20--26
 []\T1/cmr/m/sc/10.95 Mazzeo, M. C.  \T1/cmr/m/n/10.95 Saacs.  NO-LO-SE.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--11
+Underfull \hbox (badness 10000) in paragraph at lines 20--26
 \T1/cmr/m/n/10.95 Dis-po-ni-ble en []$\T1/cmtt/m/n/10.95 https : / / psisemadri
 d . org /
  []
 
 
-Overfull \hbox (5.26903pt too wide) in paragraph at lines 5--11
+Overfull \hbox (5.26903pt too wide) in paragraph at lines 20--26
 \T1/cmtt/m/n/10.95 los-[]sistemas-[]aumentativos-[]y-[]alternativos-[]de-[]comu
 nicacion-[]saac/$[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--27
+Underfull \hbox (badness 10000) in paragraph at lines 36--42
 []\T1/cmr/m/sc/10.95 NOSESABE\T1/cmr/m/n/10.95 .  Saacs.  NO-SE-SA-BEb.  Dis-po
 -ni-ble en
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21--27
+Underfull \hbox (badness 10000) in paragraph at lines 36--42
 []$\T1/cmtt/m/n/10.95 http : / / www . logopeda-[]madrid . es / tratamientos-[]
 logopedia /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--35
+Underfull \hbox (badness 10000) in paragraph at lines 44--50
 []\T1/cmr/m/sc/10.95 Pajón, S. M. A.  \T1/cmr/m/n/10.95 Di-vi-sion saacs.  2018
 .  Dis-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--35
+Underfull \hbox (badness 10000) in paragraph at lines 44--50
 \T1/cmr/m/n/10.95 po-ni-ble en []$\T1/cmtt/m/n/10.95 https : / / autismodiario 
 . org / 2018 / 03 / 10 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--35
+Underfull \hbox (badness 10000) in paragraph at lines 44--50
 \T1/cmtt/m/n/10.95 sistemas-[]alternativos-[]y-[]aumentativos-[]de-[]comunicaci
 on-[]saac/$[]
  []
 
-)) [13
+)) [17
 
 
 ]
 \openout2 = `Cascaras/fin.aux'.
 
- (Cascaras/fin.tex [14
+ (Cascaras/fin.tex [18
 
 
 ])
@@ -926,7 +964,7 @@ LaTeX Info: Redefining \% on input line 25.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 241.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 241.
 Package rerunfilecheck Info: File `Tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 8697B9B1C2EB0514EA018C9715498144;1275.
+(rerunfilecheck)             Checksum: AA731ED3E60B1D3434B1DAC7DE40CA51;1275.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -934,35 +972,38 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 241.
  ) 
 Here is how much of TeX's memory you used:
- 11649 strings out of 492970
- 176418 string characters out of 3126149
- 284849 words of memory out of 3000000
- 14927 multiletter control sequences out of 15000+200000
- 20060 words of font info for 42 fonts, out of 3000000 for 9000
+ 11713 strings out of 492970
+ 177738 string characters out of 3126149
+ 287217 words of memory out of 3000000
+ 14965 multiletter control sequences out of 15000+200000
+ 23580 words of font info for 49 fonts, out of 3000000 for 9000
  1379 hyphenation exceptions out of 8191
- 55i,12n,47p,1428b,452s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,12n,47p,1428b,510s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
 \ecti1095.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\ectt1095.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
-our\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\f
-onts\pk\ljfour\jknappen\ec\dpi600\ecxc1000.pk> <C:\Users\Carmen\AppData\Local\M
-iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\Carmen\AppD
-ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk> <C:\Users\
-Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk>
+our\jknappen\ec\dpi600\ectt0900.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk> <C:\Users\Carmen\AppData\Local\M
+iKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Carmen\AppD
+ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\
+Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1000.pk>
  <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
-crm1095.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\eccc1095.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Carmen\AppData\Local\MiK
-TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2488.pk> <C:\Users\Carmen\AppDat
-a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1000.pk> <C:\Users\Ca
-rmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <
-C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecb
-x1200.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
-\dpi600\ecbx2074.pk>
-Output written on Tesis.pdf (30 pages, 1022010 bytes).
+cti1000.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecbx1095.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Carmen\AppData\Local\MiK
+TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1095.pk> <C:\Users\Carmen\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Ca
+rmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <
+C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecr
+m2488.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
+\dpi600\eccc1000.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\
+jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Carmen\AppData\Local\MiKTe
+X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk>
+Output written on Tesis.pdf (34 pages, 1255749 bytes).
 PDF statistics:
- 811 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 923 PDF objects out of 1000 (max. 8388607)
+ 89 named destinations out of 1000 (max. 500000)
+ 206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

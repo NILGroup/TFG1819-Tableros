@@ -1,5 +1,20 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{8}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Campillo(2014)}]{sistemas-pictograficos}
+{\sc Campillo, R.~G.}
+\newblock Pictogramas y sistemas gr'aficos de comunicaci'on e informaci'on.
+\newblock 2014.
+\newblock Disponible en \url{http://oa.upm.es/37991/1/INVE_MEM_2014_206047.pdf}
+  (último acceso,  NOSESABE).
+
+\bibitem[{L'opez(2017)}]{ARASAAC}
+{\sc L'opez, E.~B.}
+\newblock An'alisis emp'irico de las caracter'isticas formales de los s'imbolos
+  pictogr'aficos arasaac.
+\newblock 2017.
+\newblock Disponible en \url{http://hdl.handle.net/10803/454891} (último
+  acceso,  NOSESABE).
 
 \bibitem[{Mazzeo(NOLOSE)}]{psisemadrid}
 {\sc Mazzeo, M.~C.}
@@ -31,6 +46,15 @@
 \newblock 2018.
 \newblock Disponible en
   \url{https://autismodiario.org/2018/03/10/sistemas-alternativos-y-aumentativos-de-comunicacion-saac/}
+  (último acceso,  NOSESABE).
+
+\bibitem[{Reuter et\ al.(2017)Reuter, Angiono y Mercado}]{bliss}
+{\sc Reuter, M. C.~F.}, {\sc Angiono, V.~A.} y {\sc Mercado, L.~B.}
+\newblock Comunicaci'on aumentativa y trastornos de la comunicaci'on y el
+  lenguaje.
+\newblock 2017.
+\newblock Disponible en
+  \url{https://ebookcentral.proquest.com/lib/universidadcomplutense-ebooks/detail.action?docID=482390}
   (último acceso,  NOSESABE).
 
 \bibitem[{Sanz y Mart'en(2002)}]{agendasvisuales}
