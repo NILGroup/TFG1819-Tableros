@@ -14,6 +14,7 @@ A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: nuestros.bib
 Database file #2: latex.bib
 Database file #3: otros.bib
+Warning--empty year in psisemadrid; set to ????
 ptr=1, stack=
 2002
 ---the literal stack isn't empty for entry agendasvisuales

@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{7}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Campillo(2014)}]{sistemas-pictograficos}
@@ -16,28 +16,12 @@
 \newblock Disponible en \url{http://hdl.handle.net/10803/454891} (último
   acceso,  NOSESABE).
 
-\bibitem[{Mazzeo(NOLOSE)}]{psisemadrid}
+\bibitem[{Mazzeo()}]{psisemadrid}
 {\sc Mazzeo, M.~C.}
 \newblock Saacs.
-\newblock NOLOSE.
+\newblock ????
 \newblock Disponible en
   \url{https://psisemadrid.org/los-sistemas-aumentativos-y-alternativos-de-comunicacion-saac/}
-  (último acceso,  NOSESABE).
-
-\bibitem[{NOSESABE(NOSESABE{\natexlab{a}})}]{PonceLeon}
-{\sc NOSESABE}.
-\newblock El uso de los pictogramas.
-\newblock NOSESABE{\natexlab{a}}.
-\newblock Disponible en
-  \url{http://www.ponceleon.org/logopedia/index.php?option=com_content&view=article&id=110}
-  (último acceso,  NOSESABE).
-
-\bibitem[{NOSESABE(NOSESABE{\natexlab{b}})}]{logopedia-madrid}
-{\sc NOSESABE}.
-\newblock Saacs.
-\newblock NOSESABE{\natexlab{b}}.
-\newblock Disponible en
-  \url{http://www.logopeda-madrid.es/tratamientos-logopedia/otros-sistemas-de-comunicacion.php}
   (último acceso,  NOSESABE).
 
 \bibitem[{Paj'on(2018)}]{autismodiario}
@@ -62,5 +46,13 @@
 \newblock Agendas visuales Â«no hace falta la agenda 'el me entiendeÂ».
 \newblock {\em El Guiniguada\/}, vol.\ 11, Disponible en
   \url{https://accedacris.ulpgc.es/bitstream/10553/5459/1/0235347_02002_0013.pdf}.
+
+\bibitem[{Ventoso(2017)}]{usopictogramas}
+{\sc Ventoso, M.~R.}
+\newblock Pictogramas: Una alternativa para comprender el mundo.
+\newblock 2017.
+\newblock Disponible en
+  \url{http://aetapi.org/download/pictogramas-una-alternativa-para-comprender-el-mundo/?wpdmdl=1386}
+  (último acceso,  NOSESABE).
 
 \end{thebibliography}
