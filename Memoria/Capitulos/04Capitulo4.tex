@@ -4,31 +4,77 @@
 %
 %---------------------------------------------------------------------
 \setlength{\parskip}{10pt}
-\chapter{Herramientas empleadas}
+\chapter{Tecnologia empleada}
 
 \begin{resumen}
-En este capítulo se profundizará en las herramientas que utilizaremos a lo largo del trabajo. En la sección 4.1 se muestran las herramientas básicas que vamos a usar para el desarrollo de nuestro proyecto. En la sección 4.2 se presenta el diccionario que vamos a utilizar para el marcado emocional. En la sección 4.3 se introduce el framework que vamos a utilizar para el desarrollo de los servicios web, Django. En la sección 4.4 se explica cómo vamos a utilizar Trello para seguir la metodología Scrum. En la sección 4.5 se expone la forma de realizar las pruebas utilizando Jenkins y Doctest. En la sección 4.6 se presentan SpaCy y PyStemmer, las herramientas que se utilizarán para hacer el procesamiento de las frases.
+	\todoImpl{Escribir resumen}
 \end{resumen}
 
 %-------------------------------------------------------------------
-\section{Herramientas básicas}
+\section{Introducción a las tecnologías empleadas en el proyecto}
 %-------------------------------------------------------------------
-\label{cap4:sec:basico}
+\label{cap4:sec:introduccion}
 
-Las herramientas básicas utilizadas para el desarrollo del proyecto son:
+\todoImpl{En este apartado mi intención es hacer una breve introduccion sobre lo mas basico del proyecto y ya despues explicar las tecnologias mas interesantes.}
+
+El proyecto esta desarrollado sobre una arquitectura serverless, ya que cuando es necesario guardar información, se hace uso de Firebase y LocalStorage. En el capitulo \ref{cap4:sec:firebase} se explicará mas en detalle el uso de Firebase en el proyecto.
+
+LocalStorage es una API del navegador, accesible desde el cliente, el uso de LocalStorage en este proyecto permite guardar las plantillas y tableros de cada usuario sin necesidad de tener que registrarlos, ya que se almacenan en cada dispositivo. 
+
+Al tratarse de una aplicación web, se ha desarrollado con HTML5 y CSS3, para ayudar en la maquetacion se ha usado Bootstrap 4. Ademas para realizar las tareas mas complejas se utiliza JavaScript. 
+
+%-------------------------------------------------------------------
+\section{Firebase}
+%-------------------------------------------------------------------
+\label{cap4:sec:firebase}
+
+Firebase es una plataforma de Google disponible para desarrollo Android, iOS y web, proporcionando un mismo entorno de trabajo para cualquier plataforma, y permitiendo desarrollar aplicaciones de forma muy rapida y de calidad.
+
+Firebase nos ofrece gran cantidad de servicios, a continuación se explican brevemente algunos de los mas destacados:
 
 \begin{itemize}
-	\item \textbf{Repositorio:} Se utilizará un repositorio común de \textit{GitHub} cuya dirección es https://github.com/NILGroup/TFG-1718-Emociones, en él se subirán todos los cambios realizados en el código. A pesar de ser un equipo de desarrollo pequeño y estar utilizando la metodología Scrum usaremos una rama por historia de usuario. Tendremos además dos ramas adicionales, una para la memoria y otra para los prototipos.
-	
-		\item \textbf{Pruebas automáticas:} Haremos uso de Jenkins con el fin de controlar la ejecución de pruebas y la comparación entre los resultados obtenidos y los resultados esperados. Esto nos permitirá automatizar la ejecución de pruebas necesarias a los distintos módulos que resultaría muy costoso realizar a mano.
+	\item \textbf{Realtime Database}: es una base de datos NoSQL, que permite almacenar y sincronizar datos en tiempo real. Esta funcionalidad ha sido utilizada en el proyecto y se explicará detalladamente mas adelante en el capitulo \ref{cap4:sec:realtimedatabase}.
+	\item \textbf{Authentication}: sirve para realizar la autenticacion de los usuarios de manera facil y segura. De manera predeterminada permite realizar este proceso con Google, Twitter, Facebook y GitHub, pero tambien se pueden utilizar muchos más.
+	\item \textbf{Cloud Storage}: proporciona cargas y descargas de archivos, sin importar la calidad de red, gestionando la capa de seguridad.
+	\item \textbf{Hosting}: proporciona hosting estático, rápido y seguro para la web.
+	\item \textbf{Cloud Functions}: permite crear funciones en JavaScript que se ejecutaran cuando tenga lugar algún evento de Firebase.
 \end{itemize}
 
+%-------------------------------------------------------------------
+\subsection{Realtime Database}
+%-------------------------------------------------------------------
+\label{cap4:sec:realtimedatabase}
+
+De todos los servicios que nos ofrece Firebase, anteriormente mencionados, en este proyecto se ha decidido utilizar Realtime Database para la gestión de las plantillas y los tableros públicos.
+
+Firebase Realtime Database es una base de datos NoSQL y que permite sincronizar los datos con todos los clientes en tiempo real. Las siguientes funcionalidades son motivo de la utilización en este proyecto:
+
+\begin{itemize}
+	\item Sincronizacion de datos en tiempo real: permite que cuando se publica un tablero o plantilla este accesible a todos los usuarios atomaticamente. Esto es posible mediante la suscripción de eventos JavaScript, que se quedan a la espera de cambios en la base de datos.
+	\item Accesible desde el cliente: se puede acceder a la base de datos desde el cliente, no es necesario un servidor, lo cual nos permite realizar una aplicación serverless. Ademas la seguridad y la validación de datos se realizan desde las reglas de seguiridad que se pueden configurar desde firebase.
+	\item Formato de datos JSON: los datos se almacenan en formato JSON, lo cual nos permite definir la estructura de datos a nuestro gusto y también tener la misma estructura en las plantillas y tableros privados.
+\end{itemize}
+
+En la Figura \ref{fig:firebase} se muestra un esquema del funcionamiento de Firebase Realtime Database, se puede observar que cuando se produce un cambio en la base de datos desde un dispositivo se actualiza también en todos los dispositivos.
+
+\figura{Bitmap/Capitulo4/firebase}{width=\textwidth}{fig:firebase}{Esquema de funcionamiento de Firebase Realtime Database}
+
+\todoImpl{Cambiar la imagen por una que haga yo pero con la misma idea}
 
 %-------------------------------------------------------------------
-\section{Diccionario emocional}
+\section{Interactjs}
 %-------------------------------------------------------------------
-\label{cap4:sec:diccionario emocional}
+\label{cap4:sec:interactjs}
 
+
+%-------------------------------------------------------------------
+\section{HTML2CANVAS}
+%-------------------------------------------------------------------
+\label{cap4:sec:HTML2CANVAS}
+
+
+
+\begin{comment}
 Nuestro objetivo es analizar texto en castellano por lo que necesitamos un diccionario afectivo que contenga palabras en castellano. Además, nos interesa que las palabras estén marcadas con un determinado valor para cada una de las categorías emocionales básicas con las que queremos trabajar: tristeza, miedo, alegría, enfado y asco. De todos los diccionarios presentados en la sección 3.3 solamente hay dos que cumplan con ambos requisitos: el diccionario de Hinojosa y el de Ferré. Una vez decidido que íbamos a trabajar con estos diccionarios los exportamos utilizando \textit{EmoFinder}\footnote{http://www.usc.es/pcc/app/emofinder/index.php?lang=es\#tab=0}, una herramienta en línea que contiene diferentes bases de datos de palabras y sus propiedades (dimensiones emocionales, categorías emocionales...). La propia herramienta nos permitió combinar ambos diccionarios en un mismo CSV que posteriormente tuvimos procesar para solapar las columnas: las palabras que están en un diccionario no están en el otro, por lo que para cada palabra sólo tenemos que quedarnos con las cinco columnas del diccionario al que pertenecen. Obtuvimos así un diccionario afectivo compuesto por 3.141 palabras marcadas para cada emoción básica con un grado del uno al cinco, siendo uno \textit{para nada} y el cinco \textit{extremadamente}, para las cinco categorías emocionales ya comentadas.
 	
 En la Tabla \ref{tabla:diccionario} podemos ver un ejemplo de los valores obtenidos para tres de las palabras del diccionario. Cada columna representa los grados asociados a cada categoría emocional para la palabra dada.
@@ -100,7 +146,7 @@ Para poder realizar el análisis emocional del texto, necesitamos obtener el lema
  Para solventar los problemas con los lemas devueltos por SpaCy decidimos utilizar la librería de Python \textbf{PyStemmer} que obtenía mejores resultados. PyStemmer es una adaptación de Snowball para Python. Snowball es un pequeño lenguaje de procesamiento que permite crear algoritmos de lematización. PyStemmer, soporta varios idiomas incluido el español y nos ofrece mejores resultados a la hora de obtener los lemas de las palabras. Por ejemplo, para la palabra \textit{alegre} para la que Spacy nos devolvía \textit{alegrar}, PyStemmer devuelve \textit{alegr}, que es el valor correcto.
 
 PyStemmer funciona de manera similar a Spacy, primero importamos el módulo stemmer, seleccionamos el idioma para el cual queremos que nos seleccione el lema e introducimos la palabra y nos devuelve el lema de la palabra dada. El problema de esta librería es que no nos permite saber la etiqueta gramatical de la palabra (cosa que si devuelve SpaCy), por eso vamos a combinar ambas herramientas para procesar las palabras: usaremos PyStemmer cuando necesitemos obtener el lema de una palabra y SpaCy cuando necesitemos conocer la categoría gramatical de ésta.
-
+\end{comment}
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX
 %%%
