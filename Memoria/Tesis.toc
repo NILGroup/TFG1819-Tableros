@@ -1,32 +1,43 @@
 \babel@toc {spanish}{}
 \contentsline {chapter}{\numberline {1}Introducci\'on}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivaci\'on}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Objetivos}{1}{section.1.2}
+\contentsline {section}{\numberline {1.2}Objetivos}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Estructura del trabajo}{2}{section.1.3}
-\contentsline {chapter}{\numberline {2}Introduction}{3}{chapter.2}
-\contentsline {chapter}{\numberline {3}Estado del arte}{5}{chapter.3}
-\contentsline {section}{\numberline {3.1}Sistemas Aumentativos y Alternativos de Comunicaci\'on (SAACs)}{5}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Pictogramas}{6}{subsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.1.1}Sistema Pictografico de comunicaci\'on (SPC)}{7}{subsubsection.3.1.1.1}
-\contentsline {subsubsection}{\numberline {3.1.1.2}Bliss}{7}{subsubsection.3.1.1.2}
-\contentsline {subsubsection}{\numberline {3.1.1.3}Sclera}{9}{subsubsection.3.1.1.3}
-\contentsline {subsubsection}{\numberline {3.1.1.4}Mulberry}{10}{subsubsection.3.1.1.4}
-\contentsline {subsubsection}{\numberline {3.1.1.5}ARASAAC}{10}{subsubsection.3.1.1.5}
-\contentsline {subsection}{\numberline {3.1.2}Uso de los pictogramas}{11}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Aplicaciones para generar material basado en pictogramas}{12}{subsection.3.1.3}
-\contentsline {subsubsection}{\numberline {3.1.3.1}Pictoselector}{13}{subsubsection.3.1.3.1}
-\contentsline {subsubsection}{\numberline {3.1.3.2}Herramientas propias ARASAAC}{14}{subsubsection.3.1.3.2}
-\contentsline {subsubsection}{\numberline {3.1.3.3}Piktoplus}{15}{subsubsection.3.1.3.3}
-\contentsline {subsubsection}{\numberline {3.1.3.4}BoardMaker}{15}{subsubsection.3.1.3.4}
-\contentsline {subsubsection}{\numberline {3.1.3.5}Pictar}{16}{subsubsection.3.1.3.5}
-\contentsline {subsubsection}{\numberline {3.1.3.6}Conclusiones}{17}{subsubsection.3.1.3.6}
-\contentsline {chapter}{\numberline {4}Tecnologia empleada}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introducci\'on a las tecnolog\IeC {\'\i }as empleadas en el proyecto}{19}{section.4.1}
-\contentsline {section}{\numberline {4.2}Firebase}{20}{section.4.2}
-\contentsline {section}{\numberline {4.3}Django}{21}{section.4.3}
-\contentsline {section}{\numberline {4.4}Trello}{21}{section.4.4}
-\contentsline {section}{\numberline {4.5}Doctest y Jenkins}{22}{section.4.5}
-\contentsline {section}{\numberline {4.6}SpaCy y PyStemmer}{22}{section.4.6}
-\contentsline {chapter}{\numberline {5}Cosas varias}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Interact.js}{25}{section.5.1}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{27}{appendix*.25}
+\contentsline {chapter}{\numberline {2}Introduction}{5}{chapter.2}
+\contentsline {chapter}{\numberline {3}Estado del arte}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Sistemas Aumentativos y Alternativos de Comunicaci\'on (SAACs)}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Pictogramas}{8}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Sistemas pictograficos}{10}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Sistema Pictogr\'afico de Comunicaci\'on (SPC)}{10}{subsubsection.3.2.1.1}
+\contentsline {subsubsection}{\numberline {3.2.1.2}Bliss}{12}{subsubsection.3.2.1.2}
+\contentsline {subsubsection}{\numberline {3.2.1.3}Sclera}{12}{subsubsection.3.2.1.3}
+\contentsline {subsubsection}{\numberline {3.2.1.4}Mulberry}{13}{subsubsection.3.2.1.4}
+\contentsline {subsubsection}{\numberline {3.2.1.5}ARASAAC}{14}{subsubsection.3.2.1.5}
+\contentsline {subsubsection}{\numberline {3.2.1.6}API de ARASAAC}{15}{subsubsection.3.2.1.6}
+\contentsline {subsection}{\numberline {3.2.2}Comunicar mediante pictogramas}{16}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Editores de tableros basados en pictogramas}{18}{subsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.3.1}Pictoselector}{18}{subsubsection.3.2.3.1}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Editores propios de ARASAAC}{20}{subsubsection.3.2.3.2}
+\contentsline {subsubsection}{\numberline {3.2.3.3}Piktoplus}{22}{subsubsection.3.2.3.3}
+\contentsline {subsubsection}{\numberline {3.2.3.4}BoardMaker}{23}{subsubsection.3.2.3.4}
+\contentsline {subsubsection}{\numberline {3.2.3.5}Pictar}{24}{subsubsection.3.2.3.5}
+\contentsline {subsubsection}{\numberline {3.2.3.6}Conclusiones}{25}{subsubsection.3.2.3.6}
+\contentsline {chapter}{\numberline {4}Tecnologias}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introducci\'on}{27}{section.4.1}
+\contentsline {section}{\numberline {4.2}Firebase}{28}{section.4.2}
+\contentsline {section}{\numberline {4.3}Interactjs}{29}{section.4.3}
+\contentsline {section}{\numberline {4.4}Html2canvas}{30}{section.4.4}
+\contentsline {chapter}{\numberline {5}PicTableros}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}An\'alisis de requisitos}{31}{section.5.1}
+\contentsline {section}{\numberline {5.2}Dise\~no de la interfaz}{32}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementacion}{37}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Listados}{37}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Editor}{39}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Evaluaci\'on}{41}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Dise\~no de la evaluaci\'on}{41}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Resultados de la evaluaci\'on}{42}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}An\'alisis de la evaluaci\'on}{42}{subsection.5.4.3}
+\contentsline {chapter}{\numberline {6}Conclusiones y trabajo futuro}{51}{chapter.6}
+\contentsline {section}{\numberline {6.1}Conclusiones}{51}{section.6.1}
+\contentsline {section}{\numberline {6.2}Trabajo futuro}{51}{section.6.2}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{53}{appendix*.50}

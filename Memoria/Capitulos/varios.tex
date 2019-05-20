@@ -1,134 +1,214 @@
 %---------------------------------------------------------------------
 %
-%                          Capítulo 4
+%                          Capítulo 5
 %
 %---------------------------------------------------------------------
 
 
 
 \setlength{\parskip}{10pt}
-\chapter{Cosas varias}
+\chapter{PicTableros}
 
 \begin{resumen}
 
 \end{resumen}
 
-\todoImpl{Aqui estoy poniendo las cosas que non quiero que se me olviden pero aun no tengo claro donde van}
+\todoImpl{En esta sección estoy poniendo las cosas según lo tengo estructurado en mis notas pero habrá que reorganizarlo}
 
 %-------------------------------------------------------------------
-\section{Interact.js}
+\section{Análisis de requisitos}
 %-------------------------------------------------------------------
-\label{cap4:sec:Interact.js}
+\label{cap5:sec:analisis}
 
-Interact.js es una librería de JavaScript basada en Drag \& Drop, cambiar el tamaño de los elementos, dando soporte a los navegadores mas modernos. 
+En este proyecto se ha dado mucha importancia al usuario final de la aplicación, con la intención de desarrollar una herramienta que cubra sus necesidades. Por ello, se ha trabajado conjuntamente con la Asociación de Autismo Sevilla. 
 
-He decidido utilizar esta librería en mi proyecto ya que de las opciones que hay es la que me permitía mover los elementos con mayor libertad, la mayoría de herramientas disponibles solo te permiten mover un elemento a un destino concreto, es decir, solo un elemento por cada destino. Algunos ejemplos de este caso son: HTML5 nativo, draggable.js, dragula.
+Como ya se ha explicado anteriormente, para facilitar la comunicación con personas con discapacidad cognitiva se suelen emplear formatos que reconocen y entienden mejor. Pero a pesar de que ya existen herramientas destinadas a realizar esta tarea, los usuarios aun no han encontrado una que se adapte a sus necesidades. Esto motivó el desarrollo de una herramienta que permita a los usuarios diseñar sus plantillas y tableros de una manera mas sencilla.
 
-Esta librería me permite mover los pictogramas dentro del área de lo que sera la plantilla, y ajustarlos al tamaño que desee. También valoré la opción de utilizar la opción que tiene la librería para crear una cuadricula en base a la que mover y ordenar los elementos para así permitir al usuario que los alinee fácilmente, pero no era compatible con la opción de cambiar el tamaño de los elementos.
+En una reunión que tuvo lugar el 22 de Febrero durante una Jornada de Trabajo en Aulas TIC 2017, desde la Asociación de Autismo Sevilla nos transmitieron la necesidad de una aplicación que les permitiese digitalizar los formatos que utilizan para comunicarse con sus usuarios, ya que hasta el momento es un trabajo que realizan de manera manual.
 
-Actualmente cuenta con mas de 800.000 descargas y como se puede ver en la figura \ref{fig:interactjs}, es una libreria reciente pero que cada vez esta creciendo mas.
-
-\figura{Bitmap/Capitulo4/stats-interactjs}{width=.9\textwidth}{fig:interactjs}{Descargas de la librería Interact.js.  \href{https://npm-stat.com/charts.html?package=interactjs&from=2016-11-01&to=2019-01-31}{Fuente: npm-stats}}
-
-
-
-
-
-\begin{comment}
-%-------------------------------------------------------------------
-\section{Lista de funcionalidades necesarias}
-%-------------------------------------------------------------------
-\label{cap4:sec:basico}
-
-
-
-
-
-Las herramientas básicas utilizadas para el desarrollo del proyecto son:
+Para identificar los requisitos necesarios de este proyecto desde la Asociación de Autismo Sevilla nos hicieron llegar una serie de plantillas que utilizan con frecuencia. En base a las plantillas de la Figura \ref{fig:plantillas} se establecieron los siguientes requisitos y funcionalidades necesarias para los usuarios:
 
 \begin{itemize}
-	\item \textbf{Repositorio:} Se utilizará un repositorio común de \textit{GitHub} cuya dirección es https://github.com/NILGroup/TFG-1718-Emociones, en él se subirán todos los cambios realizados en el código. A pesar de ser un equipo de desarrollo pequeño y estar utilizando la metodología Scrum usaremos una rama por historia de usuario. Tendremos además dos ramas adicionales, una para la memoria y otra para los prototipos.
-	
-		\item \textbf{Pruebas automáticas:} Haremos uso de Jenkins con el fin de controlar la ejecución de pruebas y la comparación entre los resultados obtenidos y los resultados esperados. Esto nos permitirá automatizar la ejecución de pruebas necesarias a los distintos módulos que resultaría muy costoso realizar a mano.
+	\item La aplicacion debe ser accesible desde cualquier dispositivo y en cualquier momento, para que los usuarios puedan acceder a su material en cualquier situacion.
+	\item Buscador con todos los pictogramas de ARASAAC.
+	\item Poder arrastrar y soltar los elementos en cualquier posición de la plantilla.
+	\item Cambiar el tamaño de los elementos.
+	\item Crear cuadros de texto, en los que poder establecer el color del texto, el borde y el fondo.
+	\item Crear áreas en las que poder colocar los pictogramas, y personalizar el color del borde y del fondo, para conseguir áreas personalizadas como en la plantilla de ``Normas 1''.
+	\item Personalizar los pictogramas cambiando el color del borde y fondo. 
+	\item Como se puede ver en la plantilla ``Normas 2'' es necesario poder tachar los pictogramas.
+	\item Crear pictogramas en blanco que permitan al usuario cuando vuelva a usar la plantilla sustituirlos fácilmente.
 \end{itemize}
 
-
-%-------------------------------------------------------------------
-\section{Diccionario emocional}
-%-------------------------------------------------------------------
-\label{cap4:sec:diccionario emocional}
-
-Nuestro objetivo es analizar texto en castellano por lo que necesitamos un diccionario afectivo que contenga palabras en castellano. Además, nos interesa que las palabras estén marcadas con un determinado valor para cada una de las categorías emocionales básicas con las que queremos trabajar: tristeza, miedo, alegría, enfado y asco. De todos los diccionarios presentados en la sección 3.3 solamente hay dos que cumplan con ambos requisitos: el diccionario de Hinojosa y el de Ferré. Una vez decidido que íbamos a trabajar con estos diccionarios los exportamos utilizando \textit{EmoFinder}\footnote{http://www.usc.es/pcc/app/emofinder/index.php?lang=es\#tab=0}, una herramienta en línea que contiene diferentes bases de datos de palabras y sus propiedades (dimensiones emocionales, categorías emocionales...). La propia herramienta nos permitió combinar ambos diccionarios en un mismo CSV que posteriormente tuvimos procesar para solapar las columnas: las palabras que están en un diccionario no están en el otro, por lo que para cada palabra sólo tenemos que quedarnos con las cinco columnas del diccionario al que pertenecen. Obtuvimos así un diccionario afectivo compuesto por 3.141 palabras marcadas para cada emoción básica con un grado del uno al cinco, siendo uno \textit{para nada} y el cinco \textit{extremadamente}, para las cinco categorías emocionales ya comentadas.
+\figura{Bitmap/Capitulo5/plantillas}{width=.9\textwidth}{fig:plantillas}{Plantillas de la Asociación Autismo Sevilla}
 	
-En la Tabla \ref{tabla:diccionario} podemos ver un ejemplo de los valores obtenidos para tres de las palabras del diccionario. Cada columna representa los grados asociados a cada categoría emocional para la palabra dada.
+%-------------------------------------------------------------------
+\section{Diseño de la interfaz}
+%-------------------------------------------------------------------
+\label{cap5:sec:diseño}
 
-		\begin{table}[htbp]
-		\begin{center}
-		\begin{tabular}{|l|l|l|l|l|l|}
-		\hline
-		Palabra & Tristeza & Miedo & Alegría & Enfado & Asco \\
-		\hline 
-		abismo & 2,47 & 4,13 & 1,30 & 1,53 & 1,12 \\ \hline
-		abandono & 4,43 & 3,33 & 1,03 & 3,3 & 2,63 \\ \hline
-		abanico & 1 & 1 & 2,67 & 1 & 1 \\ \hline
-		\end{tabular}
-		\caption{Fragmento de la adaptación del diccionario}
-		\label{tabla:diccionario}
-		\end{center}
-		\end{table}
+Una vez obtenidos los requisitos de la aplicación, la siguiente tarea e
 
-Al igual que en los diccionarios en los que nos basamos, consideraremos que una palabra pertenece a una categoría emocional únicamente cuando el valor para dicha categoría sea superior a 2,5. Por ejemplo, la palabra abandono pertenece a las categorías emocionales Tristeza, Miedo, Enfado y Asco mientras que abanico solo pertenece a la categoría emocional Alegría. 
+contar que se han diseñado prototipos en papel
+
+contar las funcionalidades de cada pantalla referenciados con imagenes
+
+requisitos añadidos a ultima ahora y excel de prioridades
+
+Comentar interfaz final y diseño de la misma, cambio de funcionalidades etc
+
+requisitos añadidos a ultima ahora
 
 %-------------------------------------------------------------------
-\section{Django}
+\section{Implementacion}
 %-------------------------------------------------------------------
-\label{cap4:sec:django}
+\label{cap5:sec:implementacion}
 
-La implementación de los servicios web desarrollados se hará utilizando Django\footnote{https://docs.djangoproject.com/en/2.0/}, un framework para aplicaciones web gratuito y open source escrito en Python. Django se organiza según el patrón MVC, por lo que fomenta el desarrollo rápido y el diseño limpio y pragmático. Tiene una comunidad próspera y activa, una gran documentación y muchas opciones de soporte gratuito y de pago. El software que Django nos ayudará a escribir será completo, versátil, seguro, escalable, mantenible y portable. 
+Después de los requisitos obtenidos se decidió desarrollar este proyecto como una aplicación web, para hacerlo accesible desde cualquier dispositivo, ya sea ordenador, móvil o tablet. La aplicación consta de dos vistas principales: el editor de las plantillas y tableros, y los listados de los mismos. Que se explicaran mas adelante detalladamente en las secciones \ref{cap4:sec:listados} y \ref{cap4:sec:editor}.
 
-Este framework nos proporciona un servidor web, en el que se almacena la base de datos que contiene las palabras de nuestro diccionario.
-Para realizar las diferentes consultas sobre las palabras existen una serie de clases que implementan los diferentes métodos de un servicio web REST típico: \textbf{GET, POST, DELETE}. 
-Cada una de las diferentes clases nos aportarán una manera diferente de acceder a la información, como pueden ser: acceso a todo el diccionario de palabras, a una palabra concreta o a un campo de una palabra concreta.
-Los resultados serán devueltos en formato JSON.
+El desarrollo de la interfaz se ha realizado con HTML y CSS. Para permitir el uso de la aplicación en todo tipo de dispositivos se ha realizado un diseño responsive para adaptar los elementos dependiendo de la pantalla y la orientación, para facilitar esta tarea se ha utilizado Bootstrap que con sus media-queries se adaptan a las características del dispositivo.
+
+Para el resto de funcionalidades como arrastrar y soltar, buscar pictogramas, guardar, publicar, etc. se utiliza JavaScript. Al ser JavaScript un lenguaje que se puede interpretar en el cliente, permite que la arquitectura de esta aplicación sea serverless.
+
+A continuación se va a explicar en detalle las dos vistas principales de la aplicación y algunas de las funcionalidades especificas de cada una.
+
 %-------------------------------------------------------------------
-\section{Trello}
+\subsection{Listados}
 %-------------------------------------------------------------------
-\label{cap4:sec:trello}
+\label{cap5:sec:listados}
 
-Trello sirve para organizar proyectos y actividades. Para representar las tareas y las historias de usuario se usan tarjetas virtuales que podemos asignar a los miembros del equipo. En la Figura \ref{fig:sprint} podemos ver el tablero al inicio del proyecto. En este tablero tenemos cinco columnas: \textbf{Backlog}, \textbf{To Do}, \textbf{Sprint Backlog}, \textbf{In Progress} y \textbf{Done}. El Product Owner crea el Product Backlog en la columna \textbf{Backlog}, de ahí se van sacando las historias de usuario de cada sprint. Las historias de usuario seleccionadas en la reunión de planificación para el sprint pasan a la columna \textbf{To Do} del tablero. En la Figura \ref{fig:sprint2} se puede ver un ejemplo del tablero en un estado más avanzado del proyecto. En este segundo tablero se ve como las historias de usuario han sido divididas en tareas para formar el \textbf{Sprint Backlog}, del que las tareas van saliendo en orden hacia la columna \textbf{In Progress}  cada vez que se asigna una tarea a un miembro del equipo de desarrollo. Cuando una tarea se termina pasa a la columna \textbf{Done}.
+La vista con las listas de las plantillas o tableros es la vista inicial de la aplicación, es decir lo primero que se ve al entrar a la aplicación. Inicialmente se encuentra la lista de plantillas privadas, que se corresponde con la Figura \ref{fig:plantillasprivadas}. Esta vista cuenta con un menú lateral, que permite al usuario navegar entre los distintos tipos de contenido: plantillas privadas, plantillas publicas, tableros privados y tableros públicos. Para navegar entre las distintas vistas se ha implementado un router en el cliente, que carga las listas según el hash, sin necesidad de recargar la pagina, haciéndola mas dinámica.
 
-	\figura{Bitmap/Capitulo3/Sprint1Plan}{width=\textwidth}{fig:sprint}{Tablero Trello al inicio del proyecto.}
+En las plantillas y tableros privados existe una opción de importar y exportar, que se puede ver en la esquina superior izquierda de la Figura \ref{fig:plantillasprivadas}. Al exportar se genera un fichero .json con todas las plantillas o tableros del usuario, para poder compartir el material entre dispositivos y con otros usuarios. Cuando se importa un archivo se guarda un objeto con cada plantilla o tablero en LocalStorage.
+
+\figura{Bitmap/Capitulo5/listaplantillasprivadas}{width=.9\textwidth}{fig:plantillasprivadas}{Vista del listado de las plantillas privadas}
+
+Después de recoger las opiniones de los usuarios sobre los prototipos en papel se decidió que era necesario mostrar una miniatura del elemento, para que así los usuarios pudieran tener una idea del elemento sobre el que se esta trabajando. Para poder mostrar la miniatura se utiliza la librería html2canvas, que lee un elemento del DOM, en este caso el área de la plantilla, y reconstruye los elementos en un canvas. Con el canvas se puede generar una imagen codificada en base64 que se asocia al contenido al guardarlo.
+
+Como se puede ver, el usuario dispone de cuatro tipos de contenido con diversas opciones que se explicaran a continuación:
+
+\begin{itemize}
+	\item \textbf{Plantillas privadas}: en la Figura \ref{fig:opcionesplantillas} se pueden ver las distintas opciones disponibles para las plantillas privadas. La opción ``Usar como tablero'' crea una copia de la plantilla seleccionada, cambiando el tipo a tablero y abre el editor de tableros.
+	\figura{Bitmap/Capitulo5/opcionesplantillas}{width=.9\textwidth}{fig:opcionesplantillas}{Opciones de las plantillas privadas}
+	\item \textbf{Plantillas publicas}: en la Figura \ref{fig:opcionesplantillaspublicas} se pueden ver las distintas opciones disponibles para las plantillas publicas. Estas plantillas son las que los usuarios deciden publicar y compartir, por este motivo para realizar cualquier acción sobre estos elementos primero hay que generar una copia que pertenezca al usuario.
+	\figura{Bitmap/Capitulo5/opcionesplantillaspublicas}{width=.9\textwidth}{fig:opcionesplantillaspublicas}{Opciones de las plantillas publicas}
+	\item \textbf{Tableros privados}: en la Figura \ref{fig:opcionestablerosprivados} se pueden ver las distintas opciones disponibles para los tableros privados. Como se puede ver son las mismas funciones que para las plantillas privadas a excepcion de la de ``Utilizar como tablero''.
+	\figura{Bitmap/Capitulo5/opcionestablerosprivados}{width=.9\textwidth}{fig:opcionestablerosprivados}{Opciones de los tableros privados}
+	\item \textbf{Tableros públicos}: en la Figura \ref{fig:opcionestablerospublicos} se pueden ver las distintas opciones disponibles para los tableros publicos.
+	\figura{Bitmap/Capitulo5/opcionestablerospublicos}{width=.9\textwidth}{fig:opcionestablerospublicos}{Opciones de los tableros publicos}
+\end{itemize}
+
+\todoImpl{Si al final quito la opción de ver de los elementos públicos actualizar imágenes}
+
+La opción de publicar común a las plantillas y a los tableros privados guarda el tablero en una base de datos realtime de Firebase, que permite que las listas de plantillas y tableros públicos se actualicen cada vez que se publica un tablero o plantilla. En Firebase se guarda un objeto con la siguiente estructura, en la Figura \ref{fig:plantillafirebase} se puede ver un ejemplo:
+
+\begin{itemize}
+	\item \textbf{contenido}: contiene el elemento del DOM correspondiente a la plantilla.
+	\item \textbf{id}: identificador de cada elemento.
+	\item \textbf{miniatura}: contiene una imagen en base64, para poder mostrar las miniaturas.
+	\item \textbf{tamano}: se guarda el ancho y el alto del elemento original, para después poder ajustarlo si cambia el tamaño de la pantalla.
+	\item \textbf{tipo}: determina el tipo del elemento, plantilla o tablero.
+	\item \textbf{titulo}: contiene el titulo asociado al elemento.
+\end{itemize}
+
+\figura{Bitmap/Capitulo5/plantillaFirebase}{width=.9\textwidth}{fig:plantillafirebase}{Ejemplo de un objeto tipo plantilla}
+
+%-------------------------------------------------------------------
+\subsection{Editor}
+%-------------------------------------------------------------------
+\label{cap5:sec:editor}
+
+La vista de edición es la mas importante de la aplicacion, a esta vista se llega de dos maneras: creando material nuevo o editando material ya existente. Esta vista se corresponde con la Figura \ref{fig:editor}.
+
+\figura{Bitmap/Capitulo5/editor}{width=.9\textwidth}{fig:editor}{Vista del editor}
+
+Para que el usuario pudiera generar los materiales libremente y sin restricciones, se ha implementado un sistema que permite arrastrar los elementos del menu de la derecha al area principal, destinada para formar las plantillas o tableros. Para implementar este sistema se ha utilizado la librería interact.js que mediante eventos permite al usuario mover y cambiar el tamaño de los elementos. Cuando se arrastra un elemento al área principal se crea una copia del mismo en las coordenadas en las que se ha soltado, haciendo que el original vuelva a su posición para que este disponible siempre que se necesite.
+
+Esta vista esta dividida en dos zonas principales, el área a la que arrastrar los elementos y el menu lateral derecho donde se muestran distintas menús que se explicarán mas adelante. En la barra superior se muestra un input de texto que permite editar el titulo del elemento sobre el que estamos trabajando, como se puede ver en la Figura \ref{fig:inputtitulo}, la etiqueta de este input es distinta para tableros y plantillas para que el usuario distinga fácilmente sobre que esta trabajando.
+
+\figura{Bitmap/Capitulo5/inputtitulo}{width=.9\textwidth}{fig:inputtitulo}{Distintos input para el titulo.}
+
+El menú lateral se genera dinamicamente dependiendo del elemento que estamos editando, inicialmente se muestran todos los elementos que se pueden arrastrar al área principal, este menú cambia si el usuario pulsa sobre uno de los elementos del área mostrando los ajustes relativos al elemento.
+
+Como se puede ver en la Figura \ref{fig:menuinicial} el menú inicial tiene un buscador que funciona con la API de ARASAAC, la librería que permite arrastrar los elementos no es compatible con la propiedad ``overflow'' de CSS, por esta razón se muestran todos los resultados de la búsqueda en una lista completa. Para mostrar u ocultar los resultados se puede utilizar el botón que se encuentra al final de la barra de búsqueda. El resto del menú esta compuesto por un área, un pictograma en blanco, un cuadro de texto y diferentes figuras geométricas que se utilizan para plantillas como el calendario semanal de la Figura \ref{fig:plantillas}. Cuando se pulsa sobre el botón de ``Guardar'' se guarda un objeto en LocalStorage con el mismo formato que el objeto de Firebase, de esta manera al publicar un elemento no es necesario realizar una transformación del objeto para mantener la coherencia. Ademas al guardar el objeto en LocalStorage se asocia a cada usuario y dispositivo sin necesidad de registrarlos.
+
+\figura{Bitmap/Capitulo5/menuinicial}{width=.9\textwidth}{fig:menuinicial}{Menú inicial del editor.}
+
+Cuando se pulsa sobre el fondo se muestra un editor como el de la Figura \ref{fig:editorfondo}, se puede editar el color del fondo y el borde. También hay un input de texto que permite personalizar un titulo que se encuentra en la parte superior del área, el checkbox sirve para mostrarlo u ocultarlo.
+
+\figura{Bitmap/Capitulo5/editorfondo}{width=.9\textwidth}{fig:editorfondo}{Menú del editor del fondo.}
+
+Para editar el resto de elementos de la plantilla basta con pulsar sobre ellos, esto es posible gracias a los eventos de la misma libreria que permite arrastrar los elementos, ya que también gestiona eventos de táctil y ratón de manera unificada. En la Figura \ref{fig:editoresareaypicto} se pueden ver las opciones de personalizacion de los pictogramas y de las areas, muy similares ente ellas, asi que era necesario que el usuario supiese que elemento esta editando, para ello se añadio una sombra para indicar que ese es el elemento que se esta editando, se puede ver un ejemplo en la Figura \ref{fig:elementoseleccionado} que representa un pictograma sin seleccionar y un area seleccionada.
+
+\figura{Bitmap/Capitulo5/editoresareaypicto}{width=.9\textwidth}{fig:editoresareaypicto}{Editor de un pictograma a la izquierda y editor de area a la derecha}
+
+\figura{Bitmap/Capitulo5/elementoseleccionado}{width=.9\textwidth}{fig:elementoseleccionado}{Ejemplo de un elemento seleccionado}
+
+En la Figura \ref{fig:editortext} se muestra el editor de los cuadros de texto, todos los editores tienen unas opciones similares pero dependiendo del elemento existen algunas opciones distintas, en este caso ademas se puede editar el color del texto y se puede decidir si ese texto posteriormente se podrá editar, es decir, si el checkbox de editable esta activado cuando se utilice como un tablero se podrá editar, pero no en caso contrario.
+
+\figura{Bitmap/Capitulo5/editortexto}{width=.9\textwidth}{fig:editortext}{Editor de un cuadro de texto}
+
+Todos los ejemplos anteriormente mencionados forman parte de la edicion de plantillas, ya que los tableros tienen unas opciones de personalizacion mucho mas limitadas. Inicialmente los tableros solo cuentan con el buscador de pictogramas para poder rellenar las plantillas, ademas algunos elementos cuentan con algunas opciones de personalizacion adicionales, para añadir mayor funcionalidad a los tableros. Como ya se ha mencionado anteriormente los cuadros de texto si tienen la opcion de editable marcada anteriormente, en los tableros se podrá cambiar el texto que contienen. En la Figura \ref{fig:opcionesarea} se muestran la opciones de personalización disponibles para areas y pictogramas, que permiten al usuario tachar, poner un tick, un punto amarillo o una transparencia azul por encima del area o del pictograma. El punto amarillo y la transparencia azul se utilizan para marcar una tarea como realizada, dependiendo de la plantilla sobre la que se este trabajando.
+
+\figura{Bitmap/Capitulo5/opcionesarea}{width=.9\textwidth}{fig:opcionesarea}{Opciones para areas y pictogramas en tableros}
+
+%-------------------------------------------------------------------
+\section{Evaluación}
+%-------------------------------------------------------------------
+\label{cap5:sec:evaluacion}
+
+Gracias a la Asociacion de Autismo Sevilla se han podido realizar pruebas de la aplicación con los usuarios finales, a los que se les ha pedido que realicen una evaluación después de probarla. La aplicación esta destinada padres, tutores y profesores, por tanto serán profesionales del colegio los encargados de la evaluación.
+
+%-------------------------------------------------------------------
+\subsection{Diseño de la evaluacion}
+%-------------------------------------------------------------------
+\label{cap5:sec:diseñoevaluacion}
+
+Se decidio realizar la evaluacion en Excel, para que los evaluadores pudiesen realizar la evaluación a su propio ritmo. El documento de Excel contiene tres hojas: una hoja explicando los pasos a seguir para realizar la evaluacion, otra con la imagen de las plantillas que tienen que replicar y una ultima con la evaluación que tienen que rellenar, esta ultima tiene que generarse para cada evaluador.
+
+El objetivo de esta evaluación es determinar la usabilidad y la utilidad de la aplicación para los usuarios finales.
+
+Los primeros datos que se recogen del usuario son su nombre y apellidos y el cargo que ocupan en el colegio, esto sirve para saber como de familiarizados están con este tipo de herramientas. También es necesario conocer los detalles sobre el dispositivo en el que se realizará la prueba para evaluar los resultados según el dispositivo.
 	
-	\figura{Bitmap/Capitulo3/Sprint1Fin}{width=\textwidth}{fig:sprint2}{Tablero Trello al final del sprint inicial.}
+Después de rellenar estos datos, lo siguiente es empezar con la evaluacion que consta de cuatro fases que se explicaran detalladamente a continuación.
+
+En la primera fase se pedía a los evaluadores realizar cada una de las plantillas planteadas, de las que interesa saber cuanto tiempo habían invertido en realizar cada una, cuanto se parecía el resultado al original, cuanto les había costado realizarla y el nivel de satisfacción con el resultado. 
+
+En la segunda fase tenían que utilizar cada una de las plantillas realizadas anteriormente como un tablero, de esta fase se recogía información del tiempo invertido, el nivel de dificultad y el nivel de satisfacción con el resultado.
+
+Al final de cada fila en ambas fases, siempre hay disponible un campo de observaciones en el que los evaluadores puedan comentar todo aquello que crean relevante para la evaluación.
+
+La siguiente fase se trata de una prueba libre para que los evaluadores puedan explorar libremente las funcionalidades de la aplicación, y asi saber si los usuarios podrian utilizar facilmente la aplicacion sin guias y aprovechar todas las funcionalidades de la misma
+
+La ultima fase es un cuestionario para conocer la opinion de los evaluadores, el cuestionario se divide en dos partes, la primera que se evalúa segun una escala likert de cinco puntos, y la segunda que es de respuesta libre. 
+
+Las siguientes cuestiones se corresponden a la primera parte del cuestionario para responder con una escala de uno a cinco:
+
+\begin{itemize}
+	\item La aplicación es fácil de utilizar.				
+	\item Me gustaría utilizar la aplicación en mi día a día.				
+	\item Recomendaría esta aplicación a otras personas.		
+	\item Me parece útil poder exportar e importar mis tableros y plantillas.				
+	\item Me parece útil poder hacer públicos mis tableros.				
+	\item Me parece útil poder hacer públicas mis plantillas.				
+	\item La navegación por las distintas vistas me parece intuitiva.				
+	\item Se entiende fácilmente la finalidad de cada uno de los elementos que se pueden utilizar para crear plantillas y tableros.				
+	\item Se entienden las opciones de personalización de los elementos.				
+	\item El texto de los botones es descriptivo y me ayuda a comprender lo que hacen.				
+\end{itemize}
+
+Las cuestiones de la segunda parte son de desarrollo ya que son cuestiones mas generales sobre que funcionalidades no han utilizado, funcionalidades que sobran, y funcionalidades que faltan, ademas hay un apartado de observaciones generales por si hay algo que crean relevante y no se haya preguntado anteriormente.
 
 %-------------------------------------------------------------------
-\section{Doctest y Jenkins}
+\subsection{Resultados de la evaluacion}
 %-------------------------------------------------------------------
-\label{cap4:sec:pruebas}
-
-Utilizaremos Jenkins\footnote{https://jenkins.io/doc/} para la parte de la integración continua del proyecto. Esto nos permitirá asegurarnos de que la unión de las partes desarrolladas por los diferentes miembros del equipo de desarrollo es correcta y realizar las pruebas automáticas. Esto último se llevará a cabo mediante una orden shell que Jenkins ejecutará cada vez que se detecte un cambio en el repositorio Github. La orden únicamente se encarga de ejecutar el script de pruebas que contendrá las llamadas a los diferentes programas de pruebas que se desarrollen.
-
-Los programas de pruebas utilizarán Doctest para hacer las pruebas, tanto las de unidad como las de integración. Doctest es un módulo incluido en la librería estándar de Python. Su funcionamiento se basa 
-en definir la función que se quiera probar y, dentro de un comentario al inicio de esta, poner una serie de llamadas y el resultado que se espera obtener de ellas. Tiene una función testmod que realiza las pruebas y devuelve el número de fallos y el resultado de todas las pruebas. Si el número de fallos es mayor que cero provocamos una excepción que Jenkins detectará para notificar a todo el equipo que hay algún fallo. Los resultados de las pruebas se muestran por consola al acabar y Jenkins los guardará para ayudar a encontrar el problema. Tendremos un archivo de pruebas por cada uno de los servicios web que vayamos desarrollando. Cada vez que se termine el desarrollo de un servicio nuevo crearemos un nuevo archivo de pruebas que utilice Doctest para hacer las pruebas. Teniendo en cuenta que cada módulo es utilizado por otro, las pruebas de unidad de un módulo sirven como pruebas de integración para el módulo inferior.
+\label{cap5:sec:resultadosevaluacion}
 
 %-------------------------------------------------------------------
-\section{SpaCy y PyStemmer}
+\subsection{Analisis de la evaluacion}
 %-------------------------------------------------------------------
-\label{cap4:sec:lematizacion}
+\label{cap5:sec:analisisevaluacion}
 
-El objetivo de nuestro proyecto es interpretar la emoción de frases y textos, no sólo palabras. Para ello se necesita una herramienta que nos facilite trabajar con frases, etiquetando cada una de las palabras que las forman para conocer su categoría gramatical con el fin de descartar aquellas que no tengan caracter emocional (como podrían ser los articulos, los pronombres...). \textbf{SpaCy} es una librería open source escrita en Python y dedicada al Procesamiento de Lenguaje Natural. Soporta, entre otros idiomas, el español y nos permite etiquetar las palabras con categorías gramaticales como: NOUN (sustantivo), PROPN (pronombre), PART (participio), INTJ (interjección), PRON (pronombre), AUX (auxiliar), CONJ (conjunción), VERB (verbo), ADV (adverbio), ADJ (adjetivo)... Se puede encontrar una lista completa con todas las categorías gramaticales para el español en el GitHub del proyecto de SpaCy\footnote{https://github.com/explosion/spacy/blob/master/spacy/lang/es/tag\_map.py}.
-
-SpaCy recibirá un texto y devolverá un objeto de tipo ``Doc'', propio de la librería, que contendrá la frase con una serie de anotaciones sobre cada una de las palabras que la forman (lema, etiqueta, dependencias sintácticas, forma...). 
-
-%https://github.com/explosion/spacy/blob/master/spacy/lang/es/tag_map.py aquí están todas las etiquetas
-
-
-Para poder realizar el análisis emocional del texto, necesitamos obtener el lema de cada una de las palabras, para que si alguna de las palabras del texto no se encuentra en nuestro diccionario pero deriva de una que sí que está, pueda ser reconocida. Como por ejemplo, alegremente, palabra que no se encuentra en nuestro diccionario pero es reconocida ya que deriva de alegre, palabra que sí que se encuentra. A pesar de que SpaCy nos proporciona el lema de una palabra, tras estar haciendo pruebas descubrimos que los resultados que nos devuelve no son del todo correctos. Por ejemplo, para la palabra \textit{alegría} SpaCy devuelve \textit{alegrar} como lema, cuando lo correcto sería devolver \textit{alegr}.
-
-
- Para solventar los problemas con los lemas devueltos por SpaCy decidimos utilizar la librería de Python \textbf{PyStemmer} que obtenía mejores resultados. PyStemmer es una adaptación de Snowball para Python. Snowball es un pequeño lenguaje de procesamiento que permite crear algoritmos de lematización. PyStemmer, soporta varios idiomas incluido el español y nos ofrece mejores resultados a la hora de obtener los lemas de las palabras. Por ejemplo, para la palabra \textit{alegre} para la que Spacy nos devolvía \textit{alegrar}, PyStemmer devuelve \textit{alegr}, que es el valor correcto.
-
-PyStemmer funciona de manera similar a Spacy, primero importamos el módulo stemmer, seleccionamos el idioma para el cual queremos que nos seleccione el lema e introducimos la palabra y nos devuelve el lema de la palabra dada. El problema de esta librería es que no nos permite saber la etiqueta gramatical de la palabra (cosa que si devuelve SpaCy), por eso vamos a combinar ambas herramientas para procesar las palabras: usaremos PyStemmer cuando necesitemos obtener el lema de una palabra y SpaCy cuando necesitemos conocer la categoría gramatical de ésta.
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX
@@ -137,4 +217,3 @@ PyStemmer funciona de manera similar a Spacy, primero importamos el módulo stemm
 %%% mode: latex
 %%% TeX-master: "../Tesis.tex"
 %%% End:
-\end{comment}

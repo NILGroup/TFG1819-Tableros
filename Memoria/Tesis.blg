@@ -8,20 +8,20 @@ A level-1 auxiliary file: Capitulos/01Capitulo1.aux
 A level-1 auxiliary file: Capitulos/02Capitulo2.aux
 A level-1 auxiliary file: Capitulos/03Capitulo3.aux
 A level-1 auxiliary file: Capitulos/04Capitulo4.aux
-A level-1 auxiliary file: Capitulos/varios.aux
+A level-1 auxiliary file: Capitulos/05Capitulo5.aux
+A level-1 auxiliary file: Capitulos/06Capitulo6.aux
 A level-1 auxiliary file: Cascaras/bibliografia.aux
 The style file: TeXiS/TeXiS.bst
 A level-1 auxiliary file: Cascaras/fin.aux
 Database file #1: nuestros.bib
 Database file #2: latex.bib
 Database file #3: otros.bib
-Warning--empty year in psisemadrid; set to ????
-ptr=1, stack=
-????
----the literal stack isn't empty for entry psisemadrid
-while executing---line 1842 of file TeXiS/TeXiS.bst
 ptr=1, stack=
 2002
 ---the literal stack isn't empty for entry agendasvisuales
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+Entrada: ``{Pictograma}''
+---the literal stack isn't empty for entry pictogramawikipedia
 while executing---line 1842 of file TeXiS/TeXiS.bst
 (There were 2 error messages)

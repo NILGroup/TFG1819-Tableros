@@ -1,4 +1,4 @@
-\begin{thebibliography}{7}
+\begin{thebibliography}{9}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Campillo(2014)}]{sistemas-pictograficos}
@@ -13,6 +13,11 @@
 \newblock {\em INTERSAACs\/}.
 \newblock Proyecto Fin de Carrera, Universidad Complutense de Madrid, 2015.
 
+\bibitem[{Guerrero(2018)}]{TFMPictar}
+{\sc Guerrero, A.~M.}
+\newblock {\em PICTAR\/}.
+\newblock Proyecto Fin de Carrera, Universidad Complutense de Madrid, 2018.
+
 \bibitem[{L'opez(2017)}]{ARASAAC}
 {\sc L'opez, E.~B.}
 \newblock An'alisis emp'irico de las caracter'isticas formales de los s'imbolos
@@ -21,11 +26,10 @@
 \newblock Disponible en \url{http://hdl.handle.net/10803/454891} (último
   acceso,  NOSESABE).
 
-\bibitem[{Mazzeo()}]{psisemadrid}
-{\sc Mazzeo, M.~C.}
-\newblock Saacs.
-\newblock Disponible en
-  \url{https://psisemadrid.org/los-sistemas-aumentativos-y-alternativos-de-comunicacion-saac/}.
+\bibitem[{Mirenda y Iacono(2008)}]{psisemadrid2}
+{\sc Mirenda, P.} y {\sc Iacono, T.}
+\newblock {\em Autism Spectrum Disorders and AAC\/}.
+\newblock Paul H. Brookes, 2008.
 
 \bibitem[{Reuter et\ al.(2017)Reuter, Angiono y Mercado}]{bliss}
 {\sc Reuter, M. C.~F.}, {\sc Angiono, V.~A.} y {\sc Mercado, L.~B.}
@@ -49,5 +53,9 @@
 \newblock Disponible en
   \url{http://aetapi.org/download/pictogramas-una-alternativa-para-comprender-el-mundo/?wpdmdl=1386}
   (último acceso,  NOSESABE).
+
+\bibitem[{Wikipedia(Pictograma)}]{pictogramawikipedia}
+{\sc Wikipedia} (Pictograma).
+\newblock Disponible en \url{https://es.wikipedia.org/wiki/Pictograma}.
 
 \end{thebibliography}

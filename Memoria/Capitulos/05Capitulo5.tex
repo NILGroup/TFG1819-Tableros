@@ -3,287 +3,267 @@
 %                          Capítulo 5
 %
 %---------------------------------------------------------------------
+
+
+
 \setlength{\parskip}{10pt}
-\chapter{Análisis del Contenido Afectivo de un Texto}
+\chapter{PicTableros}
 
 \begin{resumen}
-En este capítulo se explicarán los servicios web que se han desarrollado con el fin de analizar el contenido afectivo de un texto.
-Primero, en la sección 5.1, se explica la base sobre la que trabajaran todos los servicios. En la sección 5.2, se presentarán los servicios orientados a identificar las emociones predominantes en una palabra concreta. Seguidamente, en la sección 5.3, se explica como el análisis de la palabra se aplica a determinar la emoción de una frase para después, en la sección 5.4, aplicar todo lo anterior al análisis de un texto. Por último, en la sección 5.5 se presentará la API Web que contiene todos los servicios web hemos desarrollado. 
+	En este capitulo se explica el proceso de desarrollo de la aplicacion, empezando por el análisis de los requisitos que se explica en la seccion \ref{cap5:sec:analisis}. Despues, en la secccion \ref{cap5:sec:diseño} se explica el diseño de la interfaz y en la sección \ref{cap5:sec:implementacion}. Finalmente se explica el proceso de evaluacion con los usuarios en la sección \ref{cap5:sec:evaluacion}
 \end{resumen}
 
 %-------------------------------------------------------------------
-\section{Base para los servicios web}
+\section{Análisis de requisitos}
 %-------------------------------------------------------------------
-\label{cap5:sec:base}
+\label{cap5:sec:analisis}
 
-El diccionario que vamos a utilizar, explicado en la sección 4.2, contiene las palabras que nos servirán como base para el análisis. Para ampliar el diccionario original añadiremos una columna donde se guardará el lema de las palabras. Para obtener este lema usaraemos la herramienta PyStemmer. A la hora de buscar una palabra en el diccionario lo haremos consultando esta nueva columna, el lema, lo que nos permite procesar no solo las 3.141 palabras del diccionario sino también sus derivadas. Por ejemplo, en el diccionario está incluida la palabra ``aborto", si en un texto aparece la palabra ``abortista", como tienen el mismo lema, diremos que ``abortista" tiene la misma carga emocional que ``aborto".
+En este proyecto se ha dado mucha importancia al usuario final de la aplicación, con la intención de desarrollar una herramienta que cubra sus necesidades. Por ello, se ha trabajado conjuntamente con la Asociación de Autismo Sevilla. 
 
-Una vez que tenemos el diccionario definitivo necesitamos almacenarlo en algún servidor para poder acceder a él ya que los servicios web utilizarán la información que contiene para realizar el análisis. Django nos permite crear un servidor y nos facilita la creación de una base de datos para poder almacenar las palabras junto a su lema y sus grados. La base de datos será creada automáticamente por Django en SQLite, un sistema de gestión de bases de datos relacional que se integra en el programa en vez de ser un proceso independiente con el que el programa se comunique. Para que la base de datos pueda ser creada necesitamos definir un modelo y unas vistas.
+Como ya se ha explicado anteriormente, para facilitar la comunicación con personas con discapacidad cognitiva se suelen emplear formatos que reconocen y entienden mejor. Pero a pesar de que ya existen herramientas destinadas a realizar esta tarea, los usuarios aun no han encontrado una que se adapte a sus necesidades. Esto motivó el desarrollo de una herramienta que permita a los usuarios diseñar sus plantillas y tableros de una manera mas sencilla.
 
-Los campos que tiene el modelo para cada palabra son los mismos que en el diccionario: la propia palabra, el lema de ésta y un valor del uno al cinco para cada una de las cinco categorías básicas. Los grados se guardarán en una lista de cinco enteros del 100 al 500, esto nos facilitará obtener todos los grados a la vez. Decidimos guardar los números como enteros porque las listas que proporciona Django para los modelos son de enteros, cada vez que se realice una consulta se dividirán los valores entre 100 obteniendo los valores reales. El modelo se define en un fichero Python y permite que cada una de las palabras que tenemos recogidas se encapsulen en este modelo para ser almacenadas en el servidor.
+En una reunión que tuvo lugar el 22 de Febrero durante una Jornada de Trabajo en Aulas TIC 2017, desde la Asociación de Autismo Sevilla nos transmitieron la necesidad de una aplicación que les permitiese digitalizar los formatos que utilizan para comunicarse con sus usuarios, ya que hasta el momento es un trabajo que realizan de manera manual.
 
-Django utiliza un fichero Python para declarar una serie de ``vistas'' que servirán para realizar las consultas necesarias sobre la base de datos. Cada vez que necesitemos alguna información específica se creará una nueva vista en la que se especifique la información que necesitamos de la base de datos y el tratamiento que esta recibirá así como la salida que se producirá. Inicialmente disponemos de una vista general (Figura \ref{fig:vista_general}) que muestra la lista entera de palabras almacenadas con el valor de todos sus campos y una vista detalle (Figura \ref{fig:vista_det}) para cada una de ellas en la que sólo se muestran los campos de esa palabra en particular.
-
-
-\figura{Bitmap/Capitulo4/listaPalabrasServidor}{width=0.7\textwidth}{fig:vista_general}{Vista general de la lista de palabras del diccionario almacenado en Django.}
-\figura{Bitmap/Capitulo4/vista_detalle}{width=0.6\textwidth}{fig:vista_det}{Vista detalle de la palabra ``Alegre''.}
-
-Una vez que estos dos ficheros hayan sido creados, Django puede crear la base de datos vacía y alojarla en el servidor. Para rellenar la base de datos con las palabras de nuestro diccionario necesitamos desarrollar un programa en Python que se encargue de leer cada línea del CSV en el que este se encuentra y encapsular la información, utilizando el modelo, para guardarla en los distintos campos de la base de datos que ya está en el servidor. Una vez que todas las palabras estén subidas ya se pueden comenzar a desarrollar los servicios web.
-
-%-------------------------------------------------------------------
-\section{Análisis afectivo de una palabra}
-%-------------------------------------------------------------------
-\label{cap5:sec:palabra}
-
-La primera tarea a resolver fue obtener el contenido emocional de una palabra aislada, dicho contenido emocional puede ser de dos tipos: los grados emocionales y la emoción mayoritaria. A continuación se explica la información que nos aporta cada uno de estos tipos.
+Para identificar los requisitos necesarios de este proyecto desde la Asociación de Autismo Sevilla nos hicieron llegar una serie de plantillas que utilizan con frecuencia. En base a las plantillas de la Figura \ref{fig:plantillas} se establecieron los siguientes requisitos y funcionalidades necesarias para los usuarios:
 
 \begin{itemize}
-	\item \textbf{Grados emocionales}: Una lista de cinco valores del uno al cinco, cada uno de los cuales se corresponde con una de las cinco categorías emocionales básicas con las que trabajamos: tristeza, miedo, alegría, enfado y asco. Estos grados nos permiten ver en qué medida están presentes estas emociones en una palabra. Por ejemplo, los grados emocionales de la palabra ``abejas'' son los que indica la tabla \ref{tabla:abejaEmocion}
-	
-	\begin{table}[htbp]
-		\begin{center}
-		\begin{tabular}{|l|l|l|l|l|l|}
-		\hline
-		 & Tristeza & Miedo & Alegría & Enfado & Asco \\
-		\hline 
-		abejas & 1,17 & 3,47 & 1,37 & 2,0 & 2,2 \\
-		\end{tabular}
-		\caption{Grados emocionales de la palabra ``abejas".}
-		\label{tabla:abejaEmocion}
-		\end{center}
-\end{table}
-
-	\item \textbf{Emoción mayoritaria}: Nos permite conocer cual es la categoría emocional con mayor grado para una palabra. La información que aporta es la emoción, o emociones si hay más de una categoría con el grado mayor, y el grado que tiene. Por ejemplo, la palabra ``tormenta'', como podemos ver en la tabla \ref{tabla:mayoritarias} tiene dos emociones mayoritarias, tristeza y miedo, que comparten el grado 2.52, mientras que la palabra ``madre'' tiene, como vemos en la tabla \ref{tabla:mayoritarias}, una única emoción mayoritaria, alegría, con un grado de 4.79.
-	
-	\begin{table}[htbp]
-		\begin{center}
-			\begin{tabular}{|l|l|l|l|l|l|}
-				\hline
-				& Tristeza & Miedo & Alegría & Enfado & Asco \\
-				\hline 
-				tormenta & 2,52 & 2,52 & 1,53 & 1,5 & 1,2 \\ \hline
-				madre & 1,86 & 1,52 & 4,79 & 1,48 & 1,0 \\ \hline
-			\end{tabular}
-					\caption{Grados emocionales de las palabras ``tormenta'' y ``madre".}
-
-			\label{tabla:mayoritarias}
-		\end{center}
-\end{table}
+	\item La aplicacion debe ser accesible desde cualquier dispositivo y en cualquier momento, para que los usuarios puedan acceder a su material en cualquier situacion.
+	\item Buscador con todos los pictogramas de ARASAAC.
+	\item Poder arrastrar y soltar los elementos en cualquier posición de la plantilla.
+	\item Cambiar el tamaño de los elementos.
+	\item Crear cuadros de texto, en los que poder establecer el color del texto, el borde y el fondo.
+	\item Crear áreas en las que poder colocar los pictogramas, y personalizar el color del borde y del fondo, para conseguir áreas personalizadas como en la plantilla de ``Normas 1''.
+	\item Personalizar los pictogramas cambiando el color del borde y fondo. 
+	\item Como se puede ver en la plantilla ``Normas 2'' es necesario poder tachar los pictogramas.
+	\item Crear pictogramas en blanco que permitan al usuario cuando vuelva a usar la plantilla sustituirlos fácilmente.
 \end{itemize}
 
-Para cada tipo de contenido emocional hemos desarrollado un servicio web diferente. Los dos servicios tienen la misma URL raíz\footnote{http://sesat.fdi.ucm.es/emociones/palabra/}. A continuación, se explicará cómo tratamos las palabras introducidas por los usuarios en nuestros servicios y como funciona cada uno de ellos.
-
-\subsection{Lematización}
-Como ya hemos comentado, lo primero que tenemos que hacer para obtener el contenido afectivo de cualquier palabra es obtener su lema para poder compararlo con los lemas de las palabras que tenemos almacenadas en nuestro diccionario. Para ello, utilizaremos la misma herramienta que nos sirvió para añadir los lemas al diccionario: PyStemmer. Cada vez que el servidor reciba una petición mediante un palabra hará una llamada al método ``stemWord'' de la PyStemmer y utilizará el resultado para realizar la búsqueda de la palabra en el diccionario. Por ejemplo, con la palabra ``abortista", que no está en el diccionario, PyStemmer reconocerá su lema como ``abort" y encontrará sus emociones gracias a la palabra ``aborto", existente en el diccionario y con lema ``abort".
-
-\subsection{Servicio web para obtener los grados para cada emoción de una palabra}
-Dada una palabra, este servicio nos devuelve la información sobre los grados o valores en cada categoría emocional. Para ello se realiza la siguiente peticion:
-
-http://sesat.fdi.ucm.es/emociones/palabra/gradosEmo?palabra=\textit{palabra\_buscada}
-
-Cambiando \textit{palabra\_buscada} por la palabra correspondiente. Por ejemplo: si quisiéramos buscar la palabra ``enfermedad" pondríamos lo siguiente:
-
-http://sesat.fdi.ucm.es/emociones/palabra/gradosEmo?palabra=enfermedad
-
-En la figura (Figura \ref{fig:grados}) se puede ver el JSON de respuesta para la anterior petición, devuelto por el servicio para la palabra ``enfermedad''. Si la palabra está en nuestro diccionario, la salida sería el grado de cada emoción. Si la palabra no existe en nuestro diccionario el servicio devolverá dicha palabra como si apareciese en el diccionario devolviendo para cada emoción el grado uno, considerado neutral al ser el valor mínimo que puede tener el grado (Figura \ref{fig:notfound}). Es decir, tratamos a las palabras que no están en nuestro diccionario como carentes de emoción.
-
-\figura{Bitmap/Capitulo4/gradosEnfermedad}{width=0.6\textwidth}{fig:grados}{JSON devuelto al buscar los grados emocionales de la palabra ``enfermedad''.}
-	
-\figura{Bitmap/Capitulo4/gradosNoExiste}{width=0.6\textwidth}{fig:notfound}{JSON devuelto al buscar los grados de una palabra que no está en el diccionario.}
-
-\subsection{Servicio web para obtener la emoción mayoritaria de una palabra}
-Dada una palabra el servicio nos devuelve la emoción mayoritaria. La emoción mayoritaria será aquella que tiene el mayor grado asociado, como ya hemos comentado. Para ello se realiza la siguiente petición:
-
-http://sesat.fdi.ucm.es/emociones/palabra/mayoritariaEmo?palabra=\textit{palabra\_buscada}
-
-Cambiando \textit{palabra\_buscada} por la palabra correspondiente. Por ejemplo: si quisiéramos buscar la palabra ``tormenta" pondríamos lo siguiente:
-
-http://sesat.fdi.ucm.es/emociones/palabra/mayoritariaEmo?palabra=tormenta
-
-Como entrada tendríamos la palabra, en este caso ``tormenta", y nos devolvería lo que podemos ver en la figura \ref{fig:mayoritarias2}.
-En caso de que la palabra buscada tenga una emoción mayoritaria, el resultado será como el que podemos ver en la figura \ref{fig:mayoritaria}, respuesta para la petición con ``abejas" como \textit{palabra\_buscada}.
-En el caso de que la palabra no se haya encontrado en el diccionario se devolverá una lista vacía de emociones ya que no hay y el grado cero, como podemos ver en la figura \ref{fig:mno}, respuesta para la petición con ``te" como \textit{palabra`\_buscada}.
-
-\figura{Bitmap/Capitulo4/mayoritarias}{width=0.6\textwidth}{fig:mayoritarias2}{Respuesta si hay dos emociones mayoritarias.}
-\figura{Bitmap/Capitulo4/mayoritariaAbeja}{width=0.6\textwidth}{fig:mayoritaria}{Respuesta al encontrar la emoción mayoritaria.}
-\figura{Bitmap/Capitulo4/mayoritariasNo}{width=0.6\textwidth}{fig:mno}{Respuesta cuando se pide la mayoritaria de una palabra que no está en el diccionario.}
+\figura{Bitmap/Capitulo5/plantillas}{width=.9\textwidth}{fig:plantillas}{Plantillas de la Asociación Autismo Sevilla}
 
 %-------------------------------------------------------------------
-\section{Análisis afectivo de una frase}
+\section{Diseño de la interfaz}
 %-------------------------------------------------------------------
-\label{cap5:sec:frase}
+\label{cap5:sec:diseño}
 
-El anális emocional de una frase se sustenta en los servicios web desarrollados para hallar la carga afectiva de las palabras. Partimos de la base de que cualquier frase es, de primeras, carente de emoción, así que si no contiene ninguna palabra emocional el resultado será que es una frase 100\% neutral. Es decir, el valor para cada una de las categorías emocionales es uno. Para el resto de frases, además de los resultados del análisis emocional devolvemos la lista de palabras que nos han llevado a dichos resultados. Por ejemplo, si queremos obtener los grados emocionales finales de la frase: ``Estoy alegre porque mañana es mi boda'' no sólo se devolverían los grados para cada emoción sino también una lista con las palabras ``alegre'' y ``boda'' ya que son palabras emocionales que están dentro de nuestro diccionario.
+Después de obtener los requisitos, ya se tenia una idea mas o menos clara de como debía ser la aplicación y con que funcionalidades tenia que contar. Se realizaron prototipos en papel de la aplicación, para que los pudiesen evaluar los usuarios finales y así obtener una aplicación que se adaptase lo máximo posible a sus necesidades. Los prototipos en papel al completo se encuentran en el repositorio de GitHub.\todoImpl{poner enlace a los prototipos en papel}
 
-\subsection{Obtención de palabras relevantes}
+En la Figura \ref{fig:listados} se muestra el prototipo de la lista de plantillas privadas, en el caso de los otros listados el formato es similar, pero cambiando las opciones sobre el elemento. 
 
-Comenzaremos dividiendo la frase en las palabras que la forman y procesaremos cada una de estas utilizando la herramienta SpaCy, como ya se explicó en la sección 4.5, para obtener una lista de palabras candidatas. Consideraremos una palabra como candidata si su etiqueta gramatical es verbo, adjetivo o nombre. Hemos elegido los verbos, los adjetivos y los sustantivos ya que son las categorías que consideramos que pueden tener contenido afectivo. El resto de categorías se utilizan para construir la sintáxis del lenguaje. 
+\figura{Bitmap/Capitulo5/listados}{width=.9\textwidth}{fig:listados}{Prototipo en papel de la lista de plantillas privadas.}
 
-Para cada una de las palabras de la lista obtenemos la información emocional mediante el servicio web que devuelve los grados para cada emoción de una palabra (ver sección 5.2.2) y, vamos sumando los valores devueltos para cada una de las emociones. Por ejemplo, para la frase ``Mi casa es bonita", el servicio elegirá como candidatas a palabras emocionales ``casa", ``es" y ``bonita", por ser un nombre, un verbo y un adjetivo respectivamente y llamará al servicio de web de grados para cada palabra candidata y sumará los resultados por emociones básicas.
+En el menú lateral se pueden observar las listas de plantillas desplegadas, publicar y privadas, y la opción de crear una nueva plantilla. En el caso de los tableros, serian las mismas opciones.
 
+Para las plantillas privadas tenemos las siguientes opciones, se decidio mostrar las opciones con texto, en vez de iconos, ya que explican mejor la funcionalidad de cada una:
 
-\subsection{Grados emocionales finales de una frase}
-Una vez que tenemos la suma de los grados para cada una de las categorías emocionales tendremos que dividir dicho valor entre el número de palabras emocionales que hemos encontrado dentro de la frase. Por ejemplo, para la frase: ``\textit{Estoy alegre y feliz.}'' en la que tenemos las palabras emocionales: ``alegre'' y ``feliz'', se dividiría la suma de los grados entre dos. El resultado se puede ver en la tabla \ref{tabla:analisis_alegre}. En ella se observa en detalle el proceso que seguimos para calcular los grados, primero obtenemos los grados emocionales para cada categoría y los sumamos. Después dividimos cada valor entre el número de palabras, en este caso dos, obteniendo así el valor final para cada emoción. Los valores para la frase son muy similares a los valores para cada una de las palabras, esto se debe a que ambas palabras son prácticamente idénticas en cuanto a contenido afectivo.
+\begin{itemize}
+	\item \textbf{Publicar}: que sirve para publicar el elemento y asi todo el mundo pudiese acceder a el.
+	\item \textbf{Editar}: que lleva al editor de elementos.
+	\item \textbf{Utilizar cono tablero}: esta opción solo esta disponible para las plantillas y sirve para utilizar este material como un tablero.
+	\item \textbf{Duplicar}: crea una copia del material.
+	\item \textbf{Eliminar}: elimina el material.
+\end{itemize}
 
-\begin{table}[htbp]
-		\begin{center}
-		\begin{tabular}{|l|l|l|l|l|l|}
-		\hline
-		 & Tristeza & Miedo & Alegría & Enfado & Asco \\
-		\hline 
-		alegre & 1,1 & 1,23 & 4,83 & 1,1 & 1,03 \\ \hline
-		feliz & 1,1 & 1,2 & 4,63 & 1,0 & 1,0 \\ \hline
-		\textit{Suma} & \textit{2,2} & \textit{2,43} & \textit{9,46} & \textit{2,1} & \textit{2,03} \\ \hline
-		\textit{Número de palabras} & \multicolumn{5}{|c|}{\textit{2}} \\ \hline
-		\textbf{Valor final frase} & \textbf{1,1} & \textbf{1,21} & \textbf{4,73} & \textbf{1,05} & \textbf{1,02} \\ \hline
-		\end{tabular}
-		\caption{Resultado del anális de la frase "`Estoy alegre y feliz"'.}
-		\label{tabla:analisis_alegre}
-		\end{center}
-\end{table}
-		
-		Si la frase fuera: ``\textit{Estoy alegre y triste}'', las palabras emocionales serían ``alegre'' y ``triste'' y el resultado final sería el que se puede ver en la tabla \ref{tabla:analisis_bipolar}. El proceso que se sigue para realizar el análisis emocional de la frase es el mismo que en el ejemplo anterior pero en este caso vemos como los valores de los grados emocionales para la frase se quedan en un punto intermedio entre los grados de las palabras emocionales. Así, la frase pertenece a la categoría emocional tristeza y a la de alegría a la vez, pero en menor grado que ``triste'' y ``alegre'' respectivamente ya que ambas se contrarrestan al hacer la media.
+Al final del listado, se encuentran los botones de importar y descargar, que permiten a los usuarios compartir el material generado entre dispositivos.
 
-\begin{table}[htbp]
-		\begin{center}
-		\begin{tabular}{|l|l|l|l|l|l|}
-		\hline
-		 & Tristeza & Miedo & Alegría & Enfado & Asco \\
-		\hline 
-		alegre & 1,1 & 1,23 & 4,83 & 1,1 & 1,03 \\ \hline
-		triste & 4,47 & 2,17 & 1,03 & 2,06 & 1,5 \\ \hline
-		\textit{Suma} & \textit{5,57} & \textit{3,4} & \textit{5,86} & \textit{3,16} & \textit{2,53} \\ \hline
-		\textit{Número de palabras} & \multicolumn{5}{|c|}{\textit{2}} \\ \hline
-		\textbf{Valor final de la frase} & \textbf{2.78} & \textbf{1,7} & \textbf{2,93} & \textbf{1,58} & \textbf{1,26} \\ \hline
-		\end{tabular}
-		\caption{Resultado del análisis de la frase "`Estoy alegre y triste"'.}
-		\label{tabla:analisis_bipolar}
-		\end{center}
-\end{table}
+En la Figura \ref{fig:plantilla} se puede observar el editor de plantillas, que cuenta con tres secciones:
 
-Teniendo en cuenta que no hay ninguna palabra totalmente carente de emoción (con todos sus grados a uno) en nuestro diccionario, si alguna de las palabras que se procesan a la hora de realizar estos cálculos tiene todos sus grados a uno sabremos que es una palabra que no está en nuestro diccionario y no la tendremos en cuenta: restaremos uno al número de palabras emocionales que hay en la frase. Por ejemplo, si tenemos que analizar la frase ``He quedado con mi madre para tomar un té.'' ésta tiene tres palabras relevantes que no descartamos por su categoría gramatical: ``quedado'', ``madre'' y ``té''. La palabra ``té'' no está en nuestro diccionario así que el número de palabras emocionales es dos y, por lo tanto, se dividirían las sumas obtenidas entre este valor.
+\figura{Bitmap/Capitulo5/plantilla}{width=.9\textwidth}{fig:plantilla}{Prototipo en papel de la vista del editor de plantillas.}
 
- 
-\subsection{Emoción mayoritaria de una frase}
-Para hallar la emoción mayoritaria de una frase necesitamos primero obtener los grados finales para cada categoría emocional, es decir hacemos uso del servicio web explicado en la sección 5.3.2. Necesitamos estos grados ya que es la única manera de saber cuál de ellos es el mayor. Una vez que los tenemos, comparamos sus valores y nos quedamos con el mayor. Por ejemplo, la frase ``Me gustan las naranjas'' tiene los siguientes grados finales:
-\begin{table}[htbp]
-	\begin{center}
-	\begin{tabular}{|l|l|l|l|l|l|}
-	\hline
-	 Tristeza & Miedo & Alegría & Enfado & Asco \\
-	\hline 
-	1,17 & 1,6 & 4,43 & 1,2 & 1,17 \\ \hline
-	\end{tabular}
-	\caption{Grados emocionales de la frase ``Me gustan las naranjas".}
-	\end{center}
-\end{table}
+\begin{itemize}
+	\item En la parte superior, se muestra una barra con un boton que lleva a la vista de los listados y el nombre del elemento que estamos editando. Para editar este nombre se dispone de un boton que mostrará un input de texto que permita cambiar el valor del titulo.
+	\item En la izquierda de la vista, se muestra un area que en ese momento contiene la plantilla de elegir entre tres opciones. los pictogramas que pone ``Nuevo'' se podrán sustituir posteriormente por las opciones entre las que elegir.
+	\item En la derecha, se muestra el buscador de pictogramas, y tres elementos que permiten al usuario personalizar la plantilla. El primer elemento es el área, el segundo es un pictograma en blanco, y el tercero es un cuadro de texto.
+\end{itemize}
 
-Al comparar los grados observamos que la emoción mayoritaria es alegría con un grado de 4,43. La respuesta que daría nuestro servicio web en este caso se puede ver en la figura \ref{fig:mayAlegre}.
+Todos los elementos que se pueden utilizar para crear una plantilla o tablero se pueden personalizar, una vez arrastrados al área principal pulsando sobre ellos aparece sobre el menú de la derecha un menú distinto con las opciones de personalización. En la Figura \ref{fig:ajustesbien} se pueden observar las opciones de personalización de los pictogramas. 
 
-\figura{Bitmap/Capitulo4/mayAlegre}{width=0.6\textwidth}{fig:mayAlegre}{Respuesta JSON para una frase con una emoción mayoritaria.}
+\figura{Bitmap/Capitulo5/ajustesbien}{width=.9\textwidth}{fig:ajustesbien}{Prototipo en papel del menú de ajustes.}
 
-Al igual que ocurría en el caso de las palabras puede haber más de una emoción mayoritaria. Por ejemplo, la frase ``Me caes mal'' tiene los siguientes grados emocionales:
+De un pictograma se puede cambiar el color del borde y del fondo, también se puede cambiar el texto asociado al pictograma y decidir si se quiere mostrar o no el texto. La ultima opción disponible es la opción de tachar el pictograma, esta opción cambia según pulsas en ella permitiendo tachar, poner un tick o no poner nada.
 
-\begin{table}[htbp]
-	\begin{center}
-	\begin{tabular}{|l|l|l|l|l|l|}
-	\hline
-	 Tristeza & Miedo & Alegría & Enfado & Asco \\
-	\hline 
-	3,2 & 3,33 & 1,07 & 3,3 & 2,57 \\ \hline
-	\end{tabular}
-	\caption{Grados emocionales de la frase ``Me caes mal".}
-	\end{center}
-\end{table}
+Después de realizar los prototipos en papel, tuvo lugar una reunión con la Asociación Autismo Sevilla en la que se explico a los usuarios el funcionamiento de los prototipos y como seria su uso se obtuvieron una serie de recomendaciones de cosas a mejorar, para que la experiencia de uso fuera mejor y se adaptase a las necesidades de los usuarios.
 
-Es decir, tiene dos emociones mayoritarias: miedo y enfado con un grado de 3,33. En la figura \ref{fig:mayVarias} se puede observar como respondería el servidor ante esta petición.
+En la figura \ref{fig:cambios} se puede ver la lista de los cambios propuestos junto con la dificultad de implementar cada uno de los cambios y la importancia. Una vez definida la importancia y la dificultad de los cambios propuestos se ha obtenido un valor promedio, para asignarles una prioridad a la hora de realizar dichos cambios.
 
-\figura{Bitmap/Capitulo4/mayVarias}{width=0.6\textwidth}{fig:mayVarias}{Respuesta JSON para una frase con dos emociones mayoritarias.}
+\figura{Bitmap/Capitulo5/cambios}{width=.9\textwidth}{fig:cambios}{Lista de cambios propuestos junto con su dificultad y su importancia}
+
+De los cambios propuestos se han realizado la mayoria de ellos, a continuacion se enumeran los cambios que no se han podido llevar a cabo junto con una explicacion de por que:
+
+\begin{itemize}
+	\item \textbf{Eliminar tableros publicos}: la funcionalidad de publicar los tableros ya estaba implementada cuando se recibieron estas propuestas, y dado que no era muy relevante se decidio dejar en el proyecto.
+	\item \textbf{Vincular plantillas entre sí}: esta funcionalidad permitiria a los usuarios asociar plantillas, peor no se ha podido implementar esta funcionalidad por la falta de tiempo y por que es bastante compleja.
+	\item \textbf{Posibilidad de cambiar los pictogramas (Si eliminas un pictograma del tablero que los demas se recoloquen)}: esta funcionalidad es muy utilizar si en una agenda por ejemplo se cancela una actividad se pasaría a mostrar la siguiente actividad, pero al permitir al usuario trabajar con un area libre en vez de cuadriculas, no se puede determinar un orden para que esto sucediese.
+	\item \textbf{Añadir buscador de imágenes de google}: esta funcionalidad no se ha implementado, por que no se ha encontrado una herramienta que permita realizar una busqueda con imagenes de Google.
+	\item \textbf{Añadir imágenes personales}: esta funcionalidad no se ha implementado por que al no registrar a los usuarios no se les podrian y asociar las imagenes, tampoco se cuenta con un servidor en el que guardar las imágenes ya que la arquitectura es serverless.
+\end{itemize}
+
+El resto de cambios si se han implementado y estos han provocado que las interfaces finales fuesen distintas a los prototipos en papel. A continuacion se enumeran algunos de los cambios mas relevantes: 
+
+\begin{itemize}
+	\item En las vistas de los listados:
+	\begin{itemize}
+		\item En los listados se muestran las miniaturas de los elementos, lo cual ha provocado que tambien cambie la disposicion de los botones de las opciones, y tambien los botones de importar y exportar ahora aparecen en la parte superior, ya que al mostrar las miniaturas las listas son mas largas y si se ponen al final, normalmente no se verían.
+		\item El menú lateral ya no son listas desplegables si no que esta siempre desplegado así las opciones están mas accesibles.
+		\item En las opciones de los elementos se ha añadido la opcion de ver, que permite a los usuarios visuaizar la plantilla o el tablero sin los menús de configuracion que provocarian distracciones. 
+	\end{itemize}
+	\item En las vistas del editor:
+	\begin{itemize}
+		\item Se han añadido todas las figuras geométricas y la flecha, aparecerán a continuacion del area, el pictograma en blanco y el cuadro de texto.
+		\item Los cuadros de texto tendrán la opción de ser editables o no, lo cual implica que si es editable en el talero se podrá cambiar el texto.
+		\item Las opciones de tachado, y poner el tick se han ampliado para los tableros. Y tanto para plantillas como para tableros ahora aparecen todas una al lado de otra, ya no hay necesidad de ir pulsando para cambiar, por que resultaba confuso.
+	\end{itemize}
+\end{itemize}
 %-------------------------------------------------------------------
-\section{Análisis afectivo de un texto}
+\section{Implementacion}
 %-------------------------------------------------------------------
-\label{cap5:sec:texto}
+\label{cap5:sec:implementacion}
 
-Para obtener la carga emocional de un texto lo primero que tenemos que hacer es dividirlo en frases y obtener la carga afectiva de cada una de las frases. 
+Después de los requisitos obtenidos se decidió desarrollar este proyecto como una aplicación web, para hacerlo accesible desde cualquier dispositivo, ya sea ordenador, móvil o tablet. La aplicación consta de dos vistas principales: el editor de las plantillas y tableros, y los listados de los mismos. Que se explicaran mas adelante detalladamente en las secciones \ref{cap4:sec:listados} y \ref{cap4:sec:editor}.
 
-Las frases se obtienen partiendo el texto cada vez que se encuentre un ``.''. Una vez que se tienen todas las frases del texto hay que realizar un análisis más profundo ya que las frases interrogativas y las exclamativas al no acabar en un punto no están debidamente separadas, aparecen unidas a otra frase. Por lo tanto, tenemos que realizar una segunda partición que se aplicará a cada una de las frases obtenidas. En esta ocasión la frase se partirá cada vez que se encuentre un signo de exclamación o de interrogación. De esta manera ya tenemos todas las frases que forman el texto. A cada frase del texto le asignaremos un tipo: enunciativa, interrogativa o exclamativa y según su tipo tendrá más o menos peso en el cálculo de la carga afectiva del texto. Las exclamativas tienen el doble de peso que las enunciativas mientras que las interrogativas tienen la mitad. 
+El desarrollo de la interfaz se ha realizado con HTML y CSS. Para permitir el uso de la aplicación en todo tipo de dispositivos se ha realizado un diseño responsive para adaptar los elementos dependiendo de la pantalla y la orientación, para facilitar esta tarea se ha utilizado Bootstrap que con sus media-queries se adaptan a las características del dispositivo.
 
-\subsection{Grados emocionales finales de un texto}
-El análisis afectivo se realiza siguiendo un procedimiento bastante similar al seguido a la hora de analizar las frases. En este caso, obtenemos los grados emocionales finales para cada una de las frases mediante el servicio web dedicado a ello (ver sección 5.3.2) y los sumamos teniendo en cuenta el peso de cada frase: si es enunciativa se suman los grados tal cual, si es exclamativa antes de sumar los grados se multiplican por dos y si es interrogativa antes de sumar los grados se dividen entre dos. Una vez tenemos la suma total de todas las frases que componen el texto se dividen los valores obtenidos entre el número de frases que tiene el texto. Por ejemplo, consideremos el siguiente texto:
+Para el resto de funcionalidades como arrastrar y soltar, buscar pictogramas, guardar, publicar, etc. se utiliza JavaScript. Al ser JavaScript un lenguaje que se puede interpretar en el cliente, permite que la arquitectura de esta aplicación sea serverless.
 
-``Ayer ví a tu hermano. ¡Qué guapo está! ¿Cuándo ha vuelto de Londres?''
-
-Este texto está compuesto por tres frases:
-
-Frase 1: Ayer ví a tu hermano.
-
-Frase 2: ¡Qué guapo está!
-
-Frase 3: ¿Cuándo ha vuelto de Paris?
-
-En la tabla \ref{tabla:analisis_texto} se puede observar el proceso de análisis del texto. Primero obtenemos los grados finales para cada frase, después los adaptamos al peso de la frase y sumamos todos los pesos para, finalmente, dividir los valores obtenidos entre el número de frases, en este caso tres. La tercera frase es carente de emoción, ningua de sus palabras aparece en nuestro diccionario, por ello se le asignan ceros a los grados emocionales ya que si tuviesen valores podría alterar la media realizada. El texto resulta ser alegre con un grado de 3,95. 
-
-\begin{table}[htbp]
-		\begin{center}
-		\begin{tabular}{|l|l|l|l|l|l|}
-		\hline
-		 & Tristeza & Miedo & Alegría & Enfado & Asco \\
-		\hline 
-		Frase 1 & 1,47 & 1,1 & 4,3 & 1,47 & 1,1  \\ \hline
-		Enunciativa(x1) & 1,47 & 1,1 & 4,3 & 1,47 & 1,1 \\ \hline
-		Frase 2 & 1,12 & 1,27 & 3,77 & 1,17 & 1,07 \\ \hline
-		Exclamativa(x2) & 2,24 & 2,54 & 7,54 & 2,34 & 1,14 \\ \hline
-		Frase 3 & 0 & 0 & 0 & 0 & 0 \\ \hline
-		Interrogativa(/2) & 0 & 0 & 0 & 0 & 0 \\ \hline
-		Suma frases & 2,59 & 3,64 & 11,84 & 3,81 & 2,24 \\ \hline
-		Nº de frases & \multicolumn{5}{|c|}{3} \\ \hline
-		Valor final del texto & 0.86 & 1,21 & 3,95 & 1,27 & 0.75 \\ \hline
-		\end{tabular}
-		\caption{Resultado del análisis del texto.}
-		\label{tabla:analisis_texto}
-		\end{center}
-\end{table}
-
-\subsection{Emoción mayoritaria de un texto}
-Para calcular la emoción mayoritaria de un texto hay que obtener sus grados finales y compararlos para quedarnos con el mayor. Este servicio es, por lo tanto, el equivalente del descrito en la sección 5.3.3 pero aplicado a textos. Por ejemplo, si el texto que queremos analizar es: ``Me he encontrado con Ana esta mañana. Me ha dicho que su madre está mejor. Me alegro mucho por ella.'' el servicio presentado en la sección 5.4.1 nos devuelve los grados que se pueden ver en la figura \ref{fig:gradostxt}. Se ve que la emoción mayoritaria del texto es alegría con un grado de 4,26. Podemos ver que esta es precisamente la información que devuelve el servicio para la emoción mayoritaria de un texto en la figura \ref{fig:maytxt} y que la forma en la que se muestra es idéntica a la del servicio para la emoción mayoritaria de una frase.
-
-\figura{Bitmap/Capitulo4/gradostxt}{width=0.6\textwidth}{fig:gradostxt}{Respuesta JSON para los grados de un texto.}
-\figura{Bitmap/Capitulo4/maytxt}{width=0.6\textwidth}{fig:maytxt}{Respuesta JSON para la emoción mayoritaria de un texto.}
-
-\subsection{Palabras emocionales de un texto}
-Este servicio se encarga de combinar los resultados devueltos por el servicio de la sección 5.4.1, los grados emocionales finales de un texto, con una lista de las palabras emocionales que contiene el texto. Esta lista se obtiene juntando las listas de palabras emocionales de todas las frases que componen el texto. Por ejemplo, para el texto ``Luis es un chico muy agradable. No me gusta verle tan triste.'' los grados emocionales finales que obtenemos con el servicio correspondiente son:
-
-\begin{table}[htbp]
-	\begin{center}
-	\begin{tabular}{|l|l|l|l|l|l|}
-	\hline
-	 Tristeza & Miedo & Alegría & Enfado & Asco \\
-	\hline 
-	1,98 & 1,57 & 3,17 & 1,4 & 1,22 \\ \hline
-	\end{tabular}
-	\caption{Grados emocionales del texto ``Luis es un chico muy agradable. No me gusta verle triste".}
-	\end{center}
-\end{table}
-
-Además de esta lista de grados se devuelve la lista de palabras que han llevado al resultado obtenido (Figura \ref{fig:pal}).
-
-\figura{Bitmap/Capitulo4/p}{width=0.6\textwidth}{fig:pal}{Respuesta JSON que contiene la lista de palabras emocionales.}
+A continuación se va a explicar en detalle las dos vistas principales de la aplicación y algunas de las funcionalidades especificas de cada una.
 
 %-------------------------------------------------------------------
-\section{API EmoTraductor}
+\subsection{Listados}
 %-------------------------------------------------------------------
-\label{cap5:sec:api}
+\label{cap5:sec:listados}
 
-Con el objetivo de facilitar a los desarrolladores el uso de todos nuestros servicios hemos creado un API\footnote{http://sesat.fdi.ucm.es/apiEmoTraductor/}. Esta API favorecerá la transferencia de resultados. Para ello es muy importante que exista esta API ya que nos permite mostrar una breve explicación de cada uno de los servicios junto la URL de su petición, la información sobre la respuesta que devuelve y varios ejemplos. La estructura que tiene nuestra API se puede apreciar en la figura \ref{fig:api}. Como se puede observar los servicios están divididos en tres bloques. El primer bloque contiene los servicios desarrollados para las palabras, el segundo contiene los servicios desarrollados para las frases y el último contiene aquellos desarrollados para los textos.
+La vista con las listas de las plantillas o tableros es la vista inicial de la aplicación, es decir lo primero que se ve al entrar a la aplicación. Inicialmente se encuentra la lista de plantillas privadas, que se corresponde con la Figura \ref{fig:plantillasprivadas}. Esta vista cuenta con un menú lateral, que permite al usuario navegar entre los distintos tipos de contenido: plantillas privadas, plantillas publicas, tableros privados y tableros públicos. Para navegar entre las distintas vistas se ha implementado un router en el cliente, que carga las listas según el hash, sin necesidad de recargar la pagina, haciéndola mas dinámica.
 
-\figura{Bitmap/Capitulo4/api}{width=0.8\textwidth}{fig:api}{Estructura general de la API.}
+En las plantillas y tableros privados existe una opción de importar y exportar, que se puede ver en la esquina superior izquierda de la Figura \ref{fig:plantillasprivadas}. Al exportar se genera un fichero .json con todas las plantillas o tableros del usuario, para poder compartir el material entre dispositivos y con otros usuarios. Cuando se importa un archivo se guarda un objeto con cada plantilla o tablero en LocalStorage.
 
-Cada servicio aparece acompañado de una etiqueta ``(ver más)'' que lleva a una sección dedicada al servicio en cuestión. En esta sección aparece toda la información necesaria para comprender qué hace el servicio, qué recibe y qué devuelve. Aparece también el tipo de servicio que es (GET o POST), sus parámetros, la URL que hay que utilizar para acceder a él y algunos ejemplos de peticiones y respuestas. En las figuras \ref{fig:apiEj} y \ref{fig:apiEj2}, podemos ver toda la información proporcionada sobre el servicio de grados de una palabra.
+\figura{Bitmap/Capitulo5/listaplantillasprivadas}{width=.9\textwidth}{fig:plantillasprivadas}{Vista del listado de las plantillas privadas}
 
-\figura{Bitmap/Capitulo4/apiEj}{width=0.6\textwidth}{fig:apiEj}{Información mostrada en la api para el servicio de obtener los grados para las categorías emocionales de una palabra.}
-\figura{Bitmap/Capitulo4/apiEj2}{width=0.6\textwidth}{fig:apiEj2}{Ejemplos mostrados en la api para el servicio de obtener los grados para las categorías emocionales de una palabra.}
+Después de recoger las opiniones de los usuarios sobre los prototipos en papel se decidió que era necesario mostrar una miniatura del elemento, para que así los usuarios pudieran tener una idea del elemento sobre el que se esta trabajando. Para poder mostrar la miniatura se utiliza la librería html2canvas, que lee un elemento del DOM, en este caso el área de la plantilla, y reconstruye los elementos en un canvas. Con el canvas se puede generar una imagen codificada en base64 que se asocia al contenido al guardarlo.
 
-Esta API es pública y seguirá ampliándose con los servicios que se desarrollen más allá de este TFG. 
+Como se puede ver, el usuario dispone de cuatro tipos de contenido con diversas opciones que se explicaran a continuación:
+
+\begin{itemize}
+	\item \textbf{Plantillas privadas}: en la Figura \ref{fig:opcionesplantillas} se pueden ver las distintas opciones disponibles para las plantillas privadas. La opción ``Usar como tablero'' crea una copia de la plantilla seleccionada, cambiando el tipo a tablero y abre el editor de tableros.
+	\figura{Bitmap/Capitulo5/opcionesplantillas}{width=.9\textwidth}{fig:opcionesplantillas}{Opciones de las plantillas privadas}
+	\item \textbf{Plantillas publicas}: en la Figura \ref{fig:opcionesplantillaspublicas} se pueden ver las distintas opciones disponibles para las plantillas publicas. Estas plantillas son las que los usuarios deciden publicar y compartir, por este motivo para realizar cualquier acción sobre estos elementos primero hay que generar una copia que pertenezca al usuario.
+	\figura{Bitmap/Capitulo5/opcionesplantillaspublicas}{width=.9\textwidth}{fig:opcionesplantillaspublicas}{Opciones de las plantillas publicas}
+	\item \textbf{Tableros privados}: en la Figura \ref{fig:opcionestablerosprivados} se pueden ver las distintas opciones disponibles para los tableros privados. Como se puede ver son las mismas funciones que para las plantillas privadas a excepción de la de ``Utilizar como tablero''.
+	\figura{Bitmap/Capitulo5/opcionestablerosprivados}{width=.9\textwidth}{fig:opcionestablerosprivados}{Opciones de los tableros privados}
+	\item \textbf{Tableros públicos}: en la Figura \ref{fig:opcionestablerospublicos} se pueden ver las distintas opciones disponibles para los tableros públicos.
+	\figura{Bitmap/Capitulo5/opcionestablerospublicos}{width=.9\textwidth}{fig:opcionestablerospublicos}{Opciones de los tableros públicos.}
+\end{itemize}
+
+\todoImpl{Si al final quito la opción de ver de los elementos públicos actualizar imágenes}
+
+La opción de publicar común a las plantillas y a los tableros privados guarda el tablero en una base de datos realtime de Firebase, que permite que las listas de plantillas y tableros públicos se actualicen cada vez que se publica un tablero o plantilla. En Firebase se guarda un objeto con la siguiente estructura, en la Figura \ref{fig:plantillafirebase} se puede ver un ejemplo:
+
+\begin{itemize}
+	\item \textbf{contenido}: contiene el elemento del DOM correspondiente a la plantilla.
+	\item \textbf{id}: identificador de cada elemento.
+	\item \textbf{miniatura}: contiene una imagen en base64, para poder mostrar las miniaturas.
+	\item \textbf{tamano}: se guarda el ancho y el alto del elemento original, para después poder ajustarlo si cambia el tamaño de la pantalla.
+	\item \textbf{tipo}: determina el tipo del elemento, plantilla o tablero.
+	\item \textbf{titulo}: contiene el titulo asociado al elemento.
+\end{itemize}
+
+\figura{Bitmap/Capitulo5/plantillaFirebase}{width=.9\textwidth}{fig:plantillafirebase}{Ejemplo de un objeto tipo plantilla}
+
+%-------------------------------------------------------------------
+\subsection{Editor}
+%-------------------------------------------------------------------
+\label{cap5:sec:editor}
+
+La vista de edición es la mas importante de la aplicación, a esta vista se llega de dos maneras: creando material nuevo o editando material ya existente. Esta vista se corresponde con la Figura \ref{fig:editor}.
+
+\figura{Bitmap/Capitulo5/editor}{width=.9\textwidth}{fig:editor}{Vista del editor}
+
+Para que el usuario pudiera generar los materiales libremente y sin restricciones, se ha implementado un sistema que permite arrastrar los elementos del menú de la derecha al área principal, destinada para formar las plantillas o tableros. Para implementar este sistema se ha utilizado la librería interact.js que mediante eventos permite al usuario mover y cambiar el tamaño de los elementos. Cuando se arrastra un elemento al área principal se crea una copia del mismo en las coordenadas en las que se ha soltado, haciendo que el original vuelva a su posición para que este disponible siempre que se necesite.
+
+Esta vista esta dividida en dos zonas principales, el área a la que arrastrar los elementos y el menú lateral derecho donde se muestran distintas menús que se explicarán mas adelante. En la barra superior se muestra un input de texto que permite editar el titulo del elemento sobre el que estamos trabajando, como se puede ver en la Figura \ref{fig:inputtitulo}, la etiqueta de este input es distinta para tableros y plantillas para que el usuario distinga fácilmente sobre que esta trabajando.
+
+\figura{Bitmap/Capitulo5/inputtitulo}{width=.9\textwidth}{fig:inputtitulo}{Distintos input para el titulo.}
+
+El menú lateral se genera dinámicamente dependiendo del elemento que estamos editando, inicialmente se muestran todos los elementos que se pueden arrastrar al área principal, este menú cambia si el usuario pulsa sobre uno de los elementos del área mostrando los ajustes relativos al elemento.
+
+Como se puede ver en la Figura \ref{fig:menuinicial} el menú inicial tiene un buscador que funciona con la API de ARASAAC, la librería que permite arrastrar los elementos no es compatible con la propiedad ``overflow'' de CSS, por esta razón se muestran todos los resultados de la búsqueda en una lista completa. Para mostrar u ocultar los resultados se puede utilizar el botón que se encuentra al final de la barra de búsqueda. El resto del menú esta compuesto por un área, un pictograma en blanco, un cuadro de texto y diferentes figuras geométricas que se utilizan para plantillas como el calendario semanal de la Figura \ref{fig:plantillas}. Cuando se pulsa sobre el botón de ``Guardar'' se guarda un objeto en LocalStorage con el mismo formato que el objeto de Firebase, de esta manera al publicar un elemento no es necesario realizar una transformación del objeto para mantener la coherencia. Ademas al guardar el objeto en LocalStorage se asocia a cada usuario y dispositivo sin necesidad de registrarlos.
+
+\figura{Bitmap/Capitulo5/menuinicial}{width=.9\textwidth}{fig:menuinicial}{Menú inicial del editor.}
+
+Cuando se pulsa sobre el fondo se muestra un editor como el de la Figura \ref{fig:editorfondo}, se puede editar el color del fondo y el borde. También hay un input de texto que permite personalizar un titulo que se encuentra en la parte superior del área, el checkbox sirve para mostrarlo u ocultarlo.
+
+\figura{Bitmap/Capitulo5/editorfondo}{width=.9\textwidth}{fig:editorfondo}{Menú del editor del fondo.}
+
+Para editar el resto de elementos de la plantilla basta con pulsar sobre ellos, esto es posible gracias a los eventos de la misma librería que permite arrastrar los elementos, ya que también gestiona eventos de táctil y ratón de manera unificada. En la Figura \ref{fig:editoresareaypicto} se pueden ver las opciones de personalización de los pictogramas y de las áreas, muy similares ente ellas, así que era necesario que el usuario supiese que elemento esta editando, para ello se añadió una sombra para indicar que ese es el elemento que se esta editando, se puede ver un ejemplo en la Figura \ref{fig:elementoseleccionado} que representa un pictograma sin seleccionar y un área seleccionada.
+
+\figura{Bitmap/Capitulo5/editoresareaypicto}{width=.9\textwidth}{fig:editoresareaypicto}{Editor de un pictograma a la izquierda y editor de área a la derecha}
+
+\figura{Bitmap/Capitulo5/elementoseleccionado}{width=.9\textwidth}{fig:elementoseleccionado}{Ejemplo de un elemento seleccionado}
+
+En la Figura \ref{fig:editortext} se muestra el editor de los cuadros de texto, todos los editores tienen unas opciones similares pero dependiendo del elemento existen algunas opciones distintas, en este caso ademas se puede editar el color del texto y se puede decidir si ese texto posteriormente se podrá editar, es decir, si el checkbox de editable esta activado cuando se utilice como un tablero se podrá editar, pero no en caso contrario.
+
+\figura{Bitmap/Capitulo5/editortexto}{width=.9\textwidth}{fig:editortext}{Editor de un cuadro de texto}
+
+Todos los ejemplos anteriormente mencionados forman parte de la edición de plantillas, ya que los tableros tienen unas opciones de personalización mucho mas limitadas. Inicialmente los tableros solo cuentan con el buscador de pictogramas para poder rellenar las plantillas, ademas algunos elementos cuentan con algunas opciones de personalización adicionales, para añadir mayor funcionalidad a los tableros. Como ya se ha mencionado anteriormente los cuadros de texto si tienen la opción de editable marcada anteriormente, en los tableros se podrá cambiar el texto que contienen. En la Figura \ref{fig:opcionesarea} se muestran la opciones de personalización disponibles para áreas y pictogramas, que permiten al usuario tachar, poner un tick, un punto amarillo o una transparencia azul por encima del área o del pictograma. El punto amarillo y la transparencia azul se utilizan para marcar una tarea como realizada, dependiendo de la plantilla sobre la que se este trabajando.
+
+\figura{Bitmap/Capitulo5/opcionesarea}{width=.9\textwidth}{fig:opcionesarea}{Opciones para áreas y pictogramas en tableros}
+
+%-------------------------------------------------------------------
+\section{Evaluación}
+%-------------------------------------------------------------------
+\label{cap5:sec:evaluacion}
+
+Gracias a la Asociación de Autismo Sevilla se han podido realizar pruebas de la aplicación con los usuarios finales, a los que se les ha pedido que realicen una evaluación después de probarla. La aplicación esta destinada padres, tutores y profesores, por tanto serán profesionales del colegio los encargados de la evaluación.
+
+%-------------------------------------------------------------------
+\subsection{Diseño de la evaluación}
+%-------------------------------------------------------------------
+\label{cap5:sec:diseñoevaluacion}
+
+Se decidió realizar la evaluación en Excel, para que los evaluadores pudiesen realizar la evaluación a su propio ritmo. El documento de Excel contiene tres hojas: una hoja explicando los pasos a seguir para realizar la evaluación, otra con la imagen de las plantillas que tienen que replicar y una ultima con la evaluación que tienen que rellenar, esta ultima tiene que generarse para cada evaluador.
+
+El objetivo de esta evaluación es determinar la usabilidad y la utilidad de la aplicación para los usuarios finales.
+
+Los primeros datos que se recogen del usuario son su nombre y apellidos y el cargo que ocupan en el colegio, esto sirve para saber como de familiarizados están con este tipo de herramientas. También es necesario conocer los detalles sobre el dispositivo en el que se realizará la prueba para evaluar los resultados según el dispositivo.
+
+Después de rellenar estos datos, lo siguiente es empezar con la evaluación que consta de cuatro fases que se explicaran detalladamente a continuación.
+
+En la primera fase se pedía a los evaluadores realizar cada una de las plantillas planteadas, de las que interesa saber cuanto tiempo habían invertido en realizar cada una, cuanto se parecía el resultado al original, cuanto les había costado realizarla y el nivel de satisfacción con el resultado. 
+
+En la segunda fase tenían que utilizar cada una de las plantillas realizadas anteriormente como un tablero, de esta fase se recogía información del tiempo invertido, el nivel de dificultad y el nivel de satisfacción con el resultado.
+
+Al final de cada fila en ambas fases, siempre hay disponible un campo de observaciones en el que los evaluadores puedan comentar todo aquello que crean relevante para la evaluación.
+
+La siguiente fase se trata de una prueba libre para que los evaluadores puedan explorar libremente las funcionalidades de la aplicación, y así saber si los usuarios podrían utilizar fácilmente la aplicación sin guías y aprovechar todas las funcionalidades de la misma
+
+La ultima fase es un cuestionario para conocer la opinión de los evaluadores, el cuestionario se divide en dos partes, la primera que se evalúa según una escala likert de cinco puntos, y la segunda que es de respuesta libre. 
+
+Las siguientes cuestiones se corresponden a la primera parte del cuestionario para responder con una escala de uno a cinco:
+
+\begin{itemize}
+	\item La aplicación es fácil de utilizar.				
+	\item Me gustaría utilizar la aplicación en mi día a día.				
+	\item Recomendaría esta aplicación a otras personas.		
+	\item Me parece útil poder exportar e importar mis tableros y plantillas.				
+	\item Me parece útil poder hacer públicos mis tableros.				
+	\item Me parece útil poder hacer públicas mis plantillas.				
+	\item La navegación por las distintas vistas me parece intuitiva.				
+	\item Se entiende fácilmente la finalidad de cada uno de los elementos que se pueden utilizar para crear plantillas y tableros.				
+	\item Se entienden las opciones de personalización de los elementos.				
+	\item El texto de los botones es descriptivo y me ayuda a comprender lo que hacen.				
+\end{itemize}
+
+Las cuestiones de la segunda parte son de desarrollo ya que son cuestiones mas generales sobre que funcionalidades no han utilizado, funcionalidades que sobran, y funcionalidades que faltan, ademas hay un apartado de observaciones generales por si hay algo que crean relevante y no se haya preguntado anteriormente.
+
+%-------------------------------------------------------------------
+\subsection{Resultados de la evaluación}
+%-------------------------------------------------------------------
+\label{cap5:sec:resultadosevaluacion}
+
+%-------------------------------------------------------------------
+\subsection{Análisis de la evaluación}
+%-------------------------------------------------------------------
+\label{cap5:sec:analisisevaluacion}
+
+
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX
 %%%
