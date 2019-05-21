@@ -1,0 +1,391 @@
+.title {
+  margin: 20px auto;
+  padding: 5px;
+}
+
+.dropzone {
+  background-color: #fff;
+  /*height: 530px;
+  min-width: 895px;*/
+  /*position: fixed;*/
+  border: solid 2px black;
+}
+
+.pictograma {
+  padding: 15px;
+  text-align: center;
+  /*max-height: 160px;*/
+  z-index: 1;
+  position: relative;
+  border: solid 2px transparent;
+}
+
+.pictograma > img {
+  width: 100%;
+}
+
+.newPicto {
+  padding: 15px;
+  text-align: center;
+  /*max-height: 160px;*/
+  z-index: 1;
+  position: relative;
+  border: solid 2px grey;
+}
+
+.newPicto > img {
+  width: 100%;
+}
+
+.resize-drag > img {
+  width: 100%;
+}
+.row {
+  margin-bottom: 20px;
+}
+
+/*.dropdown{
+  padding-left: 0px;
+}
+*/
+.custom-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.tituloElemento {
+  margin: 0 15px;
+  /*font-size: 1.3rem;*/
+}
+
+#addrectangle {
+  padding: 15px;
+  background-color: white;
+  border: solid 2px black;
+  min-height: 100px;
+}
+
+#circulo {
+  background-color: #d2d2d2;
+  /*box-sizing: border-box;
+  border:solid 2px black;*/
+  -webkit-clip-path: circle(45% at 50% 50%);
+  clip-path: circle(45% at 50% 50%);
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+}
+
+#hexagono {
+  background-color: #d2d2d2;
+  /*box-sizing: border-box;
+  border:solid 2px black;*/
+  -webkit-clip-path: polygon(
+    25% 5%,
+    75% 5%,
+    100% 50%,
+    75% 95%,
+    25% 95%,
+    0% 50%
+  );
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+}
+
+#triangulo {
+  background-color: #d2d2d2;
+  /*box-sizing: border-box;
+  border:solid 2px black;*/
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+}
+
+#elipse {
+  background-color: #d2d2d2;
+  /*box-sizing: border-box;
+  border:solid 2px black;*/
+  -webkit-clip-path: ellipse(50% 33% at 50% 50%);
+  clip-path: ellipse(50% 33% at 50% 50%);
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+}
+
+#estrella {
+  background-color: #d2d2d2;
+  /*box-sizing: border-box;
+  border:solid 2px black;*/
+  -webkit-clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+}
+
+#rombo {
+  background-color: #d2d2d2;
+  /*box-sizing: border-box;
+  border:solid 2px black;*/
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+}
+
+#flecha {
+  background-color: #333333;
+  /*box-sizing: border-box;
+  border:solid 2px black;*/
+  -webkit-clip-path: polygon(0 39%, 59% 39%, 60% 10%, 100% 50%, 60% 90%, 60% 62%, 0 62%);
+  clip-path: polygon(0 39%, 59% 39%, 60% 10%, 100% 50%, 60% 90%, 60% 62%, 0 62%);
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+}
+
+#addText {
+  padding: 15px;
+  background-color: white;
+  border: solid 2px black;
+  height: 80px;
+}
+
+#addrectanglepicto {
+  margin: 0 20px;
+  background-color: green;
+  border: solid 1px black;
+  min-height: 100px;
+}
+
+body {
+  -ms-touch-action: none;
+  touch-action: none;
+  overflow: auto;
+}
+
+#title {
+  text-align: center;
+}
+
+#titleArea {
+  text-align: center;
+}
+.pictogramaHover {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+}
+
+.areaHover {
+  /*background-color: red;*/
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+}
+
+.myShadow {
+  box-shadow: 0px 0px 34px 13px rgba(0, 0, 0, 0.56);
+}
+
+/***********************/
+
+body,
+html,
+.container-fluid {
+  height: 100%;
+}
+
+.container-fluid {
+  padding-top: 60px;
+  z-index: 1;
+}
+.navbar {
+  height: 56px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.bg-green {
+  background-color: #8bc34a;
+}
+
+.active {
+  background-color: #dadada;
+}
+
+/*
+.container-fluid .row{
+  height: 100%;
+}*/
+
+#panelDerecha {
+  display: block;
+}
+
+.panelAjustes {
+  /*font-size: 1.3em;*/
+  display: none;
+}
+
+.rowColores,
+.rowTitulo,
+.rowHover,
+.rowBuscador {
+  margin-bottom: 10%;
+}
+.colorButton {
+  margin-left: 10%;
+  /*background-color: #F5FF55;*/
+  width: 30%;
+  height: 100%;
+  border-radius: 5px;
+  /*padding: 5px;*/
+}
+
+.checkbox:before {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.checkbox:after {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+/*
+.btn{
+  /*font-size: 1.3rem;
+}
+*/
+#botonCerrarDropZone {
+  margin: 0 15px;
+}
+
+.margenBoton {
+  margin: 0 15px;
+}
+
+.buscar {
+  padding-left: 0px;
+  padding-right: 0px;
+  z-index: 4;
+}
+/*
+#inputBusqueda{
+  /*font-size: 1.3rem;
+}
+*/
+.rowNewElement {
+  margin-bottom: 10%;
+  /*font-size: 1.3rem;*/
+  text-align: center;
+}
+
+#resultadosBusqueda {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  padding-top: 2.5rem;
+  background-color: #fff;
+  /*max-height: 160px;
+  overflow: auto;*/
+  /*padding: 0px;*/
+  /*margin-left: 0px;
+  
+  
+  
+  
+  
+  width:95.5%;
+  border-bottom-left-radius: 1%;
+  border-bottom-right-radius: 1%;*/
+}
+
+#panelDerecha {
+  display: block;
+  /*overflow-y: auto;
+  max-height: 100%;*/
+}
+
+.btn-circle.btn-xl {
+  width: auto;
+  height: auto;
+  padding: 13px 16px;
+  border-radius: 100%;
+  line-height: 1.33;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+  color: rgb(90, 90, 90);
+  opacity: 0.8;
+}
+
+#buttonsUpandDown {
+  float: right;
+}
+
+#btnUp {
+  top: 1%;
+  left: 91%;
+  position: fixed;
+  z-index: 10;
+}
+#btnDown {
+  bottom: 1%;
+  left: 91%;
+  position: fixed;
+  z-index: 10;
+}
+
+#textForTitle {
+  margin-right: 20px;
+}
