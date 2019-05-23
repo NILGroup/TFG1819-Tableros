@@ -36,7 +36,7 @@ Dentro de los SAACs podemos encontrar los pictogramas, que son de gran ayuda ya 
 \section{Pictogramas}
 \label{cap3:sec:pictogramas}
 
-Los pictogramas son signos claros y esquemáticos, que representan ideas, objetos, acciones, etc. Se utilizan a diario para ofrecernos información de manera rápida, por ejemplo en señales de trafico, distintivos en los cuartos de baño,\dots\footnote{\url{http://www.ponceleon.org/logopedia/index.php?option=com_content&view=article&id=110}}
+Los pictogramas son signos claros y esquemáticos, que representan ideas, objetos, acciones, etc. Se utilizan a diario para ofrecernos información de manera rápida, por ejemplo en señales de trafico, distintivos en los cuartos de baño, \dots\footnote{\url{http://www.ponceleon.org/logopedia/index.php?option=com_content&view=article&id=110}}
 
 %\figura{Bitmap/Capitulo3/pictograma1}{width=.9\textwidth}{fig:pictograma}{Uso de pictogramas en la vida cotidiana} 
 
@@ -45,13 +45,13 @@ Para los usuarios con algún tipo de discapacidad cognitiva, los pictogramas les 
 Los sistemas de pictogramas han de tener una serie de características para poder considerarlos como tal\citep{pictogramawikipedia}:
 
 \begin{itemize}
-	\item Tienen una relación directa con la idea que representan, como en la Figura \ref{fig:cepillodientes} que reppresenta un cepillo de dientes. Ademas, se pueden combinar distintos elementos para representar una idea mas compleja, como en el pictograma de la Figura \ref{fig:lavardientes} en el que se introduce también un cepillo de dientes.
-	\figura{Bitmap/Capitulo3/cepillodientes}{width=.5\textwidth}{fig:cepillodientes}{Pictograma que representa un cepillo de dientes.}
-	\figura{Bitmap/Capitulo3/lavardientes}{width=.5\textwidth}{fig:lavardientes}{Pictograma que representa la acción de lavarse los dientes.}
+	\item Tienen una relación directa con la idea que representan, como en la Figura \ref{fig:cepillodientes} que representa un cepillo de dientes. Ademas, se pueden combinar distintos elementos para representar una idea mas compleja, como en el pictograma de la Figura \ref{fig:lavardientes} en el que se introduce también un cepillo de dientes, para reflejar la accion de ``Lavarse los dientes''.
+	\figura{Bitmap/Capitulo3/cepillodientes}{width=125px}{fig:cepillodientes}{Pictograma que representa un cepillo de dientes.}
+	\figura{Bitmap/Capitulo3/lavardientes}{width=125px}{fig:lavardientes}{Pictograma que representa la acción de lavarse los dientes.}
 	\item Deben ser comprensibles por el mayor numero de personas, independientemente de la formación, idioma o capacidad.
 	\item Deben seguir una serie de reglas que permitan mantener la coherencia visual y legibilidad.
 	\item Deben representar los elementos mas importantes, evitando distracciones y generando elementos más sencillos, como en la Figura \ref{fig:avion} que representa un avión sin fondo ni elementos distractores. 
-	\figura{Bitmap/Capitulo3/avion}{width=.5\textwidth}{fig:avion}{Pictograma que representa un avión.}
+	\figura{Bitmap/Capitulo3/avion}{width=125px}{fig:avion}{Pictograma que representa un avión.}
 \end{itemize}
 
 \subsection{Sistemas pictograficos}
@@ -89,16 +89,16 @@ El significado de los pictogramas Bliss esta definido por una serie de caracterí
 \subsubsection{Sclera}
 \label{cap3:sec:sclera}
 
-Los pictogramas de Sclera\footnote{url{https://www.sclera.be/}} son simples en cuanto a colores, pero expresan ideas mas complejas. Sclera proporciona mas 11.000 pictogramas en español y ademas da soporte a ingles, alemán, francés, polaco y holandés.
+Los pictogramas de Sclera\footnote{\url{https://www.sclera.be/}} son simples en cuanto a colores, pero expresan ideas mas complejas. Sclera proporciona mas 11.000 pictogramas en español y ademas da soporte a ingles, alemán, francés, polaco y holandés.
 
-\figura{Bitmap/Capitulo3/sclera}{width=.9\textwidth}{fig:sclera}{Ejemplo de pictogramas Sclera} 
+\figura{Bitmap/Capitulo3/sclera}{width=.9\textwidth}{fig:sclera}{Ejemplo de pictogramas Sclera+.} 
 
 En la Figura \ref{fig:sclera} se puede ver un ejemplo de estos pictogramas. En este caso el fondo no se utiliza para establecer un significado concreto y las ideas se representan habitualmente con dibujos en blanco.
 
 \subsubsection{Mulberry}
 \label{cap3:sec:mulberry}
 
-Mulberry\footnote{\url{https://mulberrysymbols.org/}} nos ofrece mas de 3.000 pictogramas en un formato .svg que facilita su uso en el software SAAC. Están diseñados y revisados por personas acostumbradas a utilizarlos, y aportan símbolos inusuales en otros sistemas, como ebay, reflexologia, etc.
+Mulberry\footnote{\url{https://mulberrysymbols.org/}} ofrece mas de 3.000 pictogramas en un formato .svg que facilita su uso en el software SAAC. Están diseñados y revisados por personas acostumbradas a utilizarlos, y aportan símbolos inusuales en otros sistemas, como ebay, reflexologia, etc.
 
 Como se puede ver en la Figura \ref{fig:mulberry} los pictogramas son sencillos con fondo blanco, con imágenes a color representando ideas muy especificas.
 
@@ -137,7 +137,7 @@ ARASAAC provee a los desarrolladores una API\footnote{\url{https://beta.arasaac.
 La API tiene métodos que permiten el acceso a materiales como agendas, normas, calendarios, etc. También tiene métodos que permiten trabajar con los pictogramas, dos de estos métodos son los que se han utilizado en la aplicación.
 
 \begin{itemize}
-	\item Método de búsqueda, que permite buscar toda la información de los pictogramas correspondientes a la palabra buscada. Por cada resultado, se devuelve el id del pictograma y las distintas afecciones que puede tener el pictograma.
+	\item Método de búsqueda, que permite buscar toda la información de los pictogramas correspondientes a la palabra buscada. Por cada resultado, se devuelve el id del pictograma y las distintas afecciones que puede tener la palabra.
 	\item Otro método utilizado es el encargado de recibir el id de un pictograma y devolver la imagen correspondiente. 
 \end{itemize}
 
@@ -148,14 +148,14 @@ Esta API ofrece soporte a múltiples idiomas, al realizar la petición se indica e
 %-------------------------------------------------------------------
 \label{cap3:sec:comunicacionpictogramas}
 
-Las personas con discapacidad cognitiva suelen emplear los pictogramas para comunicarse, pero habitualmente para una comunicación mas completa se utilizan tableros. Un tablero es un formato concreto en el que colocar los pictogramas y que se entienda fácilmente que es lo se quiere expresar con este tablero. Hay formatos que se utilizan con mucha frecuencia ya que al utilizar siempre el mismo formato visualmente es mas fácil de comprender \citep{usopictogramas}.
+Las personas con discapacidad cognitiva suelen emplear los pictogramas para comunicarse, pero habitualmente para lograr una comunicación mas completa se utilizan tableros. Un tablero es un formato concreto en el que colocar los pictogramas y que se entienda fácilmente que es lo se quiere expresar con este tablero. Hay formatos que se utilizan con mucha frecuencia ya que al utilizar siempre el mismo formato visualmente es mas fácil de comprender \citep{usopictogramas}.
 
 %El uso de un formato concreto para expresar nuestras ideas ayuda a las personas con dificultades comunicativas a entender que es lo que queremos expresar, y de ahí surge la necesidad de crear dichos formatos. Así cuando se les comunique sus horarios o los recados que tienen que hacer ó si hay una serie de normas que tienen que cumplir, serán más fáciles de comprender. En todos estos formatos el uso de pictogramas suele ser más efectivo, ya que visualmente son más fáciles de comprender y sirven para que siempre sea el mismo formato \citep{usopictogramas}.
 
 Algunos de los formatos que se suelen emplear son los siguientes:
 
 \begin{itemize}
-	\item Agenda personal: sirven para tener una idea clara de todas las actividades que se van a realizar en un periodo de tiempo determinado \citep{agendasvisuales}. En la Figura \ref{fig:horario} se puede ver un tablero del horario de una semana.
+	\item Agenda personal: sirven para tener una idea clara de todas las actividades que se van a realizar en un periodo de tiempo determinado \citep{agendasvisuales}. En la Figura \ref{fig:horario} se puede ver un tablero que se corresponde con el horario de una semana.
 	\figura{Bitmap/Capitulo3/horario}{width=.9\textwidth}{fig:horario}{Ejemplo de tablero de horario.}
 	\item Secuencias de actividades: mostrar las actividades y los pequeños pasos que conlleven mediante pictogramas tiene mas efectividad y mejores resultados. Cuando se trata de actividades muy complejas, resultan mas comprensibles si se dividen en tareas mas pequeñas y simples. En la Figura \ref{fig:secuencias} se muestra la secuencia de actividades que hay que seguir para lavarse los dientes.
 	\figura{Bitmap/Capitulo3/secuencias}{width=.9\textwidth}{fig:secuencias}{Secuencia de actividades para lavarse los dientes.}
@@ -209,7 +209,7 @@ Las herramientas que cumplen las funciones mas similares a nuestro proyecto son 
 	\figura{Bitmap/Capitulo3/horarioarasaac}{width=.9\textwidth}{fig:horarioarasaac}{Horario generado por ARASAAC}
 \end{itemize}
 
-Una vez generada la plantilla de cualquiera de estas tres herramientas se puede editar el contenido de cada celda eligiendo que pictograma se quiere poner. Como se puede ver en la Figura \ref{fig:configceldas} estas herramientas permiten personalizar cada celda y cada pictograma eligiendo el fondo, el borde, que tenga texto o no. Esta personalización es la misma para todas las herramientas.
+Una vez generada la plantilla de cualquiera de estas tres herramientas se puede editar el contenido de cada celda eligiendo que pictograma se quiere poner. Como se puede ver en la Figura \ref{fig:configceldas} estas herramientas también permiten personalizar cada celda y cada pictograma eligiendo el fondo, el borde, que tenga texto o no. Esta personalización es la misma para todas las herramientas.
 
 \figura{Bitmap/Capitulo3/configceldas}{width=.9\textwidth}{fig:configceldas}{Configuracion de las Celdas ARASAAC}
 
@@ -220,9 +220,9 @@ Ademas todas las herramientas permiten exportar un fichero .rtf que se puede abr
 %-------------------------------------------------------------------
 \label{cap3:sec:piktoplus}
 
-Piktoplus\footnote{\url{https://piktoplus.com/}} es una aplicación para dispositivos Android que ofrece un apoyo integral audiovisual. Por lo que permite crear contenidos personalizados para comunicación, secuencias de trabajo, normas y todo lo que necesitemos. Esta herramienta permite registrar usuarios distintos para personalizar el contenido que utiliza cada usuario, también se pueden personalizar los rasgos del avatar del usuario para que se identifique con él.
+Piktoplus\footnote{\url{https://piktoplus.com/}} es una aplicación para dispositivos Android que ofrece un apoyo integral audiovisual. Por lo que permite crear contenidos personalizados para comunicación, secuencias de trabajo, normas y todo lo que se necesite. Esta herramienta permite registrar usuarios distintos para personalizar el contenido que utiliza cada usuario, también se pueden personalizar los rasgos del avatar del usuario para que se identifique con él.
 
- Como se puede ver en la Figura \ref{fig:piktoplus} a la hora de generar el contenido se parte inicialmente de un tablero compuesto de siete columnas por cuatro filas, asignando a cada celda un pictograma, a su vez se pueden modificar estas celdas y que ocupen mas celdas, por ejemplo en la imagen el avatar de ``Roi'' que ocupa lo que serian cuatro pictogramas pequeños.
+Como se puede ver en la Figura \ref{fig:piktoplus} a la hora de generar el contenido se parte inicialmente de un tablero compuesto de siete columnas por cuatro filas, asignando a cada celda un pictograma, a su vez se pueden modificar estas celdas y que ocupen mas celdas, por ejemplo en la imagen el avatar de ``Roi'' que ocupa lo que serian cuatro pictogramas pequeños.
 
 \figura{Bitmap/Capitulo3/piktoplus}{width=.9\textwidth}{fig:piktoplus}{Generador de material con Piktoplus}
 
