@@ -23,6 +23,24 @@ LocalStorage es una API del navegador, accesible desde el cliente, el uso de Loc
 
 Para que los usuarios al ver los listados de plantillas y tableros supiesen a que elemento se correspondía, se tomo la decisión de mostrar una miniatura de los elementos, esto es posible gracias a la librería html2canvas que se explica en la sección \ref{cap4:sec:html2canvas}.
 
+%-----------------------------------------------------
+\subsubsection{API de ARASAAC}
+%-------------------------------------------
+\label{cap3:sec:apiarasaac}
+
+\todoImpl{No se muy bien donde colocarlo, si aquí o en las tecnologías}
+
+ARASAAC provee a los desarrolladores una API\footnote{\url{https://beta.arasaac.org/developers/api}}, para facilitar el uso de sus recursos en proyectos software de terceros. Esta bajo una licencia Creative Commons que permite utilizar sus recursos, siempre que no sean aplicaciones con fines comerciales.
+
+La API tiene métodos que permiten el acceso a materiales como agendas, normas, calendarios, etc. También tiene métodos que permiten trabajar con los pictogramas, dos de estos métodos son los que se han utilizado en la aplicación.
+
+\begin{itemize}
+	\item Método de búsqueda, que permite buscar toda la información de los pictogramas correspondientes a la palabra buscada. Por cada resultado, se devuelve el id del pictograma y las distintas afecciones que puede tener la palabra.
+	\item Otro método utilizado es el encargado de recibir el id de un pictograma y devolver la imagen correspondiente. 
+\end{itemize}
+
+Esta API ofrece soporte a múltiples idiomas, al realizar la petición se indica el idioma asociado a la petición y el esperado en los resultados. Este es el listado de idiomas que soporta la API y en el formato que espera recibirlo: es, ru, ro, ar, zh, bg, pl, en, fr, ca, eu, de, it, pt, gl, br, hr, val.
+
 %-------------------------------------------------------------------
 \section{Firebase}
 %-------------------------------------------------------------------
