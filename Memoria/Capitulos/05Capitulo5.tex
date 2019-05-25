@@ -10,25 +10,25 @@
 \chapter{PicTableros}
 
 \begin{resumen}
-	En este capitulo se explica el proceso de desarrollo de la aplicacion, empezando por el análisis de los requisitos que se explica en la seccion \ref{cap5:sec:analisis}. Despues, en la secccion \ref{cap5:sec:diseño} se explica el diseño de la interfaz y en la sección \ref{cap5:sec:implementacion}. Finalmente se explica el proceso de evaluacion con los usuarios en la sección \ref{cap5:sec:evaluacion}
+	En este capítulo se explica el proceso de desarrollo de la aplicación PicTableros, una aplicación web para la creación de plantillas y tableros de comunicación con pictogramas. En este capítulo se explicarán cada una de las fases del desarrollo: en la Sección \ref{cap5:sec:analisis} se explica en detalle como se desarrolló la fase de requisitos, en la  Sección \ref{cap5:sec:diseño} se explica cómo se llevo a cabo el diseño de la interfaz y en la Sección \ref{cap5:sec:implementacion} se explica como se implementó la aplicación. Por ultimo, en la Sección \ref{cap5:sec:evaluacion} se explica la fase de evaluación con usuarios finales.
 \end{resumen}
 
 %-------------------------------------------------------------------
-\section{Análisis de requisitos}
+\section{Captura de requisitos}
 %-------------------------------------------------------------------
 \label{cap5:sec:analisis}
 
-En este proyecto se ha dado mucha importancia al usuario final de la aplicación, con la intención de desarrollar una herramienta que cubra sus necesidades. Por ello, se ha trabajado conjuntamente con la Asociación de Autismo Sevilla. 
+En este proyecto se ha dado mucha importancia al usuario final de la aplicación, con la intención de desarrollar una herramienta que cubra de verdad sus necesidades. Por ello, durante todo el proceso se ha trabajado con la Asociación de Autismo Sevilla y con el Colegio Ángel Riviere de Sevilla.
 
-Como ya se ha explicado anteriormente, para facilitar la comunicación con personas con discapacidad cognitiva se suelen emplear formatos que reconocen y entienden mejor. Pero a pesar de que ya existen herramientas destinadas a realizar esta tarea, los usuarios aun no han encontrado una que se adapte a sus necesidades. Esto motivó el desarrollo de una herramienta que permita a los usuarios diseñar sus plantillas y tableros de una manera mas sencilla.
+Como ya se ha explicado anteriormente, para facilitar la comunicación con personas con discapacidad cognitiva se suelen emplear siempre las mismas plantillas, así los receptores del mensaje sabrán identificar rápidamente el objetivo del tablero: secuencia de acciones, agenda, normas, \ldots A pesar de que ya existen herramientas digitales para la creación de tableros de comunicación con pictogramas, los usuarios aun no han encontrado una que cubra todas sus necesidades. Esto motivó el desarrollo de una herramienta que permita a los usuarios diseñar sus plantillas y tableros de una manera mas sencilla y rápida.
 
-En una reunión que tuvo lugar el 22 de Febrero durante una Jornada de Trabajo en Aulas TIC 2017, desde la Asociación de Autismo Sevilla nos transmitieron la necesidad de una aplicación que les permitiese digitalizar los formatos que utilizan para comunicarse con sus usuarios, ya que hasta el momento es un trabajo que realizan de manera manual.
+En una reunión que tuvo lugar el 22 de Febrero de 2017 durante la Jornada de Trabajo en Aulas TIC, desde la Asociación de Autismo Sevilla nos transmitieron la necesidad de una aplicación que les permitiese digitalizar las plantillas que utilizan para comunicarse con sus usuarios, ya que hasta el momento es un trabajo que realizan de manera manual. Cada vez que desean hacer un tablero para una agenda, por ejemplo, tienen que dibujarlo de manera manual desde cero. Nos indicaron que les seria de gran utilidad tener una herramienta que les permitiera crear las plantillas según el tipo de tablero (agenda, normas, secuencias de acciones, \ldots) y luego usar estas plantillas para generar los tableros modificando o añadiendo solo la información propia del tablero concreto. 
 
-Para identificar los requisitos necesarios de este proyecto desde la Asociación de Autismo Sevilla nos hicieron llegar una serie de plantillas que utilizan con frecuencia. En base a las plantillas de la Figura \ref{fig:plantillas} se establecieron los siguientes requisitos y funcionalidades necesarias para los usuarios:
+Para identificar todos los requisitos de la aplicación desde la Asociación de Autismo Sevilla nos hicieron llegar una serie de plantillas que utilizan con frecuencia (ver Figura \ref{fig:plantillas}). En base estas plantillas y a las necesidades expresadas por la asociación se establecieron los siguientes requisitos y funcionalidades:
 
 \begin{itemize}
-	\item La aplicacion debe ser accesible desde cualquier dispositivo y en cualquier momento, para que los usuarios puedan acceder a su material en cualquier situacion.
-	\item Buscador con todos los pictogramas de ARASAAC.
+	\item La aplicación debe ser accesible desde cualquier dispositivo y en cualquier momento, para que los usuarios puedan acceder a su material en cualquier situación.
+	\item Debe haber un buscador que permita encontrar cualquier pictograma de ARASAAC.
 	\item Poder arrastrar y soltar los elementos en cualquier posición de la plantilla.
 	\item Cambiar el tamaño de los elementos.
 	\item Crear cuadros de texto, en los que poder establecer el color del texto, el borde y el fondo.
@@ -87,7 +87,47 @@ Después de realizar los prototipos en papel, tuvo lugar una reunión con la Asoci
 
 En la figura \ref{fig:cambios} se puede ver la lista de los cambios propuestos junto con la dificultad de implementar cada uno de los cambios y la importancia. Una vez definida la importancia y la dificultad de los cambios propuestos se ha obtenido un valor promedio, para asignarles una prioridad a la hora de realizar dichos cambios.
 
-\figura{Bitmap/Capitulo5/cambios}{width=.9\textwidth}{fig:cambios}{Lista de cambios propuestos junto con su dificultad y su importancia}
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[]
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|p{6cm}|c|c|c|}
+			\hline
+			\textit{\textbf{Cambios propuestos}} & \textit{Dificultad} & \textit{Importancia} & \textit{Prioridad} \\ \hline
+			Vista por defecto plantillas privadas & 1 & 2 & 2 \\ \hline
+			Dispositivo móvil & 2 & 3 & 6 \\ \hline
+			Mostrar miniatura del contenido & 1 & 3 & 3 \\ \hline
+			Eliminar tableros públicos & 3 & 1 & 3 \\ \hline
+			Crear vista para mostrar tablero (sin opciones de editar) & 2 & 1 & 2 \\ \hline
+			\multicolumn{4}{|l|}{\textbf{Cambios propuestos para las plantillas}} \\ \hline
+			Figuras geometricas, para dias de la semana (cuadrado, circulo, hexagono, triangulo, rombo, elipse, estrella) & 2 & 3 & 6 \\ \hline
+			Añadir opcion de editar a los cuadros de texto & 2 & 2 & 4 \\ \hline
+			Añadir flecha & 3 & 3 & 9 \\ \hline
+			Añadir pictograma de esperar & 3 & 3 & 9 \\ \hline
+			Añadir circulos & 3 & 3 & 9 \\ \hline
+			Vincular plantillas entre si & 1 & 1 & 1 \\ \hline
+			Poder cambiar el color del texto & 3 & 2 & 6 \\ \hline
+			Tachar pictograma & 3 & 3 & 9 \\ \hline
+			Tick pictograma & 3 & 3 & 9 \\ \hline
+			Poner borde para el pictograma nuevo & 3 & 2 & 6 \\ \hline
+			Hacer los bordes del área mas gruesos & 3 & 2 & 6 \\ \hline
+			\multicolumn{4}{|l|}{\textbf{Cambios propuestos para los tableros}} \\ \hline
+			Poder editar el texto (según se haya establecido previamente) & 2 & 2 & 4 \\ \hline
+			Posibilidad de cambiar los pictogramas (Si eliminas un pictograma del tablero que los demás se recoloquen) & 1 & 1 & 1 \\ \hline
+			Poder poner un punto amarillo cuando la tarea este completada & 3 & 2 & 6 \\ \hline
+			Añadir buscador de imágenes de google & 1 & 1 & 1 \\ \hline
+			Tachar pictograma & 3 & 3 & 9 \\ \hline
+			Tick pictograma & 3 & 3 & 9 \\ \hline
+			Tapar pictograma(transparencia azul) & 3 & 3 & 9 \\ \hline
+			Añadir imágenes personales & 1 & 3 & 3 \\ \hline
+		\end{tabular}%
+	}
+	\caption{Lista de cambios propuestos junto con su dificultad, su importancia y su prioridad}
+	\label{table:cambiosprpuestps}
+\end{table}
+
+
+%\figura{Bitmap/Capitulo5/cambios}{width=.9\textwidth}{fig:cambios}{Lista de cambios propuestos junto con su dificultad y su importancia}
 
 De los cambios propuestos se han realizado la mayoria de ellos, a continuacion se enumeran los cambios que no se han podido llevar a cabo junto con una explicacion de por que:
 
