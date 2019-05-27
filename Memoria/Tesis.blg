@@ -10,6 +10,7 @@ A level-1 auxiliary file: Capitulos/03Capitulo3.aux
 A level-1 auxiliary file: Capitulos/04Capitulo4.aux
 A level-1 auxiliary file: Capitulos/05Capitulo5.aux
 A level-1 auxiliary file: Capitulos/06Capitulo6.aux
+A level-1 auxiliary file: Capitulos/07Capitulo7.aux
 A level-1 auxiliary file: Cascaras/bibliografia.aux
 The style file: TeXiS/TeXiS.bst
 A level-1 auxiliary file: Cascaras/fin.aux
@@ -20,8 +21,4 @@ ptr=1, stack=
 2002
 ---the literal stack isn't empty for entry agendasvisuales
 while executing---line 1842 of file TeXiS/TeXiS.bst
-ptr=1, stack=
-Entrada: ``{Pictograma}''
----the literal stack isn't empty for entry pictogramawikipedia
-while executing---line 1842 of file TeXiS/TeXiS.bst
-(There were 2 error messages)
+(There was 1 error message)

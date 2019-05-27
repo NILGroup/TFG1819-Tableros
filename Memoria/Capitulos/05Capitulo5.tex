@@ -10,7 +10,7 @@
 \chapter{PicTableros}
 
 \begin{resumen}
-	En este capítulo se explica el proceso de desarrollo de la aplicación PicTableros, una aplicación web para la creación de plantillas y tableros de comunicación con pictogramas. En este capítulo se explicarán cada una de las fases del desarrollo: en la Sección \ref{cap5:sec:analisis} se explica en detalle como se desarrolló la fase de requisitos, en la  Sección \ref{cap5:sec:diseño} se explica cómo se llevo a cabo el diseño de la interfaz y en la Sección \ref{cap5:sec:implementacion} se explica como se implementó la aplicación. Por ultimo, en la Sección \ref{cap5:sec:evaluacion} se explica la fase de evaluación con usuarios finales.
+	En este capítulo se explica el proceso de desarrollo de la aplicación PicTableros, una aplicación web para la creación de plantillas y tableros de comunicación con pictogramas. En este capítulo se explicarán cada una de las fases del desarrollo: en la Sección \ref{cap5:sec:analisis} se explica en detalle como se desarrolló la fase de requisitos, en la  Sección \ref{cap5:sec:diseno} se explica cómo se llevo a cabo el diseño de la interfaz y en la Sección \ref{cap5:sec:implementacion} se explica como se implementó la aplicación. Por ultimo, en la Sección \ref{cap5:sec:evaluacion} se explica la fase de evaluación con usuarios finales.
 \end{resumen}
 
 %-------------------------------------------------------------------
@@ -18,74 +18,163 @@
 %-------------------------------------------------------------------
 \label{cap5:sec:analisis}
 
-En este proyecto se ha dado mucha importancia al usuario final de la aplicación, con la intención de desarrollar una herramienta que cubra de verdad sus necesidades. Por ello, durante todo el proceso se ha trabajado con la Asociación de Autismo Sevilla y con el Colegio Ángel Riviere de Sevilla.
+En este proyecto se ha dado mucha importancia al usuario final de la aplicación, con la intención de desarrollar una herramienta que cubra de verdad sus necesidades, los usuarios finales en este proyecto son los padres, profesores o tutores de las personas con discapacidad cognitiva, pues son ellos los encargados de realizar los tableros de comunicación. Por ello, durante todo el proceso se ha trabajado con la Asociación de Autismo Sevilla y con el Colegio Ángel Riviere de Sevilla.
 
-Como ya se ha explicado anteriormente, para facilitar la comunicación con personas con discapacidad cognitiva se suelen emplear siempre las mismas plantillas, así los receptores del mensaje sabrán identificar rápidamente el objetivo del tablero: secuencia de acciones, agenda, normas, \ldots A pesar de que ya existen herramientas digitales para la creación de tableros de comunicación con pictogramas, los usuarios aun no han encontrado una que cubra todas sus necesidades. Esto motivó el desarrollo de una herramienta que permita a los usuarios diseñar sus plantillas y tableros de una manera mas sencilla y rápida.
+Como ya se ha explicado anteriormente, para facilitar la comunicación con personas con discapacidad cognitiva se suelen emplear siempre las mismas plantillas, así los receptores del mensaje sabrán identificar rápidamente el objetivo del tablero: secuencia de acciones, agenda, normas, \ldots A pesar de que ya existen herramientas digitales para la creación de tableros de comunicación con pictogramas, los usuarios aun no han encontrado una que cubra todas sus necesidades. Esto motivó el desarrollo de una herramienta que permita a los usuarios diseñar sus plantillas y tableros de una manera mas sencilla y rápida. Entendiendo como una plantilla el material que sirve de base para después generar distintos tableros de comunicación.
 
-En una reunión que tuvo lugar el 22 de Febrero de 2017 durante la Jornada de Trabajo en Aulas TIC, desde la Asociación de Autismo Sevilla nos transmitieron la necesidad de una aplicación que les permitiese digitalizar las plantillas que utilizan para comunicarse con sus usuarios, ya que hasta el momento es un trabajo que realizan de manera manual. Cada vez que desean hacer un tablero para una agenda, por ejemplo, tienen que dibujarlo de manera manual desde cero. Nos indicaron que les seria de gran utilidad tener una herramienta que les permitiera crear las plantillas según el tipo de tablero (agenda, normas, secuencias de acciones, \ldots) y luego usar estas plantillas para generar los tableros modificando o añadiendo solo la información propia del tablero concreto. 
+En una reunión que tuvo lugar el 22 de Febrero de 2017 durante la Jornada de Trabajo en Aulas TIC, desde la Asociación de Autismo Sevilla nos transmitieron la necesidad de una aplicación que les permitiese digitalizar las plantillas que utilizan para comunicarse con sus usuarios, ya que hasta el momento es un trabajo que realizan de manera manual. Cada vez que desean hacer un tablero para una agenda, por ejemplo, tienen que dibujarlo de manera manual desde cero. Nos indicaron que les seria de gran utilidad tener una herramienta que les permitiera crear las plantillas según el tipo de tablero (agenda, normas, secuencias de acciones, \ldots) y luego usar estas plantillas para generar los tableros modificando o añadiendo solo la información propia del tablero concreto. Como por ejemplo en la Figura \ref{fig:plantillatablero} en la que se muestra a la izquierda la plantilla de elegir entre tres opciones y a la derecha se muestra el tablero para elegir tres juguetes.
+
+\figura{Bitmap/Capitulo5/plantillatablero}{width=.9\textwidth}{fig:plantillatablero}{En la izquierda la plantilla de elegir y a la derecha el tablero de elegir juguetes.}
+ 
 
 Para identificar todos los requisitos de la aplicación desde la Asociación de Autismo Sevilla nos hicieron llegar una serie de plantillas que utilizan con frecuencia (ver Figura \ref{fig:plantillas}). En base estas plantillas y a las necesidades expresadas por la asociación se establecieron los siguientes requisitos y funcionalidades:
 
 \begin{itemize}
 	\item La aplicación debe ser accesible desde cualquier dispositivo y en cualquier momento, para que los usuarios puedan acceder a su material en cualquier situación.
+	\item Los usuarios deben poder tener tantas plantillas y tableros como deseen. Además es importante que los puedan compartir entre distintos dispositivos y con distintos usuarios.
 	\item Debe haber un buscador que permita encontrar cualquier pictograma de ARASAAC.
-	\item Poder arrastrar y soltar los elementos en cualquier posición de la plantilla.
-	\item Cambiar el tamaño de los elementos.
-	\item Crear cuadros de texto, en los que poder establecer el color del texto, el borde y el fondo.
-	\item Crear áreas en las que poder colocar los pictogramas, y personalizar el color del borde y del fondo, para conseguir áreas personalizadas como en la plantilla de ``Normas 1''.
-	\item Personalizar los pictogramas cambiando el color del borde y fondo. 
-	\item Como se puede ver en la plantilla ``Normas 2'' es necesario poder tachar los pictogramas.
-	\item Crear pictogramas en blanco que permitan al usuario cuando vuelva a usar la plantilla sustituirlos fácilmente.
+	\item Se deben poder arrastrar y soltar los elementos en cualquier posición de la plantilla, sin restricciones impuestas por los típicos formatos de cuadricula.
+	\item El tamaño de los elementos del tablero debe ser configurable. Tal y como se puede observar en la Figura \ref{fig:plantillas} no todos los elementos de las plantillas tienen el mismo tamaño.
+	\item Se debe permitir al usuario crear cuadros de texto, en los que poder establecer el color del texto, el borde y el fondo. Esto será necesario para crearlas plantillas de normas, sistemas de puntos \ldots
+	\item Hay que permitir al usuario crear áreas en las que poder colocar los pictogramas. Estas áreas deben ser personalizables se debe poder cambiar el color del borde y del fondo, para conseguir áreas personalizadas como las de la plantilla de Normas 1.
+	\item Los pictogramas se tienen que poder personalizar cambiando el color del borde y fondo. Además los pictogramas también se den poder tachar. Esto será necesario para crear plantillas como Normas 2. 
+	\item Se debe permitir crear pictogramas en blanco que permitan al usuario sustituirlos por el pictograma deseado cuando se cree un tablero usando esa plantilla. Tal y como ocurre con la plantilla de Elegir. En esta plantilla las opciones entre las que se puede elegir estarán en blanco y cuando el usuario cree un tablero utilizando esta plantilla podrá rellenar estas opciones con los pictogramas entre los que se puede elegir.
+	\item El usuario debe poder trabajar con figuras geométricas, así podrá crear plantillas como el Calendario Semanal en la que los días de la semana están representados por distintas formas geométricas.
 \end{itemize}
 
-\figura{Bitmap/Capitulo5/plantillas}{width=.9\textwidth}{fig:plantillas}{Plantillas de la Asociación Autismo Sevilla}
+\figura{Bitmap/Capitulo5/plantillas}{width=.9\textwidth}{fig:plantillas}{Plantillas enviadas por la Asociación Autismo Sevilla durante la fase de captura de requisitos.}
+
+Teniendo en cuenta los requisitos obtenidos se procedió a diseñar la primera versión de la aplicación.
 
 %-------------------------------------------------------------------
 \section{Diseño de la interfaz}
 %-------------------------------------------------------------------
-\label{cap5:sec:diseño}
+\label{cap5:sec:diseno}
 
-Después de obtener los requisitos, ya se tenia una idea mas o menos clara de como debía ser la aplicación y con que funcionalidades tenia que contar. Se realizaron prototipos en papel de la aplicación, para que los pudiesen evaluar los usuarios finales y así obtener una aplicación que se adaptase lo máximo posible a sus necesidades. Los prototipos en papel al completo se encuentran en el repositorio de GitHub.\todoImpl{poner enlace a los prototipos en papel}
+Para diseñar la interfaz de la aplicación, se han realizado distintas fases. En la primera fase se diseño un prototipo tecnológico para comprobar si era posible implementar las funcionalidades de la aplicación. En la segunda fase se diseñaron prototipos en papel que permitían a los usuarios interactuar con los elementos. Y por ultimo, se validaron los prototipos con los usuarios finales de la aplicación.
 
-En la Figura \ref{fig:listados} se muestra el prototipo de la lista de plantillas privadas, en el caso de los otros listados el formato es similar, pero cambiando las opciones sobre el elemento. 
+\subsection{Prototipo tecnológico}
+\label{cap5:sec:prototipotec}
+
+Después de los requisitos obtenidos se decidió desarrollar este proyecto como una aplicación web, para hacerlo accesible desde cualquier dispositivo, ya sea ordenador, móvil o tablet, de esta manera el único requisito que deben cumplir los dispositivos de los usuarios es contar con conexión a internet.
+
+Para cubrir otro de los requisitos se pensó como permitir a los usuarios el alto nivel de interacción que se requería, como arrastrar y soltar elementos o cambiarlos de tamaño. Por esta razón, antes de diseñar los prototipos en papel y presentárselos a los usuarios se decidió que era necesario comprobar si tecnológicamente era posible implementar estas funcionalidades en una aplicación web.
+
+En un primer momento se valoró la opción de que en el área de destino existiese una cuadricula en el fondo para que los usuarios pudiesen alinear fácilmente los elementos, pero no era posible aplicar esta opción y cumplir con el requisito de que los elementos pudiesen cambiar de tamaño.
+
+El prototipo tecnológico permitió validar que requisitos se podían cubrir con la aplicación, y así a la hora de realizar los prototipos en papel y presentárselos a los usuarios, tener la certeza de que las funcionalidades de los prototipos en papel se podían implementar en la aplicación.
+
+\subsection{Prototipo de papel interactivo}
+\label{cap5:sec:prototipopapel}
+
+Una vez estaba claro que funcionalidades se podían implementar y se tenia una idea de como debía ser la aplicación, se realizaron prototipos en papel de la aplicación, para que los pudiesen evaluar los usuarios finales y así obtener una aplicación que se adaptase lo máximo posible a sus necesidades. Los prototipos en papel al completo se encuentran en el siguiente repositorio de GitHub\footnote{\url{https://github.com/NILGroup/TFG1819-Tableros/blob/master/Prototipos/prototipos.pdf}}. En la Figura \ref{fig:listados} se muestra el prototipo de la lista de plantillas privadas, en el caso de los otros listados el formato es similar.
 
 \figura{Bitmap/Capitulo5/listados}{width=.9\textwidth}{fig:listados}{Prototipo en papel de la lista de plantillas privadas.}
 
-En el menú lateral se pueden observar las listas de plantillas desplegadas, publicar y privadas, y la opción de crear una nueva plantilla. En el caso de los tableros, serian las mismas opciones.
-
-Para las plantillas privadas tenemos las siguientes opciones, se decidio mostrar las opciones con texto, en vez de iconos, ya que explican mejor la funcionalidad de cada una:
+En el menú lateral se pueden observar las opciones para los distintos listados de plantillas desplegadas, publicas, privadas, y crear una nueva plantilla. En el caso de los tableros serian las mismas opciones, tableros públicos, privados y crear un nuevo tablero. Para cada plantilla privada tenemos las siguientes opciones:
 
 \begin{itemize}
-	\item \textbf{Publicar}: que sirve para publicar el elemento y asi todo el mundo pudiese acceder a el.
-	\item \textbf{Editar}: que lleva al editor de elementos.
-	\item \textbf{Utilizar cono tablero}: esta opción solo esta disponible para las plantillas y sirve para utilizar este material como un tablero.
-	\item \textbf{Duplicar}: crea una copia del material.
-	\item \textbf{Eliminar}: elimina el material.
+	\item \textbf{Publicar}: sirve para publicar la plantilla y dejarla accesible para todo el mundo. De este modo la asociación o el colegio podrían crear las plantillas que usan habitualmente y hacerlas publicas para que todos puedan utilizarlas también.
+	\item \textbf{Editar}: lleva al editor de plantillas para poder hacer modificaciones sobre la plantilla ya creada.
+	\item \textbf{Utilizar como tablero}: sirve para crear un tablero a partir de la plantilla.
+	\item \textbf{Duplicar}: crea una copia de la plantilla.
+	\item \textbf{Eliminar}: elimina la plantilla.
 \end{itemize}
 
-Al final del listado, se encuentran los botones de importar y descargar, que permiten a los usuarios compartir el material generado entre dispositivos.
+Al final del listado de plantillas privadas, se encuentran los botones de importar y descargar, que permiten a los usuarios compartir el material generado con otros dispositivos.
+
+Para las plantillas públicas las opciones son: 
+
+\begin{itemize}
+	\item \textbf{Crear copia privada}: sirve para crear una plantilla privada a partir de la pública.
+	\item \textbf{Utilizar como tablero}: sirve para crear un tablero privado a partir de la plantilla.
+	\item \textbf{Ver}: permite visualizar la plantilla.
+\end{itemize}
+
+Para los tableros privados las opciones son: publicar, ver, editar, duplicar y eliminar. También cuentan con la opción de importar y descargar todos los tableros privados. Para los tableros públicos las opciones son: crear copia privada y ver.
 
 En la Figura \ref{fig:plantilla} se puede observar el editor de plantillas, que cuenta con tres secciones:
 
 \figura{Bitmap/Capitulo5/plantilla}{width=.9\textwidth}{fig:plantilla}{Prototipo en papel de la vista del editor de plantillas.}
 
 \begin{itemize}
-	\item En la parte superior, se muestra una barra con un boton que lleva a la vista de los listados y el nombre del elemento que estamos editando. Para editar este nombre se dispone de un boton que mostrará un input de texto que permita cambiar el valor del titulo.
-	\item En la izquierda de la vista, se muestra un area que en ese momento contiene la plantilla de elegir entre tres opciones. los pictogramas que pone ``Nuevo'' se podrán sustituir posteriormente por las opciones entre las que elegir.
-	\item En la derecha, se muestra el buscador de pictogramas, y tres elementos que permiten al usuario personalizar la plantilla. El primer elemento es el área, el segundo es un pictograma en blanco, y el tercero es un cuadro de texto.
+	\item En la parte superior, se muestra una barra con un botón que lleva a la vista de los listados (\textit{home}) y el nombre del elemento que estamos editando. Para editar este nombre se dispone de un botón con un lápiz, al pulsarlo se mostrará un cuadro de texto que permitirá cambiar el nombre del titulo.
+	\item A la izquierda se muestra el área destinada a la plantilla.
+	\item A la derecha se muestra el buscador de pictogramas, y tres elementos que permiten al usuario personalizar la plantilla: área, pictograma en blanco, y cuadro de texto.
 \end{itemize}
 
-\figura{Bitmap/Capitulo5/ajustesbien}{width=.9\textwidth}{fig:ajustesbien}{Prototipo en papel del menú de ajustes.}
+El pictograma en blanco sirve para generar una plantilla con los huecos que posteriormente se sustituirán por pictogramas al estar creando el tablero. En el caso de la plantilla de la Figura \ref{fig:plantilla} los pictogramas en los que pone ``Nuevo'' se sustituirán por las opciones entre las que elegir.
 
-Todos los elementos que se pueden utilizar para crear una plantilla o tablero se pueden personalizar, una vez arrastrados al área principal pulsando sobre ellos aparece sobre el menú de la derecha un menú distinto con las opciones de personalización. En la Figura \ref{fig:ajustesbien} se pueden observar las opciones de personalización de los pictogramas. 
+Todos los elementos que se pueden utilizar para crear una plantilla se pueden personalizar. Si en el área principal se pulsa sobre un elemento aparece en el menú de la derecha un menú con las distintas opciones de personalización. En la Figura \ref{fig:ajustesbien} se muestran las opciones de personalización de los pictogramas. De un pictograma se puede cambiar el color del borde y del fondo, el texto asociado al pictograma y decidir si se quiere mostrar o no el texto. La última opción disponible es la opción de tachar el pictograma, esta opción cambia según pulsas en ella permitiendo tachar, poner un tick o no poner nada.
 
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=.7\textwidth]{Imagenes/Bitmap/Capitulo5/ajustesbien}
+	\caption{Prototipo en papel del menú de ajustes.}
+	\label{fig:ajustesbien}
+\end{figure}
 
+El resto de elementos que se pueden poner en una plantilla tienen unas opciones de personalización similares, también se pueden cambiar de tamaño aun que no se refleje en el prototipo de papel.
 
-De un pictograma se puede cambiar el color del borde y del fondo, también se puede cambiar el texto asociado al pictograma y decidir si se quiere mostrar o no el texto. La ultima opción disponible es la opción de tachar el pictograma, esta opción cambia según pulsas en ella permitiendo tachar, poner un tick o no poner nada.
+El editor de tableros tiene una interfaz similar al editor de plantillas, la barra superior y el área principal no tienen ningún cambio con respecto al editor de plantillas, pero en este caso en el menú de la derecha solo contamos con el buscador de pictogramas, ya que cuando se edita un tablero la idea es que solo sea necesario colocar los pictogramas relativos al tablero.
 
-Después de realizar los prototipos en papel, tuvo lugar una reunión con la Asociación Autismo Sevilla en la que se explico a los usuarios el funcionamiento de los prototipos y como seria su uso se obtuvieron una serie de recomendaciones de cosas a mejorar, para que la experiencia de uso fuera mejor y se adaptase a las necesidades de los usuarios.
+\subsection{Validación de prototipos}
+\label{cap5:sec:validacionprototipos}
 
-En la figura \ref{fig:cambios} se puede ver la lista de los cambios propuestos junto con la dificultad de implementar cada uno de los cambios y la importancia. Una vez definida la importancia y la dificultad de los cambios propuestos se ha obtenido un valor promedio, para asignarles una prioridad a la hora de realizar dichos cambios.
+Después de realizar los prototipos en papel, el 28 de marzo tuvo lugar una reunión con la Asociación Autismo Sevilla, en el colegio Angel Riviere, en la que se mostraron a los usuarios finales el funcionamiento los prototipos en papel y el prototipo tecnológico. 
+
+Una de las partes más interesantes de la reunión fue que nos enseñaron el contexto de uso y la importancia que tienen las plantillas en su trabajo del día a día. No sólo se usan en este colegio específico, sino en la Asociación Autismo Sevilla (a la que pertenece el colegio). Esto hace que en todos los colegios y asociaciones bajo su influencia a nivel provincial, se usen estas plantillas de manera estándar, entrenando tanto a los docentes como a los familiares en su uso. De esta manera, los jóvenes con autismo aprenden qué significan y se las encuentran en todos los ámbitos de su vida (escolar, familiar, etc.), haciendo así mucho más fácil la comunicación con ellos.
+
+Nos enseñaron cómo se usan actualmente, completamente en papel. En todas las clases hay numerosas ``instancias'' de las plantillas por las paredes, en cuadernos personales de los alumnos, en libretas de profesores\ldots Son la base de la comunicación con sus estudiantes. Actualmente todo se hace en papel y cartulina, con recortables, pegatinas y transparencias. Por ejemplo, el kit básico del profesor es una libreta en blanco y un bolígrafo de cuatro colores para que cuando lo necesitan puedan hacer la plantilla correspondiente para comunicarse con el estudiante. Esto se recomienda también a los padres, a los que se involucra para que ayuden haciendo materiales de este tipo y otros para el colegio y la asociación.
+
+Lo que les gustaría que hiciera el sistema es que todo este método para generar tableros se pudiera digitalizar y llevar en el móvil. Así, en cualquier momento se podría usar un tablero sin necesidad de pararse a dibujarlo. El uso debe ser sencillo y rápido, ya que cuando se necesita una de estas plantillas no hay mucho tiempo para reaccionar (p.e. si el joven con autismo se está portando mal, quiere algo y se está poniendo ansioso, etc.).
+
+Teniendo claro el contexto de uso, surgieron una serie de recomendaciones sobre cosas a mejorar, para que la experiencia de uso fuera mejor y se adaptase a las necesidades de los usuarios.
+
+Se obtuvieron una serie de recomendaciones generales sobre la aplicación:
+
+\begin{itemize}
+	\item La vista por defecto al entrar a la aplicación debe de ser la de plantillas privadas.
+	\item El dispositivo preferido de uso va a ser el móvil. En el momento de probar el prototipo tecnológico no funcionaban algunas de las opciones como cambiar tamaño, seleccionar un elemento en táctil,\ldots
+	\item Las plantillas y tableros en lugar de aparecer en una tabla con las opciones y propiedades mejor que aparezcan en miniaturas las miniaturas de los elementos.
+	\item Quitar la opción de que los tableros sean públicos, todos los tableros serán privados.
+	\item Crear una vista que permita mostrar solo los tableros, para que no haya elementos que provoquen distracciones.
+\end{itemize}
+
+Después nos hicieron recomendaciones sobre las necesidades que no estaban cubiertas en los editores de plantillas y tableros:
+\begin{itemize}
+	\item Opciones que se deberían añadir en las plantillas:
+	\begin{itemize}
+		\item Añadir figuras geométricas para representar los días de la semana como en las plantillas que nos dieron.
+		\item Añadir cuadros de texto que se puedan editar posteriormente en el tablero.
+		\item Añadir flechas negras, esto sirve para una plantilla que no se encuentra entre las que nos dieron inicialmente, esta plantilla se puede ver en la Figura \ref{fig:plantillaflecha}.
+		\figura{Bitmap/Capitulo5/plantillaflecha}{width=.9\textwidth}{fig:plantillaflecha}{Plantilla que representa que ocurre y la solución.}
+		\item Añadir el pictograma de esperar como un pictograma especial, ya que el que utilizan no forma parte de los pictogramas de ARASAAC.
+		\item Añadir círculos que se puedan poner en amarillo, sirve para marcar una tarea como realizada.
+		\item Hacer que una plantilla se vincule a otra.
+		\item Poder cambiar el color de texto.
+		\item Poder tachar el pictograma.
+		\item Poder poner un tick por encima del pictograma. Esta opción actualmente es poco intuitiva, mejor que estén por separado.
+		\item Añadir un borde al pictograma nuevo, para que se note la diferencia con el resto de elementos.
+		\item Hacer mas gruesos los bordes de los elementos.
+	\end{itemize}
+	\item Opciones que se deberían añadir en los tableros:
+	\begin{itemize}
+		\item Dependiendo de si se ha marcado como editable o no, poder cambiar el texto de los cuadros de texto de la plantilla.
+		\item Posibilidad de recolocar los pictogramas si se elimina alguno, sirve para que en las agendas si se cancela una actividad se recoloquen las demás.
+		\item Poder poner un punto amarillo cuando la tarea este completada.
+		\item Añadir un buscador de imágenes en Google.
+		\item Poder tachar el pictograma.
+		\item Poder poner un tick en el pictograma.
+		\item Poder tapar el pictograma con una transparencia azul.
+		\item Añadir imágenes personales.
+	\end{itemize}
+\end{itemize}
+
+Debido a las restricciones de tiempo existentes para presentar el TFG no se podían implementar todos los cambios y mejoras propuestos por la asociación así que se decidió priorizar estos cambios y realizar solo los mas prioritarios. Para realizar esta priorización a cada cambio propuesto se le asignó un valor entre uno y tres, asignando un tres a las mejoras que más valor aportan al producto y uno a las que menos, y también se asignó una dificultad, siendo uno el valor asignado a los cambios que entrañan mas dificultad y tres los que menos.
+
+Una vez definido el valor y la dificultad de los cambios propuestos, se obtuvo una prioridad para cada mejora (valor*dificultad) en base a la que realizar los cambios, los resultados se pueden observar en la tabla \ref{table:cambiospropuestos} se pueden ver la lista de los cambios junto con su valor, dificultad y prioridad resultante.
+
 
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
@@ -98,7 +187,7 @@ En la figura \ref{fig:cambios} se puede ver la lista de los cambios propuestos j
 			Dispositivo móvil & 2 & 3 & 6 \\ \hline
 			Mostrar miniatura del contenido & 1 & 3 & 3 \\ \hline
 			Eliminar tableros públicos & 3 & 1 & 3 \\ \hline
-			Crear vista para mostrar tablero (sin opciones de editar) & 2 & 1 & 2 \\ \hline
+			Crear vista para mostrar tablero (sin opciones de editar) & 2 & 2 & 4 \\ \hline
 			\multicolumn{4}{|l|}{\textbf{Cambios propuestos para las plantillas}} \\ \hline
 			Figuras geometricas, para dias de la semana (cuadrado, circulo, hexagono, triangulo, rombo, elipse, estrella) & 2 & 3 & 6 \\ \hline
 			Añadir opcion de editar a los cuadros de texto & 2 & 2 & 4 \\ \hline
@@ -123,103 +212,167 @@ En la figura \ref{fig:cambios} se puede ver la lista de los cambios propuestos j
 		\end{tabular}%
 	}
 	\caption{Lista de cambios propuestos junto con su dificultad, su importancia y su prioridad}
-	\label{table:cambiosprpuestps}
+	\label{table:cambiospropuestos}
 \end{table}
 
+Todos los cambios con una prioridad mayor que tres se han podido implementar finalmente en la aplicación, también uno de los cambios con prioridad tres se ha implementado debido a la importancia que tenia para los usuarios y el valor que añadía a la aplicación, este cambio es el de mostrar las miniaturas de plantillas y tableros.
 
-%\figura{Bitmap/Capitulo5/cambios}{width=.9\textwidth}{fig:cambios}{Lista de cambios propuestos junto con su dificultad y su importancia}
-
-De los cambios propuestos se han realizado la mayoria de ellos, a continuacion se enumeran los cambios que no se han podido llevar a cabo junto con una explicacion de por que:
-
-\begin{itemize}
-	\item \textbf{Eliminar tableros publicos}: la funcionalidad de publicar los tableros ya estaba implementada cuando se recibieron estas propuestas, y dado que no era muy relevante se decidio dejar en el proyecto.
-	\item \textbf{Vincular plantillas entre sí}: esta funcionalidad permitiria a los usuarios asociar plantillas, peor no se ha podido implementar esta funcionalidad por la falta de tiempo y por que es bastante compleja.
-	\item \textbf{Posibilidad de cambiar los pictogramas (Si eliminas un pictograma del tablero que los demas se recoloquen)}: esta funcionalidad es muy utilizar si en una agenda por ejemplo se cancela una actividad se pasaría a mostrar la siguiente actividad, pero al permitir al usuario trabajar con un area libre en vez de cuadriculas, no se puede determinar un orden para que esto sucediese.
-	\item \textbf{Añadir buscador de imágenes de google}: esta funcionalidad no se ha implementado, por que no se ha encontrado una herramienta que permita realizar una busqueda con imagenes de Google.
-	\item \textbf{Añadir imágenes personales}: esta funcionalidad no se ha implementado por que al no registrar a los usuarios no se les podrian y asociar las imagenes, tampoco se cuenta con un servidor en el que guardar las imágenes ya que la arquitectura es serverless.
-\end{itemize}
-
-El resto de cambios si se han implementado y estos han provocado que las interfaces finales fuesen distintas a los prototipos en papel. A continuacion se enumeran algunos de los cambios mas relevantes: 
-
-\begin{itemize}
-	\item En las vistas de los listados:
-	\begin{itemize}
-		\item En los listados se muestran las miniaturas de los elementos, lo cual ha provocado que tambien cambie la disposicion de los botones de las opciones, y tambien los botones de importar y exportar ahora aparecen en la parte superior, ya que al mostrar las miniaturas las listas son mas largas y si se ponen al final, normalmente no se verían.
-		\item El menú lateral ya no son listas desplegables si no que esta siempre desplegado así las opciones están mas accesibles.
-		\item En las opciones de los elementos se ha añadido la opcion de ver, que permite a los usuarios visuaizar la plantilla o el tablero sin los menús de configuracion que provocarian distracciones. 
-	\end{itemize}
-	\item En las vistas del editor:
-	\begin{itemize}
-		\item Se han añadido todas las figuras geométricas y la flecha, aparecerán a continuacion del area, el pictograma en blanco y el cuadro de texto.
-		\item Los cuadros de texto tendrán la opción de ser editables o no, lo cual implica que si es editable en el talero se podrá cambiar el texto.
-		\item Las opciones de tachado, y poner el tick se han ampliado para los tableros. Y tanto para plantillas como para tableros ahora aparecen todas una al lado de otra, ya no hay necesidad de ir pulsando para cambiar, por que resultaba confuso.
-	\end{itemize}
-\end{itemize}
 %-------------------------------------------------------------------
-\section{Implementacion}
+\section{Implementación}
 %-------------------------------------------------------------------
 \label{cap5:sec:implementacion}
 
-Después de los requisitos obtenidos se decidió desarrollar este proyecto como una aplicación web, para hacerlo accesible desde cualquier dispositivo, ya sea ordenador, móvil o tablet. La aplicación consta de dos vistas principales: el editor de las plantillas y tableros, y los listados de los mismos. Que se explicaran mas adelante detalladamente en las secciones \ref{cap4:sec:listados} y \ref{cap4:sec:editor}.
+Finalmente para este proyecto se ha desarrollado una aplicación web, el código de la aplicación\footnote{\url{https://holstein.fdi.ucm.es/tfg-plantillas/}} se encuentra en GitHub\footnote{\url{https://github.com/NILGroup/TFG1819-Tableros/tree/master/Aplicacion}}. En la Figura \ref{fig:editorplantillas} se puede ver la funcionalidad principal de la aplicación que es el editor de plantillas.
 
-El desarrollo de la interfaz se ha realizado con HTML y CSS. Para permitir el uso de la aplicación en todo tipo de dispositivos se ha realizado un diseño responsive para adaptar los elementos dependiendo de la pantalla y la orientación, para facilitar esta tarea se ha utilizado Bootstrap que con sus media-queries se adaptan a las características del dispositivo.
+\figura{Bitmap/Capitulo5/editorplantillas}{width=.9\textwidth}{fig:editorplantillas}{Vista del editor de plantillas.}
 
-Para el resto de funcionalidades como arrastrar y soltar, buscar pictogramas, guardar, publicar, etc. se utiliza JavaScript. Al ser JavaScript un lenguaje que se puede interpretar en el cliente, permite que la arquitectura de esta aplicación sea serverless.
+La aplicación consta de tres partes diferenciadas: los listados, el editor de plantillas y el editor de tableros.
 
-A continuación se va a explicar en detalle las dos vistas principales de la aplicación y algunas de las funcionalidades especificas de cada una.
+El desarrollo de la interfaz se ha realizado utilizando HTML y CSS. Se ha realizado un diseño \textit{responsive} para que la aplicación se pudiese utilizar en todos los dispositivos indiferentemente de la pantalla y la orientación. Para facilitar esta tarea se ha utilizado Bootstrap que con sus \textit{media-queries} se adaptan a las características del dispositivo. 
+
+Para el resto de funcionalidades como arrastrar y soltar, buscar pictogramas, guardar, publicar, etc. se utiliza JavaScript. Al ser JavaScript un lenguaje que se puede interpretar en el cliente, permite que la arquitectura de esta aplicación sea \textit{serverless}.
+
+A continuación se van a explicar en detalle las vistas principales de la aplicación y las funcionalidades especificas de cada una.
 
 %-------------------------------------------------------------------
 \subsection{Listados}
 %-------------------------------------------------------------------
 \label{cap5:sec:listados}
 
-La vista con las listas de las plantillas o tableros es la vista inicial de la aplicación, es decir lo primero que se ve al entrar a la aplicación. Inicialmente se encuentra la lista de plantillas privadas, que se corresponde con la Figura \ref{fig:plantillasprivadas}. Esta vista cuenta con un menú lateral, que permite al usuario navegar entre los distintos tipos de contenido: plantillas privadas, plantillas publicas, tableros privados y tableros públicos. Para navegar entre las distintas vistas se ha implementado un router en el cliente, que carga las listas según el hash, sin necesidad de recargar la pagina, haciéndola mas dinámica.
+La vista con las listas de las plantillas o tableros es la vista inicial de la aplicación, es decir lo primero que se ve al entrar a la aplicación. Inicialmente se encuentra la lista de plantillas privadas, que se corresponde con la Figura \ref{fig:plantillasprivadas}. Esta vista cuenta con un menú lateral, que permite al usuario navegar entre los distintos tipos de contenido: plantillas privadas, plantillas publicas, tableros privados y tableros públicos. Para navegar entre las distintas vistas se ha implementado un router en el cliente, que carga las listas según el hash, sin necesidad de recargar la pagina, haciéndola mas dinámica. Para implementar este router se ha utilizado el evento de \textit{hashchange} JavaScript, que permite que cada vez que cambia la url ejecutar una función, en este caso se cargan las distintas listas de la aplicación.
 
-En las plantillas y tableros privados existe una opción de importar y exportar, que se puede ver en la esquina superior izquierda de la Figura \ref{fig:plantillasprivadas}. Al exportar se genera un fichero .json con todas las plantillas o tableros del usuario, para poder compartir el material entre dispositivos y con otros usuarios. Cuando se importa un archivo se guarda un objeto con cada plantilla o tablero en LocalStorage.
+En las plantillas y tableros privados existe la opción de importar y exportar, que se puede ver en la esquina superior derecha de la Figura \ref{fig:plantillasprivadas}. Al exportar se genera un fichero .json con todas las plantillas o tableros del usuario, para poder compartir el material entre dispositivos y con otros usuarios. Para generar el fichero se utiliza \textit{Blob} que permite crear ficheros de cualquier tipo, entre ellos .json, para después descargarlos. Cuando se importa un archivo se guarda un objeto con cada plantilla o tablero en LocalStorage.
+
+LocalStorage es una propiedad de HTML5 que permite almacenar datos en el navegador, de manera persistente. Para guardar los elementos importados se utiliza la función ``setItem'' que recibe un objeto del tipo clave y valor.
 
 \figura{Bitmap/Capitulo5/listaplantillasprivadas}{width=.9\textwidth}{fig:plantillasprivadas}{Vista del listado de las plantillas privadas}
 
-Después de recoger las opiniones de los usuarios sobre los prototipos en papel se decidió que era necesario mostrar una miniatura del elemento, para que así los usuarios pudieran tener una idea del elemento sobre el que se esta trabajando. Para poder mostrar la miniatura se utiliza la librería html2canvas, que lee un elemento del DOM, en este caso el área de la plantilla, y reconstruye los elementos en un canvas. Con el canvas se puede generar una imagen codificada en base64 que se asocia al contenido al guardarlo.
+Como se puede observar en el listado de plantillas que aparece a la derecha de la Figura \ref{fig:plantillasprivadas} se muestra una miniatura de cada plantilla para que así los usuarios puedan localizar mas fácilmente la plantilla con la que desean trabajar. Para poder mostrar la miniatura se utiliza la librería html2canvas, que lee un elemento del DOM, en este caso el área de la plantilla y todo lo que la compone, y reconstruye los elementos en un canvas. Con el canvas se puede generar una imagen codificada en base64 que se asocia al contenido al guardarlo, cuando se codifica una imagen en base64 se convierte la información de la imagen en una serie de caracteres de texto, esto permite que sea posible guardar esta información en un objeto, para luego guardarlo.
 
-Como se puede ver, el usuario dispone de cuatro tipos de contenido con diversas opciones que se explicaran a continuación:
+Dentro de las plantillas privadas se disponen de distintas opciones sobre cada plantilla:
 
 \begin{itemize}
-	\item \textbf{Plantillas privadas}: en la Figura \ref{fig:opcionesplantillas} se pueden ver las distintas opciones disponibles para las plantillas privadas. La opción ``Usar como tablero'' crea una copia de la plantilla seleccionada, cambiando el tipo a tablero y abre el editor de tableros.
-	\figura{Bitmap/Capitulo5/opcionesplantillas}{width=.9\textwidth}{fig:opcionesplantillas}{Opciones de las plantillas privadas}
-	\item \textbf{Plantillas publicas}: en la Figura \ref{fig:opcionesplantillaspublicas} se pueden ver las distintas opciones disponibles para las plantillas publicas. Estas plantillas son las que los usuarios deciden publicar y compartir, por este motivo para realizar cualquier acción sobre estos elementos primero hay que generar una copia que pertenezca al usuario.
-	\figura{Bitmap/Capitulo5/opcionesplantillaspublicas}{width=.9\textwidth}{fig:opcionesplantillaspublicas}{Opciones de las plantillas publicas}
-	\item \textbf{Tableros privados}: en la Figura \ref{fig:opcionestablerosprivados} se pueden ver las distintas opciones disponibles para los tableros privados. Como se puede ver son las mismas funciones que para las plantillas privadas a excepción de la de ``Utilizar como tablero''.
-	\figura{Bitmap/Capitulo5/opcionestablerosprivados}{width=.9\textwidth}{fig:opcionestablerosprivados}{Opciones de los tableros privados}
-	\item \textbf{Tableros públicos}: en la Figura \ref{fig:opcionestablerospublicos} se pueden ver las distintas opciones disponibles para los tableros públicos.
-	\figura{Bitmap/Capitulo5/opcionestablerospublicos}{width=.9\textwidth}{fig:opcionestablerospublicos}{Opciones de los tableros públicos.}
+	\item \textbf{Publicar}: permite publicar la plantilla. Cuando se hace pública una plantilla, se hace mediante el método ``set'' de Firebase que espera recibir un objeto con la clave y el valor de la plantilla.
+	\item \textbf{Utilizar como tablero}: se crea un tablero privado a partir de la plantilla, guardando un nuevo elemento con un identificador distinto. Además redirecciona al editor del tablero.
+	\item \textbf{Duplicar}: se duplica la plantilla, el elemento generado mantiene el mismo titulo, añadiendo ``-copia'' al final.
+	\item \textbf{Editar}: lleva a la vista del editor de plantillas, cargando la plantilla seleccionada.
+	\item \textbf{Ver}: lleva a una vista en la que únicamente se muestra la plantilla.
+	\item \textbf{Eliminar}: elimina la plantilla seleccionada.
 \end{itemize}
 
-\todoImpl{Si al final quito la opción de ver de los elementos públicos actualizar imágenes}
+Ademas de las plantillas privadas, el usuario dispone de tres tipos de listados más, que se pueden ver en la parte izquierda de la Figura \ref{fig:plantillasprivadas}: plantillas públicas, tableros privados, y tableros públicos.
 
-La opción de publicar común a las plantillas y a los tableros privados guarda el tablero en una base de datos realtime de Firebase, que permite que las listas de plantillas y tableros públicos se actualicen cada vez que se publica un tablero o plantilla. En Firebase se guarda un objeto con la siguiente estructura, en la Figura \ref{fig:plantillafirebase} se puede ver un ejemplo:
+En la Figura \ref{fig:plantillaspublicas} se puede ver el listado de plantillas públicas, las opciones por cada plantilla pública son las siguientes:
+
+\figura{Bitmap/Capitulo5/plantillaspublicas}{width=.9\textwidth}{fig:plantillaspublicas}{Vista del listado de las plantillas públicas.}
+
 
 \begin{itemize}
-	\item \textbf{contenido}: contiene el elemento del DOM correspondiente a la plantilla.
-	\item \textbf{id}: identificador de cada elemento.
-	\item \textbf{miniatura}: contiene una imagen en base64, para poder mostrar las miniaturas.
+	\item \textbf{Crear copia privada}: crea una copia privada de la plantilla en LocalStorage, para que el usuario pueda trabajar con ella.
+	\item \textbf{Utilizar como tablero}: se crea un tablero privado a partir de la plantilla, guardando un nuevo elemento con un identificador distinto. Además redirecciona al editor del tablero.
+	\item \textbf{Ver}: lleva a una vista en la que únicamente se muestra la plantilla.
+\end{itemize}
+
+En la Figura XX se puede ver el listado de tableros privados, las opciones por cada tablero privado son las siguientes:
+
+\figura{Bitmap/Capitulo5/tablerosprivados}{width=.9\textwidth}{fig:tablerosprivados}{Vista del listado de los tableros privados.}
+
+\begin{itemize}
+	\item \textbf{Publicar}: permite publicar el tablero.
+	\item \textbf{Duplicar}: se duplica el tablero, generando uno igual pero añadiendo ``-copia'' al final del titulo.
+	\item \textbf{Editar}: lleva a la vista del editor de tableros, cargando el tablero seleccionado.
+	\item \textbf{Ver}: lleva a una vista en la que únicamente se muestra el tablero.
+	\item \textbf{Eliminar}: elimina el tablero seleccionado.
+\end{itemize}
+
+En la Figura XX se puede ver el listado de tableros públicos, las opciones por cada tablero público son las siguientes:
+
+\todoImpl{Insertar imagen de las tableros publicos}
+
+\begin{itemize}
+	\item \textbf{Crear copia privada}: crea una copia privada del tablero en LocalStorage, para que el usuario pueda trabajar con el.
+	\item \textbf{Ver}: lleva a una vista en la que únicamente se muestra el tablero.
+\end{itemize}
+
+La opción de ``Ver'' lleva a la misma vista en cualquiera de los casos, en la Figura XX se muestra un ejemplo de la vista de un tablero. Esta vista cuenta unicamente con el tablero para así evitar distracciones.
+
+\figura{Bitmap/Capitulo5/vistaver}{width=.9\textwidth}{fig:vistaver}{Ejemplo de la vista en la que solo se muestra el tablero, en este caso, elegir juguetes}
+
+Cuando se pública cualquier tipo de elemento se hace mediante el método ``set'' de Firebase, que permite guardar un objeto, identificándolo con una clave. El uso de Firebase y de LocalStorage permite que los objetos tengan la misma estructura ya sean públicos o privados. La estructura de los objetos es la siguiente:
+
+\begin{itemize}
+	\item \textbf{contenido}: contiene el elemento del DOM correspondiente a la plantilla o tablero.
+	\item \textbf{id}: identificador de cada elemento, generado aleatoriamente para cada elemento.
+	\item \textbf{miniatura}: contiene una imagen codificada base64, para poder mostrar las miniaturas.
 	\item \textbf{tamano}: se guarda el ancho y el alto del elemento original, para después poder ajustarlo si cambia el tamaño de la pantalla.
 	\item \textbf{tipo}: determina el tipo del elemento, plantilla o tablero.
 	\item \textbf{titulo}: contiene el titulo asociado al elemento.
 \end{itemize}
 
+En la Figura \ref{fig:plantillafirebase} se puede ver un ejemplo de un objeto de Firebase de una plantilla pública.
+
 \figura{Bitmap/Capitulo5/plantillaFirebase}{width=.9\textwidth}{fig:plantillafirebase}{Ejemplo de un objeto tipo plantilla}
 
+La opción de publicar común a las plantillas y a los tableros privados guarda el elemento en una base de datos realtime de Firebase, que permite que las listas de plantillas y tableros públicos se actualicen cada vez que se publica un tablero o plantilla. Esto es posible por el método ``on'' que permite quedarse observando a la espera de cambios en la base de datos.
+
 %-------------------------------------------------------------------
-\subsection{Editor}
+\subsection{Editor de plantillas}
 %-------------------------------------------------------------------
-\label{cap5:sec:editor}
+\label{cap5:sec:editorplantillas}
 
-La vista de edición es la mas importante de la aplicación, a esta vista se llega de dos maneras: creando material nuevo o editando material ya existente. Esta vista se corresponde con la Figura \ref{fig:editor}.
+La vista de edición es la mas importante de la aplicación, a esta vista se llega de dos maneras: creando una nueva plantilla o editando una plantilla ya existente. La Figura \ref{fig:editorplantillas} se corresponde con la vista del editor de una nueva plantilla. Cuando se llega editando una plantilla a existente, se realizan ajustes en el tamaño de los elementos para asegurar que las plantillas se pueden abrir en cualquier dispositivo.
 
-\figura{Bitmap/Capitulo5/editor}{width=.9\textwidth}{fig:editor}{Vista del editor}
+\figura{Bitmap/Capitulo5/editor}{width=.9\textwidth}{fig:editorplantillas}{Vista del editor}
 
-Para que el usuario pudiera generar los materiales libremente y sin restricciones, se ha implementado un sistema que permite arrastrar los elementos del menú de la derecha al área principal, destinada para formar las plantillas o tableros. Para implementar este sistema se ha utilizado la librería interact.js que mediante eventos permite al usuario mover y cambiar el tamaño de los elementos. Cuando se arrastra un elemento al área principal se crea una copia del mismo en las coordenadas en las que se ha soltado, haciendo que el original vuelva a su posición para que este disponible siempre que se necesite.
+Para que el usuario pudiera generar los materiales libremente y sin restricciones, se ha implementado un sistema que permite arrastrar los elementos del menú de la derecha al área principal, destinada para formar las plantillas. Para implementar este sistema se ha utilizado la librería interact.js que mediante eventos permite al usuario mover y cambiar el tamaño de los elementos. Cuando se arrastra un elemento al área principal se crea una copia del mismo en las coordenadas en las que se ha soltado, haciendo que el original vuelva a su posición para que este disponible siempre que se necesite.
 
+Esta vista esta dividida en dos zonas principales, el área a la que arrastrar los elementos y el menú lateral derecho donde se mostrarán distintos menús que se explicarán mas adelante. En la barra superior se muestra un input de texto que permite editar el titulo de la plantilla sobre la que estamos trabajando.
+
+La librería funciona mediante eventos y cada elemento necesita tener asociados una serie de eventos frente a los que reaccionar. El área de destino reacciona frente a un evento ``ondrop'' que ejecuta las funciones cuando se suelta un elemento en el área. El resto de elementos, los que forman parte del menú de la derecha inicialmente reaccionan al evento de arrastre y una vez que que están en el área de destino reaccionan también ante el evento que permite cambiar de tamaño.
+
+En la parte derecha del editor se encuentra el menú con los elementos con los que se puede interactuar. Este menú tiene un buscador que hace uso de la API de ARASAAC, inicialmente los resultados de la búsqueda se iban a mostrar en un cajón con \textit{scroll}, pero la librería que permite arrastrar los elementos no era compatible con esa opción, así que se decidió mostrar los resultados de la búsqueda en una lista completa, tal y como se puede ver en la Figura \ref{fig:busquedaagua}. Para mostrar u ocultar los resultados se puede utilizar el botón que se encuentra al final de la barra de búsqueda.
+
+\figura{Bitmap/Capitulo5/busquedaagua}{width=.9\textwidth}{fig:busquedaagua}{Vista del editor de plantillas con los resultados de la búsqueda de ``agua'' desplegados.}
+
+El resto del menú esta compuesto por opciones para crear un área, un pictograma en blanco, un cuadro de texto y diferentes figuras geométricas que se utilizan para plantillas como el calendario semanal de la Figura \ref{fig:plantillas}. Cuando se pulsa sobre el botón de ``Guardar'' se guarda un objeto en LocalStorage con el mismo formato que el objeto de Firebase usado para los listados de plantillas y tableros explicado en la Seccion \ref{cap5:sec:listados}, de esta manera al publicar un elemento no es necesario realizar una transformación del objeto para mantener la coherencia. Ademas, al guardar el objeto en LocalStorage se asocia a cada usuario y dispositivo sin necesidad de registrarlos.
+
+Cuando se pulsa sobre algún elemento del área, en el menú de la derecha se muestran las opciones de personalización relativas al elemento pulsado, esto es posible gracias a los eventos de la misma librería que permite arrastrar los elementos, ya que también gestiona eventos táctiles y de ratón de manera unificada. Cuando se pulsa un elemento para personalizarlo se pone una sombra en el elemento para dejar claro que elemento se esta modificando. A continuación se explican las distintas opciones de personalización de cada elemento:
+
+\begin{itemize}
+	\item El pictograma y el pictograma en blanco tienen las mismas opciones de personalización, como se puede ver en la Figura XX se puede cambiar el color de borde y fondo, el texto asociado al pictograma y si se quiere o no mostrar, finalmente se encuentran las opciones de tachar, poner el tick, o dejar cono estaba originalmente.
+	\todoImpl{Insertar imagen con los ajustes de pictograma}
+	\item En la Figura XX se pueden ver los ajustes de personalización del área, se puede cambiar el color de borde y fondo, también se puede añadir un texto en la parte superior del área, y las opciones de tachar o tick.
+	\todoImpl{Insertar imagen con los ajustes de area}
+	\item En la Figura XX se pueden ver los ajustes de personalización de un cuadro de texto, estas opciones son similares a las anteriores, con el añadido de poder modificar el color del texto y decidir si en los tableros se podrá editar este texto.
+	\todoImpl{Insertar imagen con los ajustes de texto}
+	\item En la Figura XX se pueden ver los ajustes de personalización de las formas geométricas, en este caso solo se puede cambiar el color de fondo y el texto asociado a las mismas.
+	\todoImpl{Insertar imagen con los ajustes de figuras}
+\end{itemize}
+
+%-------------------------------------------------------------------
+\subsection{Editor de tableros}
+%-------------------------------------------------------------------
+\label{cap5:sec:editortableros}
+
+La vista del editor de tableros se corresponde con la Figura XX, a esta vista se llega editando un tablero ya existente o utilizando una plantilla como tablero, ya que la opción de crear un nuevo tablero cuenta con las mismas opciones que una plantilla, para facilitar la creación de un tablero desde cero.
+
+Esta vista en el menú de la derecha unicamente cuenta con el buscador de pictogramas, que se pueden arrastrar a cualquier posición del tablero y en la barra superior se encuentra el input de texto para cambiar el titulo, indicando en este caso que se trata de un tablero, para que el usuario lo tenga siempre presente.
+
+Los elementos que están en el tablero tienen unas opciones de personalización distintas a las plantillas:
+
+\begin{itemize}
+	\item En la Figura XX se pueden observar las opciones de personalización de los pictogramas, son la de tachar, poner un tick, un punto amarillo o una transparencia azul.
+	\todoImpl{Insertar imagen con los ajustes de picto en tablero}
+	\item En la Figura XX se puede observar que las opciones de personalización de un área son las mismas que los pictogramas.
+	\todoImpl{Insertar imagen con los ajustes de area en tablero}
+	\item Los cuadros de texto solo se podrán editar si al generar la plantilla se han marcado como editables, en la Figura XX se puede ver el input que permite cambiar el texto.
+	\todoImpl{Insertar imagen con los ajustes de texto en tablero}
+	\item Como se puede ver en la Figura XX de las figuras geométricas solo se puede cambiar el color.
+	\todoImpl{Insertar imagen con los ajustes de figura en tablero}
+	
+\end{itemize}
+
+\begin{comment}
 Esta vista esta dividida en dos zonas principales, el área a la que arrastrar los elementos y el menú lateral derecho donde se muestran distintas menús que se explicarán mas adelante. En la barra superior se muestra un input de texto que permite editar el titulo del elemento sobre el que estamos trabajando, como se puede ver en la Figura \ref{fig:inputtitulo}, la etiqueta de este input es distinta para tableros y plantillas para que el usuario distinga fácilmente sobre que esta trabajando.
 
 \figura{Bitmap/Capitulo5/inputtitulo}{width=.9\textwidth}{fig:inputtitulo}{Distintos input para el titulo.}
@@ -248,6 +401,7 @@ Todos los ejemplos anteriormente mencionados forman parte de la edición de plant
 
 \figura{Bitmap/Capitulo5/opcionesarea}{width=.9\textwidth}{fig:opcionesarea}{Opciones para áreas y pictogramas en tableros}
 
+\end{comment}
 %-------------------------------------------------------------------
 \section{Evaluación}
 %-------------------------------------------------------------------
@@ -260,7 +414,7 @@ Gracias a la Asociación de Autismo Sevilla se han podido realizar pruebas de la 
 %-------------------------------------------------------------------
 \label{cap5:sec:diseñoevaluacion}
 
-Se decidió realizar la evaluación en Excel, para que los evaluadores pudiesen realizar la evaluación a su propio ritmo. El documento de Excel contiene tres hojas: una hoja explicando los pasos a seguir para realizar la evaluación, otra con la imagen de las plantillas que tienen que replicar y una ultima con la evaluación que tienen que rellenar, esta ultima tiene que generarse para cada evaluador.
+Se decidió realizar la evaluación en Excel, para que los evaluadores pudiesen realizar la evaluación a su propio ritmo. El documento de Excel contiene tres hojas: una hoja explicando los pasos a seguir para realizar la evaluación, otra con la imagen de las plantillas que tienen que replicar y una ultima con la evaluación que tienen que rellenar, esta última tiene que generarse para cada evaluador.
 
 El objetivo de esta evaluación es determinar la usabilidad y la utilidad de la aplicación para los usuarios finales.
 
