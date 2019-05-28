@@ -1,57 +1,51 @@
 \begin{thebibliography}{8}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
-\bibitem[{Campillo(2014)}]{sistemas-pictograficos}
-{\sc Campillo, R.~G.}
+\bibitem[{Bertola(2017)}]{ARASAAC}
+{\sc Bertola, E.}
+\newblock {An'alisis emp'irico de las caracter'isticas formales de los
+  s'imbolos pictogr'aficos ARASAAC}.
+\newblock Disponible en \url{http://hdl.handle.net/10803/454891}.
+
+\bibitem[{Fern'indez et\ al.(2017)Fern'indez, Angiono y Mercado}]{bliss}
+{\sc Fern'indez, M.~C.}, {\sc Angiono, V.~A.} y {\sc Mercado, L.~B.}
+\newblock {\em Comunicaci'on aumentativa y trastornos de la comunicaci'on y el
+  lenguaje\/}.
+\newblock Editorial Brujas, 2017.
+
+\bibitem[{Garc'ia(2014)}]{sistemas-pictograficos}
+{\sc Garc'ia, R.}
 \newblock Pictogramas y sistemas gr'aficos de comunicaci'on e informaci'on.
-\newblock 2014.
-\newblock Disponible en \url{http://oa.upm.es/37991/1/INVE_MEM_2014_206047.pdf}
-  (último acceso,  NOSESABE).
+\newblock Disponible en
+  \url{http://oa.upm.es/37991/1/INVE_MEM_2014_206047.pdf}.
 
-\bibitem[{Garc'ia(2015)}]{TFMEvaGil}
-{\sc Garc'ia, E. M.~G.}
-\newblock {\em INTERSAACs\/}.
-\newblock Proyecto Fin de Carrera, Universidad Complutense de Madrid, 2015.
+\bibitem[{Gil(2015)}]{TFMEvaGil}
+{\sc Gil, E.~M.}
+\newblock {\em {INTERacci'on comunicativa en mensajer'ia instant'anea bajo
+  sistemas SAACs : <<INTERSAACs>>}\/}.
+\newblock {Trabajo de Fin de M'aster}, Universidad Complutense de Madrid, 2015.
 
-\bibitem[{Guerrero(2018)}]{TFMPictar}
-{\sc Guerrero, A.~M.}
-\newblock {\em PICTAR\/}.
-\newblock Proyecto Fin de Carrera, Universidad Complutense de Madrid, 2018.
-
-\bibitem[{L'opez(2017)}]{ARASAAC}
-{\sc L'opez, E.~B.}
-\newblock An'alisis emp'irico de las caracter'isticas formales de los s'imbolos
-  pictogr'aficos arasaac.
-\newblock 2017.
-\newblock Disponible en \url{http://hdl.handle.net/10803/454891} (último
-  acceso,  NOSESABE).
+\bibitem[{Mart'in(2018)}]{TFMPictar}
+{\sc Mart'in, A.}
+\newblock {\em {PICTAR: una herramienta de elaboraci'on de contenido para
+  personas con TEA basada en la traducci'on de texto a pictogramas}\/}.
+\newblock {Trabajo de Fin de M'aster}, Universidad Complutense de Madrid, 2018.
 
 \bibitem[{Mirenda y Iacono(2008)}]{psisemadrid2}
 {\sc Mirenda, P.} y {\sc Iacono, T.}
 \newblock {\em Autism Spectrum Disorders and AAC\/}.
 \newblock Paul H. Brookes, 2008.
 
-\bibitem[{Reuter et\ al.(2017)Reuter, Angiono y Mercado}]{bliss}
-{\sc Reuter, M. C.~F.}, {\sc Angiono, V.~A.} y {\sc Mercado, L.~B.}
-\newblock Comunicaci'on aumentativa y trastornos de la comunicaci'on y el
-  lenguaje.
-\newblock 2017.
-\newblock Disponible en
-  \url{https://ebookcentral.proquest.com/lib/universidadcomplutense-ebooks/detail.action?docID=482390}
-  (último acceso,  NOSESABE).
-
 \bibitem[{Sanz y Mart'en(2002)}]{agendasvisuales}
 {\sc Sanz, M. L.~P.} y {\sc Mart'en, A. M.~T.}
-\newblock Agendas visuales Â«no hace falta la agenda 'el me entiendeÂ».
+\newblock Agendas visuales <<no hace falta la agenda 'el me entiende>>.
 \newblock {\em El Guiniguada\/}, vol.\ 11, Disponible en
   \url{https://accedacris.ulpgc.es/bitstream/10553/5459/1/0235347_02002_0013.pdf}.
 
-\bibitem[{Ventoso(2017)}]{usopictogramas}
+\bibitem[{Ventoso(1995)}]{usopictogramas}
 {\sc Ventoso, M.~R.}
 \newblock Pictogramas: Una alternativa para comprender el mundo.
-\newblock 2017.
 \newblock Disponible en
-  \url{http://aetapi.org/download/pictogramas-una-alternativa-para-comprender-el-mundo/?wpdmdl=1386}
-  (último acceso,  NOSESABE).
+  \url{http://aetapi.org/download/pictogramas-una-alternativa-para-comprender-el-mundo/?wpdmdl=1386}.
 
 \end{thebibliography}

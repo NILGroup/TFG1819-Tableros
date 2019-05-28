@@ -285,9 +285,9 @@ En la Figura XX se puede ver el listado de tableros privados, las opciones por c
 	\item \textbf{Eliminar}: elimina el tablero seleccionado.
 \end{itemize}
 
-En la Figura XX se puede ver el listado de tableros públicos, las opciones por cada tablero público son las siguientes:
+En la Figura \ref{fig:tablerospublicos} se puede ver el listado de tableros públicos, las opciones por cada tablero público son las siguientes:
 
-\todoImpl{Insertar imagen de las tableros publicos}
+\figura{Bitmap/Capitulo5/tablerospublicos}{width=.9\textwidth}{fig:tablerospublicos}{Vista del listado de los tableros públicos.}
 
 \begin{itemize}
 	\item \textbf{Crear copia privada}: crea una copia privada del tablero en LocalStorage, para que el usuario pueda trabajar con el.
@@ -334,19 +334,20 @@ En la parte derecha del editor se encuentra el menú con los elementos con los qu
 
 \figura{Bitmap/Capitulo5/busquedaagua}{width=.9\textwidth}{fig:busquedaagua}{Vista del editor de plantillas con los resultados de la búsqueda de ``agua'' desplegados.}
 
-El resto del menú esta compuesto por opciones para crear un área, un pictograma en blanco, un cuadro de texto y diferentes figuras geométricas que se utilizan para plantillas como el calendario semanal de la Figura \ref{fig:plantillas}. Cuando se pulsa sobre el botón de ``Guardar'' se guarda un objeto en LocalStorage con el mismo formato que el objeto de Firebase usado para los listados de plantillas y tableros explicado en la Seccion \ref{cap5:sec:listados}, de esta manera al publicar un elemento no es necesario realizar una transformación del objeto para mantener la coherencia. Ademas, al guardar el objeto en LocalStorage se asocia a cada usuario y dispositivo sin necesidad de registrarlos.
+El resto del menú esta compuesto por opciones para crear un área, un pictograma en blanco, un cuadro de texto y diferentes figuras geométricas que se utilizan para plantillas como el calendario semanal de la Figura \ref{fig:plantillas}. Cuando se pulsa sobre el botón de ``Guardar'' se guarda un objeto en LocalStorage con el mismo formato que el objeto de Firebase usado para los listados de plantillas y tableros explicado en la Sección \ref{cap5:sec:listados}, de esta manera al publicar un elemento no es necesario realizar una transformación del objeto para mantener la coherencia. Ademas, al guardar el objeto en LocalStorage se asocia a cada usuario y dispositivo sin necesidad de registrarlos.
 
 Cuando se pulsa sobre algún elemento del área, en el menú de la derecha se muestran las opciones de personalización relativas al elemento pulsado, esto es posible gracias a los eventos de la misma librería que permite arrastrar los elementos, ya que también gestiona eventos táctiles y de ratón de manera unificada. Cuando se pulsa un elemento para personalizarlo se pone una sombra en el elemento para dejar claro que elemento se esta modificando. A continuación se explican las distintas opciones de personalización de cada elemento:
 
 \begin{itemize}
-	\item El pictograma y el pictograma en blanco tienen las mismas opciones de personalización, como se puede ver en la Figura XX se puede cambiar el color de borde y fondo, el texto asociado al pictograma y si se quiere o no mostrar, finalmente se encuentran las opciones de tachar, poner el tick, o dejar cono estaba originalmente.
-	\todoImpl{Insertar imagen con los ajustes de pictograma}
-	\item En la Figura XX se pueden ver los ajustes de personalización del área, se puede cambiar el color de borde y fondo, también se puede añadir un texto en la parte superior del área, y las opciones de tachar o tick.
-	\todoImpl{Insertar imagen con los ajustes de area}
-	\item En la Figura XX se pueden ver los ajustes de personalización de un cuadro de texto, estas opciones son similares a las anteriores, con el añadido de poder modificar el color del texto y decidir si en los tableros se podrá editar este texto.
-	\todoImpl{Insertar imagen con los ajustes de texto}
-	\item En la Figura XX se pueden ver los ajustes de personalización de las formas geométricas, en este caso solo se puede cambiar el color de fondo y el texto asociado a las mismas.
-	\todoImpl{Insertar imagen con los ajustes de figuras}
+	\item El pictograma y el pictograma en blanco tienen las mismas opciones de personalización, como se puede ver en la Figura \ref{fig:ajustespictogramaplantilla} se puede cambiar el color de borde y fondo, el texto asociado al pictograma y si se quiere o no mostrar, finalmente se encuentran las opciones de tachar, poner el tick, o dejar cono estaba originalmente.
+	\figura{Bitmap/Capitulo5/ajustespictogramaplantilla}{width=.9\textwidth}{fig:ajustespictogramaplantilla}{Vista del editor de plantillas con el menú de ajustes de pictogramas.}
+	\item En la Figura \ref{fig:ajustesareaplantilla} se pueden ver los ajustes de personalización del área, se puede cambiar el color de borde y fondo, también se puede añadir un texto en la parte superior del área, y las opciones de tachar o tick.
+	\figura{Bitmap/Capitulo5/ajustesareaplantilla}{width=.9\textwidth}{fig:ajustesareaplantilla}{Vista del editor de plantillas con el menú de ajustes de áreas.}
+	\item En la Figura \ref{fig:ajustestextoplantilla} se pueden ver los ajustes de personalización de un cuadro de texto, estas opciones son similares a las anteriores, con el añadido de poder modificar el color del texto y decidir si en los tableros se podrá editar este texto.
+	\figura{Bitmap/Capitulo5/ajustestextoplantilla}{width=.9\textwidth}{fig:ajustestextoplantilla}{Vista del editor de plantillas con el menú de ajustes de los cuadros de texto.}
+	\item En la Figura \ref{fig:ajustesfiguraplantilla} se pueden ver los ajustes de personalización de las formas geométricas, en este caso solo se puede cambiar el color de fondo y el texto asociado a las mismas.
+	\figura{Bitmap/Capitulo5/ajustesfiguraplantilla}{width=.9\textwidth}{fig:ajustesfiguraplantilla}{Vista del editor de plantillas con el menú de ajustes de figuras.}
+	
 \end{itemize}
 
 %-------------------------------------------------------------------
@@ -361,14 +362,14 @@ Esta vista en el menú de la derecha unicamente cuenta con el buscador de pictogr
 Los elementos que están en el tablero tienen unas opciones de personalización distintas a las plantillas:
 
 \begin{itemize}
-	\item En la Figura XX se pueden observar las opciones de personalización de los pictogramas, son la de tachar, poner un tick, un punto amarillo o una transparencia azul.
-	\todoImpl{Insertar imagen con los ajustes de picto en tablero}
-	\item En la Figura XX se puede observar que las opciones de personalización de un área son las mismas que los pictogramas.
-	\todoImpl{Insertar imagen con los ajustes de area en tablero}
-	\item Los cuadros de texto solo se podrán editar si al generar la plantilla se han marcado como editables, en la Figura XX se puede ver el input que permite cambiar el texto.
-	\todoImpl{Insertar imagen con los ajustes de texto en tablero}
-	\item Como se puede ver en la Figura XX de las figuras geométricas solo se puede cambiar el color.
-	\todoImpl{Insertar imagen con los ajustes de figura en tablero}
+	\item En la Figura \ref{fig:ajustespictotablero} se pueden observar las opciones de personalización de los pictogramas, son la de tachar, poner un tick, un punto amarillo o una transparencia azul.
+	\figura{Bitmap/Capitulo5/ajustespictotablero}{width=.9\textwidth}{fig:ajustespictotablero}{Vista del editor de tableros con el menú de ajustes de pictogramas.}
+	\item En la Figura \ref{fig:ajustesareatablero} se puede observar que las opciones de personalización de un área son las mismas que los pictogramas.
+	\figura{Bitmap/Capitulo5/ajustesareatablero}{width=.9\textwidth}{fig:ajustesareatablero}{Vista del editor de tableros con el menú de ajustes de areas.}
+	\item Los cuadros de texto solo se podrán editar si al generar la plantilla se han marcado como editables, en la Figura \ref{fig:ajustestextotablero} se puede ver el input que permite cambiar el texto.
+	\figura{Bitmap/Capitulo5/ajustestextotablero}{width=.9\textwidth}{fig:ajustestextotablero}{Vista del editor de tableros con el menú de ajustes de cuadros de texto.}
+	\item Como se puede ver en la Figura \ref{fig:ajustesfiguratablero} de las figuras geométricas solo se puede cambiar el color.
+	\figura{Bitmap/Capitulo5/ajustesfiguratablero}{width=.9\textwidth}{fig:ajustesfiguratablero}{Vista del editor de tableros con el menú de ajustes de las figuras geométricas.}
 	
 \end{itemize}
 
@@ -403,36 +404,31 @@ Todos los ejemplos anteriormente mencionados forman parte de la edición de plant
 
 \end{comment}
 %-------------------------------------------------------------------
-\section{Evaluación}
+d\section{Evaluación}
 %-------------------------------------------------------------------
 \label{cap5:sec:evaluacion}
 
-Gracias a la Asociación de Autismo Sevilla se han podido realizar pruebas de la aplicación con los usuarios finales, a los que se les ha pedido que realicen una evaluación después de probarla. La aplicación esta destinada padres, tutores y profesores, por tanto serán profesionales del colegio los encargados de la evaluación.
+Gracias a la Asociación de Autismo Sevilla y al Colegio Angel Riviere se han podido realizar pruebas de la aplicación con los usuarios finales. La aplicación esta destinada padres, tutores y profesores, por tanto serán profesionales del colegio los encargados de la evaluación.
 
 %-------------------------------------------------------------------
 \subsection{Diseño de la evaluación}
 %-------------------------------------------------------------------
 \label{cap5:sec:diseñoevaluacion}
 
-Se decidió realizar la evaluación en Excel, para que los evaluadores pudiesen realizar la evaluación a su propio ritmo. El documento de Excel contiene tres hojas: una hoja explicando los pasos a seguir para realizar la evaluación, otra con la imagen de las plantillas que tienen que replicar y una ultima con la evaluación que tienen que rellenar, esta última tiene que generarse para cada evaluador.
-
 El objetivo de esta evaluación es determinar la usabilidad y la utilidad de la aplicación para los usuarios finales.
 
-Los primeros datos que se recogen del usuario son su nombre y apellidos y el cargo que ocupan en el colegio, esto sirve para saber como de familiarizados están con este tipo de herramientas. También es necesario conocer los detalles sobre el dispositivo en el que se realizará la prueba para evaluar los resultados según el dispositivo.
+Se decidió realizar el cuestionario en Excel, para que los evaluadores pudiesen realizar la evaluación a su ritmo. El documento contiene tres hojas: una hoja explicando los pasos a seguir para realizar la evaluación, otra con la imagen de las plantillas que tienen que replicar y una ultima con una serie de cuestiones y datos que debían rellenar. la evaluación que tienen que rellenar, esta última tiene que generarse para cada evaluador.
 
-Después de rellenar estos datos, lo siguiente es empezar con la evaluación que consta de cuatro fases que se explicaran detalladamente a continuación.
+Los primeros que se hace es recoger del usuario su nombre y apellidos y el cargo que ocupan en el colegio (esto sirve para saber como de familiarizados están con este tipo de herramientas), los detalles sobre el dispositivo en el que se realizará la prueba (ordenador, tablet o móvil) para evaluar los resultados según el dispositivo. Después de rellenar estos datos, lo siguiente es empezar con la evaluación que consta de cuatro fases:
 
-En la primera fase se pedía a los evaluadores realizar cada una de las plantillas planteadas, de las que interesa saber cuanto tiempo habían invertido en realizar cada una, cuanto se parecía el resultado al original, cuanto les había costado realizarla y el nivel de satisfacción con el resultado. 
+\begin{itemize}
+	\item En la primera fase se pedía a los evaluadores crear la plantillas que se muestran en la Figura \ref{fig:plantillas}. Después de crear cada plantilla debían rellenar el tiempo que les había llevado crearla, nivel de parecido entre la plantilla creada y la plantilla objetivo (asignando un valor entre uno y cinco siendo uno nada parecido y cinco muy parecido), nivel de dificultad (asignando un valor entre uno y cinco siendo uno muy fácil y cinco muy difícil), nivel de satisfacción con el resultado obtenido (asignando un valor entre uno y cinco siendo uno nada satisfecho y cinco muy satisfecho) y observaciones.
+	\item En la segunda fase tenían que utilizar cada una de las plantillas realizadas anteriormente para crear un tablero. De esta fase se recogía información sobre el tiempo invertido, el nivel de dificultad y el nivel de satisfacción con el resultado. Al igual que en la fase anterior también se les daba un campo de texto libre para expresar cualquier observación que nos pudiera resultar útil.
+	\item En la tercera fase los usuarios debían explorar libremente las funcionalidades de la aplicación.
+	\item En la ultima fase se pedía a los usuarios rellenar un cuestionario para conocer la opinión de los evaluadores sobre la utilidad y la usabilidad de la aplicación. El cuestionario se divide en dos partes, la primera consta de una serie de afirmaciones que deben responder usando una escala likert de cinco puntos siendo uno la valoración mas negativa y cinco la más positiva, y la segunda que consta de una serie de preguntas con respuesta libre.
+\end{itemize}
 
-En la segunda fase tenían que utilizar cada una de las plantillas realizadas anteriormente como un tablero, de esta fase se recogía información del tiempo invertido, el nivel de dificultad y el nivel de satisfacción con el resultado.
-
-Al final de cada fila en ambas fases, siempre hay disponible un campo de observaciones en el que los evaluadores puedan comentar todo aquello que crean relevante para la evaluación.
-
-La siguiente fase se trata de una prueba libre para que los evaluadores puedan explorar libremente las funcionalidades de la aplicación, y así saber si los usuarios podrían utilizar fácilmente la aplicación sin guías y aprovechar todas las funcionalidades de la misma
-
-La ultima fase es un cuestionario para conocer la opinión de los evaluadores, el cuestionario se divide en dos partes, la primera que se evalúa según una escala likert de cinco puntos, y la segunda que es de respuesta libre. 
-
-Las siguientes cuestiones se corresponden a la primera parte del cuestionario para responder con una escala de uno a cinco:
+Las siguientes afirmaciones se corresponden con la primera parte del cuestionario:
 
 \begin{itemize}
 	\item La aplicación es fácil de utilizar.				
@@ -447,7 +443,15 @@ Las siguientes cuestiones se corresponden a la primera parte del cuestionario pa
 	\item El texto de los botones es descriptivo y me ayuda a comprender lo que hacen.				
 \end{itemize}
 
-Las cuestiones de la segunda parte son de desarrollo ya que son cuestiones mas generales sobre que funcionalidades no han utilizado, funcionalidades que sobran, y funcionalidades que faltan, ademas hay un apartado de observaciones generales por si hay algo que crean relevante y no se haya preguntado anteriormente.
+En la segunda parte del cuestionario son cuestiones mas generales y de respuesta libre:
+
+\begin{itemize}
+	\item Indica qué funcionalidades no has utilizado				
+	\item Indica qué funcionalidades crees que sobran				
+	\item Indica qué funcionalidades crees que habría que añadir						
+\end{itemize}
+
+A parte de estas cuestiones, hay un apartado de observaciones generales por si hay algo que crean relevante y no se haya preguntado anteriormente.
 
 %-------------------------------------------------------------------
 \subsection{Resultados de la evaluación}

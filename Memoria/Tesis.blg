@@ -18,7 +18,19 @@ Database file #1: nuestros.bib
 Database file #2: latex.bib
 Database file #3: otros.bib
 ptr=1, stack=
+2017
+---the literal stack isn't empty for entry ARASAAC
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
+2014
+---the literal stack isn't empty for entry sistemas-pictograficos
+while executing---line 1842 of file TeXiS/TeXiS.bst
+ptr=1, stack=
 2002
 ---the literal stack isn't empty for entry agendasvisuales
 while executing---line 1842 of file TeXiS/TeXiS.bst
-(There was 1 error message)
+ptr=1, stack=
+1995
+---the literal stack isn't empty for entry usopictogramas
+while executing---line 1842 of file TeXiS/TeXiS.bst
+(There were 4 error messages)

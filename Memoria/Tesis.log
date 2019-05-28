@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.24)  27 MAY 2019 07:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.24)  28 MAY 2019 12:13
 entering extended mode
 **./Tesis.tex
 (Tesis.tex
@@ -763,7 +763,7 @@ LaTeX Info: Redefining \% on input line 1.
 
  (Capitulos/01Capitulo1.tex
 Cap\'itulo 1.
-<Imagenes/Bitmap/Capitulo1/JUGUETES.jpg, id=419, 560.0925pt x 368.87813pt>
+<Imagenes/Bitmap/Capitulo1/JUGUETES.jpg, id=442, 560.0925pt x 368.87813pt>
 File: Imagenes/Bitmap/Capitulo1/JUGUETES.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/Capitulo1/JUGUETES.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo1/JUGUETES.jpg  used on input 
@@ -823,14 +823,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--30
 php ? option = com _ content & view =
  []
 
-<Imagenes/Bitmap/Capitulo3/cepillodientes.png, id=471, 150.5625pt x 150.5625pt>
+<Imagenes/Bitmap/Capitulo3/cepillodientes.png, id=494, 150.5625pt x 150.5625pt>
 
 File: Imagenes/Bitmap/Capitulo3/cepillodientes.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/cepillodientes.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/cepillodientes.png  used on 
 input line 40.
 (pdftex.def)             Requested size: 125.46921pt x 125.47455pt.
-<Imagenes/Bitmap/Capitulo3/lavardientes.png, id=472, 150.5625pt x 150.5625pt>
+<Imagenes/Bitmap/Capitulo3/lavardientes.png, id=495, 150.5625pt x 150.5625pt>
 File: Imagenes/Bitmap/Capitulo3/lavardientes.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/lavardientes.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/lavardientes.png  used on in
@@ -842,7 +842,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Imagenes/Bitmap/Capitulo3/avion.png, id=474, 150.5625pt x 150.5625pt>
+<Imagenes/Bitmap/Capitulo3/avion.png, id=497, 150.5625pt x 150.5625pt>
 File: Imagenes/Bitmap/Capitulo3/avion.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/avion.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/avion.png  used on input lin
@@ -858,7 +858,7 @@ LaTeX Info: Redefining \. on input line 60.
 LaTeX Info: Redefining \% on input line 60.
 [9 <./Imagenes/Bitmap/Capitulo3/cepillodientes.png> <./Imagenes/Bitmap/Capitulo
 3/lavardientes.png>]
-<Imagenes/Bitmap/Capitulo3/SPCcolores.png, id=496, 307.1475pt x 291.0875pt>
+<Imagenes/Bitmap/Capitulo3/SPCcolores.png, id=519, 307.1475pt x 291.0875pt>
 File: Imagenes/Bitmap/Capitulo3/SPCcolores.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/SPCcolores.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/SPCcolores.png  used on inpu
@@ -871,7 +871,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Info: Redefining \. on input line 73.
 LaTeX Info: Redefining \% on input line 73.
 [10 <./Imagenes/Bitmap/Capitulo3/avion.png>]
-<Imagenes/Bitmap/Capitulo3/bliss.png, id=511, 263.48438pt x 132.495pt>
+<Imagenes/Bitmap/Capitulo3/bliss.png, id=534, 263.48438pt x 132.495pt>
 File: Imagenes/Bitmap/Capitulo3/bliss.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/bliss.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/bliss.png  used on input lin
@@ -881,7 +881,7 @@ e 74.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Imagenes/Bitmap/Capitulo3/sclera.png, id=514, 338.76563pt x 132.495pt>
+<Imagenes/Bitmap/Capitulo3/sclera.png, id=537, 338.76563pt x 132.495pt>
 File: Imagenes/Bitmap/Capitulo3/sclera.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/sclera.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/sclera.png  used on input li
@@ -893,7 +893,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Info: Redefining \. on input line 86.
 LaTeX Info: Redefining \% on input line 86.
 [11 <./Imagenes/Bitmap/Capitulo3/SPCcolores.png>]
-<Imagenes/Bitmap/Capitulo3/mulberry.png, id=526, 376.40625pt x 51.19125pt>
+<Imagenes/Bitmap/Capitulo3/mulberry.png, id=549, 376.40625pt x 51.19125pt>
 File: Imagenes/Bitmap/Capitulo3/mulberry.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/mulberry.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/mulberry.png  used on input 
@@ -907,7 +907,7 @@ LaTeX Info: Redefining \. on input line 95.
 LaTeX Info: Redefining \% on input line 95.
 [12 <./Imagenes/Bitmap/Capitulo3/bliss.png> <./Imagenes/Bitmap/Capitulo3/sclera
 .png>]
-<Imagenes/Bitmap/Capitulo3/distintoHola.png, id=540, 361.35pt x 120.45pt>
+<Imagenes/Bitmap/Capitulo3/distintoHola.png, id=563, 361.35pt x 120.45pt>
 File: Imagenes/Bitmap/Capitulo3/distintoHola.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/distintoHola.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/distintoHola.png  used on in
@@ -917,19 +917,19 @@ LaTeX Info: Redefining \. on input line 106.
 LaTeX Info: Redefining \% on input line 106.
  [13 <./Imagenes/Bitmap/Capitulo3/mulberry.png> <./Imagenes/Bitmap/Capitulo3/di
 stintoHola.png>]
-<Imagenes/Bitmap/Capitulo3/nina.png, id=552, 481.8pt x 225.84375pt>
+<Imagenes/Bitmap/Capitulo3/nina.png, id=575, 481.8pt x 225.84375pt>
 File: Imagenes/Bitmap/Capitulo3/nina.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/nina.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/nina.png  used on input line
  107.
 (pdftex.def)             Requested size: 323.9978pt x 151.87622pt.
-<Imagenes/Bitmap/Capitulo3/nino.png, id=553, 489.32813pt x 225.84375pt>
+<Imagenes/Bitmap/Capitulo3/nino.png, id=576, 489.32813pt x 225.84375pt>
 File: Imagenes/Bitmap/Capitulo3/nino.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/nino.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/nino.png  used on input line
  108.
 (pdftex.def)             Requested size: 323.9978pt x 149.53978pt.
-<Imagenes/Bitmap/Capitulo3/preposiciones.png, id=555, 326.72063pt x 168.63pt>
+<Imagenes/Bitmap/Capitulo3/preposiciones.png, id=578, 326.72063pt x 168.63pt>
 File: Imagenes/Bitmap/Capitulo3/preposiciones.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/preposiciones.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/preposiciones.png  used on i
@@ -946,7 +946,7 @@ LaTeX Info: Redefining \. on input line 123.
 LaTeX Info: Redefining \% on input line 123.
  [14 <./Imagenes/Bitmap/Capitulo3/nina.png> <./Imagenes/Bitmap/Capitulo3/nino.p
 ng>]
-<Imagenes/Bitmap/Capitulo3/horario.png, id=566, 793.46437pt x 439.6425pt>
+<Imagenes/Bitmap/Capitulo3/horario.png, id=589, 793.46437pt x 439.6425pt>
 File: Imagenes/Bitmap/Capitulo3/horario.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/horario.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/horario.png  used on input l
@@ -956,7 +956,7 @@ ine 130.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Imagenes/Bitmap/Capitulo3/secuencias.png, id=568, 453.94594pt x 251.43938pt>
+<Imagenes/Bitmap/Capitulo3/secuencias.png, id=591, 453.94594pt x 251.43938pt>
 File: Imagenes/Bitmap/Capitulo3/secuencias.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/secuencias.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/secuencias.png  used on inpu
@@ -965,7 +965,7 @@ t line 132.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Imagenes/Bitmap/Capitulo3/normas.png, id=570, 472.01344pt x 360.59718pt>
+<Imagenes/Bitmap/Capitulo3/normas.png, id=593, 472.01344pt x 360.59718pt>
 File: Imagenes/Bitmap/Capitulo3/normas.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/normas.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/normas.png  used on input li
@@ -980,7 +980,7 @@ Underfull \vbox (badness 3758) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 143.
 LaTeX Info: Redefining \% on input line 143.
  [15 <./Imagenes/Bitmap/Capitulo3/preposiciones.png>]
-<Imagenes/Bitmap/Capitulo3/seleccionpictoselector.png, id=581, 335.75438pt x 27
+<Imagenes/Bitmap/Capitulo3/seleccionpictoselector.png, id=604, 335.75438pt x 27
 8.54062pt>
 File: Imagenes/Bitmap/Capitulo3/seleccionpictoselector.png Graphic file (type p
 ng)
@@ -995,7 +995,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Info: Redefining \. on input line 154.
 LaTeX Info: Redefining \% on input line 154.
 [16 <./Imagenes/Bitmap/Capitulo3/horario.png>]
-<Imagenes/Bitmap/Capitulo3/seleccionformato.png, id=589, 810.02625pt x 459.2156
+<Imagenes/Bitmap/Capitulo3/seleccionformato.png, id=612, 810.02625pt x 459.2156
 2pt>
 File: Imagenes/Bitmap/Capitulo3/seleccionformato.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/seleccionformato.png>
@@ -1006,7 +1006,7 @@ n input line 155.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Imagenes/Bitmap/Capitulo3/picto-selector.png, id=591, 977.6525pt x 688.5725pt>
+<Imagenes/Bitmap/Capitulo3/picto-selector.png, id=614, 977.6525pt x 688.5725pt>
 
 File: Imagenes/Bitmap/Capitulo3/picto-selector.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/picto-selector.png>
@@ -1019,7 +1019,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Info: Redefining \. on input line 171.
 LaTeX Info: Redefining \% on input line 171.
 [17 <./Imagenes/Bitmap/Capitulo3/secuencias.png>]
-<Imagenes/Bitmap/Capitulo3/tablero.png, id=601, 956.07187pt x 449.42906pt>
+<Imagenes/Bitmap/Capitulo3/tablero.png, id=624, 956.07187pt x 449.42906pt>
 File: Imagenes/Bitmap/Capitulo3/tablero.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/tablero.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/tablero.png  used on input l
@@ -1029,7 +1029,7 @@ ine 175.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Imagenes/Bitmap/Capitulo3/calendario.png, id=603, 944.7797pt x 448.67625pt>
+<Imagenes/Bitmap/Capitulo3/calendario.png, id=626, 944.7797pt x 448.67625pt>
 File: Imagenes/Bitmap/Capitulo3/calendario.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/calendario.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/calendario.png  used on inpu
@@ -1038,7 +1038,7 @@ t line 177.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Imagenes/Bitmap/Capitulo3/horarioarasaac.png, id=605, 952.30782pt x 441.90094p
+<Imagenes/Bitmap/Capitulo3/horarioarasaac.png, id=628, 952.30782pt x 441.90094p
 t>
 File: Imagenes/Bitmap/Capitulo3/horarioarasaac.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/horarioarasaac.png>
@@ -1051,7 +1051,7 @@ LaTeX Info: Redefining \% on input line 180.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Imagenes/Bitmap/Capitulo3/configceldas.png, id=612, 667.74469pt x 118.94438pt>
+<Imagenes/Bitmap/Capitulo3/configceldas.png, id=635, 667.74469pt x 118.94438pt>
 
 File: Imagenes/Bitmap/Capitulo3/configceldas.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/configceldas.png>
@@ -1067,7 +1067,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Info: Redefining \. on input line 194.
 LaTeX Info: Redefining \% on input line 194.
  [19 <./Imagenes/Bitmap/Capitulo3/seleccionpictoselector.png>]
-<Imagenes/Bitmap/Capitulo3/piktoplus.jpg, id=622, 1013.28563pt x 630.85687pt>
+<Imagenes/Bitmap/Capitulo3/piktoplus.jpg, id=645, 1013.28563pt x 630.85687pt>
 File: Imagenes/Bitmap/Capitulo3/piktoplus.jpg Graphic file (type jpg)
 <use Imagenes/Bitmap/Capitulo3/piktoplus.jpg>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/piktoplus.jpg  used on input
@@ -1080,7 +1080,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Info: Redefining \. on input line 206.
 LaTeX Info: Redefining \% on input line 206.
 [20 <./Imagenes/Bitmap/Capitulo3/seleccionformato.png>]
-<Imagenes/Bitmap/Capitulo3/boardmaker.png, id=633, 832.61063pt x 641.39626pt>
+<Imagenes/Bitmap/Capitulo3/boardmaker.png, id=656, 832.61063pt x 641.39626pt>
 File: Imagenes/Bitmap/Capitulo3/boardmaker.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/boardmaker.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/boardmaker.png  used on inpu
@@ -1093,7 +1093,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Info: Redefining \. on input line 218.
 LaTeX Info: Redefining \% on input line 218.
 [21 <./Imagenes/Bitmap/Capitulo3/picto-selector.png>]
-<Imagenes/Bitmap/Capitulo3/pictar.png, id=648, 1416.79312pt x 543.53062pt>
+<Imagenes/Bitmap/Capitulo3/pictar.png, id=671, 1416.79312pt x 543.53062pt>
 File: Imagenes/Bitmap/Capitulo3/pictar.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo3/pictar.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo3/pictar.png  used on input li
@@ -1103,12 +1103,12 @@ ne 219.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Info: Redefining \. on input line 228.
-LaTeX Info: Redefining \% on input line 228.
+LaTeX Info: Redefining \. on input line 229.
+LaTeX Info: Redefining \% on input line 229.
 [22 <./Imagenes/Bitmap/Capitulo3/tablero.png> <./Imagenes/Bitmap/Capitulo3/cale
 ndario.png>]
-LaTeX Info: Redefining \. on input line 236.
-LaTeX Info: Redefining \% on input line 236.
+LaTeX Info: Redefining \. on input line 237.
+LaTeX Info: Redefining \% on input line 237.
  [23 <./Imagenes/Bitmap/Capitulo3/horarioarasaac.png> <./Imagenes/Bitmap/Capitu
 lo3/configceldas.png>])
 LaTeX Info: Redefining \. on input line 176.
@@ -1133,7 +1133,7 @@ LaTeX Info: Redefining \% on input line 50.
 LaTeX Info: Redefining \. on input line 71.
 LaTeX Info: Redefining \% on input line 71.
  [29]
-<Imagenes/Bitmap/Capitulo4/firebase.png, id=715, 963.6pt x 413.29407pt>
+<Imagenes/Bitmap/Capitulo4/firebase.png, id=738, 963.6pt x 413.29407pt>
 File: Imagenes/Bitmap/Capitulo4/firebase.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo4/firebase.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo4/firebase.png  used on input 
@@ -1159,7 +1159,7 @@ LaTeX Info: Redefining \% on input line 177.
 ]
 Cap\'itulo 5.
 [33]
-<Imagenes/Bitmap/Capitulo5/plantillatablero.png, id=743, 2006.99812pt x 636.879
+<Imagenes/Bitmap/Capitulo5/plantillatablero.png, id=766, 2006.99812pt x 636.879
 38pt>
 File: Imagenes/Bitmap/Capitulo5/plantillatablero.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/plantillatablero.png>
@@ -1175,7 +1175,7 @@ a-ble-ros co-mo deseen.
 LaTeX Info: Redefining \. on input line 36.
 LaTeX Info: Redefining \% on input line 36.
 [34 <./Imagenes/Bitmap/Capitulo5/plantillatablero.png>]
-<Imagenes/Bitmap/Capitulo5/plantillas.png, id=750, 669.2503pt x 476.53032pt>
+<Imagenes/Bitmap/Capitulo5/plantillas.png, id=773, 669.2503pt x 476.53032pt>
 File: Imagenes/Bitmap/Capitulo5/plantillas.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/plantillas.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/plantillas.png  used on inpu
@@ -1196,7 +1196,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--70
 s / blob / master / Prototipos /
  []
 
-<Imagenes/Bitmap/Capitulo5/listados.png, id=762, 506.8536pt x 305.4612pt>
+<Imagenes/Bitmap/Capitulo5/listados.png, id=785, 506.8536pt x 305.4612pt>
 File: Imagenes/Bitmap/Capitulo5/listados.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/listados.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/listados.png  used on input 
@@ -1205,7 +1205,7 @@ line 72.
 LaTeX Info: Redefining \. on input line 78.
 LaTeX Info: Redefining \% on input line 78.
 [37 <./Imagenes/Bitmap/Capitulo5/listados.png>]
-<Imagenes/Bitmap/Capitulo5/plantilla.png, id=771, 473.1276pt x 342.078pt>
+<Imagenes/Bitmap/Capitulo5/plantilla.png, id=794, 473.1276pt x 342.078pt>
 File: Imagenes/Bitmap/Capitulo5/plantilla.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/plantilla.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/plantilla.png  used on input
@@ -1218,7 +1218,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Info: Redefining \. on input line 107.
 LaTeX Info: Redefining \% on input line 107.
 [38]
-<Imagenes/Bitmap/Capitulo5/ajustesbien.png, id=778, 279.9258pt x 337.7418pt>
+<Imagenes/Bitmap/Capitulo5/ajustesbien.png, id=801, 279.9258pt x 337.7418pt>
 File: Imagenes/Bitmap/Capitulo5/ajustesbien.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/ajustesbien.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/ajustesbien.png  used on inp
@@ -1244,7 +1244,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 148.
-<Imagenes/Bitmap/Capitulo5/plantillaflecha.png, id=795, 404.26031pt x 192.72pt>
+<Imagenes/Bitmap/Capitulo5/plantillaflecha.png, id=818, 404.26031pt x 192.72pt>
 
 File: Imagenes/Bitmap/Capitulo5/plantillaflecha.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/plantillaflecha.png>
@@ -1274,7 +1274,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 213--213
 []|\T1/cmr/m/n/10.95 Tapar pic-to-gra-ma(transparencia
  []
 
-<Imagenes/Bitmap/Capitulo5/editorplantillas.png, id=807, 1430.34375pt x 703.126
+<Imagenes/Bitmap/Capitulo5/editorplantillas.png, id=830, 1430.34375pt x 703.126
 88pt>
 File: Imagenes/Bitmap/Capitulo5/editorplantillas.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/editorplantillas.png>
@@ -1293,7 +1293,7 @@ LaTeX Info: Redefining \% on input line 232.
 LaTeX Info: Redefining \. on input line 245.
 LaTeX Info: Redefining \% on input line 245.
  [45 <./Imagenes/Bitmap/Capitulo5/editorplantillas.png>]
-<Imagenes/Bitmap/Capitulo5/listaplantillasprivadas.png, id=827, 1431.84938pt x 
+<Imagenes/Bitmap/Capitulo5/listaplantillasprivadas.png, id=850, 1431.84938pt x 
 676.77844pt>
 File: Imagenes/Bitmap/Capitulo5/listaplantillasprivadas.png Graphic file (type 
 png)
@@ -1304,14 +1304,14 @@ Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/listaplantillasprivadas.png
 LaTeX Info: Redefining \. on input line 257.
 LaTeX Info: Redefining \% on input line 257.
  [46 <./Imagenes/Bitmap/Capitulo5/listaplantillasprivadas.png>]
-<Imagenes/Bitmap/Capitulo5/plantillaspublicas.png, id=836, 1432.60219pt x 697.1
+<Imagenes/Bitmap/Capitulo5/plantillaspublicas.png, id=859, 1432.60219pt x 697.1
 0437pt>
 File: Imagenes/Bitmap/Capitulo5/plantillaspublicas.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/plantillaspublicas.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/plantillaspublicas.png  used
  on input line 267.
 (pdftex.def)             Requested size: 323.9978pt x 157.65012pt.
-<Imagenes/Bitmap/Capitulo5/tablerosprivados.png, id=837, 1431.84938pt x 703.879
+<Imagenes/Bitmap/Capitulo5/tablerosprivados.png, id=860, 1431.84938pt x 703.879
 68pt>
 File: Imagenes/Bitmap/Capitulo5/tablerosprivados.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/tablerosprivados.png>
@@ -1321,44 +1321,54 @@ n input line 278.
 LaTeX Info: Redefining \. on input line 278.
 LaTeX Info: Redefining \% on input line 278.
  [47 <./Imagenes/Bitmap/Capitulo5/plantillaspublicas.png>]
-<Imagenes/Bitmap/Capitulo5/vistaver.png, id=843, 1443.89438pt x 705.38531pt>
+<Imagenes/Bitmap/Capitulo5/tablerospublicos.png, id=867, 1428.83812pt x 676.778
+44pt>
+File: Imagenes/Bitmap/Capitulo5/tablerospublicos.png Graphic file (type png)
+<use Imagenes/Bitmap/Capitulo5/tablerospublicos.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/tablerospublicos.png  used o
+n input line 290.
+(pdftex.def)             Requested size: 323.9978pt x 153.45616pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Imagenes/Bitmap/Capitulo5/vistaver.png, id=868, 1443.89438pt x 705.38531pt>
 File: Imagenes/Bitmap/Capitulo5/vistaver.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/vistaver.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/vistaver.png  used on input 
 line 299.
 (pdftex.def)             Requested size: 323.9978pt x 158.2743pt.
 
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Info: Redefining \. on input line 302.
 LaTeX Info: Redefining \% on input line 302.
 [48 <./Imagenes/Bitmap/Capitulo5/tablerosprivados.png>]
-<Imagenes/Bitmap/Capitulo5/plantillaFirebase.png, id=850, 462.97969pt x 191.967
+LaTeX Info: Redefining \. on input line 308.
+LaTeX Info: Redefining \% on input line 308.
+ [49 <./Imagenes/Bitmap/Capitulo5/tablerospublicos.png> <./Imagenes/Bitmap/Capi
+tulo5/vistaver.png>]
+<Imagenes/Bitmap/Capitulo5/plantillaFirebase.png, id=881, 462.97969pt x 191.967
 2pt>
 File: Imagenes/Bitmap/Capitulo5/plantillaFirebase.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/plantillaFirebase.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/plantillaFirebase.png  used 
 on input line 314.
 (pdftex.def)             Requested size: 323.9978pt x 134.34096pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Info: Redefining \. on input line 319.
-LaTeX Info: Redefining \% on input line 319.
-[49 <./Imagenes/Bitmap/Capitulo5/vistaver.png>]
-<Imagenes/Bitmap/Capitulo5/editor.png, id=857, 1443.89438pt x 703.87968pt>
+<Imagenes/Bitmap/Capitulo5/editor.png, id=883, 1443.89438pt x 703.87968pt>
 File: Imagenes/Bitmap/Capitulo5/editor.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/editor.png>
 Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/editor.png  used on input li
 ne 325.
 (pdftex.def)             Requested size: 323.9978pt x 157.93648pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 LaTeX Info: Redefining \. on input line 328.
 LaTeX Info: Redefining \% on input line 328.
- [50 <./Imagenes/Bitmap/Capitulo5/plantillaFirebase.png> <./Imagenes/Bitmap/Cap
-itulo5/editor.png>]
-<Imagenes/Bitmap/Capitulo5/busquedaagua.png, id=865, 1431.84938pt x 709.14937pt
+[50 <./Imagenes/Bitmap/Capitulo5/plantillaFirebase.png>]
+<Imagenes/Bitmap/Capitulo5/busquedaagua.png, id=890, 1431.84938pt x 709.14937pt
 >
 File: Imagenes/Bitmap/Capitulo5/busquedaagua.png Graphic file (type png)
 <use Imagenes/Bitmap/Capitulo5/busquedaagua.png>
@@ -1370,78 +1380,173 @@ put line 335.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1436) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 340.
-LaTeX Info: Redefining \% on input line 340.
- [51]
-LaTeX Info: Redefining \. on input line 358.
-LaTeX Info: Redefining \% on input line 358.
+LaTeX Info: Redefining \. on input line 338.
+LaTeX Info: Redefining \% on input line 338.
+ [51 <./Imagenes/Bitmap/Capitulo5/editor.png>]
+<Imagenes/Bitmap/Capitulo5/ajustespictogramaplantilla.png, id=900, 1013.28563pt
+ x 467.49657pt>
+File: Imagenes/Bitmap/Capitulo5/ajustespictogramaplantilla.png Graphic file (ty
+pe png)
+<use Imagenes/Bitmap/Capitulo5/ajustespictogramaplantilla.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/ajustespictogramaplantilla.p
+ng  used on input line 343.
+(pdftex.def)             Requested size: 323.9978pt x 149.48068pt.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Imagenes/Bitmap/Capitulo5/ajustesareaplantilla.png, id=902, 1023.07219pt x 465
+.99094pt>
+File: Imagenes/Bitmap/Capitulo5/ajustesareaplantilla.png Graphic file (type png
+)
+<use Imagenes/Bitmap/Capitulo5/ajustesareaplantilla.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/ajustesareaplantilla.png  us
+ed on input line 345.
+(pdftex.def)             Requested size: 323.9978pt x 147.57007pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Imagenes/Bitmap/Capitulo5/ajustestextoplantilla.png, id=904, 1008.76875pt x 46
+9.755pt>
+File: Imagenes/Bitmap/Capitulo5/ajustestextoplantilla.png Graphic file (type pn
+g)
+<use Imagenes/Bitmap/Capitulo5/ajustestextoplantilla.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/ajustestextoplantilla.png  u
+sed on input line 347.
+(pdftex.def)             Requested size: 323.9978pt x 150.8766pt.
+LaTeX Info: Redefining \. on input line 348.
+LaTeX Info: Redefining \% on input line 348.
 [52 <./Imagenes/Bitmap/Capitulo5/busquedaagua.png>]
-LaTeX Info: Redefining \. on input line 418.
-LaTeX Info: Redefining \% on input line 418.
- [53]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 439.
-LaTeX Info: Redefining \% on input line 439.
- [54])
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Imagenes/Bitmap/Capitulo5/ajustesfiguraplantilla.png, id=911, 1016.29688pt x 4
+67.49657pt>
+File: Imagenes/Bitmap/Capitulo5/ajustesfiguraplantilla.png Graphic file (type p
+ng)
+<use Imagenes/Bitmap/Capitulo5/ajustesfiguraplantilla.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/ajustesfiguraplantilla.png  
+used on input line 349.
+(pdftex.def)             Requested size: 323.9978pt x 149.0384pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 359.
+LaTeX Info: Redefining \% on input line 359.
+[53 <./Imagenes/Bitmap/Capitulo5/ajustespictogramaplantilla.png> <./Imagenes/Bi
+tmap/Capitulo5/ajustesareaplantilla.png>]
+<Imagenes/Bitmap/Capitulo5/ajustespictotablero.png, id=919, 1437.11906pt x 700.
+86844pt>
+File: Imagenes/Bitmap/Capitulo5/ajustespictotablero.png Graphic file (type png)
+
+<use Imagenes/Bitmap/Capitulo5/ajustespictotablero.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/ajustespictotablero.png  use
+d on input line 366.
+(pdftex.def)             Requested size: 323.9978pt x 158.00941pt.
+LaTeX Info: Redefining \. on input line 367.
+LaTeX Info: Redefining \% on input line 367.
+ [54 <./Imagenes/Bitmap/Capitulo5/ajustestextoplantilla.png> <./Imagenes/Bitmap
+/Capitulo5/ajustesfiguraplantilla.png>]
+<Imagenes/Bitmap/Capitulo5/ajustesareatablero.png, id=927, 1433.355pt x 700.115
+63pt>
+File: Imagenes/Bitmap/Capitulo5/ajustesareatablero.png Graphic file (type png)
+<use Imagenes/Bitmap/Capitulo5/ajustesareatablero.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/ajustesareatablero.png  used
+ on input line 368.
+(pdftex.def)             Requested size: 323.9978pt x 158.24565pt.
+<Imagenes/Bitmap/Capitulo5/ajustestextotablero.png, id=929, 1443.14156pt x 704.
+6325pt>
+File: Imagenes/Bitmap/Capitulo5/ajustestextotablero.png Graphic file (type png)
+
+<use Imagenes/Bitmap/Capitulo5/ajustestextotablero.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/ajustestextotablero.png  use
+d on input line 370.
+(pdftex.def)             Requested size: 323.9978pt x 158.1914pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<Imagenes/Bitmap/Capitulo5/ajustesfiguratablero.png, id=931, 1425.82687pt x 700
+.86844pt>
+File: Imagenes/Bitmap/Capitulo5/ajustesfiguratablero.png Graphic file (type png
+)
+<use Imagenes/Bitmap/Capitulo5/ajustesfiguratablero.png>
+Package pdftex.def Info: Imagenes/Bitmap/Capitulo5/ajustesfiguratablero.png  us
+ed on input line 372.
+(pdftex.def)             Requested size: 323.9978pt x 159.26067pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Info: Redefining \. on input line 407.
+LaTeX Info: Redefining \% on input line 407.
+[55 <./Imagenes/Bitmap/Capitulo5/ajustespictotablero.png> <./Imagenes/Bitmap/Ca
+pitulo5/ajustesareatablero.png>]
+LaTeX Info: Redefining \. on input line 423.
+LaTeX Info: Redefining \% on input line 423.
+ [56 <./Imagenes/Bitmap/Capitulo5/ajustestextotablero.png>]
+LaTeX Info: Redefining \. on input line 429.
+LaTeX Info: Redefining \% on input line 429.
+ [57 <./Imagenes/Bitmap/Capitulo5/ajustesfiguratablero.png>])
 LaTeX Info: Redefining \. on input line 180.
 LaTeX Info: Redefining \% on input line 180.
 
-[55]
+[58]
 \openout2 = `Capitulos/06Capitulo6.aux'.
 
- (Capitulos/06Capitulo6.tex [56
+ (Capitulos/06Capitulo6.tex
+Cap\'itulo 6.
+[59
 
 
 
 ]
-Cap\'itulo 6.
-[57])
+LaTeX Info: Redefining \. on input line 48.
+LaTeX Info: Redefining \% on input line 48.
+ [60])
 LaTeX Info: Redefining \. on input line 181.
 LaTeX Info: Redefining \% on input line 181.
- [58]
+ [61]
 \openout2 = `Capitulos/07Capitulo7.aux'.
 
- (Capitulos/07Capitulo7.tex
+ (Capitulos/07Capitulo7.tex [62
+
+
+
+]
 Cap\'itulo 7.
-) [59
-
-
-
-] [60
+) [63] [64
 
 
 ]
 \openout2 = `Cascaras/bibliografia.aux'.
 
  (Cascaras/bibliografia.tex (Tesis.bbl
-Underfull \hbox (badness 2165) in paragraph at lines 50--56
+Underfull \hbox (badness 4229) in paragraph at lines 46--50
 []\T1/cmr/m/sc/10.95 Ventoso, M. R.  \T1/cmr/m/n/10.95 Pic-to-gra-mas: Una al-t
-er-na-ti-va pa-ra com-pren-der
+er-na-ti-va pa-ra com-pren-
  []
 
 
-Underfull \hbox (badness 2318) in paragraph at lines 50--56
-\T1/cmr/m/n/10.95 el mun-do.  2017.  Dis-po-ni-ble en []$\T1/cmtt/m/n/10.95 htt
-p : / / aetapi . org / download /
+Underfull \hbox (badness 10000) in paragraph at lines 46--50
+\T1/cmr/m/n/10.95 der el mun-do.  Dis-po-ni-ble en []$\T1/cmtt/m/n/10.95 http :
+ / / aetapi . org / download /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--56
+Underfull \hbox (badness 10000) in paragraph at lines 46--50
 \T1/cmtt/m/n/10.95 pictogramas-[]una-[]alternativa-[]para-[]comprender-[]el-[]m
 undo / ?wpdmdl =
  []
 
-)) [61
+)) [65
 
 
 ]
 \openout2 = `Cascaras/fin.aux'.
 
- (Cascaras/fin.tex [62
+ (Cascaras/fin.tex [66
 
 
 ])
@@ -1459,7 +1564,7 @@ LaTeX Info: Redefining \% on input line 25.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 243.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 243.
 Package rerunfilecheck Info: File `Tesis.out' has not changed.
-(rerunfilecheck)             Checksum: E80D017947EA44B8EA8A4D8C4A243843;3165.
+(rerunfilecheck)             Checksum: 935666F6A59F66D74B4E36352F3D6D36;3165.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1467,10 +1572,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 243.
  ) 
 Here is how much of TeX's memory you used:
- 12125 strings out of 492970
- 188644 string characters out of 3126149
- 305487 words of memory out of 3000000
- 15197 multiletter control sequences out of 15000+200000
+ 12199 strings out of 492970
+ 191347 string characters out of 3126149
+ 306458 words of memory out of 3000000
+ 15249 multiletter control sequences out of 15000+200000
  23595 words of font info for 49 fonts, out of 3000000 for 9000
  1379 hyphenation exceptions out of 8191
  55i,12n,53p,1183b,673s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1485,8 +1590,8 @@ Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecxc1000.pk>
  <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
 cbx1095.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
 ec\dpi600\ecbx1440.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fon
-ts\pk\ljfour\jknappen\ec\dpi600\eccc1095.pk> <C:\Users\Carmen\AppData\Local\MiK
+r\jknappen\ec\dpi600\eccc1095.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C:\Users\Carmen\AppData\Local\MiK
 TeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <C:\Users\Carmen\AppDat
 a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Ca
 rmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm2488.pk> <
@@ -1496,9 +1601,9 @@ c1000.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
 jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\Carmen\AppData\Local\MiKTeX\2.9\fonts
 \pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk><C:/Users/Carmen/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Tesis.pdf (78 pages, 8647270 bytes).
+Output written on Tesis.pdf (82 pages, 8928639 bytes).
 PDF statistics:
- 1654 PDF objects out of 1728 (max. 8388607)
- 210 named destinations out of 1000 (max. 500000)
- 590 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1731 PDF objects out of 2073 (max. 8388607)
+ 223 named destinations out of 1000 (max. 500000)
+ 635 words of extra memory for PDF output out of 10000 (max. 10000000)
 
