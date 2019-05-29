@@ -10,7 +10,7 @@
 \chapter{PicTableros}
 
 \begin{resumen}
-	En este capítulo se explica el proceso de desarrollo de la aplicación PicTableros, una aplicación web para la creación de plantillas y tableros de comunicación con pictogramas. En este capítulo se explicarán cada una de las fases del desarrollo: en la Sección \ref{cap5:sec:analisis} se explica en detalle como se desarrolló la fase de requisitos, en la  Sección \ref{cap5:sec:diseno} se explica cómo se llevo a cabo el diseño de la interfaz y en la Sección \ref{cap5:sec:implementacion} se explica como se implementó la aplicación. Por ultimo, en la Sección \ref{cap5:sec:evaluacion} se explica la fase de evaluación con usuarios finales.
+	En este capítulo se explica el proceso de desarrollo de la aplicación PicTableros, una aplicación web para la creación de plantillas y tableros de comunicación con pictogramas. En este capítulo se explicarán cada una de las fases del desarrollo: en la Sección \ref{cap5:sec:analisis} se explica en detalle cómo se desarrolló la fase de requisitos, en la  Sección \ref{cap5:sec:diseno} se explica cómo se llevo a cabo el diseño de la interfaz y en la Sección \ref{cap5:sec:implementacion} se explica cómo se implementó la aplicación. Por ultimo, en la Sección \ref{cap5:sec:evaluacion} se explica la fase de evaluación con usuarios finales.
 \end{resumen}
 
 %-------------------------------------------------------------------
@@ -18,11 +18,11 @@
 %-------------------------------------------------------------------
 \label{cap5:sec:analisis}
 
-En este proyecto se ha dado mucha importancia al usuario final de la aplicación, con la intención de desarrollar una herramienta que cubra de verdad sus necesidades, los usuarios finales en este proyecto son los padres, profesores o tutores de las personas con discapacidad cognitiva, pues son ellos los encargados de realizar los tableros de comunicación. Por ello, durante todo el proceso se ha trabajado con la Asociación de Autismo Sevilla y con el Colegio Ángel Riviere de Sevilla.
+En este proyecto se ha dado mucha importancia al usuario final de la aplicación, con la intención de desarrollar una herramienta que cubra de verdad sus necesidades. Los usuarios finales en este proyecto son los padres, profesores o tutores de las personas con discapacidad cognitiva, pues son ellos los encargados de realizar los tableros de comunicación. Por ello, durante todo el proceso se ha trabajado con la Asociación de Autismo Sevilla y con el Colegio Ángel Riviere de Sevilla.
 
-Como ya se ha explicado anteriormente, para facilitar la comunicación con personas con discapacidad cognitiva se suelen emplear siempre las mismas plantillas, así los receptores del mensaje sabrán identificar rápidamente el objetivo del tablero: secuencia de acciones, agenda, normas, \ldots A pesar de que ya existen herramientas digitales para la creación de tableros de comunicación con pictogramas, los usuarios aun no han encontrado una que cubra todas sus necesidades. Esto motivó el desarrollo de una herramienta que permita a los usuarios diseñar sus plantillas y tableros de una manera mas sencilla y rápida. Entendiendo como una plantilla el material que sirve de base para después generar distintos tableros de comunicación.
+Como ya se ha explicado anteriormente, para facilitar la comunicación con personas con discapacidad cognitiva se suelen emplear siempre las mismas plantillas y así los receptores del mensaje sabrán identificar rápidamente el objetivo del tablero: secuencia de acciones, agenda, normas, \ldots A pesar de que ya existen herramientas digitales para la creación de tableros de comunicación con pictogramas, los usuarios aún no han encontrado una que cubra todas sus necesidades. Esto motivó el desarrollo de una herramienta que permita a los usuarios diseñar sus plantillas y tableros de una manera más sencilla y rápida, entendiendo como una plantilla el material que sirve de base para después generar distintos tableros de comunicación.
 
-En una reunión que tuvo lugar el 22 de Febrero de 2017 durante la Jornada de Trabajo en Aulas TIC, desde la Asociación de Autismo Sevilla nos transmitieron la necesidad de una aplicación que les permitiese digitalizar las plantillas que utilizan para comunicarse con sus usuarios, ya que hasta el momento es un trabajo que realizan de manera manual. Cada vez que desean hacer un tablero para una agenda, por ejemplo, tienen que dibujarlo de manera manual desde cero. Nos indicaron que les seria de gran utilidad tener una herramienta que les permitiera crear las plantillas según el tipo de tablero (agenda, normas, secuencias de acciones, \ldots) y luego usar estas plantillas para generar los tableros modificando o añadiendo solo la información propia del tablero concreto. Como por ejemplo en la Figura \ref{fig:plantillatablero} en la que se muestra a la izquierda la plantilla de elegir entre tres opciones y a la derecha se muestra el tablero para elegir tres juguetes.
+En una reunión que tuvo lugar el 22 de Febrero de 2017 durante la Jornada de Trabajo en Aulas TIC, desde la Asociación de Autismo Sevilla nos transmitieron la necesidad de una aplicación que les permitiese digitalizar las plantillas que utilizan para comunicarse con sus usuarios, ya que hasta el momento es un trabajo que realizan de manera manual. Cada vez que desean hacer un tablero para una agenda, por ejemplo, tienen que dibujarlo de manera manual desde cero. Nos indicaron que les sería de gran utilidad tener una herramienta que les permitiera crear las plantillas según el tipo de tablero (agenda, normas, secuencias de acciones, \ldots) y luego usar estas plantillas para generar los tableros modificando o añadiendo solo la información propia del tablero concreto. Como por ejemplo en la Figura \ref{fig:plantillatablero} en la que se muestra a la izquierda la plantilla de elegir entre tres opciones y a la derecha se muestra el tablero para elegir tres juguetes.
 
 \figura{Bitmap/Capitulo5/plantillatablero}{width=.9\textwidth}{fig:plantillatablero}{En la izquierda la plantilla de elegir y a la derecha el tablero de elegir juguetes.}
  
@@ -33,13 +33,13 @@ Para identificar todos los requisitos de la aplicación desde la Asociación de Au
 	\item La aplicación debe ser accesible desde cualquier dispositivo y en cualquier momento, para que los usuarios puedan acceder a su material en cualquier situación.
 	\item Los usuarios deben poder tener tantas plantillas y tableros como deseen. Además es importante que los puedan compartir entre distintos dispositivos y con distintos usuarios.
 	\item Debe haber un buscador que permita encontrar cualquier pictograma de ARASAAC.
-	\item Se deben poder arrastrar y soltar los elementos en cualquier posición de la plantilla, sin restricciones impuestas por los típicos formatos de cuadricula.
+	\item Se deben poder arrastrar y soltar los elementos en cualquier posición de la plantilla, sin restricciones impuestas por los típicos formatos de cuadrícula.
 	\item El tamaño de los elementos del tablero debe ser configurable. Tal y como se puede observar en la Figura \ref{fig:plantillas} no todos los elementos de las plantillas tienen el mismo tamaño.
-	\item Se debe permitir al usuario crear cuadros de texto, en los que poder establecer el color del texto, el borde y el fondo. Esto será necesario para crearlas plantillas de normas, sistemas de puntos \ldots
-	\item Hay que permitir al usuario crear áreas en las que poder colocar los pictogramas. Estas áreas deben ser personalizables se debe poder cambiar el color del borde y del fondo, para conseguir áreas personalizadas como las de la plantilla de Normas 1.
-	\item Los pictogramas se tienen que poder personalizar cambiando el color del borde y fondo. Además los pictogramas también se den poder tachar. Esto será necesario para crear plantillas como Normas 2. 
-	\item Se debe permitir crear pictogramas en blanco que permitan al usuario sustituirlos por el pictograma deseado cuando se cree un tablero usando esa plantilla. Tal y como ocurre con la plantilla de Elegir. En esta plantilla las opciones entre las que se puede elegir estarán en blanco y cuando el usuario cree un tablero utilizando esta plantilla podrá rellenar estas opciones con los pictogramas entre los que se puede elegir.
-	\item El usuario debe poder trabajar con figuras geométricas, así podrá crear plantillas como el Calendario Semanal en la que los días de la semana están representados por distintas formas geométricas.
+	\item Se debe permitir al usuario crear cuadros de texto, en los que poder establecer el color del texto, el borde y el fondo. Esto será necesario para crearlas plantillas de normas, sistemas de puntos, \ldots
+	\item Hay que permitir al usuario crear áreas en las que poder colocar los pictogramas. Estas áreas deben ser personalizables y se debe poder cambiar el color del borde y del fondo, para conseguir áreas personalizadas como las de la plantilla de Normas 1.
+	\item Los pictogramas se tienen que poder personalizar cambiando el color del borde y fondo. Además los pictogramas también se deben poder tachar. Esto será necesario para crear plantillas como Normas 2. 
+	\item Se debe permitir crear pictogramas en blanco que permitan al usuario sustituirlos por el pictograma deseado cuando se cree un tablero usando esa plantilla, tal y como ocurre con la plantilla de Elegir. En esta plantilla las opciones entre las que se puede elegir estarán en blanco y cuando el usuario cree un tablero utilizando esta plantilla podrá rellenar estas opciones con los pictogramas entre los que se puede elegir.
+	\item El usuario debe poder trabajar con figuras geométricas. Así podrá crear plantillas como el Calendario Semanal en la que los días de la semana están representados por distintas formas geométricas.
 \end{itemize}
 
 \figura{Bitmap/Capitulo5/plantillas}{width=.9\textwidth}{fig:plantillas}{Plantillas enviadas por la Asociación Autismo Sevilla durante la fase de captura de requisitos.}
@@ -51,30 +51,30 @@ Teniendo en cuenta los requisitos obtenidos se procedió a diseñar la primera ver
 %-------------------------------------------------------------------
 \label{cap5:sec:diseno}
 
-Para diseñar la interfaz de la aplicación, se han realizado distintas fases. En la primera fase se diseño un prototipo tecnológico para comprobar si era posible implementar las funcionalidades de la aplicación. En la segunda fase se diseñaron prototipos en papel que permitían a los usuarios interactuar con los elementos. Y por ultimo, se validaron los prototipos con los usuarios finales de la aplicación.
+Para diseñar la interfaz de la aplicación, se han realizado distintas fases. En la primera fase se diseño un prototipo tecnológico para comprobar si era posible implementar las funcionalidades de la aplicación. En la segunda fase se diseñaron prototipos en papel que permitían a los usuarios interactuar con los elementos. Y por último, se validaron los prototipos con los usuarios finales de la aplicación.
 
 \subsection{Prototipo tecnológico}
 \label{cap5:sec:prototipotec}
 
-Después de los requisitos obtenidos se decidió desarrollar este proyecto como una aplicación web, para hacerlo accesible desde cualquier dispositivo, ya sea ordenador, móvil o tablet, de esta manera el único requisito que deben cumplir los dispositivos de los usuarios es contar con conexión a internet.
+Después de los requisitos obtenidos se decidió desarrollar este proyecto como una aplicación web, para hacerlo accesible desde cualquier dispositivo, ya sea ordenador, móvil o tablet. De esta manera el único requisito que deben cumplir los dispositivos de los usuarios es contar con conexión a internet.
 
-Para cubrir otro de los requisitos se pensó como permitir a los usuarios el alto nivel de interacción que se requería, como arrastrar y soltar elementos o cambiarlos de tamaño. Por esta razón, antes de diseñar los prototipos en papel y presentárselos a los usuarios se decidió que era necesario comprobar si tecnológicamente era posible implementar estas funcionalidades en una aplicación web.
+Para cubrir otro de los requisitos se pensó cómo permitir a los usuarios el alto nivel de interacción que se requería, como arrastrar y soltar elementos o cambiarlos de tamaño. Por esta razón, antes de diseñar los prototipos en papel y presentárselos a los usuarios, se decidió que era necesario comprobar si tecnológicamente era posible implementar estas funcionalidades en una aplicación web.
 
-En un primer momento se valoró la opción de que en el área de destino existiese una cuadricula en el fondo para que los usuarios pudiesen alinear fácilmente los elementos, pero no era posible aplicar esta opción y cumplir con el requisito de que los elementos pudiesen cambiar de tamaño.
+En un primer momento se valoró la opción de que en el área de destino existiese una cuadrícula en el fondo para que los usuarios pudiesen alinear fácilmente los elementos, pero no era posible aplicar esta opción y cumplir con el requisito de que los elementos pudiesen cambiar de tamaño.
 
-El prototipo tecnológico permitió validar que requisitos se podían cubrir con la aplicación, y así a la hora de realizar los prototipos en papel y presentárselos a los usuarios, tener la certeza de que las funcionalidades de los prototipos en papel se podían implementar en la aplicación.
+El prototipo tecnológico permitió validar qué requisitos se podían cubrir con la aplicación, y así a la hora de realizar los prototipos en papel y presentárselos a los usuarios, tener la certeza de que las funcionalidades de los prototipos en papel se podían implementar en la aplicación.
 
 \subsection{Prototipo de papel interactivo}
 \label{cap5:sec:prototipopapel}
 
-Una vez estaba claro que funcionalidades se podían implementar y se tenia una idea de como debía ser la aplicación, se realizaron prototipos en papel de la aplicación, para que los pudiesen evaluar los usuarios finales y así obtener una aplicación que se adaptase lo máximo posible a sus necesidades. Los prototipos en papel al completo se encuentran en el siguiente repositorio de GitHub\footnote{\url{https://github.com/NILGroup/TFG1819-Tableros/blob/master/Prototipos/prototipos.pdf}}. En la Figura \ref{fig:listados} se muestra el prototipo de la lista de plantillas privadas, en el caso de los otros listados el formato es similar.
+Una vez estaba claro que funcionalidades se podían implementar y se tenía una idea de como debía ser la aplicación, se realizaron prototipos en papel de la aplicación, para que los pudiesen evaluar los usuarios finales y así obtener una aplicación que se adaptase lo máximo posible a sus necesidades. Los prototipos en papel al completo se encuentran en el siguiente repositorio de GitHub\footnote{\url{https://github.com/NILGroup/TFG1819-Tableros/blob/master/Prototipos/prototipos.pdf}}. En la Figura \ref{fig:listados} se muestra el prototipo de la lista de plantillas privadas, en el caso de los otros listados el formato es similar.
 
 \figura{Bitmap/Capitulo5/listados}{width=.9\textwidth}{fig:listados}{Prototipo en papel de la lista de plantillas privadas.}
 
-En el menú lateral se pueden observar las opciones para los distintos listados de plantillas desplegadas, publicas, privadas, y crear una nueva plantilla. En el caso de los tableros serian las mismas opciones, tableros públicos, privados y crear un nuevo tablero. Para cada plantilla privada tenemos las siguientes opciones:
+En el menú lateral se pueden observar las opciones para los distintos listados de plantillas desplegadas, públicas, privadas, y crear una nueva plantilla. En el caso de los tableros serían las mismas opciones, tableros públicos, privados y crear un nuevo tablero. Para cada plantilla privada tenemos las siguientes opciones:
 
 \begin{itemize}
-	\item \textbf{Publicar}: sirve para publicar la plantilla y dejarla accesible para todo el mundo. De este modo la asociación o el colegio podrían crear las plantillas que usan habitualmente y hacerlas publicas para que todos puedan utilizarlas también.
+	\item \textbf{Publicar}: sirve para publicar la plantilla y dejarla accesible para todo el mundo. De este modo la asociación o el colegio podrían crear las plantillas que usan habitualmente y hacerlas públicas para que todos puedan utilizarlas también.
 	\item \textbf{Editar}: lleva al editor de plantillas para poder hacer modificaciones sobre la plantilla ya creada.
 	\item \textbf{Utilizar como tablero}: sirve para crear un tablero a partir de la plantilla.
 	\item \textbf{Duplicar}: crea una copia de la plantilla.
@@ -98,7 +98,7 @@ En la Figura \ref{fig:plantilla} se puede observar el editor de plantillas, que 
 \figura{Bitmap/Capitulo5/plantilla}{width=.9\textwidth}{fig:plantilla}{Prototipo en papel de la vista del editor de plantillas.}
 
 \begin{itemize}
-	\item En la parte superior, se muestra una barra con un botón que lleva a la vista de los listados (\textit{home}) y el nombre del elemento que estamos editando. Para editar este nombre se dispone de un botón con un lápiz, al pulsarlo se mostrará un cuadro de texto que permitirá cambiar el nombre del titulo.
+	\item En la parte superior, se muestra una barra con un botón que lleva a la vista de los listados (\textit{home}) y el nombre del elemento que estamos editando. Para editar este nombre se dispone de un botón con un lápiz. Al pulsarlo se mostrará un cuadro de texto que permitirá cambiar el nombre del titulo.
 	\item A la izquierda se muestra el área destinada a la plantilla.
 	\item A la derecha se muestra el buscador de pictogramas, y tres elementos que permiten al usuario personalizar la plantilla: área, pictograma en blanco, y cuadro de texto.
 \end{itemize}
@@ -114,7 +114,7 @@ Todos los elementos que se pueden utilizar para crear una plantilla se pueden pe
 	\label{fig:ajustesbien}
 \end{figure}
 
-El resto de elementos que se pueden poner en una plantilla tienen unas opciones de personalización similares, también se pueden cambiar de tamaño aun que no se refleje en el prototipo de papel.
+El resto de elementos que se pueden poner en una plantilla tienen unas opciones de personalización similares. También se podrán cambiar de tamaño aunque no se refleje en el prototipo de papel.
 
 El editor de tableros tiene una interfaz similar al editor de plantillas, la barra superior y el área principal no tienen ningún cambio con respecto al editor de plantillas, pero en este caso en el menú de la derecha solo contamos con el buscador de pictogramas, ya que cuando se edita un tablero la idea es que solo sea necesario colocar los pictogramas relativos al tablero.
 
@@ -129,9 +129,7 @@ Nos enseñaron cómo se usan actualmente, completamente en papel. En todas las cla
 
 Lo que les gustaría que hiciera el sistema es que todo este método para generar tableros se pudiera digitalizar y llevar en el móvil. Así, en cualquier momento se podría usar un tablero sin necesidad de pararse a dibujarlo. El uso debe ser sencillo y rápido, ya que cuando se necesita una de estas plantillas no hay mucho tiempo para reaccionar (p.e. si el joven con autismo se está portando mal, quiere algo y se está poniendo ansioso, etc.).
 
-Teniendo claro el contexto de uso, surgieron una serie de recomendaciones sobre cosas a mejorar, para que la experiencia de uso fuera mejor y se adaptase a las necesidades de los usuarios.
-
-Se obtuvieron una serie de recomendaciones generales sobre la aplicación:
+Teniendo claro el contexto de uso, surgieron una serie de recomendaciones sobre cosas a mejorar, para que la experiencia de uso fuera mejor y se adaptase a las necesidades de los usuarios. Las recomendaciones generales sobre la aplicación fueron:
 
 \begin{itemize}
 	\item La vista por defecto al entrar a la aplicación debe de ser la de plantillas privadas.
@@ -145,24 +143,24 @@ Después nos hicieron recomendaciones sobre las necesidades que no estaban cubier
 \begin{itemize}
 	\item Opciones que se deberían añadir en las plantillas:
 	\begin{itemize}
-		\item Añadir figuras geométricas para representar los días de la semana como en las plantillas que nos dieron.
+		\item Añadir figuras geométricas para representar los días de la semana como en las plantillas originales.
 		\item Añadir cuadros de texto que se puedan editar posteriormente en el tablero.
-		\item Añadir flechas negras, esto sirve para una plantilla que no se encuentra entre las que nos dieron inicialmente, esta plantilla se puede ver en la Figura \ref{fig:plantillaflecha}.
+		\item Añadir flechas negras. Esto sirve para una plantilla que no se encuentra entre las que nos dieron inicialmente, que se puede ver en la Figura \ref{fig:plantillaflecha}.
 		\figura{Bitmap/Capitulo5/plantillaflecha}{width=.9\textwidth}{fig:plantillaflecha}{Plantilla que representa que ocurre y la solución.}
 		\item Añadir el pictograma de esperar como un pictograma especial, ya que el que utilizan no forma parte de los pictogramas de ARASAAC.
 		\item Añadir círculos que se puedan poner en amarillo, sirve para marcar una tarea como realizada.
 		\item Hacer que una plantilla se vincule a otra.
 		\item Poder cambiar el color de texto.
 		\item Poder tachar el pictograma.
-		\item Poder poner un tick por encima del pictograma. Esta opción actualmente es poco intuitiva, mejor que estén por separado.
+		\item Poder poner un tick por encima del pictograma. %Esta opción actualmente es poco intuitiva, mejor que estén por separado.
 		\item Añadir un borde al pictograma nuevo, para que se note la diferencia con el resto de elementos.
-		\item Hacer mas gruesos los bordes de los elementos.
+		\item Hacer más gruesos los bordes de los elementos.
 	\end{itemize}
 	\item Opciones que se deberían añadir en los tableros:
 	\begin{itemize}
 		\item Dependiendo de si se ha marcado como editable o no, poder cambiar el texto de los cuadros de texto de la plantilla.
-		\item Posibilidad de recolocar los pictogramas si se elimina alguno, sirve para que en las agendas si se cancela una actividad se recoloquen las demás.
-		\item Poder poner un punto amarillo cuando la tarea este completada.
+		\item Posibilidad de recolocar los pictogramas si se elimina alguno. Sirve para que en las agendas si se cancela una actividad se recoloquen las demás.
+		\item Poder poner un punto amarillo cuando la tarea esté completada.
 		\item Añadir un buscador de imágenes en Google.
 		\item Poder tachar el pictograma.
 		\item Poder poner un tick en el pictograma.
@@ -171,51 +169,51 @@ Después nos hicieron recomendaciones sobre las necesidades que no estaban cubier
 	\end{itemize}
 \end{itemize}
 
-Debido a las restricciones de tiempo existentes para presentar el TFG no se podían implementar todos los cambios y mejoras propuestos por la asociación así que se decidió priorizar estos cambios y realizar solo los mas prioritarios. Para realizar esta priorización a cada cambio propuesto se le asignó un valor entre uno y tres, asignando un tres a las mejoras que más valor aportan al producto y uno a las que menos, y también se asignó una dificultad, siendo uno el valor asignado a los cambios que entrañan mas dificultad y tres los que menos.
+Debido a las restricciones de tiempo existentes para presentar el TFG no se podían implementar todos los cambios y mejoras propuestos por la asociación, así que se decidió priorizar estos cambios y realizar solo los mas prioritarios. Para realizar esta priorización a cada cambio propuesto se le asignó un valor entre uno y tres, asignando un tres a las mejoras que más valor aportan al producto y uno a las que menos. También se asignó una dificultad, siendo uno el valor asignado a los cambios que entrañan mas dificultad y tres los que menos.
 
-Una vez definido el valor y la dificultad de los cambios propuestos, se obtuvo una prioridad para cada mejora (valor*dificultad) en base a la que realizar los cambios, los resultados se pueden observar en la tabla \ref{table:cambiospropuestos} se pueden ver la lista de los cambios junto con su valor, dificultad y prioridad resultante.
+Una vez definido el valor y la dificultad de los cambios propuestos, se obtuvo una prioridad para cada mejora (valor*dificultad) en base a la que realizar los cambios. Los resultados se pueden observar en la Tabla \ref{table:cambiospropuestos}: se pueden ver la lista de los cambios junto con su valor, dificultad y prioridad resultante.
 
 
 % Please add the following required packages to your document preamble:
 % \usepackage{graphicx}
 \begin{table}[]
 	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{|p{6cm}|c|c|c|}
+		\begin{tabular}{|p{6cm}|c|c|c|c|}
 			\hline
-			\textit{\textbf{Cambios propuestos}} & \textit{Dificultad} & \textit{Importancia} & \textit{Prioridad} \\ \hline
-			Vista por defecto plantillas privadas & 1 & 2 & 2 \\ \hline
-			Dispositivo móvil & 2 & 3 & 6 \\ \hline
-			Mostrar miniatura del contenido & 1 & 3 & 3 \\ \hline
-			Eliminar tableros públicos & 3 & 1 & 3 \\ \hline
-			Crear vista para mostrar tablero (sin opciones de editar) & 2 & 2 & 4 \\ \hline
-			\multicolumn{4}{|l|}{\textbf{Cambios propuestos para las plantillas}} \\ \hline
-			Figuras geometricas, para dias de la semana (cuadrado, circulo, hexagono, triangulo, rombo, elipse, estrella) & 2 & 3 & 6 \\ \hline
-			Añadir opcion de editar a los cuadros de texto & 2 & 2 & 4 \\ \hline
-			Añadir flecha & 3 & 3 & 9 \\ \hline
-			Añadir pictograma de esperar & 3 & 3 & 9 \\ \hline
-			Añadir circulos & 3 & 3 & 9 \\ \hline
-			Vincular plantillas entre si & 1 & 1 & 1 \\ \hline
-			Poder cambiar el color del texto & 3 & 2 & 6 \\ \hline
-			Tachar pictograma & 3 & 3 & 9 \\ \hline
-			Tick pictograma & 3 & 3 & 9 \\ \hline
-			Poner borde para el pictograma nuevo & 3 & 2 & 6 \\ \hline
-			Hacer los bordes del área mas gruesos & 3 & 2 & 6 \\ \hline
-			\multicolumn{4}{|l|}{\textbf{Cambios propuestos para los tableros}} \\ \hline
-			Poder editar el texto (según se haya establecido previamente) & 2 & 2 & 4 \\ \hline
-			Posibilidad de cambiar los pictogramas (Si eliminas un pictograma del tablero que los demás se recoloquen) & 1 & 1 & 1 \\ \hline
-			Poder poner un punto amarillo cuando la tarea este completada & 3 & 2 & 6 \\ \hline
-			Añadir buscador de imágenes de google & 1 & 1 & 1 \\ \hline
-			Tachar pictograma & 3 & 3 & 9 \\ \hline
-			Tick pictograma & 3 & 3 & 9 \\ \hline
-			Tapar pictograma(transparencia azul) & 3 & 3 & 9 \\ \hline
-			Añadir imágenes personales & 1 & 3 & 3 \\ \hline
+			\textbf{Cambios propuestos} & \textit{Dificultad} & \textit{Importancia} & \textit{Prioridad} & \textit{Realizado} \\ \hline
+			Vista por defecto plantillas privadas & 1 & 2 & 2 & X \\ \hline
+			Dispositivo móvil & 2 & 3 & 6 & X \\ \hline
+			Mostrar miniatura del contenido & 1 & 3 & 3 & X \\ \hline
+			Eliminar tableros públicos & 3 & 1 & 3 &   \\ \hline
+			Crear vista para mostrar tablero (sin opciones de editar) & 2 & 2 & 4 & X \\ \hline
+			\multicolumn{5}{|l|}{\textbf{Cambios propuestos para las plantillas}} \\ \hline
+			Figuras geometricas, para dias de la semana (cuadrado, circulo, hexagono, triangulo, rombo, elipse, estrella) & 2 & 3 & 6 & X \\ \hline
+			Añadir opcion de editar a los cuadros de texto & 2 & 2 & 4 & X \\ \hline
+			Añadir flecha & 3 & 3 & 9 &   \\ \hline
+			Añadir pictograma de esperar & 3 & 3 & 9 & X \\ \hline
+			Añadir circulos & 3 & 3 & 9 & X \\ \hline
+			Vincular plantillas entre si & 1 & 1 & 1 &   \\ \hline
+			Poder cambiar el color del texto & 3 & 2 & 6 & X \\ \hline
+			Tachar pictograma & 3 & 3 & 9 & X \\ \hline
+			Tick pictograma & 3 & 3 & 9 & X \\ \hline
+			Poner borde para el pictograma nuevo & 3 & 2 & 6 & X \\ \hline
+			Hacer los bordes del área mas gruesos & 3 & 2 & 6 & X \\ \hline
+			\multicolumn{5}{|l|}{\textbf{Cambios propuestos para los tableros}} \\ \hline
+			Poder editar el texto (según se haya establecido previamente) & 2 & 2 & 4 & X \\ \hline
+			Posibilidad de cambiar los pictogramas (Si eliminas un pictograma del tablero que los demás se recoloquen) & 1 & 1 & 1 &   \\ \hline
+			Poder poner un punto amarillo cuando la tarea este completada & 3 & 2 & 6 & X \\ \hline
+			Añadir buscador de imágenes de google & 1 & 1 & 1 &   \\ \hline
+			Tachar pictograma & 3 & 3 & 9 & X \\ \hline
+			Tick pictograma & 3 & 3 & 9 & X \\ \hline
+			Tapar pictograma(transparencia azul) & 3 & 3 & 9 & X \\ \hline
+			Añadir imágenes personales & 1 & 3 & 3 &   \\ \hline
 		\end{tabular}%
 	}
 	\caption{Lista de cambios propuestos junto con su dificultad, su importancia y su prioridad}
 	\label{table:cambiospropuestos}
 \end{table}
 
-Todos los cambios con una prioridad mayor que tres se han podido implementar finalmente en la aplicación, también uno de los cambios con prioridad tres se ha implementado debido a la importancia que tenia para los usuarios y el valor que añadía a la aplicación, este cambio es el de mostrar las miniaturas de plantillas y tableros.
+Todos los cambios con una prioridad mayor que tres se han podido implementar finalmente en la aplicación, también uno de los cambios con prioridad tres se ha implementado debido a la importancia que tenía para los usuarios y el valor que añadía a la aplicación. Este cambio es el de mostrar las miniaturas de plantillas y tableros.
 
 %-------------------------------------------------------------------
 \section{Implementación}

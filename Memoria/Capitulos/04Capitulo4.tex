@@ -7,7 +7,7 @@
 \chapter{Tecnologías}
 
 \begin{resumen}
-	En este capitulo se introducen las principales herramientas utilizadas en el proyecto, que son: interact.js en la Sección \ref{cap4:sec:interactjs} para arrastrar y soltar,la API de ARASAAC para obtener los pictogramas en la Sección \ref{cap4:sec:apiarasaac} html2canvas en la Sección \ref{cap4:sec:html2canvas} para las miniaturas de las listas, y Realtime Database de Firebase en la Sección \ref{cap4:sec:firebase} para listar el contenido publico de la herramienta.
+	En este capítulo se introducen las principales herramientas utilizadas en el proyecto, que son: interact.js en la Sección \ref{cap4:sec:interactjs} para arrastrar y soltar, la API de ARASAAC para obtener los pictogramas en la Sección \ref{cap4:sec:apiarasaac} html2canvas en la Sección \ref{cap4:sec:html2canvas} para las miniaturas de las listas, y Realtime Database de Firebase en la Sección \ref{cap4:sec:firebase} para listar el contenido publico de la herramienta.
 \end{resumen}
 
 %-------------------------------------------------------------------
@@ -17,7 +17,7 @@
 
 El objetivo de este proyecto es la creación de una aplicación que debe ser accesible desde cualquier dispositivo, ordenador, tablet o móvil. Para conseguir esto, se ha desarrollado una aplicación web para que el único requisito que deban tener los dispositivos en los que se desee usar la herramienta sea tener conexión a internet. La aplicación web se ha desarrollado con HTML5 y CSS3. Para ayudar en la maquetación se ha usado Bootstrap 4 y para realizar las tareas más complejas se utiliza JavaScript.
 
-En la aplicación era fundamental que los usuarios pudieran tener un elevado nivel de interacción con los elementos del tablero. Para ello se ha utilizado la librería \textit{interact.js} que se explica en la Sección \ref{cap4:sec:interactjs}. Dentro de los elementos con los que se puede interactuar, se encuentran los pictogramas, que llegan a la aplicación mediante la API de ARASAAC explicada en la Sección \ref{cap4:sec:apiarasaac}. Una vez generada la plantilla o el tablero se debe poder guardar, para el contenido privado se utiliza la API de LocalStorage y para el contenido publico se utiliza Firebase que se explica en la Sección \ref{cap4:sec:firebase}. El uso de Firebase y LocalStorage permite desarrollar el proyecto sobre una arquitectura \textit{serverless}. LocalStorage es una API del navegador, accesible desde el cliente, el uso de LocalStorage en este proyecto permite guardar las plantillas y tableros de cada usuario sin necesidad de tener que registrarlos, ya que se almacenan en cada dispositivo. 
+En la aplicación era fundamental que los usuarios pudieran tener un elevado nivel de interacción con los elementos del tablero. Para ello se ha utilizado la librería \textit{interact.js} que se explica en la Sección \ref{cap4:sec:interactjs}. Dentro de los elementos con los que se puede interactuar, se encuentran los pictogramas, que llegan a la aplicación mediante la API de ARASAAC explicada en la Sección \ref{cap4:sec:apiarasaac}. Una vez generada la plantilla o el tablero se debe poder guardar. Para el contenido privado se utiliza la API de LocalStorage y para el contenido público se utiliza Firebase que se explica en la Sección \ref{cap4:sec:firebase}. El uso de Firebase y LocalStorage permite desarrollar el proyecto sobre una arquitectura \textit{serverless}. LocalStorage es una API del navegador, accesible desde el cliente, el uso de LocalStorage en este proyecto permite guardar las plantillas y tableros de cada usuario sin necesidad de tener que registrarlos, ya que se almacenan en cada dispositivo. 
 
 Para mostrar a los usuarios los listados de plantillas y tableros era necesario mostrar una miniatura de los elementos, para que fueran rápidamente identificables de un solo vistazo, esto es posible gracias a la librería \textit{html2canvas} que se explica en la sección \ref{cap4:sec:html2canvas}.
 
@@ -30,10 +30,10 @@ Interact.js\footnote{\url{https://interactjs.io/}} es una librería de JavaScript
 
 Interact.js permite al usuario colocar los pictogramas dentro del área de lo que será la plantilla, y ajustarlos al tamaño que se desee.
 
-Interact.js coge un elemento del DOM convirtiéndolo en objeto con el que se puede interactuar, este objeto tiene diferentes métodos para acciones y eventos que permiten configurar el objeto, los principales son:
+Interact.js coge un elemento del DOM convirtiéndolo en objeto con el que se puede interactuar, este objeto tiene diferentes métodos para acciones y eventos que permiten configurar el objeto. Los principales son:
 
 \begin{itemize}
-	\item \textbf{Draggable}: permite mover los elementos en cualquier dirección y hay que combinarlo con \textit{Dropzones}.
+	\item \textbf{Draggable}: permite mover los elementos en cualquier dirección y hay que combinarlo con \textit{dropzones}.
 	\item \textbf{Dropzone}: se utiliza para definir el espacio donde se pueden mover los objetos de tipo \textit{draggable}.
 	\item \textbf{Resizable}: permite cambiar el tamaño de los elementos.
 \end{itemize}
@@ -42,7 +42,7 @@ Todas estas acciones se añaden al objeto mediante la suscripción de eventos de J
 % Interact.js también permite crear una cuadricula que sirve para que el usuario la utilice de guía al colocar los elementos y los pueda alinear fácilmente. Pero se descarto la posibilidad de utilizar esta funcionalidad ya que no era compatible con la funcionalidad de cambiar el tamaño de los elementos, que se consideraba mas importante para los usuarios.
 
 %-----------------------------------------------------
-\subsubsection{API de ARASAAC}
+\section{API de ARASAAC}
 %-------------------------------------------
 \label{cap4:sec:apiarasaac}
 
@@ -56,6 +56,20 @@ La API de ARASAAC tiene métodos que permiten el acceso a materiales como agendas
 \end{itemize}
 
 Esta API ofrece soporte para múltiples idiomas, al realizar la petición se indica el idioma asociado a la petición y el esperado en los resultados.
+
+%-------------------------------------------------------------------
+\section{Html2canvas}
+%-------------------------------------------------------------------
+\label{cap4:sec:html2canvas}
+
+Html2canvas\footnote{\url{https://html2canvas.hertzen.com/}} es una librería JavaScript que permite hacer capturas de páginas web o partes de ella. Para hacer las capturas se recorre el DOM recopilando toda la información posible, para posteriormente reconstruir los elementos en un canvas, que utilizaremos como imagen para las miniaturas de las plantillas. Al no realizar una captura de lo que se ve en la pantalla, el resultado obtenido puede que no sea 100\% preciso. Esta librería presenta algunos problemas de compatibilidades:
+
+\begin{itemize}
+	\item Para que la herramienta capture todas las imágenes, éstas han de estar en el servidor, por lo que si las imágenes vienen de una url externa no podrá acceder a ellas. %Esto provoca que las miniaturas no contengan los pictogramas que nos provee la API de ARASAAC.
+	\item No soporta todas las propiedades CSS, entre ellas \textit{clip-path}. %, provocando que las formas geométricas en la miniatura salgan como cuadrados.
+\end{itemize}
+
+Esta librería resulta muy útil para dar al usuario una idea del formato del elemento sin necesidad de abrirlo, ya que si es posible representar los bordes, los colores, y los textos sin problema.
 
 %-------------------------------------------------------------------
 \section{Firebase}
@@ -89,19 +103,6 @@ En la Figura \ref{fig:firebase} se muestra un esquema del funcionamiento de Fire
 
 \figura{Bitmap/Capitulo4/firebase}{width=\textwidth}{fig:firebase}{Esquema de funcionamiento de Firebase Realtime Database}
 
-%-------------------------------------------------------------------
-\section{Html2canvas}
-%-------------------------------------------------------------------
-\label{cap4:sec:html2canvas}
-
-Html2canvas\footnote{\url{https://html2canvas.hertzen.com/}} es una librería JavaScript que permite hacer capturas de páginas web o partes de ella. Para hacer las capturas se recorre el DOM recopilando toda la información posible, para posteriormente reconstruir los elementos en un canvas, que utilizaremos como imagen para las miniaturas de las plantillas. Al no realizar una captura de lo que se ve en la pantalla, el resultado obtenido puede que no sea 100\% preciso. Esta librería presenta algunos problemas de compatibilidades:
-
-\begin{itemize}
-	\item Para que la herramienta capture todas las imágenes, éstas han de estar en el servidor, por lo que si las imágenes vienen de una url externa no podrá acceder a ellas. %Esto provoca que las miniaturas no contengan los pictogramas que nos provee la API de ARASAAC.
-	\item No soporta todas las propiedades CSS, entre ellas \textit{clip-path}. %, provocando que las formas geométricas en la miniatura salgan como cuadrados.
-\end{itemize}
-
-Esta librería resulta muy útil para dar al usuario una idea del formato del elemento sin necesidad de abrirlo, ya que si es posible representar los bordes, los colores, y los textos sin problema.
 
 % Variable local para emacs, para  que encuentre el fichero maestro de
 % compilación y funcionen mejor algunas teclas rápidas de AucTeX
