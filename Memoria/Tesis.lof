@@ -18,12 +18,12 @@
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Ejemplo de tablero con la secuencia de pasos para lavarse los dientes.\relax }}{17}{figure.caption.20}
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Ejemplo de tablero de normas para el supermercado.\relax }}{18}{figure.caption.21}
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Vista de las opciones de selecci\'on de pictogramas en Pictoselector.\relax }}{19}{figure.caption.22}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Vista de las opciones de selecci\'on de pictogramas en Pictoselector.\relax }}{20}{figure.caption.23}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Vista de las opciones de selecci\'on de pictogramas en Pictoselector.\relax }}{19}{figure.caption.23}
 \contentsline {figure}{\numberline {3.16}{\ignorespaces Pantalla principal de Pictoselector.\relax }}{20}{figure.caption.24}
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Tablero generado por el generador de tableros de ARASAAC.\relax }}{21}{figure.caption.25}
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Calendario del mes de mayo generado por ARASAAC.\relax }}{22}{figure.caption.26}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Calendario del mes de mayo generado por ARASAAC.\relax }}{21}{figure.caption.26}
 \contentsline {figure}{\numberline {3.19}{\ignorespaces Horario generado por ARASAAC.\relax }}{22}{figure.caption.27}
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Configuracion de las Celdas ARASAAC\relax }}{23}{figure.caption.28}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Configuracion de las Celdas ARASAAC\relax }}{22}{figure.caption.28}
 \contentsline {figure}{\numberline {3.21}{\ignorespaces Generador de material con Piktoplus.\relax }}{23}{figure.caption.29}
 \contentsline {figure}{\numberline {3.22}{\ignorespaces Pantalla inicial de BoardMaker Online.\relax }}{24}{figure.caption.30}
 \contentsline {figure}{\numberline {3.23}{\ignorespaces Pantalla principal de Pictar.\relax }}{25}{figure.caption.31}
@@ -35,24 +35,25 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Prototipo en papel de la lista de plantillas privadas.\relax }}{37}{figure.caption.35}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Prototipo en papel de la vista del editor de plantillas.\relax }}{39}{figure.caption.36}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Prototipo en papel del editor de plantillas con men\'u de ajustes de los pictogramas.\relax }}{40}{figure.caption.37}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Plantilla que representa que ocurre y la soluci\'on.\relax }}{42}{figure.caption.38}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Vista del editor de plantillas.\relax }}{45}{figure.caption.40}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Vista del listado de las plantillas privadas.\relax }}{46}{figure.caption.41}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Vista del listado de las plantillas p\'ublicas.\relax }}{47}{figure.caption.42}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Vista del listado de los tableros privados.\relax }}{48}{figure.caption.43}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Vista del listado de los tableros p\'ublicos.\relax }}{49}{figure.caption.44}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Ejemplo de la vista en la que solo se muestra el tablero, en este caso, un tablero creado para elegir juguetes.\relax }}{49}{figure.caption.45}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Ejemplo de un objeto tipo plantilla.\relax }}{50}{figure.caption.46}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Vista del editor de plantillas.\relax }}{51}{figure.caption.47}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Vista del editor de plantillas con los resultados de la b\'usqueda de ``agua'' desplegados.\relax }}{52}{figure.caption.48}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Vista del editor de plantillas con el men\'u de ajustes de pictogramas.\relax }}{53}{figure.caption.49}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Vista del editor de plantillas con el men\'u de ajustes de \'areas.\relax }}{53}{figure.caption.50}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Vista del editor de plantillas con el men\'u de ajustes de los cuadros de texto.\relax }}{54}{figure.caption.51}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Vista del editor de plantillas con el men\'u de ajustes de figuras.\relax }}{54}{figure.caption.52}
-\contentsline {figure}{\numberline {5.20}{\ignorespaces Vista del editor de tableros.\relax }}{54}{figure.caption.53}
-\contentsline {figure}{\numberline {5.21}{\ignorespaces Vista del editor de tableros con el men\'u de ajustes de pictogramas.\relax }}{55}{figure.caption.54}
-\contentsline {figure}{\numberline {5.22}{\ignorespaces Vista del editor de tableros con el men\'u de ajustes de cuadros de texto.\relax }}{56}{figure.caption.55}
-\contentsline {figure}{\numberline {5.23}{\ignorespaces Vista del editor de tableros con el men\'u de ajustes de las figuras geom\'etricas.\relax }}{56}{figure.caption.56}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Prototipo en papel de la vista del editor de tableros.\relax }}{41}{figure.caption.38}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Plantilla que representa que ocurre y la soluci\'on.\relax }}{42}{figure.caption.39}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Vista del editor de plantillas.\relax }}{44}{figure.caption.41}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Vista del listado de las plantillas privadas.\relax }}{47}{figure.caption.42}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Vista del listado de las plantillas p\'ublicas.\relax }}{48}{figure.caption.43}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Vista del listado de los tableros privados.\relax }}{48}{figure.caption.44}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Vista del listado de los tableros p\'ublicos.\relax }}{49}{figure.caption.45}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Ejemplo de la vista en la que solo se muestra el tablero, en este caso un tablero creado para elegir juguetes.\relax }}{50}{figure.caption.46}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Ejemplo de un objeto tipo plantilla.\relax }}{51}{figure.caption.47}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Vista del editor de plantillas.\relax }}{52}{figure.caption.48}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Vista del editor de plantillas con los resultados de la b\'usqueda de ``agua'' desplegados.\relax }}{52}{figure.caption.49}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Vista del editor de plantillas con el men\'u de ajustes de pictogramas.\relax }}{53}{figure.caption.50}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Vista del editor de plantillas con el men\'u de ajustes de \'areas.\relax }}{54}{figure.caption.51}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Vista del editor de plantillas con el men\'u de ajustes de los cuadros de texto.\relax }}{54}{figure.caption.52}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Vista del editor de plantillas con el men\'u de ajustes de figuras.\relax }}{55}{figure.caption.53}
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Vista del editor de tableros.\relax }}{55}{figure.caption.54}
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Vista del editor de tableros con el men\'u de ajustes de pictogramas.\relax }}{56}{figure.caption.55}
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Vista del editor de tableros con el men\'u de ajustes de cuadros de texto.\relax }}{56}{figure.caption.56}
 \contentsline {figure}{\numberline {5.24}{\ignorespaces Vista del editor de tableros con el men\'u de ajustes de las figuras geom\'etricas.\relax }}{57}{figure.caption.57}
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Vista del editor de tableros con el men\'u de ajustes de las figuras geom\'etricas.\relax }}{58}{figure.caption.58}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

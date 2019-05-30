@@ -8,7 +8,7 @@
 \chapter{Conclusiones y trabajo futuro}
 
 \begin{resumen}
-	En este capitulo en la Sección \ref{cap6:sec:conclusiones} se muestran las conclusiones extraídas del trabajo presentado en esta memoria y en la Sección \ref{cap6:sec:trabajofuturo} el trabajo futuro que podría implementarse extendiendo la funcionalidad de este proyecto.
+	En este capitulo en la Sección \ref{cap6:sec:conclusiones} se muestran las conclusiones extraídas del trabajo presentado en esta memoria y en la Sección \ref{cap6:sec:trabajofuturo} el trabajo futuro.
 \end{resumen}
 
 %-------------------------------------------------------------------
@@ -16,41 +16,30 @@
 %-------------------------------------------------------------------
 \label{cap6:sec:conclusiones}
 
-%Las personas con discapacidad cognitiva presentan en muchas ocasiones dificultades a la hora de comunicarse con lenguaje natural. Por esta razón es muy común el uso de los tableros de comunicación basados en pictogramas dentro de este colectivo. Estos tableros presentan siempre un mismo formato dependiendo del tipo de mensaje que se quiere transmitir, por ejemplo en agendas, secuencias de actividades,\dots, lo que facilita su reconocimiento por parte de los usuarios que los utilizan. Actualmente a pesar del avance de la tecnología en muchos centros se siguen creando estos tableros de manera manual, ya que no hay una herramienta que se adapte a las necesidades de los usuarios. Por ello surge la necesidad de desarrollar una aplicación que permita a los usuarios generar digitalmente estos tableros de comunicación y que esta aplicación sea accesible desde cualquier dispositivo.
+El objetivo principal de este proyecto era desarrollar una aplicación web que permitiese a los usuarios crear de forma digital los tableros que utilizan en su día a día. Para ello había que dar la posibilidad de crear plantillas que sirvieran de base para crear tableros. Para que la aplicación creada se adaptase lo máximo posible a las necesidades de los usuarios se utilizó una librería que permitía arrastrar y soltar los elementos a cualquier posición y cambiar el tamaño de los mismos, permitiendo así la creación de cualquier tipo de material a partir de un lienzo en blanco. La aplicación se creo siguiendo un diseño centrado en el usuario. El diseño de la aplicación fue creado contando con los usuarios finales quienes también participaron en la evaluación de la aplicación. Esta evaluación ha permitido comprobar la utilidad de la aplicación, así como permitir identificar los aspectos que mejorar.
 
-El objetivo principal de este proyecto era desarrollar una aplicación web que permitiese a los usuarios crear de forma digital los tableros que utilizan en su día a día. Para ello había que dar la posibilidad de crear plantillas que sirvieran de base para crear tableros. Para que la aplicación creada se adaptase lo máximo posible a las necesidades de los usuarios se utilizó una librería que permitía arrastrar y soltar los elementos a cualquier posición y cambiar el tamaño de los mismos, permitiendo así la creación de cualquier tipo de material a partir de un lienzo en blanco. 
-
-La aplicación se creo siguiendo un diseño centrado en el usuario. El diseño de la aplicación fue creado contando con los usuarios finales quienes también participaron en la evaluación de la aplicación. Esta evaluación ha permitido comprobar la utilidad de la aplicación, así como permitir identificar los aspectos que mejorar.
-
-
-%Una vez desarrollada la parte que permitía a los usuarios generar las plantillas, para facilitar la gestión del material generado por esta aplicación se decidió que era necesario que la herramienta se encargase de listar el material generado y permitiese realizar distintas acciones sobre el mismo.
-
-%Para asegurar que la aplicación sea de utilidad para la mayor cantidad de usuarios posible, se ha desarrollado para cubrir las necesidades y requisitos obtenidos en la Sección \ref{cap5:sec:analisis} y también se han tenido en cuenta las conclusiones obtenidas en el uso de otras aplicaciones en la Sección \ref{cap3:sec:concluciones}.
-
-%Finalmente la aplicación ha sido sometida a una evaluación con los usuarios finales, esta evaluación ha permitido comprobar la utilidad de la aplicación, a pesar de tener aspectos que mejorar.
-
-El segundo objetivo de este TFG era aplicar algunos de los conocimientos adquiridos durante el grado, especialmente en las siguientes asignaturas:
+El segundo objetivo de este TFG era aplicar algunos de los conocimientos adquiridos durante el grado, especialmente útiles han resultado las siguientes asignaturas:
 
 \begin{itemize}
-	\item \textbf{Aplicaciones Web}: donde adquirí los conocimientos necesarios de HTML, CSS y JavaScript, necesarios para crear la aplicación.
+	\item \textbf{Aplicaciones Web}: donde adquirí los conocimientos básicos de HTML, CSS y JavaScript, necesarios para crear la aplicación.
 	\item \textbf{Diseño de Sistemas Interactivos}: donde aprendí a diseñar aplicaciones centradas en el usuario, realizando pruebas con prototipos interactivos, evaluaciones sobre la aplicación final, etc.
 \end{itemize}
 
-Por ultimo, el tercer objetivo era aprender cosas nuevas y este proyecto me ha permitido profundizar en el uso de JavaScript explorando al máximo sus funcionalidades y trabajando con distintas librerías como interact.js y html2canvas. También me ha permitido aprender a trabajar con nuevas tecnologías como Firebase y LocalStorage.
+Por ultimo, el tercer objetivo era aprender cosas nuevas y este proyecto me ha permitido profundizar en el uso de JavaScript explorando al máximo sus funcionalidades y trabajando con distintas librerías como \textit{interact.js} y \textit{html2canvas}. También me ha permitido aprender a trabajar con nuevas tecnologías como Firebase y LocalStorage.
 
 %-------------------------------------------------------------------
 \section{Trabajo futuro}
 %-------------------------------------------------------------------
 \label{cap6:sec:trabajofuturo}
 
-Una vez terminado el proyecto, existen diversas mejoras que se pueden añadir en el futuro y así dotar a la aplicación:
+Una vez terminado el proyecto, existen diversas mejoras que se pueden añadir en el futuro y así dotar a la aplicación de mayor funcionalidad:
 
 \begin{itemize}
 	\item Implementar un buscador por el titulo de la plantilla o tablero en los listados. Así cuando los usuarios tengan mucho material pueden buscar por nombre fácilmente.
 	\item Definir categorías para filtrar el contenido de las listas de plantillas y tableros. Esto sería muy útil en el caso de que el contenido público sea demasiado grande y se quiera buscar un tipo de contenido concreto, por ejemplo: normas, agendas, calendarios, etc.
-	\item Vincular unas plantillas con otras, es decir, que al seleccionar un pictograma asociado a otra plantilla te lleve a la vista de otra plantilla.
-	\item Permitir a los usuarios utilizar imágenes propias, en las plantillas y tableros. Así los usuarios puedan personalizar aún más las plantillas y tableros.
-	\item Permitir que el usuario pueda interactuar con el tablero marcando el pictograma elegido, por ejemplo si se muestra el tablero de elegir juguetes, que pueda marcar el juguete elegido.
+	\item Vincular unas plantillas con otras. Por ejemplo en la plantilla del Sistema de puntos los usuarios podrían vincular un tablero a cada punto y en el tablero asociado mostrar la actividad que tienen que realizar para conseguir una recompensa.
+	\item Permitir a los usuarios utilizar imágenes propias, en las plantillas y tableros. Así los usuarios puedan personalizar aún más las plantillas y tableros, por ejemplo para los usuarios es mejor poner una foto de su madre, que el pictograma madre.
+	\item Permitir que el usuario pueda interactuar con el tablero marcando el pictograma elegido. Por ejemplo, si se muestra el tablero de elegir juguetes, que el juguete elegido por el usuario se marque en el tablero.
 	\item Mejorar el buscador de tal manera que al buscar por ejemplo la palabra ``hola'', los resultados de la búsqueda sean todos aquellos que empiezan por la palabra buscada, en este caso ``hola'' y ``holanda'' y no solo los pictogramas con la coincidencia exacta.
 	\item Añadir un botón en la lista de contenidos, que permita a los usuarios imprimir fácilmente sus plantillas y tableros.
 	\item Ajustar el texto dentro de los elementos, así cuando un elemento es pequeño el texto se debería ajustar a su tamaño.

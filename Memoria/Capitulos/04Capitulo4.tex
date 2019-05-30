@@ -28,7 +28,7 @@ Para mostrar a los usuarios los listados de plantillas y tableros era necesario 
 
 Interact.js\footnote{\url{https://interactjs.io/}} es una librería de JavaScript que permite arrastrar y soltar elementos y cambiar su tamaño, permitiendo que el usuario tenga un elevado nivel de interacción con los elementos. Se ha decidido utilizar esta librería en el proyecto ya que de las opciones existentes, es la única que permite mover los elementos con mayor libertad, permitiendo así a nuestros usuarios colocar los elementos sin ningún tipo de restricción. La mayoría de herramientas disponibles solo permiten mover un elemento a una posición concreta y con características limitadas, es decir, un solo elemento por cada destino y de tamaño determinado. Algunos ejemplos de este caso son: HTML5 nativo, \textit{draggable.js} ó \textit{dragula}.
 
-Interact.js permite al usuario colocar los pictogramas dentro del área de la plantilla o tablero, y ajustarlos al tamaño que se desee.
+Interact.js permite al usuario colocar los pictogramas dentro del área de la plantilla o el tablero, y ajustarlos al tamaño que se desee.
 
 Interact.js coge un elemento del DOM convirtiéndolo en objeto con el que se puede interactuar, este objeto tiene diferentes métodos para acciones y eventos que permiten configurar el objeto. Los principales son:
 
@@ -51,8 +51,8 @@ ARASAAC provee a los desarrolladores una de API\footnote{\url{https://beta.arasa
 La API de ARASAAC tiene métodos que permiten el acceso a materiales como agendas, normas, calendarios, etc. También tiene métodos que permiten trabajar con los pictogramas. Los dos métodos que se utilizaran en este TFG son:
 
 \begin{itemize}
-	\item Método\footnote{\url{https://api.arasaac.org/api/pictograms/es/search/palabra}} que permite buscar los pictogramas asociados a una palabra dada. Por cada pictograma asociado a la palabra recibida como entrada se devuelve el id del pictograma y las distintas acepciones que puede tener.
-	\item Método\footnote{\url{https://api.arasaac.org/api/pictograms/identificador}} que dado el id de un pictograma devuelve la imagen correspondiente a dicho pictograma. 
+	\item Método\footnote{\url{https://api.arasaac.org/api/pictograms/es/search/:palabra}} que permite buscar los pictogramas asociados a una palabra dada. Por cada pictograma asociado a la palabra recibida como entrada se devuelve el id del pictograma y las distintas acepciones que puede tener.
+	\item Método\footnote{\url{https://api.arasaac.org/api/pictograms/:identificador}} que dado el id de un pictograma devuelve la imagen correspondiente a dicho pictograma. 
 \end{itemize}
 
 Esta API ofrece soporte para múltiples idiomas, al realizar la petición se indica el idioma asociado a la petición y el idioma esperado en los resultados.
