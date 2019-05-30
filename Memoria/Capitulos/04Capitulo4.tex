@@ -7,7 +7,7 @@
 \chapter{Tecnologías}
 
 \begin{resumen}
-	En este capítulo se introducen las principales herramientas utilizadas en el proyecto, que son: interact.js en la Sección \ref{cap4:sec:interactjs} para arrastrar y soltar, la API de ARASAAC para obtener los pictogramas en la Sección \ref{cap4:sec:apiarasaac} html2canvas en la Sección \ref{cap4:sec:html2canvas} para las miniaturas de las listas, y Realtime Database de Firebase en la Sección \ref{cap4:sec:firebase} para listar el contenido publico de la herramienta.
+	En este capítulo se introducen las principales herramientas utilizadas en el proyecto, que son: interact.js (Sección \ref{cap4:sec:interactjs}), la API de ARASAAC (Sección \ref{cap4:sec:apiarasaac}), html2canvas (Sección \ref{cap4:sec:html2canvas}) y Realtime Database de Firebase (Sección \ref{cap4:sec:firebase}).
 \end{resumen}
 
 %-------------------------------------------------------------------
@@ -17,9 +17,9 @@
 
 El objetivo de este proyecto es la creación de una aplicación que debe ser accesible desde cualquier dispositivo, ordenador, tablet o móvil. Para conseguir esto, se ha desarrollado una aplicación web para que el único requisito que deban tener los dispositivos en los que se desee usar la herramienta sea tener conexión a internet. La aplicación web se ha desarrollado con HTML5 y CSS3. Para ayudar en la maquetación se ha usado Bootstrap 4 y para realizar las tareas más complejas se utiliza JavaScript.
 
-En la aplicación era fundamental que los usuarios pudieran tener un elevado nivel de interacción con los elementos del tablero. Para ello se ha utilizado la librería \textit{interact.js} que se explica en la Sección \ref{cap4:sec:interactjs}. Dentro de los elementos con los que se puede interactuar, se encuentran los pictogramas, que llegan a la aplicación mediante la API de ARASAAC explicada en la Sección \ref{cap4:sec:apiarasaac}. Una vez generada la plantilla o el tablero se debe poder guardar. Para el contenido privado se utiliza la API de LocalStorage y para el contenido público se utiliza Firebase que se explica en la Sección \ref{cap4:sec:firebase}. El uso de Firebase y LocalStorage permite desarrollar el proyecto sobre una arquitectura \textit{serverless}. LocalStorage es una API del navegador, accesible desde el cliente, el uso de LocalStorage en este proyecto permite guardar las plantillas y tableros de cada usuario sin necesidad de tener que registrarlos, ya que se almacenan en cada dispositivo. 
+En la aplicación era fundamental que los usuarios pudieran tener un elevado nivel de interacción con los elementos del tablero. Para ello se ha utilizado la librería \textit{interact.js} que se explica en la Sección \ref{cap4:sec:interactjs}. Dentro de los elementos con los que se puede interactuar, se encuentran los pictogramas, que llegan a la aplicación mediante la API de ARASAAC explicada en la Sección \ref{cap4:sec:apiarasaac}. Una vez generada la plantilla o el tablero se debe poder guardar el material generado. Para el contenido privado se utiliza la API de LocalStorage y para el contenido público se utiliza Firebase que se explica en la Sección \ref{cap4:sec:firebase}. El uso de Firebase y LocalStorage permite desarrollar el proyecto sobre una arquitectura \textit{serverless}. LocalStorage es una API del navegador, accesible desde el cliente, el uso de LocalStorage en este proyecto permite guardar las plantillas y tableros de cada usuario sin necesidad de tener que registrarlos, ya que se almacenan en cada dispositivo. 
 
-Para mostrar a los usuarios los listados de plantillas y tableros era necesario mostrar una miniatura de los elementos, para que fueran rápidamente identificables de un solo vistazo, esto es posible gracias a la librería \textit{html2canvas} que se explica en la sección \ref{cap4:sec:html2canvas}.
+Para mostrar a los usuarios los listados de plantillas y tableros era necesario mostrar una miniatura de los elementos para que fueran rápidamente identificables de un solo vistazo, esto es posible gracias a la librería \textit{html2canvas} que se explica en la sección \ref{cap4:sec:html2canvas}.
 
 %-------------------------------------------------------------------
 \section{Interact.js}
@@ -28,7 +28,7 @@ Para mostrar a los usuarios los listados de plantillas y tableros era necesario 
 
 Interact.js\footnote{\url{https://interactjs.io/}} es una librería de JavaScript que permite arrastrar y soltar elementos y cambiar su tamaño, permitiendo que el usuario tenga un elevado nivel de interacción con los elementos. Se ha decidido utilizar esta librería en el proyecto ya que de las opciones existentes, es la única que permite mover los elementos con mayor libertad, permitiendo así a nuestros usuarios colocar los elementos sin ningún tipo de restricción. La mayoría de herramientas disponibles solo permiten mover un elemento a una posición concreta y con características limitadas, es decir, un solo elemento por cada destino y de tamaño determinado. Algunos ejemplos de este caso son: HTML5 nativo, \textit{draggable.js} ó \textit{dragula}.
 
-Interact.js permite al usuario colocar los pictogramas dentro del área de lo que será la plantilla, y ajustarlos al tamaño que se desee.
+Interact.js permite al usuario colocar los pictogramas dentro del área de la plantilla o tablero, y ajustarlos al tamaño que se desee.
 
 Interact.js coge un elemento del DOM convirtiéndolo en objeto con el que se puede interactuar, este objeto tiene diferentes métodos para acciones y eventos que permiten configurar el objeto. Los principales son:
 
@@ -38,7 +38,7 @@ Interact.js coge un elemento del DOM convirtiéndolo en objeto con el que se pued
 	\item \textbf{Resizable}: permite cambiar el tamaño de los elementos.
 \end{itemize}
 
-Todas estas acciones se añaden al objeto mediante la suscripción de eventos de JavaScript, que permite detectar cuando se interactúa con el elemento.
+Todas estas acciones se añaden al objeto mediante la suscripción de eventos de JavaScript, que permite detectar cuando se esta interactuando con el elemento.
 % Interact.js también permite crear una cuadricula que sirve para que el usuario la utilice de guía al colocar los elementos y los pueda alinear fácilmente. Pero se descarto la posibilidad de utilizar esta funcionalidad ya que no era compatible con la funcionalidad de cambiar el tamaño de los elementos, que se consideraba mas importante para los usuarios.
 
 %-----------------------------------------------------
@@ -46,16 +46,16 @@ Todas estas acciones se añaden al objeto mediante la suscripción de eventos de J
 %-------------------------------------------
 \label{cap4:sec:apiarasaac}
 
-ARASAAC provee a los desarrolladores una de API\footnote{\url{https://beta.arasaac.org/developers/api}} para facilitar el uso de sus recursos en otros proyectos software de terceros. Esta API está bajo una licencia Creative Commons que permite utilizar sus recursos, siempre que no sean aplicaciones con fines comerciales.
+ARASAAC provee a los desarrolladores una de API\footnote{\url{https://beta.arasaac.org/developers/api}} para facilitar el uso de sus recursos en otros proyectos software. Esta API está bajo una licencia Creative Commons que permite utilizar sus recursos, siempre que no sean aplicaciones con fines comerciales.
 
 La API de ARASAAC tiene métodos que permiten el acceso a materiales como agendas, normas, calendarios, etc. También tiene métodos que permiten trabajar con los pictogramas. Los dos métodos que se utilizaran en este TFG son:
 
 \begin{itemize}
-	\item Método\footnote{\url{https://api.arasaac.org/api/pictograms/es/search/hola}} que permite buscar los pictogramas asociados a una palabra dada. Por cada pictograma asociado a la palabra recibida como entrada se devuelve el id del pictograma y las distintas afecciones que puede tener.
-	\item Método\footnote{\url{https://api.arasaac.org/api/pictograms/6009}} que dado el id de un pictograma y devuelve la imagen correspondiente. 
+	\item Método\footnote{\url{https://api.arasaac.org/api/pictograms/es/search/palabra}} que permite buscar los pictogramas asociados a una palabra dada. Por cada pictograma asociado a la palabra recibida como entrada se devuelve el id del pictograma y las distintas acepciones que puede tener.
+	\item Método\footnote{\url{https://api.arasaac.org/api/pictograms/identificador}} que dado el id de un pictograma devuelve la imagen correspondiente a dicho pictograma. 
 \end{itemize}
 
-Esta API ofrece soporte para múltiples idiomas, al realizar la petición se indica el idioma asociado a la petición y el esperado en los resultados.
+Esta API ofrece soporte para múltiples idiomas, al realizar la petición se indica el idioma asociado a la petición y el idioma esperado en los resultados.
 
 %-------------------------------------------------------------------
 \section{Html2canvas}
@@ -69,8 +69,6 @@ Html2canvas\footnote{\url{https://html2canvas.hertzen.com/}} es una librería Jav
 	\item No soporta todas las propiedades CSS, entre ellas \textit{clip-path}. %, provocando que las formas geométricas en la miniatura salgan como cuadrados.
 \end{itemize}
 
-Esta librería resulta muy útil para dar al usuario una idea del formato del elemento sin necesidad de abrirlo, ya que si es posible representar los bordes, los colores, y los textos sin problema.
-
 %-------------------------------------------------------------------
 \section{Firebase}
 %-------------------------------------------------------------------
@@ -79,7 +77,7 @@ Esta librería resulta muy útil para dar al usuario una idea del formato del elem
 Firebase\footnote{\url{https://firebase.google.com/}} es una plataforma de Google disponible para desarrollo Android, iOS y web, que permite desarrollar aplicaciones de calidad de forma muy rápida. Firebase ofrece gran cantidad de servicios, algunos de los más destacados son:
 
 \begin{itemize}
-	\item \textbf{Realtime Database}: base de datos NoSQL que permite almacenar y sincronizar datos en tiempo real. Este servicio ha sido utilizado en el proyecto y se explicará detalladamente mas adelante en este capitulo.
+	\item \textbf{Realtime Database}: base de datos NoSQL que permite almacenar y sincronizar datos en tiempo real.
 	\item \textbf{Authentication}: permite realizar la autenticación de los usuarios de manera fácil y segura. De manera predeterminada permite realizar este proceso con Google, Twitter, Facebook y GitHub, pero también se pueden utilizar muchos más.
 	\item \textbf{Cloud Storage}: proporciona cargas y descargas de archivos sin importar la calidad de red y gestionando la capa de seguridad.
 	\item \textbf{Hosting}: proporciona hosting estático, rápido y seguro para la web.
@@ -94,7 +92,7 @@ Firebase\footnote{\url{https://firebase.google.com/}} es una plataforma de Googl
 De todos los servicios que nos ofrece Firebase, en este proyecto se utiliza Realtime Database para la gestión de las plantillas y los tableros públicos. Firebase Realtime Database\footnote{\url{https://firebase.google.com/products/realtime-database/}} es una base de datos NoSQL que permite sincronizar los datos con todos los clientes en tiempo real. Las siguientes funcionalidades son las que se utilizan en este proyecto:
 
 \begin{itemize}
-	\item Sincronización de datos en tiempo real:  que cuando se hace público un tablero o una plantilla esté accesible a todos los usuarios automáticamente. Esto es posible mediante la suscripción de eventos JavaScript, que se quedan a la espera de cambios en la base de datos.
+	\item Sincronización de datos en tiempo real: permite que cuando se hace público un tablero o una plantilla esté accesible a todos los usuarios automáticamente. Esto es posible mediante la suscripción de eventos JavaScript, que se quedan a la espera de cambios en la base de datos.
 	\item Accesible desde el cliente: se puede acceder a la base de datos desde el cliente, no es necesario un servidor, lo cual nos permite realizar una aplicación \textit{serverless}. Además la seguridad y la validación de datos se realizan desde las reglas de seguridad que se pueden configurar desde \textit{Firebase}.
 	\item Formato de datos JSON: los datos se almacenan en formato JSON, lo cual nos permite definir la estructura de datos a nuestro gusto y también tener la misma estructura en las plantillas y en los tableros privados.
 \end{itemize}

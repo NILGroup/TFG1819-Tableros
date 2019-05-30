@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{7}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{Bertola(2017)}]{ARASAAC}
@@ -30,11 +30,6 @@
 \newblock {\em {PICTAR: una herramienta de elaboraci'on de contenido para
   personas con TEA basada en la traducci'on de texto a pictogramas}\/}.
 \newblock {Trabajo de Fin de M'aster}, Universidad Complutense de Madrid, 2018.
-
-\bibitem[{Mirenda y Iacono(2008)}]{psisemadrid2}
-{\sc Mirenda, P.} y {\sc Iacono, T.}
-\newblock {\em Autism Spectrum Disorders and AAC\/}.
-\newblock Paul H. Brookes, 2008.
 
 \bibitem[{Sanz y Mart'en(2002)}]{agendasvisuales}
 {\sc Sanz, M. L.~P.} y {\sc Mart'en, A. M.~T.}
